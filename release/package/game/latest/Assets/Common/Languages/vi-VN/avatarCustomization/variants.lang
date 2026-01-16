@@ -1,0 +1,34 @@
+earSide = Bên tai
+earSide.left = Trái
+earSide.right = Phải
+earSide.both = Cả hai
+
+pattern.skull = Họa tiết đầu lâu
+pattern.star = Họa tiết ngôi sao
+pattern.gaia = Họa tiết cây lăng kính
+pattern.cat = Họa tiết mèo
+pattern.bunny = Họa tiết thỏ
+pattern.unicorn = Họa tiết kỳ lân
+pattern.cat = Họa tiết mèo
+pattern.play = Họa tiết nút Phát
+pattern.play_inverted = Họa tiết nút Phát đảo ngược
+
+pants.dungareesshorts = Quần yếm đùi
+pants.bracedshorts = Quần đùi có dây đeo
+pants.dungarees = Quần yếm
+pants.bracedpants = Quần dài có dây đeo
+
+default = Mặc định
+
+overtops.Scavenger_Poncho = Không có đầu lâu
+
+capes.no_neck = Không có cổ
+
+haircuts.Dreadlocks01.name = Tóc bím 1
+haircuts.Dreadlocks02.name = Tóc bím 2
+haircuts.Dreadlocks03.name = Tóc bím 3
+haircuts.SlickbackCowlick.name = [TMP] Tóc vuốt ngược có xoáy
+
+headaccessory.Logo_Cap_Movie.name = Logo Phim
+headaccessory.Logo_Cap_Heart.name = Logo Trái tim
+headaccessory.Logo_Cap_Hypixel.name = Logo Hypixel

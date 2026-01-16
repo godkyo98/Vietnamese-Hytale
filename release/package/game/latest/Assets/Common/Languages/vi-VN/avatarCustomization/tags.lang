@@ -1,0 +1,15 @@
+style.fantasy = Huyền ảo
+style.modern = Hiện đại
+style.costume = Trang phục
+style.special = Đặc biệt
+
+haircut.short = Tóc ngắn
+haircut.medium = Tóc vừa
+haircut.long = Tóc dài
+HairLength.Short.name = Ngắn
+HairLength.Medium.name = Vừa
+HairLength.Long.name = Dài
+Style.Fantasy.name = Huyền ảo
+Style.Modern.name = Hiện đại
+Style.Costume.name = Trang phục
+Style.Special.name = Đặc biệt
