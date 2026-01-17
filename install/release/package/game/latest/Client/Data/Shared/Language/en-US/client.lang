@@ -880,19 +880,6 @@ builderTools.panel.npcStamina = Stamina
 builderTools.panel.npcSpeed = Speed
 builderTools.panel.npcTarget = Target
 builderTools.panel.npcTarget.none = None
-# === codex ===
-codex.title = Codex
-
-codex.movement = Movement
-
-codex.mantling = Mantling
-codex.mantling.description = When facing an obstacle taller than you, move forward and press jump to mantle over it.
-
-codex.sliding = Sliding
-codex.sliding.description = While sprinting, press the "Crouch" keybind to slide.
-
-codex.rolling = Rolling
-codex.rolling.description = While falling, hold the "Crouch" keybind to roll and negate fall damage.
 # === confirmQuitOverlay ===
 confirmQuitOverlay.title = Quit Game
 confirmQuitOverlay.text = Are you sure you want to quit?
@@ -958,7 +945,6 @@ contentCreation.navigation.worldtools.playSound.tooltipTitle = Browse and play s
 contentCreation.navigation.worldtools.importObj = Import OBJ
 contentCreation.navigation.worldtools.importObj.tooltipTitle = Convert 3D OBJ models to voxels and copy to clipboard.
 contentCreation.navigation.worldtools.importImage = Import Image
-contentCreation.navigation.worldtools.importImage.tooltipTitle = Convert 2D images to block art and copy to clipboard.
 
 contentCreation.navigation.help = Help
 contentCreation.navigation.help.commands = Commands
@@ -1632,7 +1618,6 @@ mediaBrowser.youtube.errors.requestFailed = Failed to fetch data from YouTube
 menuOverlay.buttons.returnToGame = Return to Game
 menuOverlay.buttons.quitToDesktop = Quit to Desktop
 menuOverlay.buttons.quitToMainMenu = Quit to Main Menu
-menuOverlay.buttons.codex = Codex
 menuOverlay.buttons.settings = Settings
 menuOverlay.buttons.feedback = Submit Bug or Feedback
 menuOverlay.buttons.onlinePlay = Online Play
@@ -2259,3 +2244,17 @@ feedback.success.submitMore = Submit More
 
 
 bugReportButton.tooltip = Report a Bug or Feedback
+# === patchline ===
+# Patchlines allow early release of content to help players test new features
+
+patchline.launchNotification.title = Pre-release Patchline
+patchline.launchNotification.text = You are running a pre-release patchline of Hytale.\n\n\
+    This version may contain experimental features and bugs.\n\n\
+    Your feedback helps us improve the game!
+
+patchline.worldWarning.title = Patchline Warning
+patchline.worldWarning.text = You are about to open a world using a different patchline.\n\n\
+    Opening this world may introduce changes that could affect your save.\n\n\
+    We recommend creating a backup copy before continuing.
+patchline.worldWarning.openAnyway = Open Anyway
+patchline.worldWarning.duplicateWorld = Duplicate World

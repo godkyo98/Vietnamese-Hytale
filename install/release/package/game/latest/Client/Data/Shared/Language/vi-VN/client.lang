@@ -880,19 +880,6 @@ builderTools.panel.npcStamina = Thể lực
 builderTools.panel.npcSpeed = Tốc độ
 builderTools.panel.npcTarget = Mục tiêu
 builderTools.panel.npcTarget.none = Không có
-# === codex ===
-codex.title = Codex
-
-codex.movement = Di chuyển
-
-codex.mantling = Leo trèo
-codex.mantling.description = Khi đối mặt với vật cản cao hơn bạn, hãy di chuyển tới và nhấn nhảy để leo qua nó.
-
-codex.sliding = Trượt
-codex.sliding.description = Khi đang chạy nước rút, hãy nhấn phím "Ngồi" để trượt.
-
-codex.rolling = Lộn nhào
-codex.rolling.description = Khi đang rơi, hãy giữ phím "Ngồi" để lộn nhào và triệt tiêu sát thương rơi.
 # === confirmQuitOverlay ===
 confirmQuitOverlay.title = Thoát trò chơi
 confirmQuitOverlay.text = Bạn có chắc chắn muốn thoát không?
@@ -958,7 +945,6 @@ contentCreation.navigation.worldtools.playSound.tooltipTitle = Duyệt và phát
 contentCreation.navigation.worldtools.importObj = Nhập OBJ
 contentCreation.navigation.worldtools.importObj.tooltipTitle = Chuyển đổi các mô hình 3D OBJ thành voxel và sao chép vào bộ nhớ tạm.
 contentCreation.navigation.worldtools.importImage = Nhập hình ảnh
-contentCreation.navigation.worldtools.importImage.tooltipTitle = Chuyển đổi hình ảnh 2D thành nghệ thuật khối và sao chép vào bộ nhớ tạm.
 
 contentCreation.navigation.help = Trợ giúp
 contentCreation.navigation.help.commands = Lệnh
@@ -1632,7 +1618,6 @@ mediaBrowser.youtube.errors.requestFailed = Lấy dữ liệu từ YouTube thấ
 menuOverlay.buttons.returnToGame = Quay lại trò chơi
 menuOverlay.buttons.quitToDesktop = Thoát ra màn hình nền
 menuOverlay.buttons.quitToMainMenu = Quay lại Menu chính
-menuOverlay.buttons.codex = Codex
 menuOverlay.buttons.settings = Cài đặt
 menuOverlay.buttons.feedback = Gửi lỗi hoặc Phản hồi
 menuOverlay.buttons.onlinePlay = Chơi trực tuyến
@@ -2259,3 +2244,17 @@ feedback.success.submitMore = Gửi thêm
 
 
 bugReportButton.tooltip = Báo cáo lỗi hoặc Phản hồi
+# === patchline ===
+# Patchline cho phép phát hành nội dung sớm để giúp người chơi thử nghiệm các tính năng mới
+
+patchline.launchNotification.title = Phiên bản thử nghiệm (Pre-release)
+patchline.launchNotification.text = Bạn đang chạy phiên bản thử nghiệm của Hytale.\n\n\
+    Phiên bản này có thể chứa các tính năng thử nghiệm và lỗi.\n\n\
+    Phản hồi của bạn sẽ giúp chúng tôi cải thiện trò chơi!
+
+patchline.worldWarning.title = Cảnh báo phiên bản
+patchline.worldWarning.text = Bạn đang chuẩn bị mở một thế giới bằng một phiên bản (patchline) khác.\n\n\
+    Việc mở thế giới này có thể dẫn đến những thay đổi gây ảnh hưởng đến dữ liệu lưu của bạn.\n\n\
+    Chúng tôi khuyên bạn nên tạo một bản sao lưu trước khi tiếp tục.
+patchline.worldWarning.openAnyway = Vẫn mở
+patchline.worldWarning.duplicateWorld = Sao chép thế giới
