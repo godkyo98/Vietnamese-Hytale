@@ -491,7 +491,7 @@ builderTools.settings.DisplayLegend.description = Shows or hides the builder too
 builderTools.settings.NoClip.name = No Clip
 builderTools.settings.NoClip.description = Disables collision detection when flying, allowing you to pass through blocks
 builderTools.settings.AirPlacement.name = Air Placement
-builderTools.settings.AirPlacement.description = Allows placing blocks in air at range without requiring support
+builderTools.settings.AirPlacement.description = Allows placing blocks in air at range without requiring support. Use mouse wheel to adjust placement distance
 builderTools.settings.AllowNPCDetection.name = Allow NPC Detection
 builderTools.settings.AllowNPCDetection.description = When enabled, NPCs can detect and react to you while in Creative mode
 builderTools.settings.RespondToHit.name = Respond To Hit
@@ -893,8 +893,6 @@ contentCreation.introText = This is the hub from which you can access various to
 \n\
 Simply choose one of the tools from the menu above to get started.
 
-contentCreation.actionButton.toggleBlockEditingTools = Toggle Block Editing Tools
-
 contentCreation.notification.noBlockTargeted = You need to target a block to open it in the Asset Editor.
 
 # Blockbench Modals
@@ -968,7 +966,6 @@ devTools.tabs.GameInfo = Game Info
 devTools.options = Options
 
 devTools.popupMenu.copyGameInfo = Copy game info to clipboard
-devTools.popupMenu.createDefect = Create Defect
 
 devTools.gameStats.popupMenu.editInAssetEditor = Edit in Asset Editor
 devTools.gameStats.popupMenu.copyValue = Copy Value
@@ -1058,6 +1055,13 @@ disconnection.autoConnectingIn = Connecting in {seconds}
 
 disconnection.error.unexpectedError = An unexpected error occurred
 disconnection.error.noConnectectionEstablished = Connection could not be established
+disconnection.error.rateLimited = You have been rate limited. Please wait a moment before trying again.
+disconnection.error.authFailed = Authentication failed. Please restart the game and try again.
+disconnection.error.notAuthenticated = You must be logged in to connect to multiplayer servers.
+disconnection.error.timeout = Connection timed out. Please check your internet connection and try again.
+disconnection.error.versionMismatch = Unable to connect due to a version mismatch between the client and server.
+disconnection.error.clientOutdated = Your game client is out of date. Please update to connect to this server.
+disconnection.error.serverOutdated = The server is running an older version and cannot accept your connection.
 # === gameLoadingView ===
 gameLoadingView.hints.constructionThanks = Thanks for playing while we are under construction!
 gameLoadingView.hints.futureTipsAndTricks = This screen is going to show you tips and tricks to help you with your adventure.
@@ -1175,9 +1179,9 @@ Are you sure you want to proceed?
 hud.chat.openLinkModal.confirm = Open Website
 # === inventory ===
 inventory.chest.title = Chest
-inventory.chest.tooltip.takeAll = Take All - Move all items from the container to the inventory.
-inventory.chest.tooltip.putAll = Put All - Move all items from the inventory to the container.
-inventory.chest.tooltip.quickStack = Quick Stack - Move items from the inventory to the container for item types already present.
+inventory.chest.tooltip.takeAll = Take All - Move all items from the container to the inventory. ({keybind})
+inventory.chest.tooltip.putAll = Put All - Move all items from the inventory to the container. ({keybind})
+inventory.chest.tooltip.quickStack = Quick Stack - Move items from the inventory to the container for item types already present. ({keybind})
 
 inventory.inventory.title = Inventory
 inventory.itemQuantityPopup.title = Split Stack:
@@ -1196,6 +1200,10 @@ inventory.character.tooltip.disabledMemories = [TMP] Memories is disabled in thi
 inventory.character.tooltip.disabledBackpack = [TMP] Backpack is disabled in this context.
 inventory.character.tooltip.lockedMemories = Find the Forgotten Temple to learn more.
 inventory.character.tooltip.pocketCraftingDisabled = [TMP] Pocket Crafting is disabled in this context.
+inventory.character.tooltip.toggleHelmVisibility = [TMP] Toggle Helm Visibility
+inventory.character.tooltip.toggleCuirassVisibility = [TMP] Toggle Cuirass Visibility
+inventory.character.tooltip.toggleGauntletsVisibility = [TMP] Toggle Gauntlets Visibility
+inventory.character.tooltip.togglePantsVisibility = [TMP] Toggle Pants Visibility
 
 inventory.character.stats.mana = Mana
 inventory.character.stats.health = Health
@@ -1223,6 +1231,8 @@ inventory.bench.tierLevelX.requirements = Tier {level} requirements
 inventory.bench.tierLevelX.upgrade = Upgrade to tier {level}
 inventory.bench.tier.button.upgrade = Upgrade
 inventory.bench.tier.max = MAX TIER REACHED
+inventory.bench.chestInfo = [TMP] Workstations can link to storage chests in a radius of {horizontalRadius, number}/{verticalRadius, number}, up to {maxChests, number} chests may be linked to one station
+inventory.bench.chestLimitReached = [TMP] This workstation has reached its maximum limit of linked chests
 
 inventory.crafting.ingredient.tooltip.pullingFromChests = You don't have enough ingredients in your inventory. Using items from nearby chests.
 
@@ -1249,11 +1259,9 @@ inventory.storage.filterTooltips.weapons = Show Weapons Only
 inventory.storage.filterTooltips.armor = Show Armor Only
 inventory.storage.filterTooltips.blocks = Show Building Materials Only
 
-inventory.button.autoSort.tooltip = Sort Items by Type
+inventory.button.autoSort.tooltip = Sort Items by Type ({keybind})
 inventory.dropdown.autoSortBy = Autosort by:
-inventory.dropdown.autoSort.types.Name = Name
 inventory.dropdown.autoSort.types.Type = Type
-inventory.dropdown.autoSort.types.Rarity = Rarity
 
 inventory.memories.title = Collected Memories
 
@@ -1602,6 +1610,9 @@ map.playerList.titleWorld = World Players
 map.playerList.titleServer = Server Players
 map.playerList.inWorld = This player is in your world
 
+map.playerListEntry.tooltip.compass = [TMP] Track on Compass
+map.playerListEntry.tooltip.map = [TMP] Show on Map
+
 map.marker.localPlayer = You
 map.marker.targetLocation = Target Location
 # === mediaBrowser ===
@@ -1743,6 +1754,7 @@ settings.groups.controls.blockPlacement = Block Placement
 settings.groups.controls.builderTools = Builder Tools
 settings.groups.controls.misc = Misc
 settings.groups.controls.debug = Debug
+settings.groups.controls.inventory = [TMP] Inventory
 settings.groups.builderTools = Builder Tools
 settings.groups.movement = Movement
 settings.groups.mantling = Mantling
@@ -1753,7 +1765,6 @@ settings.groups.stamina = Stamina
 settings.groups.weaponPullback = Weapon Pullback
 settings.groups.entityui = Entity UI
 settings.groups.playselect = Play Selection Tool
-settings.groups.playpaint = Play Paint Tool
 settings.groups.paint = Paint
 settings.groups.debug = Debug
 settings.groups.mounts = Mounts
@@ -1826,7 +1837,6 @@ settings.graphicsPreset.high.description = Prioritizes fidelity over performance
 settings.graphicsPreset.epic = Epic
 settings.graphicsPreset.epic.description = Quality above all else.
 settings.graphicsPreset.custom = Custom
-settings.maximized = Maximized
 settings.vsync = V-Sync
 settings.vsync.description = Enabling V-Sync will limit the amount of frames per second to the refresh rate of your monitor.
 settings.fpsLimit = Maximum FPS
@@ -1887,6 +1897,11 @@ settings.hideChat = Hide Chat
 settings.hideChat.description = Hide the chat window (does not prevent receiving messages).
 settings.hideHeldItem = Hide Held Item
 settings.hideHeldItem.description = Hide the item held in your hand (first-person view).
+settings.showFpsOverlay = FPS Overlay
+settings.showFpsOverlay.description = Display a Frames Per Second counter at the top-right of the screen at all times.
+settings.showFpsOverlay.off = Off
+settings.showFpsOverlay.colorCoded = On (Color-coded)
+settings.showFpsOverlay.monochrome = On (Monochrome)
 settings.maxChatMessages = Max Chat Messages
 settings.maxChatMessages.description = Determines the max number of messages to keep listed in chat.
 settings.cameraBasedFlying = Camera-Relative Flight
@@ -2063,12 +2078,19 @@ settings.bindings.ToggleFlyCameraControlTarget.description = Toggles the target 
 settings.bindings.PreviousBuilderToolsLegendPage = Legend - Previous Page
 settings.bindings.NextBuilderToolsLegendPage = Legend - Next Page
 
+settings.bindings.ContainerTakeAll = [TMP] Container: Take All
+settings.bindings.ContainerPutAll = [TMP] Container: Put All
+settings.bindings.ContainerQuickStack = [TMP] Container: Quick Stack
+settings.bindings.ContainerSort = [TMP] Container: Sort Items
+
 settings.autoJumpObstacle = Auto Step-Up
 settings.autoJumpObstacle.description = With this setting enabled, you will automatically walk up blocks with a max height of 1 unit.
 settings.enableUtilityQuickSwap = Enable Utility Quick Swap
 settings.enableUtilityQuickSwap.description = When enabled, tapping the keybind will instantly switch to the next item in your utility wheel.
 settings.enableArachnophobiaMode = Enable Arachnophobia Mode
-settings.enableArachnophobiaMode.description = When enabled, spiders will be replaced by another model (the server default is a crab).\n\n<b><color is="#b32626">This setting requires you to go back to the main menu to take effect!</color></b>
+settings.enableArachnophobiaMode.description = When enabled, spiders will be replaced by another model (the default is a crab).\n\n<b><color is="#b32626">This setting requires you to go back to the main menu to take effect!</color></b>
+settings.enableOphidiophobiaMode = [TMP] Enable Ophidiophobia Mode
+settings.enableOphidiophobiaMode.description = [TMP] When enabled, snakes will be replaced by another model (the default is a worm).\n\n<b><color is="#b32626">This setting requires you to go back to the main menu to take effect!</color></b>
 settings.autoJumpGap = Jump Automatically Over Gaps
 settings.builderMode = Builder Mode
 settings.builderMode.tooltip = When toggled on AND in Creative mode, disables some features (i.e. fall effects, head-bobbing, etc...)
@@ -2258,3 +2280,83 @@ patchline.worldWarning.text = You are about to open a world using a different pa
     We recommend creating a backup copy before continuing.
 patchline.worldWarning.openAnyway = Open Anyway
 patchline.worldWarning.duplicateWorld = Duplicate World
+
+# === cosmetics ===
+cosmetics.color.skinTone = Tone
+
+# Hair Gradients
+cosmetics.color.PitchBlack = Pitch Black
+cosmetics.color.Black = Black
+cosmetics.color.BrownDarker = Darker Brown
+cosmetics.color.BrownDark = Dark Brown
+cosmetics.color.BrownSemiDark = Semi-Dark Brown
+cosmetics.color.Brown = Brown
+cosmetics.color.BrownSemiLight = Semi-Light Brown
+cosmetics.color.BrownLight = Light Brown
+cosmetics.color.Blond = Blond
+cosmetics.color.BlondPlatinum = Platinum Blond
+cosmetics.color.BlondSand = Sand Blond
+cosmetics.color.BlondCaramel = Caramel Blond
+cosmetics.color.Copper = Copper
+cosmetics.color.Red = Red
+cosmetics.color.RedDark = Dark Red
+cosmetics.color.Pink = Pink
+cosmetics.color.PinkBerry = Berry Pink
+cosmetics.color.Bubblegum = Bubblegum
+cosmetics.color.Purple = Purple
+cosmetics.color.Lavender = Lavender
+cosmetics.color.BlueDark = Dark Blue
+cosmetics.color.Blue = Blue
+cosmetics.color.BlueLight = Light Blue
+cosmetics.color.Turquoise = Turquoise
+cosmetics.color.Green = Green
+cosmetics.color.White = White
+cosmetics.color.GreyAsh = Ash Grey
+cosmetics.color.Grey = Grey
+cosmetics.color.GreyPurple = Purple Grey
+cosmetics.color.Blue_Anthracite = Anthracite Blue
+
+# Shiny_Fabric Gradients
+cosmetics.color.Lime = Lime
+cosmetics.color.Orange = Orange
+cosmetics.color.Yellow = Yellow
+cosmetics.color.Violet = Violet
+
+# Jean_Generic Gradients
+cosmetics.color.BluePastel = Pastel Blue
+cosmetics.color.GreyDark = Dark Grey
+cosmetics.color.GreyLight = Light Grey
+cosmetics.color.GreyBlue = Blue Grey
+cosmetics.color.Marine_Blue = Marine Blue
+cosmetics.color.Maroon = Maroon
+cosmetics.color.Blue_Night = Night Blue
+cosmetics.color.Turquoise_Dark = Dark Turquoise
+
+# Faded_Leather Gradients
+cosmetics.color.Orange_Tan = Tan Orange
+
+# Flashy_Synthetic Gradients
+cosmetics.color.OrangePastel = Pastel Orange
+cosmetics.color.PinkPastel = Pastel Pink
+
+# Colored_Cotton Gradients
+cosmetics.color.Cream = Cream
+cosmetics.color.Charcoal = Charcoal
+
+# Pastel_Cotton Gradients
+cosmetics.color.Carmin = Carmine
+cosmetics.color.PurplePastel = Pastel Purple
+
+# Fantasy_Cotton Gradients
+cosmetics.color.Beige = Beige
+
+# Eyes Gradients
+cosmetics.color.Honey = Honey
+cosmetics.color.GreenLight = Light Green
+
+# Ornamented_Metal Gradients
+cosmetics.color.Gold_Red = Gold
+cosmetics.color.Silver_Blue = Silver
+cosmetics.color.Copper_Green = Copper
+cosmetics.color.Brass_Purple = Brass
+cosmetics.color.Iron_Black = Iron

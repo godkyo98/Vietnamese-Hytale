@@ -491,7 +491,7 @@ builderTools.settings.DisplayLegend.description = Hiện hoặc ẩn bảng chú
 builderTools.settings.NoClip.name = Đi xuyên khối
 builderTools.settings.NoClip.description = Vô hiệu hóa tính năng phát hiện va chạm khi bay, cho phép bạn đi xuyên qua các khối
 builderTools.settings.AirPlacement.name = Đặt trên không
-builderTools.settings.AirPlacement.description = Cho phép đặt các khối trong không trung ở khoảng cách xa mà không cần điểm tựa
+builderTools.settings.AirPlacement.description = Cho phép đặt các khối trên không trung ở khoảng cách xa mà không cần điểm tựa. Sử dụng con lăn chuột để điều chỉnh khoảng cách đặt khối
 builderTools.settings.AllowNPCDetection.name = Cho phép NPC phát hiện
 builderTools.settings.AllowNPCDetection.description = Khi được kích hoạt, các NPC có thể phát hiện và phản ứng với bạn khi đang ở chế độ Sáng tạo
 builderTools.settings.RespondToHit.name = Phản ứng khi bị đánh
@@ -893,8 +893,6 @@ contentCreation.introText = Đây là trung tâm mà từ đó bạn có thể t
 \n\
 Đơn giản chỉ cần chọn một trong các công cụ từ menu phía trên để bắt đầu.
 
-contentCreation.actionButton.toggleBlockEditingTools = Bật/Tắt Công cụ chỉnh sửa khối
-
 contentCreation.notification.noBlockTargeted = Bạn cần nhắm vào một khối để mở nó trong Trình chỉnh sửa tài sản.
 
 # Blockbench Modals
@@ -968,7 +966,6 @@ devTools.tabs.GameInfo = Thông tin game
 devTools.options = Tùy chọn
 
 devTools.popupMenu.copyGameInfo = Sao chép thông tin game vào bộ nhớ tạm
-devTools.popupMenu.createDefect = Tạo báo cáo lỗi
 
 devTools.gameStats.popupMenu.editInAssetEditor = Chỉnh sửa trong Trình chỉnh sửa tài sản
 devTools.gameStats.popupMenu.copyValue = Sao chép giá trị
@@ -1058,6 +1055,13 @@ disconnection.autoConnectingIn = Đang kết nối sau {seconds} giây
 
 disconnection.error.unexpectedError = Đã xảy ra lỗi không mong muốn
 disconnection.error.noConnectectionEstablished = Không thể thiết lập kết nối
+disconnection.error.rateLimited = Bạn đã bị giới hạn tần suất yêu cầu. Vui lòng chờ một lát trước khi thử lại.
+disconnection.error.authFailed = Xác thực thất bại. Vui lòng khởi động lại trò chơi và thử lại.
+disconnection.error.notAuthenticated = Bạn phải đăng nhập để kết nối với các máy chủ nhiều người chơi.
+disconnection.error.timeout = Kết nối quá hạn. Vui lòng kiểm tra kết nối internet và thử lại.
+disconnection.error.versionMismatch = Không thể kết nối do phiên bản giữa máy khách và máy chủ không khớp.
+disconnection.error.clientOutdated = Phiên bản trò chơi của bạn đã cũ. Vui lòng cập nhật để kết nối với máy chủ này.
+disconnection.error.serverOutdated = Máy chủ đang chạy phiên bản cũ hơn và không thể chấp nhận kết nối của bạn.
 # === gameLoadingView ===
 gameLoadingView.hints.constructionThanks = Cảm ơn bạn đã chơi trong khi chúng tôi đang hoàn thiện trò chơi!
 gameLoadingView.hints.futureTipsAndTricks = Màn hình này sẽ hiển thị cho bạn các mẹo và thủ thuật để hỗ trợ bạn trong cuộc phiêu lưu.
@@ -1175,9 +1179,9 @@ Bạn có chắc chắn muốn tiếp tục không?
 hud.chat.openLinkModal.confirm = Mở trang web
 # === inventory ===
 inventory.chest.title = Rương
-inventory.chest.tooltip.takeAll = Lấy tất cả - Di chuyển tất cả vật phẩm từ rương vào túi đồ.
-inventory.chest.tooltip.putAll = Cất tất cả - Di chuyển tất cả vật phẩm từ túi đồ vào rương.
-inventory.chest.tooltip.quickStack = Cất nhanh - Di chuyển vật phẩm từ túi đồ vào rương đối với các loại vật phẩm đã có sẵn trong rương.
+inventory.chest.tooltip.takeAll = Lấy tất cả - Di chuyển tất cả vật phẩm từ rương vào túi đồ. ({keybind})
+inventory.chest.tooltip.putAll = Cất tất cả - Di chuyển tất cả vật phẩm từ túi đồ vào rương. ({keybind})
+inventory.chest.tooltip.quickStack = Cất nhanh - Di chuyển vật phẩm từ túi đồ vào rương đối với các loại vật phẩm đã có sẵn trong rương. ({keybind})
 
 inventory.inventory.title = Túi đồ
 inventory.itemQuantityPopup.title = Chia chồng vật phẩm:
@@ -1196,6 +1200,10 @@ inventory.character.tooltip.disabledMemories = [TMP] Ký ức bị vô hiệu h�
 inventory.character.tooltip.disabledBackpack = [TMP] Balo bị vô hiệu hóa trong bối cảnh này.
 inventory.character.tooltip.lockedMemories = Tìm Đền thờ Bị lãng quên để biết thêm chi tiết.
 inventory.character.tooltip.pocketCraftingDisabled = [TMP] Chế tạo bỏ túi bị vô hiệu hóa trong bối cảnh này.
+inventory.character.tooltip.toggleHelmVisibility = [TMP] Bật/Tắt hiển thị Mũ giáp
+inventory.character.tooltip.toggleCuirassVisibility = [TMP] Bật/Tắt hiển thị Giáp ngực
+inventory.character.tooltip.toggleGauntletsVisibility = [TMP] Bật/Tắt hiển thị Găng tay
+inventory.character.tooltip.togglePantsVisibility = [TMP] Bật/Tắt hiển thị Quần giáp
 
 inventory.character.stats.mana = Năng lượng
 inventory.character.stats.health = Máu
@@ -1223,6 +1231,8 @@ inventory.bench.tierLevelX.requirements = Yêu cầu cấp {level}
 inventory.bench.tierLevelX.upgrade = Nâng cấp lên cấp {level}
 inventory.bench.tier.button.upgrade = Nâng cấp
 inventory.bench.tier.max = ĐÃ ĐẠT CẤP TỐI ĐA
+inventory.bench.chestInfo = [TMP] Các trạm chế tác có thể liên kết với rương lưu trữ trong bán kính {horizontalRadius, number}/{verticalRadius, number}, có thể liên kết tối đa {maxChests, number} rương với một trạm
+inventory.bench.chestLimitReached = [TMP] Trạm chế tác này đã đạt giới hạn tối đa số lượng rương liên kết
 
 inventory.crafting.ingredient.tooltip.pullingFromChests = Bạn không có đủ nguyên liệu trong túi đồ. Đang sử dụng vật phẩm từ các rương lân cận.
 
@@ -1249,11 +1259,9 @@ inventory.storage.filterTooltips.weapons = Chỉ hiện vũ khí
 inventory.storage.filterTooltips.armor = Chỉ hiện giáp
 inventory.storage.filterTooltips.blocks = Chỉ hiện vật liệu xây dựng
 
-inventory.button.autoSort.tooltip = Sắp xếp vật phẩm theo loại
+inventory.button.autoSort.tooltip = Sắp xếp vật phẩm theo loại ({keybind})
 inventory.dropdown.autoSortBy = Tự động sắp xếp theo:
-inventory.dropdown.autoSort.types.Name = Tên
 inventory.dropdown.autoSort.types.Type = Loại
-inventory.dropdown.autoSort.types.Rarity = Độ hiếm
 
 inventory.memories.title = Ký ức đã thu thập
 
@@ -1602,6 +1610,9 @@ map.playerList.titleWorld = Người chơi trong thế giới
 map.playerList.titleServer = Người chơi trong máy chủ
 map.playerList.inWorld = Người chơi này đang ở trong thế giới của bạn
 
+map.playerListEntry.tooltip.compass = [TMP] Theo dõi trên La bàn
+map.playerListEntry.tooltip.map = [TMP] Hiển thị trên Bản đồ
+
 map.marker.localPlayer = Bạn
 map.marker.targetLocation = Vị trí mục tiêu
 # === mediaBrowser ===
@@ -1743,6 +1754,7 @@ settings.groups.controls.blockPlacement = Đặt khối
 settings.groups.controls.builderTools = Công cụ xây dựng
 settings.groups.controls.misc = Khác
 settings.groups.controls.debug = Chẩn đoán
+settings.groups.controls.inventory = [TMP] Túi đồ
 settings.groups.builderTools = Công cụ xây dựng
 settings.groups.movement = Di chuyển
 settings.groups.mantling = Leo trèo
@@ -1753,7 +1765,6 @@ settings.groups.stamina = Thể lực
 settings.groups.weaponPullback = Thu vũ khí
 settings.groups.entityui = Giao diện thực thể
 settings.groups.playselect = Công cụ chọn vùng chơi
-settings.groups.playpaint = Công cụ vẽ chơi
 settings.groups.paint = Vẽ
 settings.groups.debug = Chẩn đoán
 settings.groups.mounts = Thú cưỡi
@@ -1826,7 +1837,6 @@ settings.graphicsPreset.high.description = Ưu tiên độ sắc nét hơn hiệ
 settings.graphicsPreset.epic = Sử thi
 settings.graphicsPreset.epic.description = Chất lượng là trên hết.
 settings.graphicsPreset.custom = Tùy chỉnh
-settings.maximized = Phóng to tối đa
 settings.vsync = V-Sync (Đồng bộ dọc)
 settings.vsync.description = Bật V-Sync sẽ giới hạn số khung hình trên giây theo tần số quét của màn hình.
 settings.fpsLimit = FPS tối đa
@@ -1887,6 +1897,11 @@ settings.hideChat = Ẩn trò chuyện
 settings.hideChat.description = Ẩn cửa sổ trò chuyện (không ngăn cản việc nhận tin nhắn).
 settings.hideHeldItem = Ẩn vật phẩm trên tay
 settings.hideHeldItem.description = Ẩn vật phẩm đang cầm trên tay (góc nhìn thứ nhất).
+settings.showFpsOverlay = Lớp phủ FPS
+settings.showFpsOverlay.description = Luôn hiển thị bộ đếm Số khung hình trên giây ở góc trên bên phải màn hình.
+settings.showFpsOverlay.off = Tắt
+settings.showFpsOverlay.colorCoded = Bật (Mã hóa màu)
+settings.showFpsOverlay.monochrome = Bật (Đơn sắc)
 settings.maxChatMessages = Số tin nhắn trò chuyện tối đa
 settings.maxChatMessages.description = Xác định số lượng tin nhắn tối đa được giữ lại trong danh sách trò chuyện.
 settings.cameraBasedFlying = Bay theo hướng camera
@@ -2063,12 +2078,19 @@ settings.bindings.ToggleFlyCameraControlTarget.description = Chuyển đổi m�
 settings.bindings.PreviousBuilderToolsLegendPage = Chú giải - Trang trước
 settings.bindings.NextBuilderToolsLegendPage = Chú giải - Trang sau
 
+settings.bindings.ContainerTakeAll = [TMP] Vật chứa: Lấy tất cả
+settings.bindings.ContainerPutAll = [TMP] Vật chứa: Đặt tất cả
+settings.bindings.ContainerQuickStack = [TMP] Vật chứa: Xếp chồng nhanh
+settings.bindings.ContainerSort = [TMP] Vật chứa: Sắp xếp vật phẩm
+
 settings.autoJumpObstacle = Tự động bước lên
 settings.autoJumpObstacle.description = Với cài đặt này được bật, bạn sẽ tự động bước lên các khối có chiều cao tối đa là 1 đơn vị.
 settings.enableUtilityQuickSwap = Bật chuyển nhanh tiện ích
 settings.enableUtilityQuickSwap.description = Khi được bật, việc nhấn phím gán sẽ ngay lập tức chuyển sang vật phẩm tiếp theo trong vòng xoay tiện ích của bạn.
 settings.enableArachnophobiaMode = Bật chế độ sợ nhện
-settings.enableArachnophobiaMode.description = Khi được bật, nhện sẽ được thay thế bằng một mô hình khác (mặc định của máy chủ là cua).\n\n<b><color is="#b32626">Cài đặt này yêu cầu bạn quay lại menu chính để có hiệu lực!</color></b>
+settings.enableArachnophobiaMode.description = Khi được bật, nhện sẽ được thay thế bằng một mô hình khác (mặc định là cua).\n\n<b><color is="#b32626">Cài đặt này yêu cầu bạn quay lại menu chính để có hiệu lực!</color></b>
+settings.enableOphidiophobiaMode = [TMP] Bật Chế độ sợ rắn
+settings.enableOphidiophobiaMode.description = [TMP] Khi được bật, rắn sẽ được thay thế bằng một mô hình khác (mặc định là sâu).\n\n<b><color is="#b32626">Cài đặt này yêu cầu bạn phải quay lại menu chính để có hiệu lực!</color></b>
 settings.autoJumpGap = Tự động nhảy qua khe hở
 settings.builderMode = Chế độ thợ xây
 settings.builderMode.tooltip = Khi được bật VÀ đang ở chế độ Sáng tạo, nó sẽ vô hiệu hóa một số tính năng (ví dụ: hiệu ứng rơi, rung đầu, v.v...)
@@ -2258,3 +2280,83 @@ patchline.worldWarning.text = Bạn đang chuẩn bị mở một thế giới b
     Chúng tôi khuyên bạn nên tạo một bản sao lưu trước khi tiếp tục.
 patchline.worldWarning.openAnyway = Vẫn mở
 patchline.worldWarning.duplicateWorld = Sao chép thế giới
+
+# === cosmetics ===
+cosmetics.color.skinTone = Tông màu
+
+# Hair Gradients
+cosmetics.color.PitchBlack = Đen Tuyền
+cosmetics.color.Black = Đen
+cosmetics.color.BrownDarker = Nâu Đậm Hơn
+cosmetics.color.BrownDark = Nâu Đậm
+cosmetics.color.BrownSemiDark = Nâu Vừa Đậm
+cosmetics.color.Brown = Nâu
+cosmetics.color.BrownSemiLight = Nâu Vừa Sáng
+cosmetics.color.BrownLight = Nâu Sáng
+cosmetics.color.Blond = Vàng Kim
+cosmetics.color.BlondPlatinum = Vàng Bạch Kim
+cosmetics.color.BlondSand = Vàng Cát
+cosmetics.color.BlondCaramel = Vàng Caramel
+cosmetics.color.Copper = Đồng
+cosmetics.color.Red = Đỏ
+cosmetics.color.RedDark = Đỏ Đậm
+cosmetics.color.Pink = Hồng
+cosmetics.color.PinkBerry = Hồng Dâu
+cosmetics.color.Bubblegum = Hồng Kẹo Cao Su
+cosmetics.color.Purple = Tím
+cosmetics.color.Lavender = Tím Oải Hương
+cosmetics.color.BlueDark = Xanh Dương Đậm
+cosmetics.color.Blue = Xanh Dương
+cosmetics.color.BlueLight = Xanh Dương Sáng
+cosmetics.color.Turquoise = Xanh Ngọc Lam
+cosmetics.color.Green = Xanh Lá
+cosmetics.color.White = Trắng
+cosmetics.color.GreyAsh = Xám Tro
+cosmetics.color.Grey = Xám
+cosmetics.color.GreyPurple = Xám Tím
+cosmetics.color.Blue_Anthracite = Xanh Than
+
+# Shiny_Fabric Gradients
+cosmetics.color.Lime = Xanh Chanh
+cosmetics.color.Orange = Cam
+cosmetics.color.Yellow = Vàng
+cosmetics.color.Violet = Tím Nghệ
+
+# Jean_Generic Gradients
+cosmetics.color.BluePastel = Xanh Dương Nhạt
+cosmetics.color.GreyDark = Xám Đậm
+cosmetics.color.GreyLight = Xám Sáng
+cosmetics.color.GreyBlue = Xám Xanh
+cosmetics.color.Marine_Blue = Xanh Biển Thẫm
+cosmetics.color.Maroon = Nâu Đỏ
+cosmetics.color.Blue_Night = Xanh Đêm
+cosmetics.color.Turquoise_Dark = Ngọc Lam Đậm
+
+# Faded_Leather Gradients
+cosmetics.color.Orange_Tan = Cam Rám Nắng
+
+# Flashy_Synthetic Gradients
+cosmetics.color.OrangePastel = Cam Nhạt
+cosmetics.color.PinkPastel = Hồng Nhạt
+
+# Colored_Cotton Gradients
+cosmetics.color.Cream = Kem
+cosmetics.color.Charcoal = Than Chì
+
+# Pastel_Cotton Gradients
+cosmetics.color.Carmin = Đỏ Carmine
+cosmetics.color.PurplePastel = Tím Nhạt
+
+# Fantasy_Cotton Gradients
+cosmetics.color.Beige = Be
+
+# Eyes Gradients
+cosmetics.color.Honey = Màu Mật Ong
+cosmetics.color.GreenLight = Xanh Lá Sáng
+
+# Ornamented_Metal Gradients
+cosmetics.color.Gold_Red = Vàng
+cosmetics.color.Silver_Blue = Bạc
+cosmetics.color.Copper_Green = Đồng
+cosmetics.color.Brass_Purple = Đồng Thau
+cosmetics.color.Iron_Black = Sắt
