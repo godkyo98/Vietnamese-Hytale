@@ -2111,6 +2111,7 @@ commands.update.backup_failed = [TMP] Tạo bản sao lưu thất bại. Quá tr
 commands.update.apply_confirm_required = [TMP] Sắp sửa áp dụng bản cập nhật {version} và khởi động lại máy chủ.\nChạy '/update apply --confirm' để tiếp tục.
 commands.update.applying_no_launcher = [TMP] Đang áp dụng bản cập nhật {version}...\nCảnh báo: Không tìm thấy tệp lệnh khởi chạy - các tệp cập nhật phải được di chuyển thủ công sau khi tắt máy.
 commands.update.applying = [TMP] Đang áp dụng bản cập nhật {version}...\nMáy chủ sẽ tắt và khởi động lại với phiên bản mới.
+commands.update.disabled = [TMP] Các Lệnh Cập Nhật Đã Bị Vô Hiệu Hóa Bởi Máy Chủ.
 
 # Auto-apply messages
 update.notify_players = [TMP] Bản cập nhật máy chủ {version} đã có sẵn. Quản trị viên có thể chạy '/update download' để chuẩn bị.

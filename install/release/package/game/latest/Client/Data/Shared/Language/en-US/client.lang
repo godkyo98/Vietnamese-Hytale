@@ -2085,6 +2085,8 @@ settings.bindings.ContainerSort = [TMP] Container: Sort Items
 
 settings.autoJumpObstacle = Auto Step-Up
 settings.autoJumpObstacle.description = With this setting enabled, you will automatically walk up blocks with a max height of 1 unit.
+settings.autoCrouchDownObstacle = [TMP] Crouch Auto Step-Down
+settings.autoCrouchDownObstacle.description = [TMP] With this setting enabled, when crouching, you will automatically walk down blocks with a max height of 1 unit.
 settings.enableUtilityQuickSwap = Enable Utility Quick Swap
 settings.enableUtilityQuickSwap.description = When enabled, tapping the keybind will instantly switch to the next item in your utility wheel.
 settings.enableArachnophobiaMode = Enable Arachnophobia Mode

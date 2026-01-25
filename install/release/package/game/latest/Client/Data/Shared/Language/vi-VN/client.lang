@@ -2085,6 +2085,8 @@ settings.bindings.ContainerSort = [TMP] Vật chứa: Sắp xếp vật phẩm
 
 settings.autoJumpObstacle = Tự động bước lên
 settings.autoJumpObstacle.description = Với cài đặt này được bật, bạn sẽ tự động bước lên các khối có chiều cao tối đa là 1 đơn vị.
+settings.autoCrouchDownObstacle = [TMP] Tự Động Bước Xuống Khi Ngồi
+settings.autoCrouchDownObstacle.description = [TMP] Khi bật cài đặt này, trong khi ngồi, bạn sẽ tự động bước xuống các khối có độ cao tối đa 1 đơn vị.
 settings.enableUtilityQuickSwap = Bật chuyển nhanh tiện ích
 settings.enableUtilityQuickSwap.description = Khi được bật, việc nhấn phím gán sẽ ngay lập tức chuyển sang vật phẩm tiếp theo trong vòng xoay tiện ích của bạn.
 settings.enableArachnophobiaMode = Bật chế độ sợ nhện
