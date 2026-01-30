@@ -18,6 +18,10 @@ pants.bracedshorts = Quần đùi có dây đeo
 pants.dungarees = Quần yếm
 pants.bracedpants = Quần dài có dây đeo
 
+option.a = Tùy Chọn A
+option.b = Tùy Chọn B
+option.c = Tùy Chọn C
+
 default = Mặc định
 
 overtops.Scavenger_Poncho = Không có đầu lâu
@@ -27,7 +31,7 @@ capes.no_neck = Không có cổ
 haircuts.Dreadlocks01.name = Tóc bím 1
 haircuts.Dreadlocks02.name = Tóc bím 2
 haircuts.Dreadlocks03.name = Tóc bím 3
-haircuts.SlickbackCowlick.name = [TMP] Tóc vuốt ngược có xoáy
+haircuts.SlickbackCowlick.name = Tóc vuốt ngược có xoáy
 
 headaccessory.Logo_Cap_Movie.name = Logo Phim
 headaccessory.Logo_Cap_Heart.name = Logo Trái tim

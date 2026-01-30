@@ -522,8 +522,8 @@ builderTools.panel.enableEmptyFilter = Enable 'Empty' filter
 builderTools.panel.invertEntireMask = Invert entire mask
 builderTools.panel.useCustomMaskCommandEntry = Use custom mask command entry
 
-builderTools.replace.materialsToReplace = [TMP] Materials to be replaced:
-builderTools.replace.replaceWith = [TMP] Replace with:
+builderTools.replace.materialsToReplace = Materials to be replaced:
+builderTools.replace.replaceWith = Replace with:
 
 builderTools.legend.title = Legend
 builderTools.legend.pickMaterial = Pick material
@@ -851,6 +851,10 @@ builderTools.panel.entityPosition = Position
 builderTools.panel.entityRotation = Rotation
 builderTools.panel.entityScale = Scale
 builderTools.panel.entityAllowPickup = Allow Pickup
+builderTools.panel.entityCollision = [TMP] Collision
+builderTools.panel.collisionType.none = [TMP] None
+builderTools.panel.collisionType.soft = [TMP] Soft
+builderTools.panel.collisionType.hard = [TMP] Hard
 builderTools.panel.entityClone = Clone
 builderTools.panel.entityRemove = Remove
 builderTools.panel.entityPin = Pin Entity
@@ -863,10 +867,12 @@ builderTools.commands.clearEntities.description = Removes all entities in the cu
 
 builderTools.entityType.npc = NPC
 builderTools.entityType.item = Item
-builderTools.entityType.model = Model
+builderTools.entityType.model = [TMP] Model
+builderTools.entityType.block = [TMP] Block
 builderTools.entityType.unknown = Unknown
 builderTools.entityModel.fallback.npc = NPC #{id}
 builderTools.entityModel.fallback.item = Item #{id}
+builderTools.entityModel.fallback.model = [TMP] Model #{id}
 builderTools.entityModel.fallback.block = Block #{id}
 builderTools.entityModel.fallback.unknown = #{id}
 
@@ -1080,8 +1086,8 @@ gamePageNavigation.buttons.Inventory = Inventory
 gamePageNavigation.buttons.Map = Map
 gamePageNavigation.buttons.ContentCreation = Creative Tools
 gamePageNavigation.buttons.ContentCreation.disabledTooltip = The creative menu is only available in Creative mode.
-gamePageNavigation.buttons.ContentCreation.disabledTooltip.title = [TMP] CREATIVE MODE
-gamePageNavigation.buttons.ContentCreation.disabledTooltip.description = [TMP] In creative mode you gain access to powerful editing tools, to swap to creative mode, '/op self' then toggle gamemode with 'O' hotkey
+gamePageNavigation.buttons.ContentCreation.disabledTooltip.title = CREATIVE MODE
+gamePageNavigation.buttons.ContentCreation.disabledTooltip.description = In creative mode you gain access to powerful editing tools. To swap to creative mode, use '/op self' then toggle gamemode with 'O' hotkey
 gamePageNavigation.earlyAccess = Early Access
 # === general ===
 general.button.cancel = Cancel
@@ -1128,6 +1134,10 @@ general.relativeTime.years = {years} years ago
 
 general.chatMessage.failedToSaveScreenshot = Failed to save screenshot!
 general.chatMessage.requestCancelled = The request was cancelled
+
+general.worldLoad.loadingWorld = Loading world...
+general.worldLoad.loadingAsset = Loading asset {assetName}
+
 # === hud ===
 hud.playerList.onlinePlayers = Online Players
 hud.playerList.username = Username
@@ -1170,6 +1180,18 @@ hud.networkQuality.offlineMode = Offline Mode - Your session expired. Restart th
 hud.sleep.awaiting = {asleep}/{total} players asleep...
 hud.sleep.waitingOn = Waiting on {who}
 
+hud.creative.speedMultiplier = Speed Multiplier: {value}
+hud.creative.collisionDisabled = Collision Disabled
+hud.creative.collisionEnabled = Collision Enabled
+
+hud.debug.wireframeEnabled = Wireframe: OnAll
+hud.debug.wireframeDisabled = Wireframe: Off
+hud.debug.shadersReloaded = Shaders have been reloaded.
+hud.debug.shaderTexturesReloaded = Shader textures have been reloaded.
+hud.debug.mapTransparency = Debug Map Transparency: {current} / {max}
+hud.debug.textureArrayLayer = Debug Texture Array Layer: {current} / {max}
+hud.debug.drawMapLevel = Draw Map Level: {current} / {max}
+
 hud.chat.openLinkModal.title = Open External Website?
 hud.chat.openLinkModal.text = You are about to open the website "{url}" in a web browser. \n\
 \n\
@@ -1180,8 +1202,11 @@ hud.chat.openLinkModal.confirm = Open Website
 # === inventory ===
 inventory.chest.title = Chest
 inventory.chest.tooltip.takeAll = Take All - Move all items from the container to the inventory. ({keybind})
+inventory.chest.tooltip.takeAllUnassigned = [TMP] Take All - Move all items from the container to the inventory. (unassigned)
 inventory.chest.tooltip.putAll = Put All - Move all items from the inventory to the container. ({keybind})
+inventory.chest.tooltip.putAllUnassigned = [TMP] Put All - Move all items from the inventory to the container. (unassigned)
 inventory.chest.tooltip.quickStack = Quick Stack - Move items from the inventory to the container for item types already present. ({keybind})
+inventory.chest.tooltip.quickStackUnassigned = [TMP] Quick Stack - Move items from the inventory to the container for item types already present. (unassigned)
 
 inventory.inventory.title = Inventory
 inventory.itemQuantityPopup.title = Split Stack:
@@ -1196,14 +1221,14 @@ inventory.character.tooltip.togglePocketCrafting = Toggle Pocket Crafting
 inventory.character.tooltip.toggleBackpack = Toggle Backpack
 inventory.character.tooltip.lockedBackpack = Unlocked by crafting the Backpack Upgrade.
 inventory.character.tooltip.toggleMemories = Toggle Collected Memories
-inventory.character.tooltip.disabledMemories = [TMP] Memories is disabled in this context.
-inventory.character.tooltip.disabledBackpack = [TMP] Backpack is disabled in this context.
+inventory.character.tooltip.disabledMemories = Memories are disabled in this context.
+inventory.character.tooltip.disabledBackpack = Backpack is disabled in this context.
 inventory.character.tooltip.lockedMemories = Find the Forgotten Temple to learn more.
-inventory.character.tooltip.pocketCraftingDisabled = [TMP] Pocket Crafting is disabled in this context.
-inventory.character.tooltip.toggleHelmVisibility = [TMP] Toggle Helm Visibility
-inventory.character.tooltip.toggleCuirassVisibility = [TMP] Toggle Cuirass Visibility
-inventory.character.tooltip.toggleGauntletsVisibility = [TMP] Toggle Gauntlets Visibility
-inventory.character.tooltip.togglePantsVisibility = [TMP] Toggle Pants Visibility
+inventory.character.tooltip.pocketCraftingDisabled = Pocket Crafting is disabled in this context.
+inventory.character.tooltip.toggleHelmVisibility = Toggle Head Armor Visibility
+inventory.character.tooltip.toggleCuirassVisibility = Toggle Chest Armor Visibility
+inventory.character.tooltip.toggleGauntletsVisibility = Toggle Hand Armor Visibility
+inventory.character.tooltip.togglePantsVisibility = Toggle Leg Armor Visibility
 
 inventory.character.stats.mana = Mana
 inventory.character.stats.health = Health
@@ -1231,8 +1256,8 @@ inventory.bench.tierLevelX.requirements = Tier {level} requirements
 inventory.bench.tierLevelX.upgrade = Upgrade to tier {level}
 inventory.bench.tier.button.upgrade = Upgrade
 inventory.bench.tier.max = MAX TIER REACHED
-inventory.bench.chestInfo = [TMP] Workstations can link to storage chests in a radius of {horizontalRadius, number}/{verticalRadius, number}, up to {maxChests, number} chests may be linked to one station
-inventory.bench.chestLimitReached = [TMP] This workstation has reached its maximum limit of linked chests
+inventory.bench.chestInfo = Workstations can access storage chests within a radius of {horizontalRadius, plural, one {1 block} other {{horizontalRadius, number} blocks}} and up to {verticalRadius, plural, one {1 block} other {{verticalRadius, number} blocks}} above or below. Up to {maxChests, plural, one {1 chest} other {{maxChests, number} chests}} may be linked to one station.
+inventory.bench.chestLimitReached = This workstation has reached its maximum linked chest limit.
 
 inventory.crafting.ingredient.tooltip.pullingFromChests = You don't have enough ingredients in your inventory. Using items from nearby chests.
 
@@ -1260,6 +1285,7 @@ inventory.storage.filterTooltips.armor = Show Armor Only
 inventory.storage.filterTooltips.blocks = Show Building Materials Only
 
 inventory.button.autoSort.tooltip = Sort Items by Type ({keybind})
+inventory.button.autoSort.unassignedTooltip = [TMP] Sort Items by Type (unassigned)
 inventory.dropdown.autoSortBy = Autosort by:
 inventory.dropdown.autoSort.types.Type = Type
 
@@ -1406,7 +1432,7 @@ mainMenu.navigation.shop = Shop
 mainMenu.discord.button.label = Join Discord
 mainMenu.discord.button.tooltip = Open our Discord in an external browser
 
-mainMenu.feedback.button.label = [TMP] Give Feedback
+mainMenu.feedback.button.label = Give Feedback
 
 # Minigames
 
@@ -1535,7 +1561,7 @@ mainMenu.worlds.randomWorld = Random World
 mainMenu.worlds.creativeMode = Creative Mode
 mainMenu.worlds.creativeModeStandard = Standard
 mainMenu.worlds.creativeModeHub = Creative Hub
-mainMenu.worlds.creativeModeGenerated = [TMP] Generated World
+mainMenu.worlds.creativeModeGenerated = Generated World
 mainMenu.worlds.npcSpawning = NPCs
 mainMenu.worlds.noNpcSpawning = No NPCs
 mainMenu.worlds.deleteWorld = Delete World
@@ -1553,22 +1579,22 @@ mainMenu.worlds.settings.enabled = Enabled
 mainMenu.worlds.settings.disabled = Disabled
 mainMenu.worlds.settings.fallDamage = Fall Damage
 mainMenu.worlds.settings.pauseTime = Pause Time
-mainMenu.worlds.settings.dayNightCycle = [TMP] Day / Night Cycle
-mainMenu.worlds.settings.dayDuration = [TMP] Day Duration (seconds)
-mainMenu.worlds.settings.nightDuration = [TMP] Night Duration (seconds)
-mainMenu.worlds.settings.customTime = [TMP] Custom Time
+mainMenu.worlds.settings.dayNightCycle = Day / Night Cycle
+mainMenu.worlds.settings.dayDuration = Day Duration (seconds)
+mainMenu.worlds.settings.nightDuration = Night Duration (seconds)
+mainMenu.worlds.settings.customTime = Custom Time
 mainMenu.worlds.settings.applyWorldSettings = Apply Settings
 mainMenu.worlds.settings.restoreSettings = Restore Default
-mainMenu.worlds.settings.deathPenalty = [TMP] Inventory Penalty On Death
-mainMenu.worlds.settings.deathPenalty.tooltip = [TMP] Defines the inventory penalty to apply upon the player's death.\n\
+mainMenu.worlds.settings.deathPenalty = Inventory Penalty On Death
+mainMenu.worlds.settings.deathPenalty.tooltip = Defines the inventory penalty to apply upon the player's death.\n\
 <b><color is="#f1ba50">None</color></b>: The player won't drop items upon death.\n\
 <b><color is="#f1ba50">Drop All</color></b>: The player will drop all their inventory items upon death.\n\
-<b><color is="#f1ba50">Partial Drop</color></b>: The player will only drop items configured to drop on death by a certain amount.
-mainMenu.worlds.settings.resourceLoss = [TMP] Resource Loss % On Death
-mainMenu.worlds.settings.durabilityLoss = [TMP] Durability Loss % On Death
-mainMenu.worlds.settings.deathPenaltyNone = [TMP] None
-mainMenu.worlds.settings.deathPenaltyDropAll = [TMP] Drop All
-mainMenu.worlds.settings.deathPenaltyPartial = [TMP] Partial Drop
+<b><color is="#f1ba50">Partial Drop</color></b>: The player will only drop a certain amount of items configured to drop on death.
+mainMenu.worlds.settings.resourceLoss = Resource Loss % On Death
+mainMenu.worlds.settings.durabilityLoss = Durability Loss % On Death
+mainMenu.worlds.settings.deathPenaltyNone = None
+mainMenu.worlds.settings.deathPenaltyDropAll = Drop All
+mainMenu.worlds.settings.deathPenaltyPartial = Partial Drop
 
 mainMenu.worlds.adventureMode.wip.text = [Unavailable during Early Access]
 mainMenu.worlds.exploartionMode.wip.text = [Early Access development preview]
@@ -1596,10 +1622,19 @@ map.contextMenu.teleport = Teleport
 map.contextMenu.selectLocation = Select Location
 map.contextMenu.deselectLocation = Deselect Location
 map.contextMenu.removeMarker = Remove Marker
+map.contextMenu.createMapMarker = [TMP] Create Map Marker
+map.contextMenu.coordsTitle = [TMP] X: {x}, Z: {z}
+map.contextMenu.markerTitle = [TMP] X: {x}, Z: {z}
+
+map.createMapMarker.title = [TMP] Create A Map Marker
+map.createMapMarker.nameLabel = [TMP] Name
+map.createMapMarker.nameOptional = [TMP] Optional
+map.createMapMarker.sharedLabel = [TMP] Shared with other players
+map.createMapMarker.submit = [TMP] Create Marker
 
 map.disabled = Unknown location
 
-map.actions.placeMarker = Place Marker
+map.actions.placeMarker = Select Location
 map.actions.zoom = Zoom in/out
 map.actions.playerList = Player List
 
@@ -1610,8 +1645,8 @@ map.playerList.titleWorld = World Players
 map.playerList.titleServer = Server Players
 map.playerList.inWorld = This player is in your world
 
-map.playerListEntry.tooltip.compass = [TMP] Track on Compass
-map.playerListEntry.tooltip.map = [TMP] Show on Map
+map.playerListEntry.tooltip.compass = Track on Compass
+map.playerListEntry.tooltip.map = Show on Map
 
 map.marker.localPlayer = You
 map.marker.targetLocation = Target Location
@@ -1711,11 +1746,11 @@ myAvatar.entitlement.gameFounder.lockedMessage = To use this cosmetic you need t
 myAvatar.entitlement.gameFounder.description = This part is exclusive to the Cursebreaker Edition of Hytale. Unlock it by upgrading your current edition in the Hytale Store.
 
 myAvatar.entitlement.gameDeluxe.titleSuffix = Supporter Edition Exclusive
-myAvatar.entitlement.gameDeluxe.lockedMessage = [TMP] To use this cosmetic you need the Supporter Edition.
+myAvatar.entitlement.gameDeluxe.lockedMessage = To use this cosmetic you need the Supporter Edition.
 myAvatar.entitlement.gameDeluxe.description = This part is exclusive to the Supporter Edition of Hytale. Unlock it by upgrading your current edition in the Hytale Store.
 
 myAvatar.entitlement.gameStandard.titleSuffix = Early Access Standard Edition Exclusive
-myAvatar.entitlement.gameStandard.lockedMessage = [TMP] To use this cosmetic you need the Early Access Standard Edition.
+myAvatar.entitlement.gameStandard.lockedMessage = To use this cosmetic you need the Early Access Standard Edition.
 myAvatar.entitlement.gameStandard.description = This part is exclusive to the Early Access Standard Edition of Hytale. Unlock it by upgrading your current edition in the Hytale Store.
 
 myAvatar.entitlement.default.lockedMessage = You cannot use this cosmetic as it is locked.
@@ -1754,7 +1789,7 @@ settings.groups.controls.blockPlacement = Block Placement
 settings.groups.controls.builderTools = Builder Tools
 settings.groups.controls.misc = Misc
 settings.groups.controls.debug = Debug
-settings.groups.controls.inventory = [TMP] Inventory
+settings.groups.controls.inventory = Inventory
 settings.groups.builderTools = Builder Tools
 settings.groups.movement = Movement
 settings.groups.mantling = Mantling
@@ -2078,21 +2113,21 @@ settings.bindings.ToggleFlyCameraControlTarget.description = Toggles the target 
 settings.bindings.PreviousBuilderToolsLegendPage = Legend - Previous Page
 settings.bindings.NextBuilderToolsLegendPage = Legend - Next Page
 
-settings.bindings.ContainerTakeAll = [TMP] Container: Take All
-settings.bindings.ContainerPutAll = [TMP] Container: Put All
-settings.bindings.ContainerQuickStack = [TMP] Container: Quick Stack
-settings.bindings.ContainerSort = [TMP] Container: Sort Items
+settings.bindings.ContainerTakeAll = Container: Take All
+settings.bindings.ContainerPutAll = Container: Put All
+settings.bindings.ContainerQuickStack = Container: Quick Stack
+settings.bindings.ContainerSort = Container: Sort Items
 
 settings.autoJumpObstacle = Auto Step-Up
 settings.autoJumpObstacle.description = With this setting enabled, you will automatically walk up blocks with a max height of 1 unit.
-settings.autoCrouchDownObstacle = [TMP] Crouch Auto Step-Down
-settings.autoCrouchDownObstacle.description = [TMP] With this setting enabled, when crouching, you will automatically walk down blocks with a max height of 1 unit.
+settings.autoCrouchDownObstacle = Crouch Auto Step-Down
+settings.autoCrouchDownObstacle.description = With this setting enabled, when crouching, you will automatically walk down blocks with a max height of 1 unit.
 settings.enableUtilityQuickSwap = Enable Utility Quick Swap
 settings.enableUtilityQuickSwap.description = When enabled, tapping the keybind will instantly switch to the next item in your utility wheel.
 settings.enableArachnophobiaMode = Enable Arachnophobia Mode
 settings.enableArachnophobiaMode.description = When enabled, spiders will be replaced by another model (the default is a crab).\n\n<b><color is="#b32626">This setting requires you to go back to the main menu to take effect!</color></b>
-settings.enableOphidiophobiaMode = [TMP] Enable Ophidiophobia Mode
-settings.enableOphidiophobiaMode.description = [TMP] When enabled, snakes will be replaced by another model (the default is a worm).\n\n<b><color is="#b32626">This setting requires you to go back to the main menu to take effect!</color></b>
+settings.enableOphidiophobiaMode = Enable Ophidiophobia Mode
+settings.enableOphidiophobiaMode.description = When enabled, snakes will be replaced by another model (the default is a worm).\n\n<b><color is="#b32626">This setting requires you to go back to the main menu to take effect!</color></b>
 settings.autoJumpGap = Jump Automatically Over Gaps
 settings.builderMode = Builder Mode
 settings.builderMode.tooltip = When toggled on AND in Creative mode, disables some features (i.e. fall effects, head-bobbing, etc...)

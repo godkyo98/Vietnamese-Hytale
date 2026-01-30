@@ -851,6 +851,10 @@ builderTools.panel.entityPosition = Vị trí
 builderTools.panel.entityRotation = Vòng xoay
 builderTools.panel.entityScale = Tỷ lệ
 builderTools.panel.entityAllowPickup = Cho phép nhặt
+builderTools.panel.entityCollision = [TMP] Va Chạm
+builderTools.panel.collisionType.none = [TMP] Không Có
+builderTools.panel.collisionType.soft = [TMP] Mềm
+builderTools.panel.collisionType.hard = [TMP] Cứng
 builderTools.panel.entityClone = Nhân bản
 builderTools.panel.entityRemove = Gỡ bỏ
 builderTools.panel.entityPin = Ghim thực thể
@@ -863,10 +867,12 @@ builderTools.commands.clearEntities.description = Gỡ bỏ tất cả các th�
 
 builderTools.entityType.npc = NPC
 builderTools.entityType.item = Vật phẩm
-builderTools.entityType.model = Mô hình
+builderTools.entityType.model = [TMP] Mô Hình
+builderTools.entityType.block = [TMP] Khối
 builderTools.entityType.unknown = Không rõ
 builderTools.entityModel.fallback.npc = NPC #{id}
 builderTools.entityModel.fallback.item = Vật phẩm #{id}
+builderTools.entityModel.fallback.model = [TMP] Mô Hình #{id}
 builderTools.entityModel.fallback.block = Khối #{id}
 builderTools.entityModel.fallback.unknown = #{id}
 
@@ -1081,7 +1087,7 @@ gamePageNavigation.buttons.Map = Bản đồ
 gamePageNavigation.buttons.ContentCreation = Công cụ sáng tạo
 gamePageNavigation.buttons.ContentCreation.disabledTooltip = Menu sáng tạo chỉ khả dụng ở chế độ Sáng tạo.
 gamePageNavigation.buttons.ContentCreation.disabledTooltip.title = CHẾ ĐỘ SÁNG TẠO
-gamePageNavigation.buttons.ContentCreation.disabledTooltip.description = Ở chế độ sáng tạo, bạn có quyền truy cập vào các công cụ chỉnh sửa mạnh mẽ. Để chuyển sang chế độ sáng tạo, hãy dùng lệnh '/op self' sau đó chuyển đổi chế độ chơi bằng phím nóng 'O'
+gamePageNavigation.buttons.ContentCreation.disabledTooltip.description = Trong chế độ sáng tạo, bạn có quyền truy cập vào các công cụ chỉnh sửa mạnh mẽ. Để chuyển sang chế độ sáng tạo, hãy sử dụng lệnh '/op self' sau đó thay đổi chế độ chơi bằng phím nóng 'O'
 gamePageNavigation.earlyAccess = Truy cập sớm (Early Access)
 # === general ===
 general.button.cancel = Hủy
@@ -1128,6 +1134,10 @@ general.relativeTime.years = {years} năm trước
 
 general.chatMessage.failedToSaveScreenshot = Lưu ảnh chụp màn hình thất bại!
 general.chatMessage.requestCancelled = Yêu cầu đã bị hủy
+
+general.worldLoad.loadingWorld = Đang Tải Thế Giới...
+general.worldLoad.loadingAsset = Đang Tải Tài Nguyên {assetName}
+
 # === hud ===
 hud.playerList.onlinePlayers = Người chơi trực tuyến
 hud.playerList.username = Tên người dùng
@@ -1170,6 +1180,18 @@ hud.networkQuality.offlineMode = Chế độ ngoại tuyến - Phiên làm việ
 hud.sleep.awaiting = {asleep}/{total} người chơi đang ngủ...
 hud.sleep.waitingOn = Đang chờ {who}
 
+hud.creative.speedMultiplier = Hệ Số Tốc Độ: {value}
+hud.creative.collisionDisabled = Đã Vô Hiệu Hóa Va Chạm
+hud.creative.collisionEnabled = Đã Bật Va Chạm
+
+hud.debug.wireframeEnabled = Khung Lưới: Bật Tất Cả
+hud.debug.wireframeDisabled = Khung Lưới: Tắt
+hud.debug.shadersReloaded = Các Shader Đã Được Tải Lại.
+hud.debug.shaderTexturesReloaded = Các Kết Cấu Shader Đã Được Tải Lại.
+hud.debug.mapTransparency = Độ Trong Suốt Bản Đồ Debug: {current} / {max}
+hud.debug.textureArrayLayer = Lớp Mảng Kết Cấu Debug: {current} / {max}
+hud.debug.drawMapLevel = Cấp Độ Vẽ Bản Đồ: {current} / {max}
+
 hud.chat.openLinkModal.title = Mở trang web bên ngoài?
 hud.chat.openLinkModal.text = Bạn chuẩn bị mở trang web "{url}" trong trình duyệt web. \n\
 \n\
@@ -1179,9 +1201,12 @@ Bạn có chắc chắn muốn tiếp tục không?
 hud.chat.openLinkModal.confirm = Mở trang web
 # === inventory ===
 inventory.chest.title = Rương
-inventory.chest.tooltip.takeAll = Lấy tất cả - Di chuyển tất cả vật phẩm từ rương vào túi đồ. ({keybind})
-inventory.chest.tooltip.putAll = Cất tất cả - Di chuyển tất cả vật phẩm từ túi đồ vào rương. ({keybind})
-inventory.chest.tooltip.quickStack = Cất nhanh - Di chuyển vật phẩm từ túi đồ vào rương đối với các loại vật phẩm đã có sẵn trong rương. ({keybind})
+inventory.chest.tooltip.takeAll = Lấy Tất Cả - Di chuyển tất cả vật phẩm từ vật chứa vào túi đồ. ({keybind})
+inventory.chest.tooltip.takeAllUnassigned = [TMP] Lấy Tất Cả - Di chuyển tất cả vật phẩm từ vật chứa vào túi đồ. (chưa gán phím)
+inventory.chest.tooltip.putAll = Cất Tất Cả - Di chuyển tất cả vật phẩm từ túi đồ vào vật chứa. ({keybind})
+inventory.chest.tooltip.putAllUnassigned = [TMP] Cất Tất Cả - Di chuyển tất cả vật phẩm từ túi đồ vào vật chứa. (chưa gán phím)
+inventory.chest.tooltip.quickStack = Sắp Xếp Nhanh - Di chuyển vật phẩm từ túi đồ vào vật chứa đối với các loại vật phẩm đã có sẵn. ({keybind})
+inventory.chest.tooltip.quickStackUnassigned = [TMP] Sắp Xếp Nhanh - Di chuyển vật phẩm từ túi đồ vào vật chứa đối với các loại vật phẩm đã có sẵn. (chưa gán phím)
 
 inventory.inventory.title = Túi đồ
 inventory.itemQuantityPopup.title = Chia chồng vật phẩm:
@@ -1192,18 +1217,18 @@ inventory.itemLibrary.options.showVariants = Hiện các biến thể
 
 inventory.itemPreview.title = Xem trước vật phẩm
 
-inventory.character.tooltip.togglePocketCrafting = Bật/Tắt Chế tạo bỏ túi
-inventory.character.tooltip.toggleBackpack = Bật/Tắt Balo
-inventory.character.tooltip.lockedBackpack = Được mở khóa bằng cách chế tạo Nâng cấp Balo.
-inventory.character.tooltip.toggleMemories = Bật/Tắt Ký ức đã thu thập
-inventory.character.tooltip.disabledMemories = [TMP] Ký ức bị vô hiệu hóa trong bối cảnh này.
-inventory.character.tooltip.disabledBackpack = [TMP] Balo bị vô hiệu hóa trong bối cảnh này.
-inventory.character.tooltip.lockedMemories = Tìm Đền thờ Bị lãng quên để biết thêm chi tiết.
-inventory.character.tooltip.pocketCraftingDisabled = [TMP] Chế tạo bỏ túi bị vô hiệu hóa trong bối cảnh này.
-inventory.character.tooltip.toggleHelmVisibility = [TMP] Bật/Tắt hiển thị Mũ giáp
-inventory.character.tooltip.toggleCuirassVisibility = [TMP] Bật/Tắt hiển thị Giáp ngực
-inventory.character.tooltip.toggleGauntletsVisibility = [TMP] Bật/Tắt hiển thị Găng tay
-inventory.character.tooltip.togglePantsVisibility = [TMP] Bật/Tắt hiển thị Quần giáp
+inventory.character.tooltip.togglePocketCrafting = Bật/Tắt Chế Tạo Bỏ Túi
+inventory.character.tooltip.toggleBackpack = Bật/Tắt Túi Đeo Lưng
+inventory.character.tooltip.lockedBackpack = Được mở khóa bằng cách chế tạo Nâng cấp Túi Đeo Lưng.
+inventory.character.tooltip.toggleMemories = Bật/Tắt Hồi Ức đã thu thập
+inventory.character.tooltip.disabledMemories = Hồi Ức bị vô hiệu hóa trong bối cảnh này.
+inventory.character.tooltip.disabledBackpack = Túi Đeo Lưng bị vô hiệu hóa trong bối cảnh này.
+inventory.character.tooltip.lockedMemories = Tìm Đền Thờ Bị Lãng Quên để tìm hiểu thêm.
+inventory.character.tooltip.pocketCraftingDisabled = Chế Tạo Bỏ Túi bị vô hiệu hóa trong bối cảnh này.
+inventory.character.tooltip.toggleHelmVisibility = Bật/Tắt Hiển Thị Giáp Đầu
+inventory.character.tooltip.toggleCuirassVisibility = Bật/Tắt Hiển Thị Giáp Ngực
+inventory.character.tooltip.toggleGauntletsVisibility = Bật/Tắt Hiển Thị Giáp Tay
+inventory.character.tooltip.togglePantsVisibility = Bật/Tắt Hiển Thị Giáp Chân
 
 inventory.character.stats.mana = Năng lượng
 inventory.character.stats.health = Máu
@@ -1223,7 +1248,7 @@ inventory.crafting.button.crafting = Đang chế tạo...
 inventory.crafting.unknownItem = Vật phẩm không rõ
 
 inventory.crafting.unknownItem.knowledgeRequired = Công thức chưa được khám phá
-inventory.crafting.unknownItem.memoriesCountRequired = Tìm <color is="#f1ba50">Đền thờ Bị lãng quên</color> và khôi phục {memories} Ký ức để mở khóa công thức này!
+inventory.crafting.unknownItem.memoriesCountRequired = Tìm <color is="#f1ba50">Đền thờ Bị lãng quên</color> và khôi phục {memories} Hồi Ức để mở khóa công thức này!
 inventory.crafting.lockedItem.benchTierLevelRequired = Yêu cầu {benchname} cấp {level}
 
 inventory.bench.tierLevelX = Cấp {level}
@@ -1231,8 +1256,8 @@ inventory.bench.tierLevelX.requirements = Yêu cầu cấp {level}
 inventory.bench.tierLevelX.upgrade = Nâng cấp lên cấp {level}
 inventory.bench.tier.button.upgrade = Nâng cấp
 inventory.bench.tier.max = ĐÃ ĐẠT CẤP TỐI ĐA
-inventory.bench.chestInfo = [TMP] Các trạm chế tác có thể liên kết với rương lưu trữ trong bán kính {horizontalRadius, number}/{verticalRadius, number}, có thể liên kết tối đa {maxChests, number} rương với một trạm
-inventory.bench.chestLimitReached = [TMP] Trạm chế tác này đã đạt giới hạn tối đa số lượng rương liên kết
+inventory.bench.chestInfo = Các Trạm Làm Việc có thể truy cập rương lưu trữ trong bán kính {horizontalRadius, plural, one {1 khối} other {{horizontalRadius, number} khối}} và tối đa {verticalRadius, plural, one {1 khối} other {{verticalRadius, number} khối}} phía trên hoặc phía dưới. Tối đa {maxChests, plural, one {1 rương} other {{maxChests, number} rương}} có thể liên kết với một trạm.
+inventory.bench.chestLimitReached = Trạm làm việc này đã đạt đến giới hạn rương liên kết tối đa.
 
 inventory.crafting.ingredient.tooltip.pullingFromChests = Bạn không có đủ nguyên liệu trong túi đồ. Đang sử dụng vật phẩm từ các rương lân cận.
 
@@ -1253,17 +1278,18 @@ inventory.recipesButton = Công thức
 
 inventory.recipeCataloguePopup.title = Danh mục công thức
 
-inventory.fieldcraft.title = Chế tạo bỏ túi
+inventory.fieldcraft.title = Chế Tạo Bỏ Túi
 
 inventory.storage.filterTooltips.weapons = Chỉ hiện vũ khí
 inventory.storage.filterTooltips.armor = Chỉ hiện giáp
 inventory.storage.filterTooltips.blocks = Chỉ hiện vật liệu xây dựng
 
 inventory.button.autoSort.tooltip = Sắp xếp vật phẩm theo loại ({keybind})
+inventory.button.autoSort.unassignedTooltip = [TMP] Sắp Xếp Vật Phẩm Theo Loại (chưa gán phím)
 inventory.dropdown.autoSortBy = Tự động sắp xếp theo:
 inventory.dropdown.autoSort.types.Type = Loại
 
-inventory.memories.title = Ký ức đã thu thập
+inventory.memories.title = Hồi Ức đã thu thập
 
 inventory.action.toggleBuilderTools = Bật/Tắt Công cụ xây dựng
 inventory.action.pickHalf = Lấy một nửa
@@ -1406,7 +1432,7 @@ mainMenu.navigation.shop = Cửa hàng
 mainMenu.discord.button.label = Tham gia Discord
 mainMenu.discord.button.tooltip = Mở Discord của chúng tôi trong trình duyệt bên ngoài
 
-mainMenu.feedback.button.label = [TMP] Gửi phản hồi
+mainMenu.feedback.button.label = Gửi phản hồi
 
 # Minigames
 
@@ -1535,7 +1561,7 @@ mainMenu.worlds.randomWorld = Thế giới ngẫu nhiên
 mainMenu.worlds.creativeMode = Chế độ sáng tạo
 mainMenu.worlds.creativeModeStandard = Tiêu chuẩn
 mainMenu.worlds.creativeModeHub = Trung tâm sáng tạo
-mainMenu.worlds.creativeModeGenerated = [TMP] Thế giới được tạo ngẫu nhiên
+mainMenu.worlds.creativeModeGenerated = Thế giới được tạo ngẫu nhiên
 mainMenu.worlds.npcSpawning = NPC
 mainMenu.worlds.noNpcSpawning = Không có NPC
 mainMenu.worlds.deleteWorld = Xóa thế giới
@@ -1553,22 +1579,22 @@ mainMenu.worlds.settings.enabled = Đã bật
 mainMenu.worlds.settings.disabled = Đã tắt
 mainMenu.worlds.settings.fallDamage = Sát thương rơi
 mainMenu.worlds.settings.pauseTime = Dừng thời gian
-mainMenu.worlds.settings.dayNightCycle = [TMP] Chu kỳ Ngày / Đêm
-mainMenu.worlds.settings.dayDuration = [TMP] Thời lượng ban ngày (giây)
-mainMenu.worlds.settings.nightDuration = [TMP] Thời lượng ban đêm (giây)
-mainMenu.worlds.settings.customTime = [TMP] Thời gian tùy chỉnh
+mainMenu.worlds.settings.dayNightCycle = Chu kỳ Ngày / Đêm
+mainMenu.worlds.settings.dayDuration = Thời lượng ban ngày (giây)
+mainMenu.worlds.settings.nightDuration = Thời lượng ban đêm (giây)
+mainMenu.worlds.settings.customTime = Thời gian tùy chỉnh
 mainMenu.worlds.settings.applyWorldSettings = Áp dụng cài đặt
 mainMenu.worlds.settings.restoreSettings = Khôi phục mặc định
-mainMenu.worlds.settings.deathPenalty = [TMP] Hình phạt túi đồ khi chết
-mainMenu.worlds.settings.deathPenalty.tooltip = [TMP] Xác định hình phạt túi đồ áp dụng khi người chơi chết.\n\
+mainMenu.worlds.settings.deathPenalty = Hình phạt túi đồ khi chết
+mainMenu.worlds.settings.deathPenalty.tooltip = Xác định hình phạt túi đồ áp dụng khi người chơi chết.\n\
 <b><color is="#f1ba50">Không có</color></b>: Người chơi sẽ không rơi vật phẩm khi chết.\n\
 <b><color is="#f1ba50">Rơi tất cả</color></b>: Người chơi sẽ rơi tất cả vật phẩm trong túi đồ khi chết.\n\
-<b><color is="#f1ba50">Rơi một phần</color></b>: Người chơi sẽ chỉ rơi những vật phẩm được cấu hình để rơi khi chết theo một lượng nhất định.
-mainMenu.worlds.settings.resourceLoss = [TMP] % Mất tài nguyên khi chết
-mainMenu.worlds.settings.durabilityLoss = [TMP] % Mất độ bền khi chết
-mainMenu.worlds.settings.deathPenaltyNone = [TMP] Không có
-mainMenu.worlds.settings.deathPenaltyDropAll = [TMP] Rơi tất cả
-mainMenu.worlds.settings.deathPenaltyPartial = [TMP] Rơi một phần
+<b><color is="#f1ba50">Rơi Một Phần</color></b>: Người chơi sẽ chỉ rơi một lượng vật phẩm nhất định được cấu hình để rơi khi hy sinh.
+mainMenu.worlds.settings.resourceLoss = % Tài Nguyên Mất Đi Khi Hy Sinh
+mainMenu.worlds.settings.durabilityLoss = % Độ Bền Mất Đi Khi Hy Sinh
+mainMenu.worlds.settings.deathPenaltyNone = Không Có
+mainMenu.worlds.settings.deathPenaltyDropAll = Rơi Tất Cả
+mainMenu.worlds.settings.deathPenaltyPartial = Rơi Một Phần
 
 mainMenu.worlds.adventureMode.wip.text = [Không khả dụng trong giai đoạn Truy cập sớm]
 mainMenu.worlds.exploartionMode.wip.text = [Bản xem trước phát triển Truy cập sớm]
@@ -1597,9 +1623,19 @@ map.contextMenu.selectLocation = Chọn vị trí
 map.contextMenu.deselectLocation = Bỏ chọn vị trí
 map.contextMenu.removeMarker = Xóa đánh dấu
 
+map.contextMenu.createMapMarker = [TMP] Tạo Đánh Dấu Bản Đồ
+map.contextMenu.coordsTitle = [TMP] X: {x}, Z: {z}
+map.contextMenu.markerTitle = [TMP] X: {x}, Z: {z}
+
+map.createMapMarker.title = [TMP] Tạo Một Đánh Dấu Bản Đồ
+map.createMapMarker.nameLabel = [TMP] Tên
+map.createMapMarker.nameOptional = [TMP] Không Bắt Buộc
+map.createMapMarker.sharedLabel = [TMP] Chia Sẻ Với Người Chơi Khác
+map.createMapMarker.submit = [TMP] Tạo Đánh Dấu
+
 map.disabled = Vị trí không xác định
 
-map.actions.placeMarker = Đặt đánh dấu
+map.actions.placeMarker = Chọn Vị Trí
 map.actions.zoom = Thu phóng
 map.actions.playerList = Danh sách người chơi
 
@@ -1610,8 +1646,8 @@ map.playerList.titleWorld = Người chơi trong thế giới
 map.playerList.titleServer = Người chơi trong máy chủ
 map.playerList.inWorld = Người chơi này đang ở trong thế giới của bạn
 
-map.playerListEntry.tooltip.compass = [TMP] Theo dõi trên La bàn
-map.playerListEntry.tooltip.map = [TMP] Hiển thị trên Bản đồ
+map.playerListEntry.tooltip.compass = Theo dõi trên La Bàn
+map.playerListEntry.tooltip.map = Hiển thị trên Bản Đồ
 
 map.marker.localPlayer = Bạn
 map.marker.targetLocation = Vị trí mục tiêu
@@ -1711,11 +1747,11 @@ myAvatar.entitlement.gameFounder.lockedMessage = Để sử dụng vật phẩm 
 myAvatar.entitlement.gameFounder.description = Phần này là độc quyền cho phiên bản Cursebreaker của Hytale. Mở khóa nó bằng cách nâng cấp phiên bản hiện tại của bạn trong Cửa hàng Hytale.
 
 myAvatar.entitlement.gameDeluxe.titleSuffix = Độc quyền phiên bản Supporter
-myAvatar.entitlement.gameDeluxe.lockedMessage = [TMP] Để sử dụng vật phẩm trang trí này, bạn cần có phiên bản Supporter.
+myAvatar.entitlement.gameDeluxe.lockedMessage = Để sử dụng vật phẩm trang trí này, bạn cần có phiên bản Supporter.
 myAvatar.entitlement.gameDeluxe.description = Phần này là độc quyền cho phiên bản Supporter của Hytale. Mở khóa nó bằng cách nâng cấp phiên bản hiện tại của bạn trong Cửa hàng Hytale.
 
 myAvatar.entitlement.gameStandard.titleSuffix = Độc quyền phiên bản Truy cập sớm Standard
-myAvatar.entitlement.gameStandard.lockedMessage = [TMP] Để sử dụng vật phẩm trang trí này, bạn cần có phiên bản Truy cập sớm Standard.
+myAvatar.entitlement.gameStandard.lockedMessage = Để sử dụng vật phẩm trang trí này, bạn cần có phiên bản Truy cập sớm Standard.
 myAvatar.entitlement.gameStandard.description = Phần này là độc quyền cho phiên bản Truy cập sớm Standard của Hytale. Mở khóa nó bằng cách nâng cấp phiên bản hiện tại của bạn trong Cửa hàng Hytale.
 
 myAvatar.entitlement.default.lockedMessage = Bạn không thể sử dụng vật phẩm trang trí này vì nó đã bị khóa.
@@ -1754,7 +1790,7 @@ settings.groups.controls.blockPlacement = Đặt khối
 settings.groups.controls.builderTools = Công cụ xây dựng
 settings.groups.controls.misc = Khác
 settings.groups.controls.debug = Chẩn đoán
-settings.groups.controls.inventory = [TMP] Túi đồ
+settings.groups.controls.inventory = Túi đồ
 settings.groups.builderTools = Công cụ xây dựng
 settings.groups.movement = Di chuyển
 settings.groups.mantling = Leo trèo
@@ -2078,21 +2114,21 @@ settings.bindings.ToggleFlyCameraControlTarget.description = Chuyển đổi m�
 settings.bindings.PreviousBuilderToolsLegendPage = Chú giải - Trang trước
 settings.bindings.NextBuilderToolsLegendPage = Chú giải - Trang sau
 
-settings.bindings.ContainerTakeAll = [TMP] Vật chứa: Lấy tất cả
-settings.bindings.ContainerPutAll = [TMP] Vật chứa: Đặt tất cả
-settings.bindings.ContainerQuickStack = [TMP] Vật chứa: Xếp chồng nhanh
-settings.bindings.ContainerSort = [TMP] Vật chứa: Sắp xếp vật phẩm
+settings.bindings.ContainerTakeAll = Vật chứa: Lấy tất cả
+settings.bindings.ContainerPutAll = Vật chứa: Đặt tất cả
+settings.bindings.ContainerQuickStack = Vật chứa: Xếp chồng nhanh
+settings.bindings.ContainerSort = Vật chứa: Sắp xếp vật phẩm
 
 settings.autoJumpObstacle = Tự động bước lên
 settings.autoJumpObstacle.description = Với cài đặt này được bật, bạn sẽ tự động bước lên các khối có chiều cao tối đa là 1 đơn vị.
-settings.autoCrouchDownObstacle = [TMP] Tự Động Bước Xuống Khi Ngồi
-settings.autoCrouchDownObstacle.description = [TMP] Khi bật cài đặt này, trong khi ngồi, bạn sẽ tự động bước xuống các khối có độ cao tối đa 1 đơn vị.
+settings.autoCrouchDownObstacle = Tự Động Bước Xuống Khi Ngồi
+settings.autoCrouchDownObstacle.description = Khi bật cài đặt này, trong khi ngồi, bạn sẽ tự động bước xuống các khối có độ cao tối đa 1 đơn vị.
 settings.enableUtilityQuickSwap = Bật chuyển nhanh tiện ích
 settings.enableUtilityQuickSwap.description = Khi được bật, việc nhấn phím gán sẽ ngay lập tức chuyển sang vật phẩm tiếp theo trong vòng xoay tiện ích của bạn.
 settings.enableArachnophobiaMode = Bật chế độ sợ nhện
 settings.enableArachnophobiaMode.description = Khi được bật, nhện sẽ được thay thế bằng một mô hình khác (mặc định là cua).\n\n<b><color is="#b32626">Cài đặt này yêu cầu bạn quay lại menu chính để có hiệu lực!</color></b>
-settings.enableOphidiophobiaMode = [TMP] Bật Chế độ sợ rắn
-settings.enableOphidiophobiaMode.description = [TMP] Khi được bật, rắn sẽ được thay thế bằng một mô hình khác (mặc định là sâu).\n\n<b><color is="#b32626">Cài đặt này yêu cầu bạn phải quay lại menu chính để có hiệu lực!</color></b>
+settings.enableOphidiophobiaMode = Bật Chế độ sợ rắn
+settings.enableOphidiophobiaMode.description = Khi được bật, rắn sẽ được thay thế bằng một mô hình khác (mặc định là sâu).\n\n<b><color is="#b32626">Cài đặt này yêu cầu bạn phải quay lại menu chính để có hiệu lực!</color></b>
 settings.autoJumpGap = Tự động nhảy qua khe hở
 settings.builderMode = Chế độ thợ xây
 settings.builderMode.tooltip = Khi được bật VÀ đang ở chế độ Sáng tạo, nó sẽ vô hiệu hóa một số tính năng (ví dụ: hiệu ứng rơi, rung đầu, v.v...)

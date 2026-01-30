@@ -18,6 +18,10 @@ pants.bracedshorts = Braced Shorts
 pants.dungarees = Dungarees
 pants.bracedpants = Braced Pants
 
+option.a = Option A
+option.b = Option B
+option.c = Option C
+
 default = Default
 
 overtops.Scavenger_Poncho = No Skull
@@ -27,7 +31,7 @@ capes.no_neck = No Neck
 haircuts.Dreadlocks01.name = Dreadlocks 1
 haircuts.Dreadlocks02.name = Dreadlocks 2
 haircuts.Dreadlocks03.name = Dreadlocks 3
-haircuts.SlickbackCowlick.name = [TMP] Cowlicked Slickback
+haircuts.SlickbackCowlick.name = Cowlicked Slickback
 
 headaccessory.Logo_Cap_Movie.name = Movie Logo
 headaccessory.Logo_Cap_Heart.name = Heart Logo
