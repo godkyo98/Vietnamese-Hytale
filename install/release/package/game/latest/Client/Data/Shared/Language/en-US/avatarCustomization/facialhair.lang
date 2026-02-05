@@ -3,7 +3,11 @@ Beard_Large.name = Large
 Goatee.name = Goatee
 Chin_Curtain.name = Chin Curtain
 Moustache.name = Mustache
+MoustacheSplit.name = [TMP] Split Mustache
+MoustacheSplitLong.name = [TMP] Pinstripe Mustache
+BeardAnchor.name = [TMP] Anchor Beard
 VikingBeard.name = Viking
+VikingBeard2.name = [TMP] Viking 2
 TwirlyMoustache.name = Twirly Mustache
 SoulPatch.name = Soul Patch
 PirateBeard.name = Pirate
@@ -22,4 +26,3 @@ Short_Trimmed.name = Short Trimmed
 Groomed_Large.name = Large Groomed Mustache
 WavyLongBeard.name = Long Wavy Beard
 CurlyLongBeard.name = Long Curly Beard
-

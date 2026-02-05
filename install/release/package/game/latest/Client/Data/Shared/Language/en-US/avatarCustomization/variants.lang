@@ -17,6 +17,7 @@ pants.dungareesshorts = Dungaree Shorts
 pants.bracedshorts = Braced Shorts
 pants.dungarees = Dungarees
 pants.bracedpants = Braced Pants
+pants.hiddenbelt = [TMP] Hidden Belt
 
 option.a = Option A
 option.b = Option B
@@ -32,10 +33,15 @@ haircuts.Dreadlocks01.name = Dreadlocks 1
 haircuts.Dreadlocks02.name = Dreadlocks 2
 haircuts.Dreadlocks03.name = Dreadlocks 3
 haircuts.SlickbackCowlick.name = Cowlicked Slickback
+haircuts.Hairstrand.name = [TMP] Hairstrand
+haircuts.GoldenBangles.name = [TMP] Golden Bangles
 
 headaccessory.Logo_Cap_Movie.name = Movie Logo
 headaccessory.Logo_Cap_Heart.name = Heart Logo
 headaccessory.Logo_Cap_Hypixel.name = Hypixel Logo
+
+left_arm.name = Left Arm
+right_arm.name = Right Arm
 
 thin.name = Thin
 thick.name = Thick

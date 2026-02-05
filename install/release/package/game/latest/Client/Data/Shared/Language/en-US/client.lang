@@ -1,4 +1,5 @@
 # === assetEditor ===
+assetEditor.launching = Starting Asset Editor
 assetEditor.mainMenu.connection.connecting = Connecting to server...
 assetEditor.mainMenu.connection.authenticating = Authenticating...
 assetEditor.mainMenu.title = Open Editor
@@ -256,7 +257,7 @@ assetEditor.errors.renameDirectoryOther = Failed to rename directory
 assetEditor.errors.deleteDirectoryInvalidPath = Failed to delete directory because it is not within the assets directory
 assetEditor.errors.deleteDirectoryMissing = Failed to delete directory because the directory does not exist
 assetEditor.errors.deleteDirectoryOther = Failed to delete directory
-assetEditor.errors.directoryInvalidCharacters = Directory names cannot include characters such as \ or /
+assetEditor.errors.directoryInvalidCharacters = Directory names cannot include characters such as {backslash} or {slash}
 assetEditor.errors.exportInProgress = An export is still in progress
 assetEditor.errors.cannotRevealUnexportedAsset = Cannot show file in explorer/finder because the file has not been exported yet.
 assetEditor.errors.cannotPasteWrongType = Cannot paste value: invalid type
@@ -321,6 +322,8 @@ assetEditor.packModal.field.group = Group
 assetEditor.packModal.field.group.placeholder = Pack group (e.g. Your Name)
 assetEditor.packModal.field.version = Version
 assetEditor.packModal.field.version.placeholder = 1.0.0 (semver)
+assetEditor.packModal.field.serverVersion = Server Version
+assetEditor.packModal.field.serverVersion.setCurrent = Current
 assetEditor.packModal.field.website = Website
 assetEditor.packModal.field.website.placeholder = Website URL (optional)
 assetEditor.packModal.field.description = Description
@@ -337,14 +340,14 @@ assetEditor.packModal.errors.nameRequired = Pack name is required
 assetEditor.packModal.errors.groupRequired = Pack group is required
 assetEditor.packModal.errors.versionRequired = Version is required
 assetEditor.packModal.errors.versionInvalid = Invalid version format. Use semantic versioning (e.g., 1.0.0, 2.1.3-beta, 1.0.0+build123)
+assetEditor.packModal.errors.serverVersionRequired = Server version is required
 
 assetEditor.readOnlyAssetBar.message = This asset is read-only and cannot be edited, since the asset pack is read-only.
 assetEditor.readOnlyAssetBar.overrideButton = Override Asset
-assetEditor.readOnlyAssetBar.tooltip = This asset cannot be edited because the asset pack it is in is read-only.\n\
-\n\
-Zipped asset packs cannot be edited, only directory based asset packs can be edited.\n\
-\n\
+assetEditor.readOnlyAssetBar.tooltip = This asset cannot be edited because the asset pack it's in is read-only.\n\
 You can override assets through a custom asset pack.
+assetEditor.readOnlyAssetBar.tooltipAdditionalInfo = \n\nYou can add or override the asset by manually creating a file in the Common folder of your custom asset pack.\n\
+Please be aware that you need to match the filename and folder structure for the original file to be overridden.
 
 assetEditor.inheritanceWarning.message = Warning: This asset has a Parent and inheritance is not yet supported in the property editor.
 assetEditor.inheritanceWarning.tooltip = This asset is inheriting properties from another asset (specified in the "Parent" property).\n\n\
@@ -1078,6 +1081,8 @@ gameLoadingView.status.connectingP2P = Connecting to {host}'s '{name}'... ({curr
 gameLoadingView.status.bootingServer = Booting server...
 gameLoadingView.status.enterPassword = Enter server password
 gameLoadingView.status.wrongPassword = Incorrect password. {attempts, plural, one {# attempt} other {# attempts}} remaining.
+gameLoadingView.status.waitingForChunks = [TMP]Waiting for chunks...
+gameLoadingView.status.bootingServerWithMessage = [TMP]Booting server... ({message})
 
 gameLoadingView.password.title = Server Password
 gameLoadingView.password.submit = Login
@@ -1087,7 +1092,8 @@ gamePageNavigation.buttons.Map = Map
 gamePageNavigation.buttons.ContentCreation = Creative Tools
 gamePageNavigation.buttons.ContentCreation.disabledTooltip = The creative menu is only available in Creative mode.
 gamePageNavigation.buttons.ContentCreation.disabledTooltip.title = CREATIVE MODE
-gamePageNavigation.buttons.ContentCreation.disabledTooltip.description = In creative mode you gain access to powerful editing tools. To swap to creative mode, use '/op self' then toggle gamemode with 'O' hotkey
+gamePageNavigation.buttons.ContentCreation.disabledTooltip.description = In creative mode you gain access to powerful editing tools. To swap to creative mode, use '/op self' then toggle gamemode with "{key}" hotkey.
+gamePageNavigation.buttons.ContentCreation.disabledTooltipUnassigned.description = In creative mode you gain access to powerful editing tools. To swap to creative mode, use '/op self' then type '/gm c'.
 gamePageNavigation.earlyAccess = Early Access
 # === general ===
 general.button.cancel = Cancel
@@ -1333,24 +1339,6 @@ itemTooltip.resistance = Resistance:
 
 itemTooltip.oneHanded = One-Handed
 itemTooltip.twoHanded = Two-Handed
-# === machinima ===
-machinima.bindings.TogglePause = Toggle Pause
-machinima.bindings.ToggleDisplay = Toggle Display
-machinima.bindings.ToggleCamera = Toggle Camera
-machinima.bindings.RestartScene = Restart Scene
-machinima.bindings.FrameDecrement = Decrement Frame
-machinima.bindings.FrameIncrement = Increment Frame
-machinima.bindings.FrameTimeDecrease = Decrease Frame Time
-machinima.bindings.FrameTimeIncrease = Increase Frame Time
-machinima.bindings.KeyframeDecrement = Decrement Keyframe
-machinima.bindings.KeyframeIncrement = Increment Keyframe
-machinima.bindings.PlaybackSpeedDecrease = Decrease Playback Time
-machinima.bindings.PlaybackSpeedIncrease = Increase Playback Time
-machinima.bindings.AddKeyframe = Add Keyframe
-machinima.bindings.RemoveKeyframe = Delete Keyframe
-machinima.bindings.EditKeyframe = Edit Keyframe
-machinima.bindings.OriginAction = Origin Action
-machinima.bindings.CycleSelectionMode = Cycle Selection Mode
 
 # Header
 machinima.header.placeholder.selectScene = Select a Scene
@@ -1595,6 +1583,17 @@ mainMenu.worlds.settings.durabilityLoss = Durability Loss % On Death
 mainMenu.worlds.settings.deathPenaltyNone = None
 mainMenu.worlds.settings.deathPenaltyDropAll = Drop All
 mainMenu.worlds.settings.deathPenaltyPartial = Partial Drop
+mainMenu.worlds.advancedSettings = [TMP] Advanced Settings
+mainMenu.worlds.settings.skipModValidation = [TMP] Skip Mod Validation
+mainMenu.worlds.settings.skipModValidation.tooltip = [TMP] If enabled, the game will attempt to boot the world even if some mods are broken or incompatible. This may lead to unexpected behavior.\nResets when the game is updated.
+
+mainMenu.worlds.corrupted = [TMP] Corrupted
+mainMenu.worlds.corruptedTooltip = [TMP] This world's configuration could not be loaded
+mainMenu.worlds.corruptedWarning.title = [TMP] Corrupted World Config
+mainMenu.worlds.corruptedWarning.text = [TMP] This world's configuration could not be loaded
+mainMenu.worlds.corruptedWarning.openAnyway = [TMP] Open Anyway
+mainMenu.worlds.corruptedWarning.viewBackups = [TMP] View Backups
+mainMenu.worlds.corruptedWarning.fixManually = [TMP] Fix Manually
 
 mainMenu.worlds.adventureMode.wip.text = [Unavailable during Early Access]
 mainMenu.worlds.exploartionMode.wip.text = [Early Access development preview]
@@ -1605,6 +1604,7 @@ mainMenu.worlds.noModsFound = No mods available
 mainMenu.worlds.mods = Mods
 mainMenu.worlds.modType.pack = Pack
 mainMenu.worlds.modType.plugin = Plugin
+mainMenu.worlds.modSource.save = Save
 
 mainMenu.assetEditor.errorModal.missingDirectory.title = Select a Directory
 mainMenu.assetEditor.errorModal.missingDirectory.text = You need to set an assets path before using the asset editor
@@ -1650,15 +1650,6 @@ map.playerListEntry.tooltip.map = Show on Map
 
 map.marker.localPlayer = You
 map.marker.targetLocation = Target Location
-# === mediaBrowser ===
-mediaBrowser.popularVideos = Popular Videos
-mediaBrowser.popularStreams = Popular Streams
-mediaBrowser.search = Search "{query}"
-mediaBrowser.currentlyPlaying = Currently Playing
-mediaBrowser.live = Live
-
-mediaBrowser.youtube.errors.unreachable = Failed to reach YouTube
-mediaBrowser.youtube.errors.requestFailed = Failed to fetch data from YouTube
 
 # === menuOverlay ===
 menuOverlay.buttons.returnToGame = Return to Game
@@ -1741,6 +1732,14 @@ myAvatar.failedToSaveDialog.text = We are currently having some issues trying to
 myAvatar.failedToSaveDialog.button.tryAgain = Try Again Now
 myAvatar.failedToSaveDialog.button.ok = Ok
 
+myAvatar.failedToAddSkinDialog.title = [TMP] Couldn't add skin!
+myAvatar.failedToAddSkinDialog.text = [TMP] We couldn't add your skin right now. Please try again later. If the problem persists, contact support.
+
+myAvatar.playerSkinsOperationFailedDialog.select.title = [TMP] Select avatar skin action failed!
+myAvatar.playerSkinsOperationFailedDialog.delete.title = [TMP] Delete avatar skin action failed!
+myAvatar.playerSkinsOperationFailedDialog.update.title = [TMP] Update avatar skin action failed!
+myAvatar.playerSkinsOperationFailedDialog.text = [TMP] Please try again. If the problem persists, contact support.
+
 myAvatar.entitlement.gameFounder.titleSuffix = Cursebreaker Edition Exclusive
 myAvatar.entitlement.gameFounder.lockedMessage = To use this cosmetic you need the Cursebreaker Edition.
 myAvatar.entitlement.gameFounder.description = This part is exclusive to the Cursebreaker Edition of Hytale. Unlock it by upgrading your current edition in the Hytale Store.
@@ -1759,6 +1758,15 @@ myAvatar.offline.title = Avatar Creator Unavailable
 myAvatar.offline.description.offline = You are in offline mode.\nTo use the Avatar creator, restart the game in online mode.
 myAvatar.offline.description.connecting = Connecting to Hytale's servers, try again in a moment...
 myAvatar.offline.description.unavailable = The Avatar creator is currently unavailable as we are having problems reaching Hytale's servers. Try again later or restart the game.
+
+myAvatar.presets.defaultName = [TMP] Default Avatar
+myAvatar.presets.deleteModal.title = [TMP] Delete avatar preset
+myAvatar.presets.deleteModal.text = [TMP] Are you sure you want to delete "{presetName}"?
+myAvatar.presets.panel.addPresetButton = [TMP] Add Preset
+myAvatar.presets.addModal.title = [TMP] Add Preset
+myAvatar.presets.editModal.title = [TMP] Edit Preset
+myAvatar.presets.nameInput.label = [TMP] Preset Name
+myAvatar.presets.nameInput.placeholder = [TMP] My Avatar preset
 
 # === settings ===
 settings.title = Settings
@@ -1791,27 +1799,27 @@ settings.groups.controls.misc = Misc
 settings.groups.controls.debug = Debug
 settings.groups.controls.inventory = Inventory
 settings.groups.builderTools = Builder Tools
-settings.groups.movement = Movement
-settings.groups.mantling = Mantling
+settings.prototype.groups.movement = Movement
+settings.prototype.groups.mantling = Mantling
 settings.groups.camera = Camera
-settings.groups.sprint = Sprint Force
-settings.groups.slide = Slide Force
-settings.groups.stamina = Stamina
-settings.groups.weaponPullback = Weapon Pullback
-settings.groups.entityui = Entity UI
-settings.groups.playselect = Play Selection Tool
-settings.groups.paint = Paint
-settings.groups.debug = Debug
-settings.groups.mounts = Mounts
+settings.prototype.groups.sprint = Sprint Force
+settings.prototype.groups.slide = Slide Force
+settings.prototype.groups.stamina = Stamina
+settings.prototype.groups.weaponPullback = Weapon Pullback
+settings.prototype.groups.entityui = Entity UI
+settings.prototype.groups.playselect = Play Selection Tool
+settings.prototype.groups.paint = Paint
+settings.prototype.groups.debug = Debug
+settings.prototype.groups.mounts = Mounts
 settings.groups.creativeMode = Creative Mode
 settings.groups.pickupLocations = Preferred Pickup Locations
 settings.groups.accessibility = Accessibility
 
-settings.percentagePlayGizmoLength = Percentage Width for Gizmo Rendering
-settings.minPlaySelectGizmoSize = Minimum Gizmo Size
-settings.maxPlaySelectGizmoSize = Maximum Gizmo Size
+settings.prototype.percentagePlayGizmoLength = Percentage Width for Gizmo Rendering
+settings.prototype.minPlaySelectGizmoSize = Minimum Gizmo Size
+settings.prototype.maxPlaySelectGizmoSize = Maximum Gizmo Size
 
-settings.paintOperationIgnoreHistoryLength = Play Paint Ignore History Length
+settings.prototype.paintOperationIgnoreHistoryLength = Play Paint Ignore History Length
 
 # Quick Settings Categories
 settings.category.movementFlight = Movement & Flight
@@ -1858,8 +1866,8 @@ settings.language = Language
 settings.language.description = Sets the language displayed by the game.
 settings.fullscreen = Fullscreen
 settings.noAuthName = No Auth Name
-settings.resolution = Resolution
 settings.windowSize = Window Size
+settings.maximized = Maximized
 settings.windowResize = Select to Resize
 settings.customResolution = Custom ({size})
 settings.graphicsPreset = Graphics Preset
@@ -1888,18 +1896,18 @@ settings.cameraShakeEffect = Camera Shake Effect
 settings.firstPersonCameraShakeIntensity = First Person Camera Shake Intensity
 settings.thirdPersonCameraShakeIntensity = Third Person Camera Shake Intensity
 settings.creativeInteractionDistance = Creative Interaction Distance
-settings.adventureInteractionDistance = General Interaction Distance
+settings.prototype.adventureInteractionDistance = General Interaction Distance
 settings.gizmoScaleMultiplier = Rotation / Translation Gizmo UI Scale
 settings.laserPointerColor = Default Laser Pointer Color
 settings.laserPointerColor.description = The default hex color for the laser pointer tool (e.g. #3CFAE6)
-settings.useBlockSubfaces = Use Block Subfaces
-settings.displayBlockSubfaces = Display Block Subfaces
-settings.displayBlockBoundaries = Display Block Boundaries
+settings.prototype.useBlockSubfaces = Use Block Subfaces
+settings.prototype.displayBlockSubfaces = Display Block Subfaces
+settings.prototype.displayBlockBoundaries = Display Block Boundaries
 settings.placeBlocksAtRange = Place Blocks at Range
-settings.placeBlocksAtRangeInAdventureMode = ---> Outside Creative Mode
-settings.blockPlacementSupportValidation = Block Placement Support Validation
-settings.blockPlacementFluidity = Creative Block Placement Fluidity
-settings.resetMouseSensitivityDuration = Time to Return Full Mouse Sensitivity
+settings.prototype.placeBlocksAtRangeInAdventureMode = ---> Outside Creative Mode
+settings.prototype.blockPlacementSupportValidation = Block Placement Support Validation
+settings.prototype.blockPlacementFluidity = Creative Block Placement Fluidity
+settings.prototype.resetMouseSensitivityDuration = Time to Return Full Mouse Sensitivity
 settings.automaticRenderScale = Automatic Render Scale
 settings.automaticRenderScale.description = Determines whether or not to automatically set the render scale based on your GPU.
 settings.renderScale = Render Scale
@@ -2058,12 +2066,6 @@ settings.bindings.ShowUtilitySlotSelector = Show Utility Slot Selector
 settings.bindings.ToggleBuilderToolsLegend = Toggle Builder Tools Legend
 settings.bindings.OpenToolsSettings = Open Creative Tools
 
-settings.bindings.ToolPaintBrush = Paint Brush Tool
-settings.bindings.ToolSculptBrush = Sculpt Brush Tool
-settings.bindings.ToolSelectionTool = Selection Tool
-settings.bindings.ToolPaste = Paste Tool
-settings.bindings.ToolLine = Line Tool
-
 settings.bindings.SwitchCameraMode = Switch Camera Mode
 settings.bindings.ActivateCameraRotation = Activate Camera Rotation
 settings.bindings.ToggleProfiling = Toggle Profiling
@@ -2113,6 +2115,80 @@ settings.bindings.ToggleFlyCameraControlTarget.description = Toggles the target 
 settings.bindings.PreviousBuilderToolsLegendPage = Legend - Previous Page
 settings.bindings.NextBuilderToolsLegendPage = Legend - Next Page
 
+settings.bindings.ContainerTakeAll = [TMP] Container: Take All
+settings.bindings.ContainerPutAll = [TMP] Container: Put All
+settings.bindings.ContainerQuickStack = [TMP] Container: Quick Stack
+settings.bindings.ContainerSort = [TMP] Container: Sort Items
+settings.bindings.SelectionShiftUp = [TMP] Selection - Shift Up
+settings.bindings.SelectionShiftDown = [TMP] Selection - Shift Down
+settings.bindings.SelectionCopy = [TMP] Selection - Copy
+settings.bindings.SelectionClear = [TMP] Selection - Clear
+settings.bindings.SelectionTranslateMode = [TMP] Selection - Translate Mode
+settings.bindings.SelectionGizmoMode = [TMP] Selection - Gizmo Mode
+settings.bindings.SelectionRotateMode = [TMP] Selection - Rotate Mode
+settings.bindings.SelectionCancelTransform = [TMP] Selection - Cancel Transform
+settings.bindings.SelectionNextSet = [TMP] Selection - Next Set
+settings.bindings.SelectionPreviousSet = [TMP] Selection - Previous Set
+
+settings.bindings.PasteShiftLeft = [TMP] Paste - Shift Left
+settings.bindings.PasteShiftRight = [TMP] Paste - Shift Right
+settings.bindings.PasteShiftForward = [TMP] Paste - Shift Forward
+settings.bindings.PasteShiftBackward = [TMP] Paste - Shift Backward
+settings.bindings.PasteShiftUp = [TMP] Paste - Shift Up
+settings.bindings.PasteShiftDown = [TMP] Paste - Shift Down
+settings.bindings.PasteShiftReset = [TMP] Paste - Reset Shift
+settings.bindings.PasteRotate = [TMP] Paste - Rotate
+settings.bindings.PasteOpenPrefabList = [TMP] Paste - Open Prefab List
+settings.bindings.PasteCycleOrigin = [TMP] Paste - Cycle Origin
+
+settings.bindings.BrushToggleInvert = [TMP] Brush - Toggle Invert
+settings.bindings.BrushIncreaseWidth = [TMP] Brush - Increase Width
+settings.bindings.BrushDecreaseWidth = [TMP] Brush - Decrease Width
+settings.bindings.BrushIncreaseHeight = [TMP] Brush - Increase Height
+settings.bindings.BrushDecreaseHeight = [TMP] Brush - Decrease Height
+settings.bindings.BrushNextShapeOrigin = [TMP] Brush - Next Shape Origin
+settings.bindings.BrushPreviousShapeOrigin = [TMP] Brush - Previous Shape Origin
+settings.bindings.BrushAxisLockTranslate = [TMP] Brush - Axis Lock Translate
+settings.bindings.BrushAxisLockRotate = [TMP] Brush - Axis Lock Rotate
+settings.bindings.BrushAxisLockExit = [TMP] Brush - Exit Axis Lock
+
+settings.bindings.EntityClone = [TMP] Entity - Clone
+settings.bindings.EntityRemove = [TMP] Entity - Remove
+settings.bindings.EntityToggleFreeze = [TMP] Entity - Toggle Freeze
+settings.bindings.EntityToggleSurface = [TMP] Entity - Toggle Surface Lock
+settings.bindings.EntityOpenSpawnUI = [TMP] Entity - Open Spawn UI
+settings.bindings.EntityTranslateMode = [TMP] Entity - Translate Mode
+settings.bindings.EntityRotateMode = [TMP] Entity - Rotate Mode
+settings.bindings.EntityFreeMoveMode = [TMP] Entity - Free Move Mode
+
+settings.bindings.MachinimaTogglePause = [TMP] Machinima - Toggle Pause
+settings.bindings.MachinimaToggleDisplay = [TMP] Machinima - Toggle Display
+settings.bindings.MachinimaToggleCamera = [TMP] Machinima - Toggle Camera
+settings.bindings.MachinimaRestartScene = [TMP] Machinima - Restart Scene
+settings.bindings.MachinimaFrameDecrement = [TMP] Machinima - Frame Decrement
+settings.bindings.MachinimaFrameIncrement = [TMP] Machinima - Frame Increment
+settings.bindings.MachinimaKeyframeDecrement = [TMP] Machinima - Keyframe Decrement
+settings.bindings.MachinimaKeyframeIncrement = [TMP] Machinima - Keyframe Increment
+settings.bindings.MachinimaFrameTimeDecrease = [TMP] Machinima - Decrease Frame Time
+settings.bindings.MachinimaFrameTimeIncrease = [TMP] Machinima - Increase Frame Time
+settings.bindings.MachinimaAddKeyframe = [TMP] Machinima - Add Keyframe
+settings.bindings.MachinimaRemoveKeyframe = [TMP] Machinima - Remove Keyframe
+settings.bindings.MachinimaOriginAction = [TMP] Machinima - Origin Action
+settings.bindings.MachinimaEditKeyframe = [TMP] Machinima - Edit Keyframe
+settings.bindings.MachinimaCycleSelectionMode = [TMP] Machinima - Cycle Selection Mode
+
+settings.bindings.RulerDeletePoint = [TMP] Ruler - Delete Point
+settings.bindings.RulerClearLine = [TMP] Ruler - Clear Line
+settings.bindings.RulerNextLine = [TMP] Ruler - Next Line
+settings.bindings.RulerPreviousLine = [TMP] Ruler - Previous Line
+
+settings.bindings.SelectPrefabRemove = [TMP] Select Prefab - Remove
+settings.bindings.SelectPrefabOpenSaveUI = [TMP] Select Prefab - Open Save UI
+settings.bindings.SelectPrefabUpdateBounds = [TMP] Select Prefab - Update Bounds
+settings.bindings.SelectPrefabTeleport = [TMP] Select Prefab - Teleport
+
+settings.bindings.HitboxInsert = [TMP] Hitbox - Insert
+settings.bindings.HitboxDelete = [TMP] Hitbox - Delete
 settings.bindings.ContainerTakeAll = Container: Take All
 settings.bindings.ContainerPutAll = Container: Put All
 settings.bindings.ContainerQuickStack = Container: Quick Stack
@@ -2127,98 +2203,81 @@ settings.enableUtilityQuickSwap.description = When enabled, tapping the keybind 
 settings.enableArachnophobiaMode = Enable Arachnophobia Mode
 settings.enableArachnophobiaMode.description = When enabled, spiders will be replaced by another model (the default is a crab).\n\n<b><color is="#b32626">This setting requires you to go back to the main menu to take effect!</color></b>
 settings.enableOphidiophobiaMode = Enable Ophidiophobia Mode
-settings.enableOphidiophobiaMode.description = When enabled, snakes will be replaced by another model (the default is a worm).\n\n<b><color is="#b32626">This setting requires you to go back to the main menu to take effect!</color></b>
-settings.autoJumpGap = Jump Automatically Over Gaps
-settings.builderMode = Builder Mode
-settings.builderMode.tooltip = When toggled on AND in Creative mode, disables some features (i.e. fall effects, head-bobbing, etc...)
+settings.enableOphidiophobiaMode.description = When enabled, snakes will be replaced by another model (the default is a larva).\n\n<b><color is="#b32626">This setting requires you to go back to the main menu to take effect!</color></b>
+settings.prototype.builderMode = Builder Mode
+settings.prototype.builderMode.tooltip = When toggled on AND in Creative mode, disables some features (i.e. fall effects, head-bobbing, etc...)
 
-settings.mantling = Enable/Disable Mantling
-settings.minVelocityMantling = Minimum Y velocity to mantle
-settings.maxVelocityMantling = Maximum Y velocity to mantle
-settings.jumpForceSpeedMultiplierStep = Jump force added per speed level increase
-settings.maxJumpForceSpeedMultiplier = Maximum value added to jump force
-settings.mantlingCameraOffsetY = Mantling Camera Offset Y
-settings.mantleBlockHeight = Mantle Block Height
+settings.prototype.mantling = Enable/Disable Mantling
+settings.prototype.minVelocityMantling = Minimum Y velocity to mantle
+settings.prototype.maxVelocityMantling = Maximum Y velocity to mantle
+settings.prototype.jumpForceSpeedMultiplierStep = Jump force added per speed level increase
+settings.prototype.maxJumpForceSpeedMultiplier = Maximum value added to jump force
+settings.prototype.mantlingCameraOffsetY = Mantling Camera Offset Y
+settings.prototype.mantleBlockHeight = Mantle Block Height
 
-settings.sprintForce = Sprint Force
-settings.sprintAccelerationDuration = Acceleration Duration
-settings.sprintDecelerationDuration = Deceleration Duration
-settings.sprintAccelerationEasingType = Acceleration Easing Type
-settings.sprintDecelerationEasingType = Deceleration Easing Type
+settings.prototype.sprintForce = Sprint Force
+settings.prototype.sprintAccelerationDuration = Acceleration Duration
+settings.prototype.sprintDecelerationDuration = Deceleration Duration
+settings.prototype.sprintAccelerationEasingType = Acceleration Easing Type
+settings.prototype.sprintDecelerationEasingType = Deceleration Easing Type
 
-settings.slideDecelerationEasingType = Deceleration Easing Type
-settings.slideDecelerationDuration = Deceleration Duration
+settings.prototype.slideDecelerationEasingType = Deceleration Easing Type
+settings.prototype.slideDecelerationDuration = Deceleration Duration
 
-settings.staminaLowAlertPercent = Stamina Low Alert Percent
-settings.staminaDebugInfo = Show Stamina Debug Info
+settings.prototype.staminaLowAlertPercent = Stamina Low Alert Percent
+settings.prototype.staminaDebugInfo = Show Stamina Debug Info
 
-settings.weaponPullback = Weapon Pullback
-settings.itemAnimationsClipGeometry = Item Animations Clip Geometry (Per Animation)
-settings.itemsClipGeometry = Items Clip Geometry (Per Item)
-settings.overrideFirstPersonAnimations = Use Override First Person Animations
+settings.prototype.weaponPullback = Weapon Pullback
+settings.prototype.itemAnimationsClipGeometry = Item Animations Clip Geometry (Per Animation)
+settings.prototype.itemsClipGeometry = Items Clip Geometry (Per Item)
+settings.prototype.overrideFirstPersonAnimations = Use Override First Person Animations
 
 settings.showEntityMarkers = Show Entity Markers
 
-settings.entityUIMaxEntities = Max Entities
-settings.entityUIMaxDistance = Max Distance
-settings.entityUIHideDelay = Hide Delay
-settings.entityUIFadeInDuration = Fade In Duration
-settings.entityUIFadeOutDuration = Fade Out Duration
+settings.prototype.entityUIMaxEntities = Max Entities
+settings.prototype.entityUIMaxDistance = Max Distance
+settings.prototype.entityUIHideDelay = Hide Delay
+settings.prototype.entityUIFadeInDuration = Fade In Duration
+settings.prototype.entityUIFadeOutDuration = Fade Out Duration
 
-settings.mountMinTurnRate = Min Turn Rate
-settings.mountMinTurnRate.tooltip = The min rate at which the mount can turn (degrees per second)
-settings.mountMaxTurnRate = Max Turn Rate
-settings.mountMaxTurnRate.tooltip = The max rate at which the mount can turn (degrees per second)
-settings.mountSpeedMinTurnRate = Speed Min Turn Rate
-settings.mountSpeedMinTurnRate.tooltip = From this speed and above, the min turn rate will be applied (higher speed = slower turn)
-settings.mountSpeedMaxTurnRate = Speed Max Turn Rate
-settings.mountSpeedMaxTurnRate.tooltip = From this speed and below, the max turn rate will be applied (higher speed = slower turn)
-settings.mountForwardsAccelerationEasingType = Forwards Acceleration Easing Type
-settings.mountForwardsAccelerationEasingType.tooltip = The easing curve to use for the forwards acceleration
-settings.mountForwardsDecelerationEasingType = Forwards Deceleration Easing Type
-settings.mountForwardsDecelerationEasingType.tooltip = The easing curve to use for the forwards deceleration
-settings.mountBackwardsAccelerationEasingType = Backwards Acceleration Easing Type
-settings.mountBackwardsAccelerationEasingType.tooltip = The easing curve to use for the backwards acceleration
-settings.mountBackwardsDecelerationEasingType = Backwards Deceleration Easing Type
-settings.mountBackwardsDecelerationEasingType.tooltip = The easing curve to use for the backwards deceleration
-settings.mountForwardsAccelerationDuration = Forwards Acceleration Duration
-settings.mountForwardsAccelerationDuration.tooltip = The duration it takes to reach max speed when running forwards
-settings.mountForwardsDecelerationDuration = Forwards Deceleration Duration
-settings.mountForwardsDecelerationDuration.tooltip = The duration it takes to reach idle state after running forwards
-settings.mountBackwardsAccelerationDuration = Backwards Acceleration Duration
-settings.mountBackwardsAccelerationDuration.tooltip = The duration it takes to reach max speed when running backwards
-settings.mountBackwardsDecelerationDuration = Backwards Deceleration Duration
-settings.mountBackwardsDecelerationDuration.tooltip = The duration it takes to reach idle state after running backwards
-settings.mountForcedAccelerationMultiplierSetting = Forced Acceleration Multiplier
-settings.mountForcedAccelerationMultiplierSetting.tooltip = The multiplier used to reduce acceleration duration when pressing Sprint input when running
-settings.mountForcedDecelerationMultiplierSetting = Forced Deceleration Multiplier
-settings.mountForcedDecelerationMultiplierSetting.tooltip = The multiplier used to reduce deceleration duration when pressing the opposite movement input from the current velocity
-settings.mountRequireNewInput = Require New Input After Forced Deceleration
-settings.mountRequireNewInput.tooltip = Whether you have to release and press movement input in order to move again after a forced deceleration
-settings.displayTempPrefix = Show [TMP] Tags on Text
+settings.prototype.mountMinTurnRate = Min Turn Rate
+settings.prototype.mountMinTurnRate.tooltip = The min rate at which the mount can turn (degrees per second)
+settings.prototype.mountMaxTurnRate = Max Turn Rate
+settings.prototype.mountMaxTurnRate.tooltip = The max rate at which the mount can turn (degrees per second)
+settings.prototype.mountSpeedMinTurnRate = Speed Min Turn Rate
+settings.prototype.mountSpeedMinTurnRate.tooltip = From this speed and above, the min turn rate will be applied (higher speed = slower turn)
+settings.prototype.mountSpeedMaxTurnRate = Speed Max Turn Rate
+settings.prototype.mountSpeedMaxTurnRate.tooltip = From this speed and below, the max turn rate will be applied (higher speed = slower turn)
+settings.prototype.mountForwardsAccelerationEasingType = Forwards Acceleration Easing Type
+settings.prototype.mountForwardsAccelerationEasingType.tooltip = The easing curve to use for the forwards acceleration
+settings.prototype.mountForwardsDecelerationEasingType = Forwards Deceleration Easing Type
+settings.prototype.mountForwardsDecelerationEasingType.tooltip = The easing curve to use for the forwards deceleration
+settings.prototype.mountBackwardsAccelerationEasingType = Backwards Acceleration Easing Type
+settings.prototype.mountBackwardsAccelerationEasingType.tooltip = The easing curve to use for the backwards acceleration
+settings.prototype.mountBackwardsDecelerationEasingType = Backwards Deceleration Easing Type
+settings.prototype.mountBackwardsDecelerationEasingType.tooltip = The easing curve to use for the backwards deceleration
+settings.prototype.mountForwardsAccelerationDuration = Forwards Acceleration Duration
+settings.prototype.mountForwardsAccelerationDuration.tooltip = The duration it takes to reach max speed when running forwards
+settings.prototype.mountForwardsDecelerationDuration = Forwards Deceleration Duration
+settings.prototype.mountForwardsDecelerationDuration.tooltip = The duration it takes to reach idle state after running forwards
+settings.prototype.mountBackwardsAccelerationDuration = Backwards Acceleration Duration
+settings.prototype.mountBackwardsAccelerationDuration.tooltip = The duration it takes to reach max speed when running backwards
+settings.prototype.mountBackwardsDecelerationDuration = Backwards Deceleration Duration
+settings.prototype.mountBackwardsDecelerationDuration.tooltip = The duration it takes to reach idle state after running backwards
+settings.prototype.mountForcedAccelerationMultiplierSetting = Forced Acceleration Multiplier
+settings.prototype.mountForcedAccelerationMultiplierSetting.tooltip = The multiplier used to reduce acceleration duration when pressing Sprint input when running
+settings.prototype.mountForcedDecelerationMultiplierSetting = Forced Deceleration Multiplier
+settings.prototype.mountForcedDecelerationMultiplierSetting.tooltip = The multiplier used to reduce deceleration duration when pressing the opposite movement input from the current velocity
+settings.prototype.mountRequireNewInput = Require New Input After Forced Deceleration
+settings.prototype.mountRequireNewInput.tooltip = Whether you have to release and press movement input in order to move again after a forced deceleration
+settings.prototype.displayTempPrefix = Show [TMP] Tags on Text
 
 settings.armorItemsPickupLocation = Armor Items
-settings.armorItemsPickupLocation.description = Defines the location to prioritize when storing items upon pickup.\n\
-<b><color is="#f1ba50">Hotbar</color></b>: New items will first go into the hotbar, once full, they will go into the inventory.\n\
-<b><color is="#f1ba50">Inventory</color></b>: New items will first go into the inventory, once full, they will go into the hotbar.
-
 settings.weaponAndToolItemsPickupLocation = Weapon And Tool Items
-settings.weaponAndToolItemsPickupLocation.description = Defines the location to prioritize when storing items upon pickup.\n\
-<b><color is="#f1ba50">Hotbar</color></b>: New items will first go into the hotbar, once full, they will go into the inventory.\n\
-<b><color is="#f1ba50">Inventory</color></b>: New items will first go into the inventory, once full, they will go into the hotbar.
-
 settings.usableItemsPickupLocation = Usable Items
-settings.usableItemsPickupLocation.description = Defines the location to prioritize when storing items upon pickup.\n\
-<b><color is="#f1ba50">Hotbar</color></b>: New items will first go into the hotbar, once full, they will go into the inventory.\n\
-<b><color is="#f1ba50">Inventory</color></b>: New items will first go into the inventory, once full, they will go into the hotbar.
-
 settings.solidBlockItemsPickupLocation = Solid Block Items
-settings.solidBlockItemsPickupLocation.description = Defines the location to prioritize when storing items upon pickup.\n\
-<b><color is="#f1ba50">Hotbar</color></b>: New items will first go into the hotbar, once full, they will go into the inventory.\n\
-<b><color is="#f1ba50">Inventory</color></b>: New items will first go into the inventory, once full, they will go into the hotbar.
-
 settings.miscItemsPickupLocation = Miscellaneous Items
-settings.miscItemsPickupLocation.description = Defines the location to prioritize when storing items upon pickup.\n\
+settings.pickupLocation.description = Defines the location to prioritize when storing items upon pickup.\n\
 <b><color is="#f1ba50">Hotbar</color></b>: New items will first go into the hotbar, once full, they will go into the inventory.\n\
 <b><color is="#f1ba50">Inventory</color></b>: New items will first go into the inventory, once full, they will go into the hotbar.
 
@@ -2273,11 +2332,19 @@ feedback.type.bugreport = Bug Report
 feedback.warning.abuse = Abuse of the bug report and feedback feature may lead to an account suspension.
 
 feedback.field.type = Type
+feedback.field.category = Category
 feedback.field.summary = Summary
 feedback.field.summary.placeholder = Brief summary of your feedback or bug
 feedback.field.description = Description
 feedback.field.description.placeholder = Provide detailed information about your feedback or bug report
 feedback.field.attachments = Attachments
+
+feedback.category.placeholder = Select a category
+feedback.category.website = Website
+feedback.category.game = Game
+feedback.category.launcher = Launcher
+feedback.category.accounts = Accounts
+feedback.category.billing = Billing
 
 feedback.attachments.addScreenshot = Add Screenshots
 feedback.attachments.addLogFile = Add Extra Log Files
@@ -2287,6 +2354,7 @@ feedback.attachments.selectLogFile = Select log files to attach
 feedback.submit = Submit
 feedback.submitting = Submitting...
 
+feedback.error.categoryRequired = Please select a category
 feedback.error.summaryRequired = Please enter a summary
 feedback.error.descriptionRequired = Please enter a description
 feedback.error.unknown = An error occurred. Please try again.
@@ -2299,7 +2367,12 @@ feedback.error.fileError = Could not read "{file}"
 feedback.success.title = Thank You!
 feedback.success.feedback = Your feedback has been submitted successfully. We appreciate your input!
 feedback.success.bugreport = Your bug report has been submitted successfully. We'll look into it!
+feedback.success.reportId = Report ID: {id}
 feedback.success.submitMore = Submit More
+
+feedback.redirect.title = Visit Support
+feedback.redirect.support = For account or billing issues, please visit support.hytale.com.
+feedback.redirect.button = Open Support
 
 
 bugReportButton.tooltip = Report a Bug or Feedback
@@ -2317,6 +2390,12 @@ patchline.worldWarning.text = You are about to open a world using a different pa
     We recommend creating a backup copy before continuing.
 patchline.worldWarning.openAnyway = Open Anyway
 patchline.worldWarning.duplicateWorld = Duplicate World
+
+outdatedModWarning.title = [TMP] Outdated {count, plural, one {Mod} other {Mods}} Detected
+outdatedModWarning.text = [TMP] The following {count, plural, one {mod has} other {mods have}} not been updated for the current version and may not work correctly:\n\n{modList}\n\
+    Please update or disable {count, plural, one {this mod} other {these mods}}.
+outdatedModWarning.continue = [TMP] Continue Anyway
+outdatedModWarning.cancel = [TMP] Cancel
 
 # === cosmetics ===
 cosmetics.color.skinTone = Tone
@@ -2396,4 +2475,5 @@ cosmetics.color.Gold_Red = Gold
 cosmetics.color.Silver_Blue = Silver
 cosmetics.color.Copper_Green = Copper
 cosmetics.color.Brass_Purple = Brass
-cosmetics.color.Iron_Black = Iron
+cosmetics.color.Iron_Black = Steel
+cosmetics.color.Black_Red = Iron

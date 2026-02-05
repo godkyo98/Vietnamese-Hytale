@@ -3,7 +3,11 @@ Beard_Large.name = Râu dài
 Goatee.name = Râu cằm
 Chin_Curtain.name = Râu quai nón
 Moustache.name = Ria mép
-VikingBeard.name = Râu kiểu Viking
+MoustacheSplit.name = [TMP] Ria Mép Rẽ Ngôi
+MoustacheSplitLong.name = [TMP] Ria Mép Mảnh
+BeardAnchor.name = [TMP] Râu Mỏ Neo
+VikingBeard.name = Viking
+VikingBeard2.name = [TMP] Viking 2
 TwirlyMoustache.name = Ria mép xoắn
 SoulPatch.name = Râu mọc dưới môi
 PirateBeard.name = Râu hải tặc
@@ -22,4 +26,3 @@ Short_Trimmed.name = Râu tỉa ngắn
 Groomed_Large.name = Ria mép chải chuốt lớn
 WavyLongBeard.name = Râu dài gợn sóng
 CurlyLongBeard.name = Râu dài xoăn
-

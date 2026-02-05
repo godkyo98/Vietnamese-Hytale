@@ -17,6 +17,7 @@ pants.dungareesshorts = Quần yếm đùi
 pants.bracedshorts = Quần đùi có dây đeo
 pants.dungarees = Quần yếm
 pants.bracedpants = Quần dài có dây đeo
+pants.hiddenbelt = [TMP] Thắt Lưng Ẩn
 
 option.a = Tùy Chọn A
 option.b = Tùy Chọn B
@@ -32,10 +33,15 @@ haircuts.Dreadlocks01.name = Tóc bím 1
 haircuts.Dreadlocks02.name = Tóc bím 2
 haircuts.Dreadlocks03.name = Tóc bím 3
 haircuts.SlickbackCowlick.name = Tóc vuốt ngược có xoáy
+haircuts.Hairstrand.name = [TMP] Lọn Tóc
+haircuts.GoldenBangles.name = [TMP] Vòng Tay Vàng
 
 headaccessory.Logo_Cap_Movie.name = Logo Phim
 headaccessory.Logo_Cap_Heart.name = Logo Trái tim
 headaccessory.Logo_Cap_Hypixel.name = Logo Hypixel
+
+left_arm.name = Cánh Tay Trái
+right_arm.name = Cánh Tay Phải
 
 thin.name = Mảnh
 thick.name = Dày
