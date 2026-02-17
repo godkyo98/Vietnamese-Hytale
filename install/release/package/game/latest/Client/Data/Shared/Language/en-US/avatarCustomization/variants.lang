@@ -17,7 +17,7 @@ pants.dungareesshorts = Dungaree Shorts
 pants.bracedshorts = Braced Shorts
 pants.dungarees = Dungarees
 pants.bracedpants = Braced Pants
-pants.hiddenbelt = [TMP] Hidden Belt
+pants.hiddenbelt = Hidden Belt
 
 option.a = Option A
 option.b = Option B
@@ -33,8 +33,8 @@ haircuts.Dreadlocks01.name = Dreadlocks 1
 haircuts.Dreadlocks02.name = Dreadlocks 2
 haircuts.Dreadlocks03.name = Dreadlocks 3
 haircuts.SlickbackCowlick.name = Cowlicked Slickback
-haircuts.Hairstrand.name = [TMP] Hairstrand
-haircuts.GoldenBangles.name = [TMP] Golden Bangles
+haircuts.Hairstrand.name = Hairstrand
+haircuts.GoldenBangles.name = Golden Bangles
 
 headaccessory.Logo_Cap_Movie.name = Movie Logo
 headaccessory.Logo_Cap_Heart.name = Heart Logo

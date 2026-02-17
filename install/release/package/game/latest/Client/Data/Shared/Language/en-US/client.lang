@@ -686,12 +686,12 @@ builderTools.legend.MachinimaTool.Page8.SmoothBezier = Smooth handles
 builderTools.legend.MachinimaTool.Page8.EnableSpline = Enable spline
 
 builderTools.legend.MachinimaTool.Page9.Title = Console Commands
-builderTools.legend.MachinimaTool.Page9.SceneCommands = Scene: .mach scene [list | add | remove | save | load | copy | set | rename | rotate | clear]
+builderTools.legend.MachinimaTool.Page9.SceneCommands = Scene: .mach scene [load | copy | rename]
 builderTools.legend.MachinimaTool.Page9.ActorCommands = Actor: .mach actor [list | add | remove | set | model | move | clone | rotate | scale | clear]
 builderTools.legend.MachinimaTool.Page9.EventCommands = Events: .mach event [list | add | remove]\n\
 Event types: animation, camera, command, particle, target
-builderTools.legend.MachinimaTool.Page9.FileCommands = Files: .mach save | load | files | zip | autosave [seconds]
-builderTools.legend.MachinimaTool.Page9.UtilityCommands = Utility: .mach tool | fps [value] | speed [value] | align | demo [1-7] | restart
+builderTools.legend.MachinimaTool.Page9.FileCommands = Files: .mach save | load | files | autosave [seconds]
+builderTools.legend.MachinimaTool.Page9.UtilityCommands = Utility: .mach tool | speed [value] | align | restart
 
 builderTools.legend.PasteTool.Page1.Title = Prefab Pasting Brush
 builderTools.legend.PasteTool.Page1.Description = Allows you to rapidly paste prefabs as if using a brush. Supports most features of the Paintbrush.
@@ -854,10 +854,10 @@ builderTools.panel.entityPosition = Position
 builderTools.panel.entityRotation = Rotation
 builderTools.panel.entityScale = Scale
 builderTools.panel.entityAllowPickup = Allow Pickup
-builderTools.panel.entityCollision = [TMP] Collision
-builderTools.panel.collisionType.none = [TMP] None
-builderTools.panel.collisionType.soft = [TMP] Soft
-builderTools.panel.collisionType.hard = [TMP] Hard
+builderTools.panel.entityCollision = Collision
+builderTools.panel.collisionType.none = None
+builderTools.panel.collisionType.soft = Soft
+builderTools.panel.collisionType.hard = Hard
 builderTools.panel.entityClone = Clone
 builderTools.panel.entityRemove = Remove
 builderTools.panel.entityPin = Pin Entity
@@ -870,18 +870,18 @@ builderTools.commands.clearEntities.description = Removes all entities in the cu
 
 builderTools.entityType.npc = NPC
 builderTools.entityType.item = Item
-builderTools.entityType.model = [TMP] Model
-builderTools.entityType.block = [TMP] Block
+builderTools.entityType.model = Model
+builderTools.entityType.block = Block
 builderTools.entityType.unknown = Unknown
 builderTools.entityModel.fallback.npc = NPC #{id}
 builderTools.entityModel.fallback.item = Item #{id}
-builderTools.entityModel.fallback.model = [TMP] Model #{id}
+builderTools.entityModel.fallback.model = Model #{id}
 builderTools.entityModel.fallback.block = Block #{id}
 builderTools.entityModel.fallback.unknown = #{id}
 
 builderTools.panel.entityLightEnabled = Light Enabled
 builderTools.panel.entityLightColor = Light Color
-builderTools.panel.entityLightRadius = Light Radius
+builderTools.panel.entityLightRadius = Bright Radius
 builderTools.panel.npcDebug = NPC Debug
 builderTools.panel.npcState = State
 builderTools.panel.npcHealth = Health
@@ -966,7 +966,7 @@ controls.timeline.tooltip.toggleLoop = Toggle Loop
 controls.timeline.label.time = Time: {time}s
 controls.timeline.label.frame = Frame: {frame}
 controls.timeline.label.duration = Duration: {duration}
-controls.timeline.label.fps = FPS: {fps}
+controls.timeline.label.fps = Playback Speed:
 controls.timeline.tooltip.keyframe = Frame: {time}
 # === devTools ===
 devTools.tabs.Console = Console
@@ -1080,7 +1080,7 @@ gameLoadingView.status.connecting = Connecting...
 gameLoadingView.status.connectingP2P = Connecting to {host}'s '{name}'... ({current}/{total})
 gameLoadingView.status.bootingServer = Booting server...
 gameLoadingView.status.enterPassword = Enter server password
-gameLoadingView.status.wrongPassword = Incorrect password. {attempts, plural, one {# attempt} other {# attempts}} remaining.
+gameLoadingView.status.wrongPassword = Incorrect password. {attempts, plural, one {{attempts} attempt} other {{attempts} attempts}} remaining.
 gameLoadingView.status.waitingForChunks = [TMP]Waiting for chunks...
 gameLoadingView.status.bootingServerWithMessage = [TMP]Booting server... ({message})
 
@@ -1208,11 +1208,11 @@ hud.chat.openLinkModal.confirm = Open Website
 # === inventory ===
 inventory.chest.title = Chest
 inventory.chest.tooltip.takeAll = Take All - Move all items from the container to the inventory. ({keybind})
-inventory.chest.tooltip.takeAllUnassigned = [TMP] Take All - Move all items from the container to the inventory. (unassigned)
+inventory.chest.tooltip.takeAllUnassigned = Take All - Move all items from the container to the inventory. (unassigned)
 inventory.chest.tooltip.putAll = Put All - Move all items from the inventory to the container. ({keybind})
-inventory.chest.tooltip.putAllUnassigned = [TMP] Put All - Move all items from the inventory to the container. (unassigned)
+inventory.chest.tooltip.putAllUnassigned = Put All - Move all items from the inventory to the container. (unassigned)
 inventory.chest.tooltip.quickStack = Quick Stack - Move items from the inventory to the container for item types already present. ({keybind})
-inventory.chest.tooltip.quickStackUnassigned = [TMP] Quick Stack - Move items from the inventory to the container for item types already present. (unassigned)
+inventory.chest.tooltip.quickStackUnassigned = Quick Stack - Move items from the inventory to the container for item types already present. (unassigned)
 
 inventory.inventory.title = Inventory
 inventory.itemQuantityPopup.title = Split Stack:
@@ -1291,7 +1291,7 @@ inventory.storage.filterTooltips.armor = Show Armor Only
 inventory.storage.filterTooltips.blocks = Show Building Materials Only
 
 inventory.button.autoSort.tooltip = Sort Items by Type ({keybind})
-inventory.button.autoSort.unassignedTooltip = [TMP] Sort Items by Type (unassigned)
+inventory.button.autoSort.unassignedTooltip = Sort Items by Type (unassigned)
 inventory.dropdown.autoSortBy = Autosort by:
 inventory.dropdown.autoSort.types.Type = Type
 
@@ -1326,19 +1326,34 @@ itemTooltip.stats.SignatureEnergy = Signature Energy
 itemTooltip.stats.Ammo = Ammo
 itemTooltip.stats.SignatureCharges = Signature Charges
 
-itemTooltip.damageClass.unknown = Unknown
-itemTooltip.damageClass.light = Light Attack
-itemTooltip.damageClass.charged = Charged Attack
-itemTooltip.damageClass.signature = Signature Attack
-
-itemTooltip.increases = Increases
-itemTooltip.decreases = Decreases
-itemTooltip.modifies = Modifies
-itemTooltip.damageBy = damage by:
-itemTooltip.resistance = Resistance:
-
 itemTooltip.oneHanded = One-Handed
 itemTooltip.twoHanded = Two-Handed
+
+itemTooltip.damageCauseResistance.projectile = Projectile Resistance: {value}
+itemTooltip.damageCauseResistance.physical = Physical Resistance: {value}
+itemTooltip.damageCauseResistance.fire = Fire Resistance: {value}
+itemTooltip.damageCauseResistance.poison = Poison Resistance: {value}
+itemTooltip.damageCauseResistance.fall = Fall Resistance: {value}
+
+itemTooltip.damageEnhancementCause.increase.projectile = Increases Projectile damage by: {value}
+itemTooltip.damageEnhancementCause.decrease.projectile = Decreases Projectile damage by: {value}
+itemTooltip.damageEnhancementCause.modify.projectile = Modifies Projectile damage by: {value}
+
+itemTooltip.damageEnhancementCause.increase.physical = Increases Physical damage by: {value}
+itemTooltip.damageEnhancementCause.decrease.physical = Decreases Physical damage by: {value}
+itemTooltip.damageEnhancementCause.modify.physical = Modifies Physical damage by: {value}
+
+itemTooltip.damageClassEnhancement.increase.light = Increases Light Attack damage by: {value}
+itemTooltip.damageClassEnhancement.decrease.light = Decreases Light Attack damage by: {value}
+itemTooltip.damageClassEnhancement.modify.light = Modifies Light Attack damage by: {value}
+
+itemTooltip.damageClassEnhancement.increase.charged = Increases Charged Attack damage by: {value}
+itemTooltip.damageClassEnhancement.decrease.charged = Decreases Charged Attack damage by: {value}
+itemTooltip.damageClassEnhancement.modify.charged = Modifies Charged Attack damage by: {value}
+
+itemTooltip.damageClassEnhancement.increase.signature = Increases Signature Attack damage by: {value}
+itemTooltip.damageClassEnhancement.decrease.signature = Decreases Signature Attack damage by: {value}
+itemTooltip.damageClassEnhancement.modify.signature = Modifies Signature Attack damage by: {value}
 
 # Header
 machinima.header.placeholder.selectScene = Select a Scene
@@ -1397,6 +1412,16 @@ machinima.modal.placeholder.actorName = Actor Name
 machinima.modal.placeholder.selectActorType = Select an Actor Type
 machinima.modal.placeholder.selectEvent = Select an Event
 machinima.modal.placeholder.selectItem = Select an Item
+
+# Default names
+machinima.modal.default.sceneName = New scene
+
+# Errors
+machinima.modal.new.scene.empty = Scene name can't be empty
+machinima.modal.new.scene.invalid = Scene contains invalid characters
+machinima.modal.new.scene.alreadyExisting = This scene name already exists
+machinima.playbackSpeed.invalidNumber = Playback speed must be a valid number
+machinima.playbackSpeed.outOfRange = Playback speed must be between {min} and {max}
 
 # Keyframe Editor
 machinima.keyframe.tab.settings = Settings
@@ -1548,7 +1573,7 @@ mainMenu.worlds.flatWorld = Flat World
 mainMenu.worlds.randomWorld = Random World
 mainMenu.worlds.creativeMode = Creative Mode
 mainMenu.worlds.creativeModeStandard = Standard
-mainMenu.worlds.creativeModeHub = Creative Hub
+mainMenu.worlds.creativeModeHub = Crossroads
 mainMenu.worlds.creativeModeGenerated = Generated World
 mainMenu.worlds.npcSpawning = NPCs
 mainMenu.worlds.noNpcSpawning = No NPCs
@@ -1571,6 +1596,12 @@ mainMenu.worlds.settings.dayNightCycle = Day / Night Cycle
 mainMenu.worlds.settings.dayDuration = Day Duration (seconds)
 mainMenu.worlds.settings.nightDuration = Night Duration (seconds)
 mainMenu.worlds.settings.customTime = Custom Time
+mainMenu.worlds.settings.storageType = [TMP] Storage Type
+mainMenu.worlds.settings.storageType.tooltip = [TMP] Choose the storage backend for this world. Changing this will migrate existing worlds to the selected format.\n\
+<b><color is="#f1ba50">Default</color></b>: Uses the default setting as selected by the server.\n\
+<b><color is="#f1ba50">RocksDB</color></b> <color is="#b32626">(Experimental)</color>: Uses RocksDB as the storage backend, which may offer improved reliability.
+mainMenu.worlds.settings.storageType.default = [TMP] Default
+mainMenu.worlds.settings.storageType.rocksdb = [TMP] RocksDB
 mainMenu.worlds.settings.applyWorldSettings = Apply Settings
 mainMenu.worlds.settings.restoreSettings = Restore Default
 mainMenu.worlds.settings.deathPenalty = Inventory Penalty On Death
@@ -1583,17 +1614,27 @@ mainMenu.worlds.settings.durabilityLoss = Durability Loss % On Death
 mainMenu.worlds.settings.deathPenaltyNone = None
 mainMenu.worlds.settings.deathPenaltyDropAll = Drop All
 mainMenu.worlds.settings.deathPenaltyPartial = Partial Drop
-mainMenu.worlds.advancedSettings = [TMP] Advanced Settings
-mainMenu.worlds.settings.skipModValidation = [TMP] Skip Mod Validation
-mainMenu.worlds.settings.skipModValidation.tooltip = [TMP] If enabled, the game will attempt to boot the world even if some mods are broken or incompatible. This may lead to unexpected behavior.\nResets when the game is updated.
+mainMenu.worlds.advancedSettings = Advanced Settings
+mainMenu.worlds.settings.skipModValidation = Skip Mod Validation
+mainMenu.worlds.settings.skipModValidation.tooltip = If enabled, the game will attempt to boot the world even if some mods are broken or incompatible. This may lead to unexpected behavior.\nResets when the game is updated.
 
-mainMenu.worlds.corrupted = [TMP] Corrupted
-mainMenu.worlds.corruptedTooltip = [TMP] This world's configuration could not be loaded
-mainMenu.worlds.corruptedWarning.title = [TMP] Corrupted World Config
-mainMenu.worlds.corruptedWarning.text = [TMP] This world's configuration could not be loaded
-mainMenu.worlds.corruptedWarning.openAnyway = [TMP] Open Anyway
-mainMenu.worlds.corruptedWarning.viewBackups = [TMP] View Backups
-mainMenu.worlds.corruptedWarning.fixManually = [TMP] Fix Manually
+mainMenu.worlds.settings.backups = [TMP] Backups
+mainMenu.worlds.settings.backups.enabled = [TMP] Enable Automatic Backups
+mainMenu.worlds.settings.backups.enabled.tooltip = [TMP] When enabled, your world will be automatically backed up at the specified interval. Backups can be used to restore your world in case of data corruption or accidental changes.
+mainMenu.worlds.settings.backups.frequency = [TMP] Backup Frequency
+mainMenu.worlds.settings.backups.minutes = [TMP] minutes
+mainMenu.worlds.settings.backups.maxCount = [TMP] Recent Backups to Keep
+mainMenu.worlds.settings.backups.maxCount.tooltip = [TMP] The maximum number of recent backups to retain. When this limit is exceeded, older backups will be moved to the archive or deleted.
+mainMenu.worlds.settings.backups.archiveMaxCount = [TMP] Archived Backups to Keep
+mainMenu.worlds.settings.backups.archiveMaxCount.tooltip = [TMP] The maximum number of archived backups to retain. Archived backups are older backups kept for long-term recovery. When this limit is exceeded, the oldest archives will be deleted.
+
+mainMenu.worlds.corrupted = Corrupted
+mainMenu.worlds.corruptedTooltip = This world's configuration could not be loaded.
+mainMenu.worlds.corruptedWarning.title = Corrupted World Config
+mainMenu.worlds.corruptedWarning.text = This world's configuration could not be loaded.
+mainMenu.worlds.corruptedWarning.openAnyway = Open Anyway
+mainMenu.worlds.corruptedWarning.viewBackups = View Backups
+mainMenu.worlds.corruptedWarning.fixManually = Fix Manually
 
 mainMenu.worlds.adventureMode.wip.text = [Unavailable during Early Access]
 mainMenu.worlds.exploartionMode.wip.text = [Early Access development preview]
@@ -1615,6 +1656,17 @@ mainMenu.assetEditor.errorModal.openSettingsButton = Open Settings
 # Early Access Panel
 mainMenu.earlyAccessPanel.title = Early Access\nDisclaimer
 mainMenu.earlyAccessPanel.text = This is an early access to Hytale; the game is still in active development. Expect bugs and changes as we work towards full release.\n\nThank you for your support!
+
+mainMenu.outdatedModWarning.title = Outdated {count, plural, one {Mod} other {Mods}} Detected
+mainMenu.outdatedModWarning.text = The following {count, plural, one {mod has} other {mods have}} not been updated for the current version and may not work correctly:\n\n{modList}\n\
+    Please update or disable {count, plural, one {this mod} other {these mods}}.
+mainMenu.outdatedModWarning.continue = Continue Anyway
+
+mainMenu.missingModWarning.title = Missing {count, plural, one {Mod} other {Mods}} Detected
+mainMenu.missingModWarning.text = The following {count, plural, one {mod was} other {mods were}} previously used on this world and {count, plural, one {is} other {are}} currently missing:\n\n{modList}\n\
+    Please reinstall or disable {count, plural, one {this mod} other {these mods}}.
+mainMenu.missingModWarning.continue = Disable and Continue Anyway
+
 # === map ===
 map.title = World Map
 
@@ -1622,15 +1674,15 @@ map.contextMenu.teleport = Teleport
 map.contextMenu.selectLocation = Select Location
 map.contextMenu.deselectLocation = Deselect Location
 map.contextMenu.removeMarker = Remove Marker
-map.contextMenu.createMapMarker = [TMP] Create Map Marker
-map.contextMenu.coordsTitle = [TMP] X: {x}, Z: {z}
-map.contextMenu.markerTitle = [TMP] X: {x}, Z: {z}
+map.contextMenu.createMapMarker = Create Map Marker
+map.contextMenu.coordsTitle = X: {x}, Z: {z}
+map.contextMenu.markerTitle = X: {x}, Z: {z}
 
-map.createMapMarker.title = [TMP] Create A Map Marker
-map.createMapMarker.nameLabel = [TMP] Name
-map.createMapMarker.nameOptional = [TMP] Optional
-map.createMapMarker.sharedLabel = [TMP] Shared with other players
-map.createMapMarker.submit = [TMP] Create Marker
+map.createMapMarker.title = Create A Map Marker
+map.createMapMarker.nameLabel = Name
+map.createMapMarker.nameOptional = Optional
+map.createMapMarker.sharedLabel = Shared with other players
+map.createMapMarker.submit = Create Marker
 
 map.disabled = Unknown location
 
@@ -1650,6 +1702,7 @@ map.playerListEntry.tooltip.map = Show on Map
 
 map.marker.localPlayer = You
 map.marker.targetLocation = Target Location
+map.returnToCrossroads = Return to Crossroads
 
 # === menuOverlay ===
 menuOverlay.buttons.returnToGame = Return to Game
@@ -1692,7 +1745,7 @@ myAvatar.tabs.Mouth = Mouth
 myAvatar.tabs.Eyes = Eyes
 myAvatar.tabs.Haircut = Haircut
 myAvatar.tabs.Pants = Pants
-myAvatar.tabs.Overpants = Overpants
+myAvatar.tabs.Overpants = Legwear
 myAvatar.tabs.Undertop = Undertop
 myAvatar.tabs.Overtop = Overtop
 myAvatar.tabs.Shoes = Shoes
@@ -1718,6 +1771,7 @@ myAvatar.variant = Option
 myAvatar.dropdown.filterBy = Filter by:
 
 myAvatar.lockedCosmetics = Locked Cosmetics
+myAvatar.lockedCosmetic = Locked Cosmetic
 
 myAvatar.unsavedChangesDialog.title = Unsaved changes
 myAvatar.unsavedChangesDialog.text = You have made changes to your Avatar which haven't been saved yet.
@@ -1732,13 +1786,12 @@ myAvatar.failedToSaveDialog.text = We are currently having some issues trying to
 myAvatar.failedToSaveDialog.button.tryAgain = Try Again Now
 myAvatar.failedToSaveDialog.button.ok = Ok
 
-myAvatar.failedToAddSkinDialog.title = [TMP] Couldn't add skin!
-myAvatar.failedToAddSkinDialog.text = [TMP] We couldn't add your skin right now. Please try again later. If the problem persists, contact support.
+myAvatar.failedToAddSkinDialog.title = Couldn't add avatar skin!
+myAvatar.failedToAddSkinDialog.text = We couldn't add your avatar skin right now; please try again later. If the problem persists, contact support.
 
-myAvatar.playerSkinsOperationFailedDialog.select.title = [TMP] Select avatar skin action failed!
-myAvatar.playerSkinsOperationFailedDialog.delete.title = [TMP] Delete avatar skin action failed!
-myAvatar.playerSkinsOperationFailedDialog.update.title = [TMP] Update avatar skin action failed!
-myAvatar.playerSkinsOperationFailedDialog.text = [TMP] Please try again. If the problem persists, contact support.
+myAvatar.playerSkinsOperationFailedDialog.select.title = Select avatar skin action failed!
+myAvatar.playerSkinsOperationFailedDialog.delete.title = Delete avatar skin action failed!
+myAvatar.playerSkinsOperationFailedDialog.text = Please try again. If the problem persists, contact support.
 
 myAvatar.entitlement.gameFounder.titleSuffix = Cursebreaker Edition Exclusive
 myAvatar.entitlement.gameFounder.lockedMessage = To use this cosmetic you need the Cursebreaker Edition.
@@ -1759,14 +1812,14 @@ myAvatar.offline.description.offline = You are in offline mode.\nTo use the Avat
 myAvatar.offline.description.connecting = Connecting to Hytale's servers, try again in a moment...
 myAvatar.offline.description.unavailable = The Avatar creator is currently unavailable as we are having problems reaching Hytale's servers. Try again later or restart the game.
 
-myAvatar.presets.defaultName = [TMP] Default Avatar
-myAvatar.presets.deleteModal.title = [TMP] Delete avatar preset
-myAvatar.presets.deleteModal.text = [TMP] Are you sure you want to delete "{presetName}"?
-myAvatar.presets.panel.addPresetButton = [TMP] Add Preset
-myAvatar.presets.addModal.title = [TMP] Add Preset
-myAvatar.presets.editModal.title = [TMP] Edit Preset
-myAvatar.presets.nameInput.label = [TMP] Preset Name
-myAvatar.presets.nameInput.placeholder = [TMP] My Avatar preset
+myAvatar.presets.defaultName = Default Avatar
+myAvatar.presets.deleteModal.title = Delete avatar preset
+myAvatar.presets.deleteModal.text = Are you sure you want to delete "{presetName}"?
+myAvatar.presets.panel.addPresetButton = Add Preset ({currentPresetCount, number, integer}/{maxPresets, number, integer})
+myAvatar.presets.addModal.title = Add Preset
+myAvatar.presets.editModal.title = Edit Preset
+myAvatar.presets.nameInput.label = Preset Name
+myAvatar.presets.nameInput.placeholder = My Avatar preset
 
 # === settings ===
 settings.title = Settings
@@ -1863,7 +1916,7 @@ settings.resetToDefaults.tooltip = Reset all quick settings to their default val
 settings.resetOptions = Reset Options
 settings.useSystemLanguage = Use System Language
 settings.language = Language
-settings.language.description = Sets the language displayed by the game.
+settings.language.description = Sets the language displayed by the game.\n\n<b><color is="#b32626">This setting requires you to go back to the main menu to take effect!</color></b>
 settings.fullscreen = Fullscreen
 settings.noAuthName = No Auth Name
 settings.windowSize = Window Size
@@ -2014,6 +2067,12 @@ settings.joinCameraPref.lastUsed = Remember Last Used
 settings.diagnosticMode = Diagnostic Mode
 settings.diagnosticMode.description = Enabling diagnostic mode is recommended if you plan to create content. Diagnostic mode will print out more error messages about misconfigured content.
 
+settings.quiche = [TMP] Use Alternative Network Stack
+settings.quiche.description = [TMP] Enables an alternative network stack which may improve connectivity in some situations. Must be toggled before joining a multiplayer world.
+
+settings.quiche.log = [TMP] Enable Networking Logging
+settings.quiche.log.description = [TMP] Enables detailed logging for the alternative network stack. Useful for debugging connection issues.
+
 settings.useBlockyModelShaderWorkaround = Blocky Model Workaround
 settings.useBlockyModelShaderWorkaround.description = On some Macs with NVIDIA hardware, model rendering is very slow without this workaround. Restarting the game is required for the change to take effect.
 
@@ -2031,10 +2090,15 @@ settings.ambientVolume = Ambience Volume
 settings.uiVolume = UI Volume
 settings.outputMode = Output Mode
 settings.outputMode.description = Controls the audio output channel configuration.\n\
-<b><color is="#f1ba50">Default</color></b>: Automatically selects the best option for your chosen output device.
+<b><color is="#f1ba50">Default</color></b>: Attempts to automatically select the best option for your output device.\n\
+<b><color is="#f1ba50">Speakers (Stereo)</color></b>: Standard stereo output for speaker setups.\n\
+<b><color is="#f1ba50">Headphones (Stereo)</color></b>: Standard stereo output for headphones.\n\
+<b><color is="#f1ba50">Headphones (3D Audio)</color></b>: 3D spatial audio for headphones using HRTF (experimental).\n\
+<b><color is="#f1ba50">Mono</color></b>: Single-channel output.
 settings.outputMode.default = Default
-settings.outputMode.stereo = Stereo (Speakers)
-settings.outputMode.stereoHrtf = Stereo (Headphones)
+settings.outputMode.speakersStereo = Speakers (Stereo)
+settings.outputMode.headphonesStereo = Headphones (Stereo)
+settings.outputMode.headphones3DAudio = Headphones (3D Audio)
 settings.outputMode.mono = Mono
 settings.dynamicUiScaling = Dynamic UI Scaling
 settings.uiScale = UI Scale
@@ -2105,7 +2169,7 @@ settings.bindings.Ability3ItemAction = Use Ability 3
 settings.bindings.UndoItemAction = Undo
 settings.bindings.RedoItemAction = Redo
 settings.bindings.AddRemoveFavoriteMaterialItemAction = Add/Remove Favorite Material
-settings.bindings.DismountAction = Mount/Dismount
+settings.bindings.DismountAction = Dismount
 settings.bindings.AlternatePlaySculptBrushModeModifier = Change Sculpt Brush Modifier
 settings.bindings.UsePaintModeForBrush = Use Paint Mode For Brush
 settings.bindings.SelectBlockFromSet = Select Block From Set
@@ -2115,84 +2179,86 @@ settings.bindings.ToggleFlyCameraControlTarget.description = Toggles the target 
 settings.bindings.PreviousBuilderToolsLegendPage = Legend - Previous Page
 settings.bindings.NextBuilderToolsLegendPage = Legend - Next Page
 
-settings.bindings.ContainerTakeAll = [TMP] Container: Take All
-settings.bindings.ContainerPutAll = [TMP] Container: Put All
-settings.bindings.ContainerQuickStack = [TMP] Container: Quick Stack
-settings.bindings.ContainerSort = [TMP] Container: Sort Items
-settings.bindings.SelectionShiftUp = [TMP] Selection - Shift Up
-settings.bindings.SelectionShiftDown = [TMP] Selection - Shift Down
-settings.bindings.SelectionCopy = [TMP] Selection - Copy
-settings.bindings.SelectionClear = [TMP] Selection - Clear
-settings.bindings.SelectionTranslateMode = [TMP] Selection - Translate Mode
-settings.bindings.SelectionGizmoMode = [TMP] Selection - Gizmo Mode
-settings.bindings.SelectionRotateMode = [TMP] Selection - Rotate Mode
-settings.bindings.SelectionCancelTransform = [TMP] Selection - Cancel Transform
-settings.bindings.SelectionNextSet = [TMP] Selection - Next Set
-settings.bindings.SelectionPreviousSet = [TMP] Selection - Previous Set
+settings.bindings.ContainerTakeAll = Container - Take All
+settings.bindings.ContainerPutAll = Container - Put All
+settings.bindings.ContainerQuickStack = Container - Quick Stack
+settings.bindings.ContainerSort = Container - Sort Items
+settings.bindings.SelectionShiftUp = Selection - Shift Up
+settings.bindings.SelectionShiftDown = Selection - Shift Down
+settings.bindings.SelectionCopy = Selection - Copy
+settings.bindings.SelectionClear = Selection - Clear
+settings.bindings.SelectionTranslateMode = Selection - Translate Mode
+settings.bindings.SelectionGizmoMode = Selection - Gizmo Mode
+settings.bindings.SelectionRotateMode = Selection - Rotate Mode
+settings.bindings.SelectionCancelTransform = Selection - Cancel Transform
+settings.bindings.SelectionNextSet = Selection - Next Set
+settings.bindings.SelectionPreviousSet = Selection - Previous Set
+settings.bindings.SelectionClipboard = [TMP] Selection - Clipboard
 
-settings.bindings.PasteShiftLeft = [TMP] Paste - Shift Left
-settings.bindings.PasteShiftRight = [TMP] Paste - Shift Right
-settings.bindings.PasteShiftForward = [TMP] Paste - Shift Forward
-settings.bindings.PasteShiftBackward = [TMP] Paste - Shift Backward
-settings.bindings.PasteShiftUp = [TMP] Paste - Shift Up
-settings.bindings.PasteShiftDown = [TMP] Paste - Shift Down
-settings.bindings.PasteShiftReset = [TMP] Paste - Reset Shift
-settings.bindings.PasteRotate = [TMP] Paste - Rotate
-settings.bindings.PasteOpenPrefabList = [TMP] Paste - Open Prefab List
-settings.bindings.PasteCycleOrigin = [TMP] Paste - Cycle Origin
+settings.bindings.PasteShiftLeft = Paste - Shift Left
+settings.bindings.PasteShiftRight = Paste - Shift Right
+settings.bindings.PasteShiftForward = Paste - Shift Forward
+settings.bindings.PasteShiftBackward = Paste - Shift Backward
+settings.bindings.PasteShiftUp = Paste - Shift Up
+settings.bindings.PasteShiftDown = Paste - Shift Down
+settings.bindings.PasteShiftReset = Paste - Reset Shift
+settings.bindings.PasteRotate = Paste - Rotate
+settings.bindings.PasteOpenPrefabList = Paste - Open Prefab List
+settings.bindings.PasteCycleOrigin = Paste - Cycle Origin
 
-settings.bindings.BrushToggleInvert = [TMP] Brush - Toggle Invert
-settings.bindings.BrushIncreaseWidth = [TMP] Brush - Increase Width
-settings.bindings.BrushDecreaseWidth = [TMP] Brush - Decrease Width
-settings.bindings.BrushIncreaseHeight = [TMP] Brush - Increase Height
-settings.bindings.BrushDecreaseHeight = [TMP] Brush - Decrease Height
-settings.bindings.BrushNextShapeOrigin = [TMP] Brush - Next Shape Origin
-settings.bindings.BrushPreviousShapeOrigin = [TMP] Brush - Previous Shape Origin
-settings.bindings.BrushAxisLockTranslate = [TMP] Brush - Axis Lock Translate
-settings.bindings.BrushAxisLockRotate = [TMP] Brush - Axis Lock Rotate
-settings.bindings.BrushAxisLockExit = [TMP] Brush - Exit Axis Lock
+settings.bindings.BrushToggleInvert = Brush - Toggle Invert
+settings.bindings.BrushIncreaseWidth = Brush - Increase Width
+settings.bindings.BrushDecreaseWidth = Brush - Decrease Width
+settings.bindings.BrushIncreaseHeight = Brush - Increase Height
+settings.bindings.BrushDecreaseHeight = Brush - Decrease Height
+settings.bindings.BrushNextShapeOrigin = Brush - Next Shape Origin
+settings.bindings.BrushPreviousShapeOrigin = Brush - Previous Shape Origin
+settings.bindings.BrushAxisLockTranslate = Brush - Axis Lock Translate
+settings.bindings.BrushAxisLockRotate = Brush - Axis Lock Rotate
+settings.bindings.BrushAxisLockExit = Brush - Exit Axis Lock
+settings.bindings.BrushPaste = [TMP] Brush - Paste
 
-settings.bindings.EntityClone = [TMP] Entity - Clone
-settings.bindings.EntityRemove = [TMP] Entity - Remove
-settings.bindings.EntityToggleFreeze = [TMP] Entity - Toggle Freeze
-settings.bindings.EntityToggleSurface = [TMP] Entity - Toggle Surface Lock
-settings.bindings.EntityOpenSpawnUI = [TMP] Entity - Open Spawn UI
-settings.bindings.EntityTranslateMode = [TMP] Entity - Translate Mode
-settings.bindings.EntityRotateMode = [TMP] Entity - Rotate Mode
-settings.bindings.EntityFreeMoveMode = [TMP] Entity - Free Move Mode
+settings.bindings.EntityClone = Entity - Clone
+settings.bindings.EntityRemove = Entity - Remove
+settings.bindings.EntityToggleFreeze = Entity - Toggle Freeze
+settings.bindings.EntityToggleSurface = Entity - Toggle Surface Lock
+settings.bindings.EntityOpenSpawnUI = Entity - Open Spawn UI
+settings.bindings.EntityTranslateMode = Entity - Translate Mode
+settings.bindings.EntityRotateMode = Entity - Rotate Mode
+settings.bindings.EntityFreeMoveMode = Entity - Free Move Mode
 
-settings.bindings.MachinimaTogglePause = [TMP] Machinima - Toggle Pause
-settings.bindings.MachinimaToggleDisplay = [TMP] Machinima - Toggle Display
-settings.bindings.MachinimaToggleCamera = [TMP] Machinima - Toggle Camera
-settings.bindings.MachinimaRestartScene = [TMP] Machinima - Restart Scene
-settings.bindings.MachinimaFrameDecrement = [TMP] Machinima - Frame Decrement
-settings.bindings.MachinimaFrameIncrement = [TMP] Machinima - Frame Increment
-settings.bindings.MachinimaKeyframeDecrement = [TMP] Machinima - Keyframe Decrement
-settings.bindings.MachinimaKeyframeIncrement = [TMP] Machinima - Keyframe Increment
-settings.bindings.MachinimaFrameTimeDecrease = [TMP] Machinima - Decrease Frame Time
-settings.bindings.MachinimaFrameTimeIncrease = [TMP] Machinima - Increase Frame Time
-settings.bindings.MachinimaAddKeyframe = [TMP] Machinima - Add Keyframe
-settings.bindings.MachinimaRemoveKeyframe = [TMP] Machinima - Remove Keyframe
-settings.bindings.MachinimaOriginAction = [TMP] Machinima - Origin Action
-settings.bindings.MachinimaEditKeyframe = [TMP] Machinima - Edit Keyframe
-settings.bindings.MachinimaCycleSelectionMode = [TMP] Machinima - Cycle Selection Mode
+settings.bindings.MachinimaTogglePause = Machinima - Toggle Pause
+settings.bindings.MachinimaToggleDisplay = Machinima - Toggle Display
+settings.bindings.MachinimaToggleCamera = Machinima - Toggle Camera
+settings.bindings.MachinimaRestartScene = Machinima - Restart Scene
+settings.bindings.MachinimaFrameDecrement = Machinima - Frame Decrement
+settings.bindings.MachinimaFrameIncrement = Machinima - Frame Increment
+settings.bindings.MachinimaKeyframeDecrement = Machinima - Keyframe Decrement
+settings.bindings.MachinimaKeyframeIncrement = Machinima - Keyframe Increment
+settings.bindings.MachinimaFrameTimeDecrease = Machinima - Decrease Frame Time
+settings.bindings.MachinimaFrameTimeIncrease = Machinima - Increase Frame Time
+settings.bindings.MachinimaAddKeyframe = Machinima - Add Keyframe
+settings.bindings.MachinimaRemoveKeyframe = Machinima - Remove Keyframe
+settings.bindings.MachinimaOriginAction = Machinima - Update Scene Origin
+settings.bindings.MachinimaEditKeyframe = Machinima - Edit Keyframe
+settings.bindings.MachinimaCycleSelectionMode = Machinima - Cycle Selection Mode
 
-settings.bindings.RulerDeletePoint = [TMP] Ruler - Delete Point
-settings.bindings.RulerClearLine = [TMP] Ruler - Clear Line
-settings.bindings.RulerNextLine = [TMP] Ruler - Next Line
-settings.bindings.RulerPreviousLine = [TMP] Ruler - Previous Line
+settings.bindings.RulerDeletePoint = Ruler - Delete Point
+settings.bindings.RulerClearLine = Ruler - Clear Line
+settings.bindings.RulerNextLine = Ruler - Next Line
+settings.bindings.RulerPreviousLine = Ruler - Previous Line
 
-settings.bindings.SelectPrefabRemove = [TMP] Select Prefab - Remove
-settings.bindings.SelectPrefabOpenSaveUI = [TMP] Select Prefab - Open Save UI
-settings.bindings.SelectPrefabUpdateBounds = [TMP] Select Prefab - Update Bounds
-settings.bindings.SelectPrefabTeleport = [TMP] Select Prefab - Teleport
+settings.bindings.SelectPrefabRemove = Select Prefab - Remove
+settings.bindings.SelectPrefabOpenSaveUI = Select Prefab - Open Save UI
+settings.bindings.SelectPrefabUpdateBounds = Select Prefab - Update Bounds
+settings.bindings.SelectPrefabTeleport = Select Prefab - Teleport
 
-settings.bindings.HitboxInsert = [TMP] Hitbox - Insert
-settings.bindings.HitboxDelete = [TMP] Hitbox - Delete
-settings.bindings.ContainerTakeAll = Container: Take All
-settings.bindings.ContainerPutAll = Container: Put All
-settings.bindings.ContainerQuickStack = Container: Quick Stack
-settings.bindings.ContainerSort = Container: Sort Items
+settings.bindings.HitboxInsert = Hitbox - Insert
+settings.bindings.HitboxDelete = Hitbox - Delete
+settings.bindings.ContainerTakeAll = Container - Take All
+settings.bindings.ContainerPutAll = Container - Put All
+settings.bindings.ContainerQuickStack = Container - Quick Stack
+settings.bindings.ContainerSort = Container - Sort Items
 
 settings.autoJumpObstacle = Auto Step-Up
 settings.autoJumpObstacle.description = With this setting enabled, you will automatically walk up blocks with a max height of 1 unit.
@@ -2370,12 +2436,10 @@ feedback.success.bugreport = Your bug report has been submitted successfully. We
 feedback.success.reportId = Report ID: {id}
 feedback.success.submitMore = Submit More
 
-feedback.redirect.title = Visit Support
 feedback.redirect.support = For account or billing issues, please visit support.hytale.com.
 feedback.redirect.button = Open Support
+feedback.bugReportButton.tooltip = Report a Bug or Feedback
 
-
-bugReportButton.tooltip = Report a Bug or Feedback
 # === patchline ===
 # Patchlines allow early release of content to help players test new features
 
@@ -2391,14 +2455,7 @@ patchline.worldWarning.text = You are about to open a world using a different pa
 patchline.worldWarning.openAnyway = Open Anyway
 patchline.worldWarning.duplicateWorld = Duplicate World
 
-outdatedModWarning.title = [TMP] Outdated {count, plural, one {Mod} other {Mods}} Detected
-outdatedModWarning.text = [TMP] The following {count, plural, one {mod has} other {mods have}} not been updated for the current version and may not work correctly:\n\n{modList}\n\
-    Please update or disable {count, plural, one {this mod} other {these mods}}.
-outdatedModWarning.continue = [TMP] Continue Anyway
-outdatedModWarning.cancel = [TMP] Cancel
-
 # === cosmetics ===
-cosmetics.color.skinTone = Tone
 
 # Hair Gradients
 cosmetics.color.PitchBlack = Pitch Black

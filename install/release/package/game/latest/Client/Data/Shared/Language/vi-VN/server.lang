@@ -129,7 +129,7 @@ barter.customUI.barterPage.noStock = HẾT HÀNG
 barter.customUI.barterPage.inStock = Kho: {count}
 barter.customUI.barterPage.quantityStock = Hiện Có: {count}
 barter.customUI.barterPage.invalidItem = Vật Phẩm Không Hợp Lệ
-
+barter.customUI.barterPage.cost = Giá:
 # === benchCategories ===
 
 benchCategories.workbench.crafting = Chế tạo
@@ -912,6 +912,7 @@ commands.clear.success = Các khối đã được dọn sạch.
 commands.clearhistory.desc = Xóa lịch sử bộ nhớ tạm
 commands.contract.desc = Thu hẹp vùng chọn theo mọi hướng, hoặc theo một lượng xác định theo một hướng
 commands.contract.arg.distance.desc = Số lượng khối bạn muốn di chuyển vùng chọn của mình vào bên trong
+commands.contract.arg.axis.desc = [TMP] Trục được sử dụng để thực hiện thao tác.
 commands.fill.desc = Lấp đầy tất cả không khí trong vùng chọn bằng các loại khối được chỉ định
 commands.fill.args.replacement.desc = Danh sách các loại khối để thay thế không khí
 commands.fill.success = Đã thay thế thành công các khối không khí trong vùng chọn bằng {key}
@@ -952,7 +953,7 @@ commands.extendface.yMax.desc = Tọa độ Y lớn nhất của vùng
 commands.extendface.zMax.desc = Tọa độ Z lớn nhất của vùng
 commands.flip.desc = Lật các khối trong bộ nhớ tạm
 commands.fluid.desc = Các Lệnh Debug Chất Lỏng.
-commands.fluid.fluidArgType.desc = [TMP] Một ID của tài nguyên chất lỏng
+commands.fluid.fluidArgType.desc = Một ID tài nguyên chất lỏng.
 commands.fluid.get.desc = Lấy Thông Tin Chất Lỏng Tại Vị Trí Chỉ Định.
 commands.fluid.set.desc = Thay Đổi Chất Lỏng Tại Vị Trí Chỉ Định.
 commands.fluid.setradius.desc = Thay Đổi Chất Lỏng Trong Một Bán Kính Nhất Định Xung Quanh Người Chơi.
@@ -1017,10 +1018,10 @@ commands.set.args.blocktype.desc = Loại khối để đặt cho vùng chọn
 commands.shift.desc = Dịch chuyển vùng chọn
 commands.stack.desc = Xếp cHồng vùng chọn
 commands.submerge.desc = Làm ngập vùng chọn bằng chất lỏng. Sử dụng 'Empty' để bỏ ngập.
-commands.layer.desc = [TMP] Áp dụng phân lớp cho vùng chọn
-commands.layer.direction.desc = [TMP] Hướng để áp dụng các lớp
-commands.layer.layers.desc = [TMP] Các lớp để áp dụng cho vùng chọn. LƯU Ý: Nếu các mẫu khối sử dụng phần trăm, hãy phân tách mỗi mục bằng dấu ';' thay vì dấu ','
-commands.layer.directionInvalid = [TMP] Hướng "{direction}" không hợp lệ!
+commands.layer.desc = Áp dụng phân lớp cho vùng chọn
+commands.layer.direction.desc = Hướng để áp dụng các lớp
+commands.layer.layers.desc = Các lớp để áp dụng cho vùng chọn. LƯU Ý: Nếu các mẫu khối sử dụng phần trăm, hãy phân tách mỗi mục bằng dấu ';' thay vì dấu ','
+commands.layer.directionInvalid = Hướng "{direction}" không hợp lệ!
 commands.tint.desc = Nhuộm màu vùng chọn với màu sắc chỉ định
 commands.undo.desc = Hoàn tác thay đổi cuối cùng
 commands.updateselection.desc = Cập nhật vùng chọn
@@ -1299,7 +1300,7 @@ commands.instances.createdInstanceAssetConfig = Đã tạo cấu hình tài sả
 commands.instances.beginLoading = Đã bắt đầu tải tài sản phiên bản: {name}
 commands.instances.doneLoading = Đã tải xong tài sản phiên bản tại thế giới: {world}
 commands.instances.fail.instanceAssetNotExist = Tài sản phiên bản có tên '{name}' không tồn tại
-commands.instances.migrate.desc = [TMP] Nâng cấp tất cả các thế giới phiên bản lên định dạng dữ liệu mới nhất.
+commands.instances.migrate.desc = Nâng cấp tất cả các thế giới phiên bản lên định dạng dữ liệu mới nhất.
 commands.instances.migrate.complete = Đã di trú {worlds} phiên bản. Số vùng dữ liệu (chunks) đã di trú: {chunks}
 commands.instances.migrate.failed = Di trú các phiên bản thất bại: {error}
 commands.instances.migrate.update = Đang trong quá trình di trú: {chunks}/{max}
@@ -1413,17 +1414,17 @@ commands.parsing.argtype.uuid.name = UUID
 commands.parsing.argtype.uuid.usage = Một mã định danh duy nhất toàn cầu (UUID)
 commands.parsing.argtype.uuid.fail = '{input}' không phải là một mã UUID hợp lệ
 commands.parsing.argtype.player.name = Người Chơi
-commands.parsing.argtype.player.usage = <Người Chơi>
+commands.parsing.argtype.player.usage = Tên của người chơi.
 commands.parsing.argtype.playerUuid.name = UUID người chơi
 commands.parsing.argtype.playerUuid.usage = Một mã UUID hoặc tên người dùng của một người chơi đang trực tuyến
 commands.parsing.argtype.playerUuid.fail = '{input}' không phải là mã UUID hoặc tên người dùng người chơi trực tuyến hợp lệ
-commands.parsing.argtype.relativeFloat.name = Số
-commands.parsing.argtype.relativeFloat.usage = <Số Hoặc ~Tương Đối>
+commands.parsing.argtype.relativeFloat.name = Số thực Tương đối
+commands.parsing.argtype.relativeFloat.usage = Một số thực dấu phẩy động. Thêm tiền tố là một dấu ngã (~) để xác định là tương đối.
 commands.parsing.argtype.doubleCoordinate.name = Tọa độ thập phân tương đối
-commands.parsing.argtype.doubleCoordinate.usage = Một tọa độ x, y hoặc z dưới dạng số thập phân, có thể là tọa độ tương đối bằng cách thêm dấu ngã (~) vào trước số
+commands.parsing.argtype.doubleCoordinate.usage = Một tọa độ x, y, hoặc z dưới dạng số thập phân. Thêm tiền tố là một dấu ngã (~) để xác định là tương đối.
 commands.parsing.argtype.doubleCoordinate.fail = Giá Trị Tọa Độ Không Hợp Lệ: '{input}'
 commands.parsing.argtype.integerCoordinate.name = Tọa độ nguyên tương đối
-commands.parsing.argtype.integerCoordinate.usage = Một tọa độ x, y hoặc z dưới dạng số nguyên, có thể là tọa độ tương đối bằng cách thêm dấu ngã (~) vào trước số
+commands.parsing.argtype.integerCoordinate.usage = Một tọa độ x, y, hoặc z dưới dạng số nguyên. Thêm tiền tố là một dấu ngã (~) để xác định là tương đối.
 commands.parsing.argtype.integerCoordinate.fail = [TMP] Tọa Độ Số Nguyên Không Hợp Lệ: '{input}'
 commands.parsing.argtype.world.name = Thế giới
 commands.parsing.argtype.world.usage = Tên thư mục của một thế giới
@@ -1529,10 +1530,10 @@ commands.gamemode.alreadyInMode.self = Bạn đã ở trong chế độ chơi n�
 commands.gamemode.gamemode.desc = Chế độ chơi cần thiết lập (phiêu lưu, sáng tạo, hoặc chữ viết tắt: a, c)
 commands.gamemode.success.other = Chế độ chơi của {username} đã được thiết lập thành {mode}
 commands.gamemode.success.self = Chế độ chơi của bạn đã được thiết lập thành {mode}
-creativehub.portal.returnHint = Nhập lệnh '/hub' để quay trở lại Cosmos of Creativity
-commands.hub.desc = Quay trở lại trung tâm Cosmos of Creativity
-commands.hub.notInHubWorld = Bạn không ở trong thế giới Creative Hub!
-commands.hub.alreadyInHub = Bạn đã ở trong trung tâm rồi!
+creativehub.portal.returnHint = Sử dụng nút trong bản đồ để quay lại Ngã rẽ hoặc sử dụng lệnh /crossroads
+commands.hub.desc = Quay lại Ngã rẽ Vũ trụ Sáng tạo
+commands.hub.notInHubWorld = Bạn không ở trong một thế giới có hỗ trợ Ngã rẽ!
+commands.hub.alreadyInHub = Bạn đã ở trong Ngã rẽ rồi!
 commands.hide.desc = Ẩn và hiển thị người chơi với những người chơi khác
 commands.hide.player.desc = Ẩn một người chơi khỏi một người chơi mục tiêu hoặc tất cả người chơi
 commands.hide.showPlayer.desc = Hiển thị một người chơi với một người chơi mục tiêu hoặc tất cả người chơi
@@ -1601,7 +1602,7 @@ commands.whereami.header = Bạn hiện đang ở:\n\
   Hướng nhìn: {yaw, number}, {pitch, number}, {roll, number}\n\
   Hướng: {direction}\n\
   Hướng trục: {axisDirection}\n\
-  Trục: {axis}\n
+  Trục: {axis}
 commands.whereami.header.other = {username} hiện đang ở:\n\
   Thế giới: {world}\n\
   Vùng dữ liệu: {chunkX, number}, {chunkY, number}, {chunkZ, number}\n\
@@ -1609,13 +1610,13 @@ commands.whereami.header.other = {username} hiện đang ở:\n\
   Hướng nhìn: {yaw, number}, {pitch, number}, {roll, number}\n\
   Hướng: {direction}\n\
   Hướng trục: {axisDirection}\n\
-  Trục: {axis}\n
+  Trục: {axis}
 commands.whereami.needsSaving = Cần lưu: {needsSaving}
 commands.whereami.chunkNotLoaded = Vùng dữ liệu chưa được tải!
 commands.whoami.header = Thông tin người chơi của bạn:\n\
   UUID: {uuid}\n\
   Tên người dùng: {username}\n\
-  Ngôn ngữ: {language}\n
+  Ngôn ngữ: {language}
 commands.clearinv.success = Đã xóa sạch kho đồ.
 commands.give.insufficientInvSpace = Không thể đưa {quantity, number} {item}; không đủ chỗ trống trong kho đồ.
 commands.give.gave = Bạn đã đưa cho {targetUsername} {quantity, number} {item}
@@ -1648,7 +1649,8 @@ commands.assets.tags.tagNotFound = Không tìm thấy tài sản nào có thẻ:
 commands.assets.tags.assetsOfTypeWithTag = Các tài sản thuộc loại {type} có thẻ {tag}:
 commands.assets.tags.assetKeys = Khóa
 commands.assets.tags.assetIndexes = Chỉ số
-commands.assets.longest.desc = [TMP] Trả về độ dài của tên tài nguyên dài nhất của mỗi loại tài nguyên.
+commands.assets.longest.desc = Trả về độ dài của tên tài nguyên dài nhất của mỗi loại tài nguyên.
+commands.assets.longest.result = Tên tài nguyên dài nhất cho {type}: {assetName} ({length} {length, plural, one {ký tự} other {ký tự}})
 commands.packs.desc = Các lệnh liên quan đến gói tài sản
 commands.packs.list.desc = Liệt kê tất cả các gói tài sản đã tải
 commands.packs.notInitialized = AssetModule chưa được khởi tạo.
@@ -1931,6 +1933,8 @@ commands.time.period.day.desc = Đặt thời gian thế giới thành ban ngày
 commands.time.period.night.desc = Đặt thời gian thế giới thành ban đêm
 commands.time.period.midday.desc = Đặt thời gian thế giới thành giữa trưa
 commands.time.period.midnight.desc = Đặt thời gian thế giới thành nửa đêm
+commands.time.period.dawn.desc = [TMP] Đặt thời gian thế giới thành bình minh.
+commands.time.period.dusk.desc = [TMP] Đặt thời gian thế giới thành hoàng hôn.
 commands.time.set.timeArg.desc = Giờ trong ngày (từ 0 đến 24) để thiết lập thời gian
 commands.worldthread.arg.desc = Thế giới để thực hiện lệnh này
 commands.world.settings.desc = Các lệnh để quản lý cài đặt thế giới
@@ -1945,6 +1949,11 @@ commands.world.settings.box2d.minX.desc = Tọa độ X tối thiểu
 commands.world.settings.box2d.minZ.desc = Tọa độ Z tối thiểu
 commands.world.settings.box2d.maxX.desc = Tọa độ X tối đa
 commands.world.settings.box2d.maxZ.desc = Tọa độ Z tối đa
+commands.world.rocksdb = Các lệnh hoạt động trên bộ lưu trữ chunk rocksdb
+commands.world.rocksdb.compact = Nén cơ sở dữ liệu RocksDB để tiết kiệm không gian
+commands.world.rocksdb.compact.start = Đang bắt đầu nén bộ lưu trữ chunk RocksDB...
+commands.world.rocksdb.compact.end = Đã hoàn thành nén bộ lưu trữ chunk RocksDB.
+commands.world.rocksdb.compact.wrong = Thế giới này không sử dụng RocksDB để lưu trữ chunk.
 commands.emote.emoteNotFound = Không tìm thấy biểu cảm: {id}
 commands.hitbox.extentsThresholdNeeded = Sử dụng ngưỡng phạm vi {threshold}, tổng số khối lấp đầy cần thiết là: {nb}
 commands.hitbox.notFound = Không có khung va chạm nào tên '{name}'
@@ -2003,7 +2012,10 @@ commands.nearDeath.desc = Thiết Lập Máu Của Bạn Về 1.
 commands.noon.desc = Thiết Lập Thời Gian Thành Buổi Trưa Và Tạm Dừng.
 commands.resetRotation.desc = Đặt Lại Góc Quay Camera Về Mặc Định (Độ Dốc=0, Chệch=0, Nghiêng=0).
 commands.unstuck.desc = Dịch Chuyển Đến Điểm Cao Nhất Của Thế Giới Tại Vị Trí Hiện Tại Của Bạn.
-
+commands.setTimeAndGoHome.desc = Đặt thời gian trong ngày và dịch chuyển người dùng.
+commands.setTimeAndGoHome.timeOfDay.desc = Thời gian trong ngày để đặt cho thế giới.
+commands.setTimeAndGoHome.world.desc = Thế giới để dịch chuyển đến.
+commands.setTimeAndGoHome.world.default.desc = Thế giới mặc định
 # Auto-apply messages
 update.notify_players = Bản cập nhật máy chủ {version} đã có sẵn. Quản trị viên có thể chạy '/update download' để chuẩn bị.
 update.auto_apply_warning = Bản cập nhật {version} sẽ được tự động áp dụng trong {minutes, plural, one {1 phút} other {{minutes} phút}}. Vui lòng lưu lại tiến trình của bạn.
@@ -2028,6 +2040,7 @@ commands.play.enabled.desc = Chọn bật hoặc tắt loại truy cập
 commands.play.lan.desc = Bật/tắt truy cập chơi qua mạng LAN
 commands.play.friend.desc = Bật/tắt truy cập chơi với bạn bè
 commands.play.online.desc = Bật/tắt truy cập chơi trực tuyến
+commands.play.offlineMode = Lệnh này không khả dụng khi ngoại tuyến. Nếu bạn muốn sử dụng lệnh này, hãy khởi động lại ở chế độ trực tuyến.
 commands.play.singleplayerOnlyPrivate = Chế Độ Chơi Riêng Tư Chỉ Có Thể Bật/Tắt Trong Chế Độ Chơi Đơn!
 commands.play.singleplayerOnlyLan = Chế Độ Chơi Mạng Lan Chỉ Có Thể Bật/Tắt Trong Chế Độ Chơi Đơn!
 commands.play.singleplayerOnlyFriend = Chế Độ Chơi Cùng Bạn Bè Chỉ Có Thể Bật/Tắt Trong Chế Độ Chơi Đơn!
@@ -2149,6 +2162,7 @@ commands.eventtitle.secondary.defaultDesc = Sự kiện
 commands.eventtitle.title.desc = Văn bản tiêu đề chính
 commands.eventtitle.titleRequired = Phải cung cấp một tiêu đề
 commands.help.desc = Hiển thị trợ giúp về lệnh
+commands.uigallery.desc = Mở UI Gallery trưng bày tất cả các yếu tố và phong cách UI
 commands.notify.desc = Gửi thông báo đến tất cả người chơi trên mọi thế giới
 commands.say.desc = Thông báo một tin nhắn cho toàn bộ máy chủ
 commands.stash.setDroplist.desc = Thiết lập danh sách rơi đồ cho Rương bạn đang nhìn
@@ -2368,13 +2382,13 @@ commands.chunkinfo.chunk = Vùng dữ liệu {chunkX}, {chunkZ}:\n\
   \tCần lưu: {saving}\n\
   \tSiêu dữ liệu:\n\
   \tVùng dữ liệu khối (BlockChunk):\n\
-    \t\tCần lưu: {savingChunk}\n
+    \t\tCần lưu: {savingChunk}
 commands.chunkinfo.section = \t\tPhân đoạn {index}:\n
 commands.chunkinfo.dataType = \t\t\tLoại dữ liệu: {data}\n
 commands.chunkinfo.sectionInfo = \t\t\tCó hoạt động (Ticking): {ticking}\n\
       \t\t\tLà không khí đặc (Solid Air): {solidAir}\n\
       \t\t\tSố lượng khối: {count}\n\
-      \t\t\tĐếm số lượng khối: {counts}\n
+      \t\t\tĐếm số lượng khối: {counts}
 commands.chunkinfo.blockStateChunk = \tVùng dữ liệu trạng thái khối:\n\
     \t\tCần lưu: {saving}\n\
     \t\tTrạng thái khối: {countStates}\n\
@@ -2383,7 +2397,7 @@ commands.chunkinfo.blockStateChunk = \tVùng dữ liệu trạng thái khối:\n
     \t\tTrạng thái khối có thể hoạt động: {countTickable}\n\
   \tVùng dữ liệu Thực Thể:\n\
     \t\tCần lưu: {savingEntity}\n\
-    \t\tThực Thể: {countEntities}\n
+    \t\tThực Thể: {countEntities}
 commands.time.dilation.desc = Thay đổi tỷ lệ giãn nở thời gian của máy chủ, đồng thời sửa đổi giá trị này trên bất kỳ máy khách nào đang trực tuyến
 commands.time.dilation.timeDilation.desc = Giá trị giãn nở thời gian (phải >0.01 và <=4)
 commands.time.dilation.set.success = Đã đặt giãn nở thời gian: {timeDilation, number}
@@ -2527,6 +2541,7 @@ commands.block.find-here.desc = Tìm một khối xung quanh vị trí của b�
 commands.block.find-here.print.desc = Hiển thị tên khối trong kết quả đầu ra
 commands.block.find-here.block.desc = Loại khối để tìm kiếm
 commands.block.find-here.radius.desc = Bán kính tìm kiếm tính bằng chunk
+commands.block.find-here.result = Đã tìm thấy {count}{blockName} {count, plural, one {khối} other {khối}} trong {time} {time, plural, one {giây} other {giây}}!
 commands.block.select.desc = Thiết lập khay nhớ tạm của công cụ xây dựng với các khối được chọn để dễ dàng thử nghiệm!
 commands.block.select.regex.desc = Một mẫu regex để lọc các khối theo tên
 commands.block.select.all.desc = Bao gồm tất cả các loại khối (bao gồm cả các khối trạng thái)
@@ -2540,10 +2555,11 @@ commands.block.select.select = Đã chọn {count} khối!
 commands.block.select.done = Đã thiết lập xong khay nhớ tạm với các khối! Bây giờ bạn có thể dán nó bằng công cụ dán.
 commands.block.select.noSelectionProvider = Không có plugin chọn khối nào hiện diện!
 commands.block.bulk.desc = Các lệnh khối có thể ảnh hưởng đến rất nhiều khối
-commands.block.bulk.replace.desc = [TMP] Thay thế hàng loạt các khối xung quanh người chơi
+commands.block.bulk.replace.desc = Thay thế hàng loạt các khối xung quanh người chơi
 commands.block.bulk.replace.find.desc = Loại khối cần tìm
 commands.block.bulk.replace.replaceWith.desc = Loại khối để thay thế vào
 commands.block.bulk.replace.radius.desc = Bán kính tìm kiếm tính bằng chunk
+commands.block.bulk.replace.result = Đã tìm thấy và thay thế {count} {count, plural, one {khối} other {khối}} trong {time} {time, plural, one {giây} other {giây}}!
 commands.block.row.desc = Tạo các khối cơ bản khớp với ký tự đại diện (wildcard) trên một đường thẳng từ chân bạn theo hướng bạn đang nhìn
 commands.block.row.arg.desc = Một truy vấn khối bằng ký tự đại diện, ví dụ: "Furniture_*_Table"
 commands.block.row.nonefound = Không tìm thấy loại khối nào khớp với ký tự đại diện "{query}"
@@ -2563,7 +2579,7 @@ commands.block.inspectrotation.noblocks = Không tìm thấy khối nào bị xo
 commands.block.setticking.desc = Bật tiến trình (ticking) cho một khối tại vị trí được chỉ định
 commands.block.setticking.success = Khối tại ({x, number}, {y, number}, {z, number}) hiện đang hoạt động (ticking)
 commands.block.setstate.desc = Thiết lập trạng thái của một khối
-commands.block.setstate.arg.state = [TMP] Trạng thái để thiết lập cho khối
+commands.block.setstate.arg.state = Trạng thái để thiết lập cho khối
 commands.entityStats.success = Chỉ Số Thực Thể "{name}" Được Thiết Lập Thành {value}!
 commands.entityStats.entityStatNotFound = Không Tìm Thấy Chỉ Số Thực Thể "{name}"!
 commands.entityStats.valueReset = "{name}" Đã Được Đặt Lại: {value, number}
@@ -2660,6 +2676,20 @@ commands.network.serverknockback.desc = Bật/tắt dự đoán đẩy lùi (kno
 commands.network.debugknockback.desc = Bật/tắt gỡ lỗi vị trí đẩy lùi
 commands.network.knockbackServerPredictionEnabled = Dự đoán đẩy lùi máy chủ: {enabled}
 commands.network.knockbackDebugEnabled = Gỡ lỗi đẩy lùi: {enabled}
+commands.network.streamPriority.desc = Các lệnh cho các cài đặt ưu tiên luồng QUIC
+commands.network.streamPriority.channel = Kênh mạng
+commands.network.streamPriority.set.desc = Đặt mức độ ưu tiên luồng cho một kênh cụ thể
+commands.network.streamPriority.set.channel.desc = Kênh mạng (Default, Chunks, WorldMap)
+commands.network.streamPriority.set.priority.desc = Giá trị khẩn cấp (0-255, thấp hơn là ưu tiên cao hơn)
+commands.network.streamPriority.set.notQuic = Kênh '{channel}' không phải là một luồng QUIC
+commands.network.streamPriority.set.invalidPriority = Mức ưu tiên phải nằm trong khoảng từ 0 đến 255
+commands.network.streamPriority.set.success = Đã đặt mức ưu tiên luồng {channel} thành {priority} (tăng dần)
+commands.network.streamPriority.preset.desc = Áp dụng một bản thiết lập sẵn ưu tiên có tên
+commands.network.streamPriority.preset.name.desc = Tên bản thiết lập sẵn
+commands.network.streamPriority.preset.unknown = Bản thiết lập sẵn không xác định '{name}'. Các bản thiết lập sẵn hợp lệ: {presets}
+commands.network.streamPriority.preset.success = Đã áp dụng bản thiết lập sẵn '{name}' ({priorities})
+commands.network.streamPriority.reset.desc = Đặt lại các mức ưu tiên luồng về mặc định
+commands.network.streamPriority.reset.success = Đã đặt lại tất cả mức ưu tiên luồng về mặc định ({priorities})
 commands.networkChunkSending.noComponent = Người chơi thiếu thành phần ChunkTracker
 commands.networkChunkSending.set = Thiết lập gửi vùng dữ liệu mạng cho {username}: {enabled}
 commands.networkChunkSending.sendNetworkChunks.desc = Liệu Các Chunk Có Nên Được Gửi Qua Mạng Đến Chính Bạn Hay Không.
@@ -2777,16 +2807,14 @@ commands.npc.blackboard.chunk.notLoaded = Vùng dữ liệu chưa được tải
 commands.npc.blackboard.chunk.noEntry = Không tồn tại mục nhập nào
 commands.npc.blackboard.chunk.entries = ]\n Các mục nhập:\n
 commands.npc.blackboard.chunk.blockSet = Bộ khối (BlockSet): {id}\n  Các khối:
-commands.npc.blackboard.views.title = Các góc nhìn Bảng Đen:
+commands.npc.blackboard.views.title = Các góc nhìn Bảng Đen:\n
 commands.npc.blackboard.views.partialViews = Tổng số góc nhìn bán phần: {count}\nCác góc nhìn:\n
 commands.npc.blackboard.views.view = Góc nhìn ({x}, {z}) Thực Thể: {size}, Bộ khối: {cardinal}
-commands.npc.blackboard.chunks.chunkInfo = Thông tin vùng dữ liệu Bảng Đen:\n\
-  \tTổng số phân đoạn: {nb}\n\
-  \tCác phân đoạn vùng dữ liệu:\n
+commands.npc.blackboard.chunks.chunkInfo = Thông tin chunk bảng đen:\n\tTổng số phần: {nb}\n\tCác phần chunk:\n
 commands.npc.blackboard.chunks.detailed_entry = \t{x}, {y}, {z} ({count} mục nhập, {blockSets} Bộ khối)\n
 commands.npc.blackboard.chunk.entry = Mục nhập vùng dữ liệu Bảng Đen {index} ({chunkX}, {chunkY}, {chunkZ}):\n\
   Tọa độ lưới Bảng Đen bán phần: {regionChunkX}, {regionChunkZ}
-commands.npc.blackboard.view.title = Góc nhìn ({x}, {z})
+commands.npc.blackboard.view.title = Góc nhìn ({x}, {z})\n
 commands.npc.blackboard.view.coordinates = Trải dài tọa độ thế giới: ({x1}, {z1}) đến ({x2}, {z2})
 commands.npc.blackboard.view.noPartialViews = Không tồn tại góc nhìn bán phần nào
 commands.npc.blackboard.view.entities = ]\n Thực Thể ({count}):\n
@@ -2822,8 +2850,8 @@ commands.npc.debug.presets.preset.desc = Tên của thiết lập sẵn cần hi
 commands.npc.debug.currentFlags = Vai trò {role} - Các cờ gỡ lỗi hiện tại: {flags}
 commands.npc.debug.debugFlagsSet = Vai trò {role} - Các cờ gỡ lỗi được đặt thành: {flags}
 commands.npc.debug.presets.info = Các cờ gỡ lỗi NPC:\n{flags}\n\n Các thiết lập sẵn gỡ lỗi NPC:\n{presets}\n\n
-  Các thiết lập sẵn gỡ lỗi NPC:\n{presets}\n\n
-commands.npc.debug.preset.info = Các cờ gỡ lỗi NPC cho thiết lập sẵn {preset}:\n{flags}\n\n
+  Các thiết lập sẵn gỡ lỗi NPC:\n{presets}
+commands.npc.debug.preset.info = Các cờ gỡ lỗi NPC cho thiết lập sẵn {preset}:\n{flags}
 commands.npc.dump.desc = Trích xuất tất cả thông tin thành phần về một NPC
 commands.npc.dump.json = Trích xuất ở định dạng JSON
 commands.npc.flock.desc = Thêm hoặc xóa NPC khỏi một bầy (flock)
@@ -3053,6 +3081,10 @@ commands.auth.status.format = === Trạng thái xác thực máy chủ ===\n\
     Token định danh: {identityToken}\n\
     Hết hạn: {expiry}\n\
     Chứng chỉ: {certificate}
+commands.auth.status.remaining = còn lại {hours}:{minutes}:{seconds}
+commands.auth.status.expired = ĐÃ HẾT HẠN
+commands.auth.status.certificate.unknown = Không xác định
+commands.auth.status.certificate.notLoaded = Chưa tải
 commands.auth.status.connectionMode.authenticated = Đã xác thực (mTLS + JWT)
 commands.auth.status.connectionMode.offline = Ngoại tuyến
 commands.auth.status.connectionMode.insecure = Không an toàn (dev)
@@ -3144,6 +3176,151 @@ customUI.commandListPage.paramTypeFlag = Loại: Cờ (boolean)
 customUI.commandListPage.noDescription = Không có mô tả
 customUI.commandListPage.examples = Ví dụ: '{examples}'
 customUI.commandListPage.sendToChat = Gửi vào Chat
+customUI.commandListPage.aliases = Bí danh:
+customUI.commandListPage.permission = Quyền hạn:
+customUI.commandListPage.required = [Bắt buộc]
+customUI.commandListPage.optional = [Tùy chọn]
+customUI.commandListPage.flag = [Cờ]
+customUI.commandListPage.default = [Mặc định]
+customUI.uiGallery.title = Thư viện UI
+customUI.uiGallery.category.buttons = Nút
+customUI.uiGallery.category.buttons.desc = Các yếu tố Nút với nhiều kiểu dáng khác nhau bao gồm các biến thể chính, phụ, cấp ba và phá hủy.
+customUI.uiGallery.category.inputs = Trường Nhập liệu
+customUI.uiGallery.category.inputs.desc = Các yếu tố nhập văn bản bao gồm TextField, NumberField, và CompactTextField cho chức năng tìm kiếm.
+customUI.uiGallery.category.selection = Lựa chọn
+customUI.uiGallery.category.selection.desc = Các yếu tố lựa chọn bao gồm CheckBox, DropdownBox, và ColorPicker cho các lựa chọn của người dùng.
+customUI.uiGallery.category.containers = Thùng chứa
+customUI.uiGallery.category.containers.desc = Các thùng chứa và bảng bố cục bao gồm Panel, Container, DecoratedContainer, và các yếu tố phân cách.
+customUI.uiGallery.category.text = Văn bản & Nhãn
+customUI.uiGallery.category.text.desc = Các yếu tố kiểu chữ trưng bày các kiểu tiêu đề, kiểu nhãn, kích thước phông chữ và màu văn bản.
+customUI.uiGallery.category.sliders = Thanh trượt
+customUI.uiGallery.category.sliders.desc = Các yếu tố thanh trượt để chọn giá trị bao gồm thanh trượt số nguyên, thanh trượt số thực và các trường kết hợp thanh trượt-số.
+customUI.uiGallery.category.progress = Tiến trình & Đang tải
+customUI.uiGallery.category.progress.desc = Các chỉ số tiến trình bao gồm ProgressBar, CircularProgressBar, và Spinner hoạt họa cho các trạng thái đang tải.
+customUI.uiGallery.category.scrollbars = Thanh cuộn
+customUI.uiGallery.category.scrollbars.desc = Các kiểu thanh cuộn bao gồm mặc định, khoảng cách thêm và các biến thể mờ cho các thùng chứa cuộn.
+customUI.uiGallery.category.navigation = Điều hướng
+customUI.uiGallery.category.navigation.desc = Các yếu tố điều hướng Tab bao gồm các tab trên cùng để chuyển đổi thùng chứa và các tab tiêu đề để điều hướng nội dòng.
+customUI.uiGallery.category.tooltips = Chú giải công cụ
+customUI.uiGallery.category.tooltips.desc = Kiểu dáng chú giải công cụ để cung cấp trợ giúp theo ngữ cảnh và thông tin bổ sung khi di chuột.
+customUI.uiGallery.showCode = Hiển thị Mã
+customUI.uiGallery.searchPlaceholder = Tìm kiếm...
+customUI.uiGallery.buttons.section.primary = Nút Chính
+customUI.uiGallery.buttons.section.secondary = Nút Phụ
+customUI.uiGallery.buttons.section.tertiary = Nút Cấp ba
+customUI.uiGallery.buttons.section.destructive = Nút Phá hủy
+customUI.uiGallery.buttons.section.small = Nút Nhỏ
+customUI.uiGallery.buttons.section.icon = Nút Biểu tượng (Vuông)
+customUI.uiGallery.buttons.section.back = Nút Quay lại
+customUI.uiGallery.buttons.backButtonDesc = Nút quay lại điều hướng - thường được đặt ở góc dưới bên trái của các trang
+customUI.uiGallery.inputs.section.textField = Trường Văn bản
+customUI.uiGallery.inputs.section.numberField = Trường Số
+customUI.uiGallery.inputs.section.compactTextField = Compact TextField (Tìm kiếm)
+customUI.uiGallery.inputs.section.multilineTextField = Multiline TextField
+customUI.uiGallery.inputs.textFieldPlaceholder = Nhập văn bản tại đây...
+customUI.uiGallery.inputs.textFieldDesc = Nhập văn bản tiêu chuẩn
+customUI.uiGallery.inputs.numberFieldDesc = Chỉ nhập số
+customUI.uiGallery.inputs.compactTextFieldDesc = Mở rộng khi được tập trung
+customUI.uiGallery.inputs.multilinePlaceholder = Nhập nhiều dòng văn bản...
+customUI.uiGallery.selection.section.checkBox = CheckBox
+customUI.uiGallery.selection.section.checkBoxWithLabel = CheckBox kèm Nhãn
+customUI.uiGallery.selection.section.dropdownBox = Dropdown Box
+customUI.uiGallery.selection.section.colorPicker = Color Picker
+customUI.uiGallery.selection.uncheckedCheckbox = Hộp kiểm chưa chọn
+customUI.uiGallery.selection.checkedCheckbox = Hộp kiểm đã chọn
+customUI.uiGallery.selection.enableFeature = Bật tính năng
+customUI.uiGallery.selection.showAdvancedOptions = Hiển thị các tùy chọn nâng cao
+customUI.uiGallery.selection.option1 = Tùy chọn 1
+customUI.uiGallery.selection.option2 = Tùy chọn 2
+customUI.uiGallery.selection.option3 = Tùy chọn 3
+customUI.uiGallery.selection.standardDropdown = Trình thả xuống tiêu chuẩn
+customUI.uiGallery.selection.clickToOpenColorPicker = Nhấp để mở bộ chọn màu
+customUI.uiGallery.containers.section.panel = Bảng (@Panel)
+customUI.uiGallery.containers.section.panelWithTitle = Bảng kèm Tiêu đề (@PanelTitle)
+customUI.uiGallery.containers.section.container = Thùng chứa (@Container)
+customUI.uiGallery.containers.section.decoratedContainer = Thùng chứa Trang trí (@DecoratedContainer)
+customUI.uiGallery.containers.section.complexContainer = Ví dụ Thùng chứa Phức tạp
+customUI.uiGallery.containers.section.simpleContainer = Thùng chứa Đơn giản (@SimpleContainer)
+customUI.uiGallery.containers.section.separators = Thanh phân cách
+customUI.uiGallery.containers.panelDesc = Đây là một bảng cơ bản với kết cấu nền và viền mặc định.
+customUI.uiGallery.containers.panelTitleExample = Ví dụ Tiêu đề Bảng
+customUI.uiGallery.containers.panelTitleContent = Nội dung bên dưới tiêu đề có tên.
+customUI.uiGallery.containers.containerTitle = Tiêu đề Thùng chứa
+customUI.uiGallery.containers.containerContent = Thùng chứa với tiêu đề và thân nội dung.
+customUI.uiGallery.containers.decoratedTitle = Tiêu đề Trang trí
+customUI.uiGallery.containers.decoratedContent = Với các họa tiết trang trí ở trên và dưới.
+customUI.uiGallery.containers.complexDesc = Thùng chứa với các tab trên cùng, tab tiêu đề và tìm kiếm - kết hợp nhiều kiểu điều hướng.
+customUI.uiGallery.containers.complexContent = Thùng chứa này trình diễn một bố cục phức tạp với các tab trên cùng cho các phần chính, các tab tiêu đề để chuyển đổi chế độ xem và một trường tìm kiếm tích hợp.
+customUI.uiGallery.containers.tabMain = Chính
+customUI.uiGallery.containers.tabSettings = Cài đặt
+customUI.uiGallery.containers.tabInfo = Thông tin
+customUI.uiGallery.containers.tabListView = Chế độ Danh sách
+customUI.uiGallery.containers.tabGridView = Chế độ Lưới
+customUI.uiGallery.containers.simpleContainerContent = Một thùng chứa tối giản với nền và khoảng đệm đơn giản.
+customUI.uiGallery.containers.contentSeparatorDesc = @ContentSeparator - Đường ngang đơn giản
+customUI.uiGallery.containers.fancySeparatorDesc = @PanelSeparatorFancy - Thanh phân cách trang trí
+customUI.uiGallery.text.section.titleStyles = Kiểu Tiêu đề
+customUI.uiGallery.text.section.commonColors = Màu Văn bản Phổ biến
+customUI.uiGallery.text.section.gradientMask = Mặt nạ Văn bản Gradient (@TextHighlightGradientMask)
+customUI.uiGallery.text.titleLabelDesc = @TitleLabel - FontSize: 40, Căn giữa
+customUI.uiGallery.text.titleDesc = @Title - Phông chữ phụ, viết hoa, đậm
+customUI.uiGallery.text.subtitleDesc = @Subtitle - FontSize: 15, viết hoa, tắt tiếng
+customUI.uiGallery.text.colorDefault = @ColorDefault - Trắng (mặc định)
+customUI.uiGallery.text.colorDefaultLabel = @ColorDefaultLabel - Tắt tiếng (nhãn mặc định)
+customUI.uiGallery.text.colorBlueAccent = @ColorBlueAccent - Điểm nhấn xanh lam
+customUI.uiGallery.text.colorBlueAccentHovered = @ColorBlueAccentHovered - Điểm nhấn xanh lam (khi di chuột)
+customUI.uiGallery.text.colorBlueAccentPressed = @ColorBlueAccentPressed - Điểm nhấn xanh lam (khi nhấn)
+customUI.uiGallery.text.colorGoldHighlight = @ColorGoldHighlight - Làm nổi bật vàng
+customUI.uiGallery.text.colorGrayCaption = @ColorGrayCaption - Chú thích xám
+customUI.uiGallery.text.colorButtonText = @ColorButton - Văn bản nút
+customUI.uiGallery.text.highlightedGradientText = Văn bản Gradient được Làm nổi bật
+customUI.uiGallery.text.gradientMaskDesc = Bọc trong một Group với LayoutMode: Left để mặt nạ áp dụng cho các giới hạn văn bản, không phải toàn bộ chiều rộng.
+customUI.uiGallery.sliders.section.slider = Thanh trượt
+customUI.uiGallery.sliders.section.floatSlider = Thanh trượt Số thực
+customUI.uiGallery.sliders.section.sliderWithNumberField = Thanh trượt kèm Trường Số
+customUI.uiGallery.sliders.integerSliderDesc = Thanh trượt số nguyên (0-100)
+customUI.uiGallery.sliders.value25 = Giá trị: 25
+customUI.uiGallery.sliders.floatSliderDesc = Thanh trượt số thực (0.0-1.0)
+customUI.uiGallery.sliders.combinedControl = Điều khiển kết hợp
+customUI.uiGallery.progress.section.spinner = Spinner
+customUI.uiGallery.progress.section.progressBar = Thanh Tiến trình
+customUI.uiGallery.progress.section.circularProgressBar = Thanh Tiến trình Vòng tròn
+customUI.uiGallery.progress.spinnerDesc = @DefaultSpinner - Chỉ báo tải hoạt họa 32x32
+customUI.uiGallery.progress.percent25 = Hoàn thành 25%
+customUI.uiGallery.progress.percent75 = Hoàn thành 75%
+customUI.uiGallery.progress.percent100 = Hoàn thành 100%
+customUI.uiGallery.progress.circularPercentages = 33%, 66%, 100%
+customUI.uiGallery.scrollbars.section.default = Kiểu Thanh cuộn Mặc định
+customUI.uiGallery.scrollbars.section.extraSpacing = Kiểu Thanh cuộn Khoảng cách Thêm
+customUI.uiGallery.scrollbars.section.translucent = Kiểu Thanh cuộn Mờ
+customUI.uiGallery.scrollbars.defaultContent = Khu vực nội dung này sử dụng @DefaultScrollbarStyle.\n\nThanh cuộn xuất hiện khi nội dung vượt quá chiều cao thùng chứa.\n\nDòng 1\nDòng 2\nDòng 3\nDòng 4\nDòng 5\nDòng 6
+customUI.uiGallery.scrollbars.extraSpacingContent = @DefaultExtraSpacingScrollbarStyle\n\nGiống như mặc định nhưng có khoảng cách 12px so với nội dung.\n\nThêm các dòng...\nThêm các dòng...
+customUI.uiGallery.scrollbars.translucentContent = @TranslucentScrollbarStyle\n\nKhông có rãnh nền, chỉ hiển thị khi di chuột.\n\nDi chuột để xem thanh cuộn...\nThêm nội dung...
+customUI.uiGallery.navigation.section.topTabs = Tab Trên cùng (@TopTabsStyle)
+customUI.uiGallery.navigation.section.headerTabs = Tab Tiêu đề (@HeaderTabsStyle)
+customUI.uiGallery.navigation.topTabsDesc = Các tab biểu tượng lớn được đặt phía trên các thùng chứa. Các tab hoạt họa khi di chuột/nhấn và nâng lên khi được chọn.
+customUI.uiGallery.navigation.headerTabsDesc = Các tab biểu tượng nhỏ gọn để sử dụng trong các tiêu đề thùng chứa. Biểu tượng mờ đi khi không được chọn.
+customUI.uiGallery.navigation.tabOne = Tab Một
+customUI.uiGallery.navigation.tabTwo = Tab Hai
+customUI.uiGallery.navigation.tabThree = Tab Ba
+customUI.uiGallery.navigation.tabContentArea = Khu vực Nội dung Tab
+customUI.uiGallery.navigation.tabContent = Nội dung Tab
+customUI.uiGallery.navigation.first = Thứ nhất
+customUI.uiGallery.navigation.second = Thứ hai
+customUI.uiGallery.navigation.third = Thứ ba
+customUI.uiGallery.navigation.headerTabsSeparator = Với thanh phân cách giữa các tab
+customUI.uiGallery.tooltips.section.defaultTooltip = Chú giải Văn bản Mặc định (@DefaultTextTooltipStyle)
+customUI.uiGallery.tooltips.section.variousElements = Chú giải công cụ trên Nhiều Yếu tố khác nhau
+customUI.uiGallery.tooltips.hoverDescription = Di chuột lên các yếu tố bên dưới để xem chú giải công cụ hoạt động.
+customUI.uiGallery.tooltips.simpleTooltip = Đây là một chú giải công cụ đơn giản.
+customUI.uiGallery.tooltips.buttonWithTooltip = Nút kèm chú giải công cụ
+customUI.uiGallery.tooltips.contextTooltip = Chú giải công cụ có thể cung cấp thêm ngữ cảnh hoặc văn bản trợ giúp cho các yếu tố UI.
+customUI.uiGallery.tooltips.longerTooltip = Chú giải công cụ dài hơn (ngắt dòng)
+customUI.uiGallery.tooltips.enableDisableFeature = Bật hoặc tắt tính năng này
+customUI.uiGallery.tooltips.checkboxWithTooltip = Hộp kiểm kèm chú giải công cụ
+customUI.uiGallery.tooltips.anyElementTooltip = Bạn có thể thêm chú giải công cụ vào bất kỳ yếu tố nào.
+customUI.uiGallery.tooltips.hoverThisArea = Di chuột vào khu vực này
+customUI.uiGallery.tooltips.groupWithTooltip = Nhóm kèm chú giải công cụ
 customUI.warpListPage.warps = Điểm dịch chuyển
 customUI.warpListPage.noWarps = Chưa có điểm dịch chuyển nào được thiết lập
 customUI.prefabListPage.title = Cấu trúc (Prefabs)
@@ -3170,6 +3347,8 @@ customUI.instanceListPage.button.spawn = Tạo
 customUI.instanceListPage.button.load = Chỉnh sửa
 customUI.instanceListPage.searchPlaceholder = Tìm kiếm phiên bản...
 customUI.playSoundPage.play = Phát âm thanh
+customUI.playSoundPage.volume = Âm lượng (dB)
+customUI.playSoundPage.pitch = Cao độ (st)
 customUI.tintChunkPage.title = Tô màu vùng dữ liệu
 customUI.tintChunkPage.applyTint = Áp dụng màu
 customUI.tintChunkPage.sigma = Sigma
@@ -3365,6 +3544,7 @@ customUI.objImport.sizeMode.scale = Tỷ lệ
 customUI.objImport.height = Chiều cao (khối):
 customUI.objImport.scale = Tỷ lệ:
 customUI.objImport.blockPattern = Mẫu khối lấp đầy:
+customUI.objImport.blockPattern.placeholder = [TMP] Rock_Stone hoặc 50%Rock_Stone,50%Rock_Basalt
 customUI.objImport.fillSolid = Lấp đầy đặc (bỏ chọn nếu muốn vỏ rỗng)
 customUI.objImport.useMaterials = Sử dụng vật liệu từ tệp .mtl
 customUI.objImport.autoDetectTextures = Tự động phát hiện kết cấu (cho các bản trích xuất bị lỗi)
@@ -3518,7 +3698,7 @@ worldmap.markers.edit.notFound = Không thể tìm thấy điểm đánh dấu b
 
 instances.forgotten_temple.title = Đền thờ bị lãng quên
 instances.forgotten_temple.subtitle = Rìa của tiếng vọng
-instances.creative_hub.title = Hội tụ
+instances.creative_hub.title = Ngã rẽ
 instances.creative_hub.subtitle = Vũ trụ sáng tạo
 
 # === interactionHints ===
@@ -3530,9 +3710,12 @@ interactionHints.edit = Nhấn [{key}] để chỉnh sửa
 interactionHints.turnon = Nhấn [{key}] để bật
 interactionHints.turnoff = Nhấn [{key}] để tắt
 interactionHints.sit = Nhấn [{key}] để ngồi
+interactionHints.tame = Nhấn [{key}] để thuần hóa
+interactionHints.feed = Nhấn [{key}] để cho ăn
 interactionHints.harvest = Nhấn [{key}] để thu hoạch {name}
-interactionHints.trade = Nhấn [{key}] để Giao dịch
-interactionHints.mount = Nhấn [{key}] để Cưỡi
+interactionHints.pet = Nhấn [{key}] để vuốt ve
+interactionHints.trade = Nhấn [{key}] để giao dịch
+interactionHints.mount = Nhấn [{key}] để cưỡi
 interactionHints.burst = Nhấn [{key}] để làm vỡ {name}
 interactionHints.pickup = Nhấn [{key}] để nhặt {name}
 
@@ -3548,10 +3731,10 @@ interactions.sleep.notWithinHours = Bạn không thể ngủ vào giờ này.
 interactions.sleep.durationHours = {hours}giờ {mins}phút
 interactions.sleep.durationMins = {mins}phút
 interactions.sleep.sleepAtTheseHours = Bạn có thể Ngủ bắt đầu lúc {timeValue, time}. (trong {until})
-interactions.sleep.notificationSingle = [TMP] {player} đang ở trên giường chờ đi ngủ!
-interactions.sleep.notificationSmall = [TMP] có {sleepers} người chơi đang chờ bạn đi ngủ!
-interactions.sleep.notificationBig = [TMP] có {sleepers} trên tổng số {total} người chơi đang ở trên giường chờ đi ngủ!
-interactions.sleep.notificationSingleEnter = [TMP] {player} đã lên giường để đi ngủ!
+interactions.sleep.notificationSingle = {player} đang ở trên giường chờ để ngủ!
+interactions.sleep.notificationSmall = {sleepers} {sleepers, plural, one {người chơi} other {người chơi}} đang chờ bạn đi ngủ!
+interactions.sleep.notificationBig = {sleepers} trên tổng số {total} người chơi {sleepers, plural, one {đang} other {đang}} ở trên giường chờ để ngủ!
+interactions.sleep.notificationSingleEnter = {player} đã leo lên giường để ngủ!
 
 # === io ===
 
@@ -3870,7 +4053,7 @@ items.Container_Bucket_Water.name = Xô Gỗ (Nước)
 items.Container_Bucket_Water.description = Chứa <color is="#ffffff">Nước</color> có thể đặt ra thế giới.
 items.Container_Bucket_Milk.name = Xô Gỗ (Sữa)
 items.Container_Bucket_Milk.description = Chứa <color is="#ffffff">Sữa</color> có thể uống để nhận hiệu ứng <color is="#ffffff">Giải độc</color>.
-items.Container_Bucket_Mosshorn_Milk.name = Xô Gỗ (Sữa Mosshorn)
+items.Container_Bucket_Mosshorn_Milk.name = Xô Gỗ (Sữa Bò Sừng Rêu)
 items.Container_Bucket_Mosshorn_Milk.description = <i>Có lẽ bạn không nên uống thứ này...</i>
 items.Debug_Armor_D_Chest_Of_Damage_Reduction.name = Giáp Thân Da gỡ lỗi giảm sát thương
 items.Debug_Armor_D_Hands_Of_Regeneration.name = Găng Tay Da gỡ lỗi hồi phục
@@ -3917,7 +4100,7 @@ items.Deco_Bucket_Water.name = Xô Cổ Đại (Nước)
 items.Deco_Bucket_Water.description = Chứa <color is="#ffffff">Nước</color> có thể đặt ra thế giới.
 items.Deco_Bucket_Milk.name = Xô Cổ Đại (Sữa)
 items.Deco_Bucket_Milk.description = Chứa <color is="#ffffff">Sữa</color> có thể uống để nhận hiệu ứng <color is="#ffffff">Giải độc</color>.
-items.Deco_Bucket_Mosshorn_Milk.name = Xô Cổ Đại (Sữa Mosshorn)
+items.Deco_Bucket_Mosshorn_Milk.name = Xô Cổ Đại (Sữa Bò Sừng Rêu)
 items.Deco_Bucket_Mosshorn_Milk.description = <i>Có lẽ bạn không nên uống thứ này...</i>
 items.Deco_Campfire_Off.name = Lửa trại cũ
 items.Deco_Chair_Scrap.name = Ngai Vàng Yêu Tinh
@@ -5206,7 +5389,7 @@ items.Plant_Seeds_Rice_Eternal.description = Trồng Lúa
 items.Plant_Seeds_Sallow.name = Túi Hạt Giống Liễu Tơ
 items.Plant_Seeds_Spiral.name = Túi Hạt Giống Cây Xoắn
 items.Plant_Seeds_Stamina1.name = Túi Hạt Giống Kế Bão
-items.Plant_Seeds_Stamina2.name = Túi Bào Tử Nấm Mũ Bão
+items.Plant_Seeds_Stamina2.name = Túi Mầm Nấm Mũ Bão
 items.Plant_Seeds_Stamina3.name = Túi Hạt Giống Cây Bão Non
 items.Plant_Seeds_Sunflower.name = Túi Hạt Giống Hướng Dương
 items.Plant_Seeds_Test_Tree.name = Túi Hạt Giống cây thử nghiệm
@@ -5270,11 +5453,11 @@ items.PortalKey_Henges.description = <msg key="server.items.PortalKey.descriptio
 items.Portal_Device.name = Cổng cổ đại
 items.Portal_Device.description = Đặt cái này tại căn cứ của bạn để phá vỡ các rào cản và du hành đến các Mảnh không gian khác!<i>\nĐang trong quá trình phát triển.\n\nMặc dù lời nguyền giữ cho Orbis của Gaia bị khóa chặt, vẫn có những cách để xuyên qua Hư không đang che phủ nó.</i>
 items.Hub_Portal_Zone3_Taiga1.name = Cổng Taiga Khu vực 3
-items.Hub_Portal_Zone3_Taiga1.description = Cổng dịch chuyển bạn đến Taiga Khu vực 3, được sử dụng trong Trung tâm sáng tạo
+items.Hub_Portal_Zone3_Taiga1.description = Cổng dịch chuyển đưa bạn tới Rừng Taiga Vùng 3. Được sử dụng trong Ngã rẽ.
 items.Hub_Portal_Default.name = Cổng tạo thế giới Thám hiểm
-items.Hub_Portal_Default.description = Cổng dịch chuyển bạn đến Thế giới thám hiểm, được sử dụng trong Trung tâm sáng tạo
+items.Hub_Portal_Default.description = Cổng dịch chuyển đưa bạn tới Thế giới Khám phá. Được sử dụng trong Ngã rẽ.
 items.Hub_Portal_Flat.name = Cổng tạo thế giới Phẳng
-items.Hub_Portal_Flat.description = Cổng dịch chuyển bạn đến Thế giới phẳng, được sử dụng trong Trung tâm sáng tạo
+items.Hub_Portal_Flat.description = Cổng dịch chuyển đưa bạn tới Thế giới Phẳng. Được sử dụng trong Ngã rẽ.
 items.Instance_Gateway.name = Cửa ngõ phiên bản
 items.Instance_Gateway.description = Một cửa ngõ cho phép bạn du hành đến các phiên bản khác nhau. Tương tác với nó để cấu hình điểm đến.
 items.Portal_Return.name = Cổng quay về
@@ -6061,7 +6244,7 @@ items.Tool_Capture_Crate.name = Thùng bắt thú
 items.Tool_Capture_Crate.nameFull = Thùng bắt thú ({npc})
 items.Tool_Capture_Crate.description = Được dùng để bắt các động vật nhỏ nhằm đưa chúng về nhà bạn.
 items.Tool_Feedbag.name = Túi thức ăn
-items.Tool_Feedbag.description = Một túi thức ăn chăn nuôi. Cầm vật phẩm này có thể dụ được một số động vật.
+items.Tool_Feedbag.description = Một túi thức ăn cho động vật. Có thể được sử dụng để dụ dỗ các động vật đã thuần hóa.
 items.Tool_Fertilizer.name = Túi phân bón
 items.Tool_Fertilizer.description = Dùng để bón cho đất đã xới. Cây trồng được bón phân mọc nhanh hơn <color is="#4ade80">2 lần</color>.
 items.Tool_Fishing_Trap.name = Bẫy cá
@@ -6072,8 +6255,6 @@ items.Tool_Growth_Potion.name = Thuốc tăng trưởng giai đoạn
 items.Tool_Growth_Potion.description = Công cụ nhà phát triển. Chuột trái để giảm giai đoạn, chuột phải để tăng giai đoạn. Hoạt động trên bất kỳ khối canh tác nào.
 items.Tool_Hammer_Crude.name = Búa Xây Dựng Thô Sơ
 items.Tool_Hammer_Crude.description = Được dùng để thay đổi diện mạo của các khối xây dựng cấu trúc.
-items.Tool_Hammer_Iron.name = Búa Xây Dựng Sắt
-items.Tool_Hammer_Crude.description = Được dùng để thay đổi hình dạng của các khối xây dựng cấu trúc.
 items.Tool_Hammer_Iron.name = Búa Sắt
 items.Tool_Hammer_Iron.description = Được dùng để thay đổi hình dạng của các khối xây dựng cấu trúc.\n\nMột phiên bản cải tiến của búa Thô Sơ với độ bền cao hơn.
 items.Tool_Hatchet_Adamantite.name = Rìu nhỏ Adamantite
@@ -6870,13 +7051,13 @@ items.Rock_Limestone_Cobble_Half.name = Phiến Đá Cuội vôi
 items.Rock_Limestone_Cobble_Pillar_Base.name = Trụ Đá Cuội vôi - Chân
 items.Rock_Limestone_Cobble_Pillar_Middle.name = Trụ Đá Cuội vôi - Thân
 items.Rock_Limestone_Cobble_Stairs.name = Cầu thang Đá Cuội vôi
-items.Rock_Lime.name = [TMP] Đá Vôi
-items.Rock_Lime_Stalactite_Large.name = [TMP] Chuông Đá Vôi - Lớn
-items.Rock_Lime_Stalactite_Small.name = [TMP] Chuông Đá Vôi - Nhỏ
-items.Rubble_Lime.name = [TMP] Đá Vụn Vôi
-items.Rubble_Lime_Medium.name = [TMP] Đá Vụn Vôi - Trung Bình
+items.Rock_Lime.name = Đá Vôi
+items.Rock_Lime_Stalactite_Large.name = Chuông Đá Vôi - Lớn
+items.Rock_Lime_Stalactite_Small.name = Chuông Đá Vôi - Nhỏ
+items.Rubble_Lime.name = Đá Vụn Vôi
+items.Rubble_Lime_Medium.name = Đá Vụn Vôi - Trung Bình
 items.Rubble_Lime.description = [TMP] Cũng có thể thu được bằng cách đập nhỏ đá cuội trong một <item is="Bench_Salvage"/>.
-items.Soil_Gravel_Lime.name = [TMP] Sỏi Đá Vôi
+items.Soil_Gravel_Lime.name = Sỏi Đá Vôi
 items.Rock_Peachstone_Brick.name = Gạch Đá đào
 items.Rock_Peachstone_Brick_Half.name = Phiến Gạch Đá đào
 items.Rock_Peachstone_Brick_Pillar_Base.name = Trụ Gạch Đá đào - Chân
@@ -6929,7 +7110,7 @@ items.Rock_Salt.name = Khối muối
 items.Rock_Salt.description = Có thể tinh luyện tại <item is="Bench_Cooking"/>.
 items.Rock_Salt_Half.name = Phiến muối
 items.Rock_Slate_Cobble_Corner.name = Đá Cuội Phiến - Góc
-items.Plant_Fruit_Apple.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
+items.Plant_Fruit_Apple.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>\nĐược yêu thích bởi <color is="#ffffff">Dê</color>, <color is="#ffffff">Cừu Đực</color> và <color is="#ffffff">Cừu Hoang</color>.
 items.Plant_Fruit_Berries_Red.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
 items.Plant_Fruit_Berries_Blue.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
 items.Plant_Fruit_Orange.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
@@ -6941,18 +7122,18 @@ items.Plant_Fruit_Pinkberry.description = [TMP] Hồi phục ngay lập tức <c
 items.Plant_Fruit_Poison.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
 items.Plant_Fruit_Spiral.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
 items.Plant_Fruit_Windwillow.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
-items.Plant_Crop_Carrot_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
-items.Plant_Crop_Corn_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
-items.Plant_Crop_Potato_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
-items.Plant_Crop_Pumpkin_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
-items.Plant_Crop_Onion_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
-items.Plant_Crop_Lettuce_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
-items.Plant_Crop_Turnip_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
-items.Plant_Crop_Tomato_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
+items.Plant_Crop_Carrot_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>\nĐược yêu thích bởi <color is="#ffffff">Thỏ</color>, <color is="#ffffff">Thỏ Con</color> và <color is="#ffffff">Ngựa</color>.
+items.Plant_Crop_Corn_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>\nĐược yêu thích bởi <color is="#ffffff">Gà</color> và <color is="#ffffff">Gà Tây</color>.
+items.Plant_Crop_Potato_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>\nĐược yêu thích bởi <color is="#ffffff">Bò Sừng Rêu</color>.
+items.Plant_Crop_Pumpkin_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>\nĐược yêu thích bởi <color is="#ffffff">Lợn Rừng</color>.
+items.Plant_Crop_Onion_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>\nĐược yêu thích bởi <color is="#ffffff">Lợn Bướu</color>.
+items.Plant_Crop_Lettuce_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>\nĐược yêu thích bởi <color is="#ffffff">Bò</color> và <color is="#ffffff">Cừu</color>.
+items.Plant_Crop_Turnip_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>\nĐược yêu thích bởi <color is="#ffffff">Lợn</color>.
+items.Plant_Crop_Tomato_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>\nĐược yêu thích bởi <color is="#ffffff">Lạc Đà</color>.
 items.Plant_Crop_Rice_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
-items.Plant_Crop_Cauliflower_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
-items.Plant_Crop_Chilli_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
-items.Plant_Crop_Aubergine_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
+items.Plant_Crop_Cauliflower_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>\nĐược yêu thích bởi <color is="#ffffff">Bò Tót</color>.
+items.Plant_Crop_Chilli_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>\nĐược yêu thích bởi <color is="#ffffff">Skrills</color>.
+items.Plant_Crop_Aubergine_Item.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>\nĐược yêu thích bởi <color is="#ffffff">Lợn Hoang</color>.
 items.Plant_Mushroom_Brown.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
 items.Plant_Mushroom_Red.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
 items.Food_Vegetable_Cooked.description = [TMP] Hồi phục ngay lập tức <color is="#ffffff">5%</color> máu và ban cho:\n\n• <color is="#ffffff">Hồi Phục Máu I</color>\n• <color is="#ffffff">Tăng Thể Lực I</color>\n\nThời gian: <color is="#ffffff">0:45</color>
@@ -6997,6 +7178,7 @@ map.region.Zone1_Spawn = Cổng Đầu Tiên Của Vang Vọng
 map.region.Zone1_Tier1 = Đồng Bằng Trôi Dạt
 map.region.Zone1_Tier2 = Rừng Cây Mầm
 map.region.Zone1_Tier3 = Đầm Lầy
+map.region.Zone1_Temple = [TMP] Đền Thờ
 map.region.Zone2_Tier1 = Thảo Nguyên Vàng
 map.region.Zone2_Tier2 = Vùng Đất Xấu
 map.region.Zone2_Tier3 = Lưu Vực Hoang Vắng
@@ -7009,6 +7191,7 @@ map.region.Oceans = Độ Sâu Pha Lê
 map.region.ForgottenTemple = Ngôi Đền Bị Lãng Quên
 
 map.markers.death = Cái Chết (Ngày {day})
+map.returnToHub = Quay lại Ngã rẽ
 
 # === memories ===
 
@@ -7038,9 +7221,9 @@ memories.unlock.bullet3 = Túi đồ của bạn giờ đây có thể lưu tr�
 memories.unlock.discoverMemories = Khám phá Hồi Ức
 
 memories.general.title = Hồi Ức
-memories.general.noMemories = Không có Hồi Ức nào để ghi lại
+memories.general.noMemories = Không có ký ức nào để khôi phục
 memories.general.categories = Danh mục
-memories.general.recordNum = Ghi lại {count, number} {count, plural, one {Hồi Ức} other {Hồi Ức}}
+memories.general.recordNum = Khôi phục {count, number} {count, plural, one {Hồi Ức} other {Hồi Ức}}
 memories.general.collected = Đã thu thập Hồi Ức mới! Đã khám phá ra '{memoryTitle}'!
 memories.general.featureUnlockedNotification = Đã mở khóa Hồi Ức! Hãy khám phá các phiên bản khác nhau của Orbis để thu thập Hồi Ức!
 memories.general.featureUnlockedMessage = Bạn đã mở khóa tính năng Hồi Ức!\nKhi chạm trán các sinh vật, bạn sẽ thu thập các Hồi Ức được lưu trong kho đồ.\nHãy mang những Hồi Ức này về Trái tim của Orbis để ghi lại chúng và mở khóa phần thưởng!
@@ -7091,10 +7274,10 @@ modules.blockset.setNotFound = Không tìm thấy {name}
 modules.interaction.interactedWith = Đã tương tác với loại '{interactionType}' bằng vật phẩm '{item}' với khối '{block}' tại vị trí {pos}!
 modules.interaction.failedGetActiveSlot = Kiểm tra getActiveSlot thất bại: {server} != {packet}
 modules.interaction.builderToolInteractionError = Tương tác BuilderTool đã gửi tới máy chủ nhưng lẽ ra không nên!
-modules.interaction.failedCheck = [TMP] Đặt khối thất bại!
-modules.interaction.failedCheckBlock = [TMP] Đặt khối thất bại, loại khối không hợp lệ!
-modules.interaction.failedCheckEmpty = [TMP] Đặt khối thất bại, loại khối đang trống!
-modules.interaction.failedCheckUnknown = [TMP] Đặt khối thất bại, loại khối không xác định!
+modules.interaction.failedCheck = Đặt khối thất bại!
+modules.interaction.failedCheckBlock = Đặt khối thất bại: loại khối không hợp lệ!
+modules.interaction.failedCheckEmpty = Đặt khối thất bại: loại khối đang trống!
+modules.interaction.failedCheckUnknown = Đặt khối thất bại: loại khối không xác định!
 modules.interaction.failedAddBackAfterFailedPlace = Không thể hoàn trả vật phẩm vào kho đồ sau khi đặt khối thất bại!
 modules.interaction.overlappingBlocks = Cố gắng đặt khối ở vị trí không hợp lệ! Khối bị cHồng chéo.
 modules.interaction.buildForbidden = Bạn không được phép xây dựng ở đây!
@@ -7300,7 +7483,8 @@ npcRoles.Minnow.name = Cá tuế
 npcRoles.Molerat.name = Chuột chũi
 npcRoles.Moose_Bull.name = Nai sừng tấm đực
 npcRoles.Moose_Cow.name = Nai sừng tấm cái
-npcRoles.Mosshorn.name = Mosshorn
+npcRoles.Mosshorn.name = Bò Sừng Rêu
+npcRoles.Mosshorn_Plain.name = Bò Sừng Rêu Đồng Bằng
 npcRoles.Mouflon.name = Cừu Mouflon
 npcRoles.Mouflon_Lamb.name = Cừu non Mouflon
 npcRoles.Mouse.name = Chuột
@@ -7320,6 +7504,8 @@ npcRoles.Penguin.name = Chim cánh cụt
 npcRoles.Pig.name = Lợn
 npcRoles.Pig_Piglet.name = Lợn con
 npcRoles.Pig_Undead.name = Lợn xác sống
+npcRoles.Pig_Wild.name = [TMP] Lợn Hoang
+npcRoles.Pig_Wild_Piglet.name = [TMP] Lợn Hoang Con
 npcRoles.Pigeon.name = Bồ câu
 npcRoles.Pike.name = Cá chó
 npcRoles.Piranha.name = Cá Piranha
@@ -7690,7 +7876,7 @@ npcRoles.Tuluk_Fisherman.name = Ngư dân Tuluk
 npcRoles.Turkey.name = Gà tây
 npcRoles.Turkey_Chick.name = Gà tây con
 npcRoles.Vulture.name = Kền kền
-npcRoles.Warthog.name = Lợn rừng Châu Phi
+npcRoles.Warthog.name = Lợn Bướu
 npcRoles.Warthog_Piglet.name = Lợn rừng con
 npcRoles.Werewolf.name = Người sói
 npcRoles.Whale_Humpback.name = Cá voi lưng gù
@@ -7748,7 +7934,14 @@ objectives.Objective_Tutorial.taskSet.4.task.0 = Thu thập vật liệu và ch�
 objectives.bounty.marker = Mục Tiêu Tiền Thưởng
 objectives.treasure.marker = Rương
 objectives.itemObjectiveCompletion = Đã Nhận: {item}
-
+objectives.Objective_Bounty.title = [TMP] Mục tiêu săn tiền thưởng
+objectives.Objective_Bounty.taskSet.0.task.0 = [TMP] Tiêu diệt Trork ở gần đây.
+objectives.Objective_KillSpawnBeacon.title = [TMP] Mục tiêu tiêu diệt điểm hiệu triệu
+objectives.Objective_KillSpawnBeacon.taskSet.0.task.0 = [TMP] Tiêu diệt các Trork ở gần đây.
+objectives.Objective_KillSpawnMarker.title = [TMP] Mục tiêu tiêu diệt điểm đánh dấu sinh quái
+objectives.Objective_KillSpawnMarker.taskSet.0.task.0 = [TMP] Tiêu diệt các Trork ở gần đây.
+objectives.Objective_ReachLocation.title = [TMP] Mục tiêu đi tới vị trí
+objectives.Objective_ReachLocation.taskSet.0.task.0 = [TMP] Đi tới vị trí mục tiêu.
 # === portals ===
 
 portals.desert = Sa mạc Gào thét
@@ -7897,12 +8090,12 @@ universe.worldpath.removedIndex = Đã xóa {index}!
 universe.worldpath.noPointsDefined = Bạn chưa xác định điểm nào!
 universe.worldpath.saved = Đường dẫn đã được lưu!
 universe.backup.error = Đã xảy ra lỗi khi tạo bản sao lưu: {message}
-universe.worldRemoved = [TMP] Thế giới bạn vừa ở đã bị xóa và bạn đã được gửi trở lại thế giới mặc định
-universe.worldCrash.unknown = [TMP] Thế giới bạn vừa ở đã bị lỗi và bạn đã được gửi trở lại thế giới mặc định
-universe.worldCrash.mod = [TMP] Thế giới bạn vừa ở đã bị lỗi (có thể gây ra bởi {mod}) và bạn đã được gửi trở lại thế giới mặc định
+universe.worldRemoved = Thế giới bạn vừa ở đã bị xóa và bạn đã được gửi trở lại thế giới mặc định
+universe.worldCrash.unknown = Thế giới bạn vừa ở đã bị lỗi và bạn đã được gửi trở lại thế giới mặc định
+universe.worldCrash.mod = Thế giới bạn vừa ở đã bị lỗi (có thể gây ra bởi {mod}) và bạn đã được gửi trở lại thế giới mặc định
 
-pluginManager.outOfDatePlugins = [TMP] Một hoặc nhiều plugin đang nhắm tới một phiên bản máy chủ khác. Khuyến nghị cập nhật các plugin này để đảm bảo tính tương thích.
-assetModule.outOfDatePacks = [TMP] Một hoặc nhiều gói tài nguyên đang nhắm tới một phiên bản máy chủ cũ hơn. Khuyến nghị cập nhật các plugin này để đảm bảo tính tương thích.
+pluginManager.outOfDatePlugins = Một hoặc nhiều plugin đang nhắm tới một phiên bản máy chủ khác. Khuyến nghị cập nhật các plugin này để đảm bảo tính tương thích.
+assetModule.outOfDatePacks = Một hoặc nhiều gói tài nguyên đang nhắm tới phiên bản máy chủ cũ hơn. Bạn nên cập nhật các gói tài nguyên này để đảm bảo tính tương thích.
 
 # === world ===
 

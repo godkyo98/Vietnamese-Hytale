@@ -686,12 +686,12 @@ builderTools.legend.MachinimaTool.Page8.SmoothBezier = Làm mượt tay cầm
 builderTools.legend.MachinimaTool.Page8.EnableSpline = Bật spline
 
 builderTools.legend.MachinimaTool.Page9.Title = Lệnh Console
-builderTools.legend.MachinimaTool.Page9.SceneCommands = Cảnh: .mach scene [list | add | remove | save | load | copy | set | rename | rotate | clear]
+builderTools.legend.MachinimaTool.Page9.SceneCommands = Cảnh: .mach scene [load | copy | rename]
 builderTools.legend.MachinimaTool.Page9.ActorCommands = Diễn viên: .mach actor [list | add | remove | set | model | move | clone | rotate | scale | clear]
 builderTools.legend.MachinimaTool.Page9.EventCommands = Sự kiện: .mach event [list | add | remove]\n\
 Loại sự kiện: animation, camera, command, particle, target
-builderTools.legend.MachinimaTool.Page9.FileCommands = Tệp: .mach save | load | files | zip | autosave [giây]
-builderTools.legend.MachinimaTool.Page9.UtilityCommands = Tiện ích: .mach tool | fps [giá trị] | speed [giá trị] | align | demo [1-7] | restart
+builderTools.legend.MachinimaTool.Page9.FileCommands = Tệp: .mach save | load | files | autosave [giây]
+builderTools.legend.MachinimaTool.Page9.UtilityCommands = Tiện ích: .mach tool | speed [giá trị] | align | restart
 
 builderTools.legend.PasteTool.Page1.Title = Cọ dán cấu trúc (Prefab)
 builderTools.legend.PasteTool.Page1.Description = Cho phép bạn dán nhanh các cấu trúc (prefab) như thể đang sử dụng một loại cọ. Hỗ trợ hầu hết các tính năng của Cọ vẽ.
@@ -854,10 +854,10 @@ builderTools.panel.entityPosition = Vị trí
 builderTools.panel.entityRotation = Vòng xoay
 builderTools.panel.entityScale = Tỷ lệ
 builderTools.panel.entityAllowPickup = Cho phép nhặt
-builderTools.panel.entityCollision = [TMP] Va Chạm
-builderTools.panel.collisionType.none = [TMP] Không Có
-builderTools.panel.collisionType.soft = [TMP] Mềm
-builderTools.panel.collisionType.hard = [TMP] Cứng
+builderTools.panel.entityCollision = Va Chạm
+builderTools.panel.collisionType.none = Không Có
+builderTools.panel.collisionType.soft = Mềm
+builderTools.panel.collisionType.hard = Cứng
 builderTools.panel.entityClone = Nhân bản
 builderTools.panel.entityRemove = Gỡ bỏ
 builderTools.panel.entityPin = Ghim thực thể
@@ -870,18 +870,18 @@ builderTools.commands.clearEntities.description = Gỡ bỏ tất cả các th�
 
 builderTools.entityType.npc = NPC
 builderTools.entityType.item = Vật phẩm
-builderTools.entityType.model = [TMP] Mô Hình
-builderTools.entityType.block = [TMP] Khối
+builderTools.entityType.model = Mô Hình
+builderTools.entityType.block = Khối
 builderTools.entityType.unknown = Không rõ
 builderTools.entityModel.fallback.npc = NPC #{id}
 builderTools.entityModel.fallback.item = Vật phẩm #{id}
-builderTools.entityModel.fallback.model = [TMP] Mô Hình #{id}
+builderTools.entityModel.fallback.model = Mô Hình #{id}
 builderTools.entityModel.fallback.block = Khối #{id}
 builderTools.entityModel.fallback.unknown = #{id}
 
-builderTools.panel.entityLightEnabled = Bật ánh sáng
-builderTools.panel.entityLightColor = Màu ánh sáng
-builderTools.panel.entityLightRadius = Bán kính ánh sáng
+builderTools.panel.entityLightEnabled = Bật Ánh Sáng
+builderTools.panel.entityLightColor = Màu Ánh Sáng
+builderTools.panel.entityLightRadius = Bán kính Sáng
 builderTools.panel.npcDebug = Chẩn đoán NPC
 builderTools.panel.npcState = Trạng thái
 builderTools.panel.npcHealth = Máu
@@ -966,7 +966,7 @@ controls.timeline.tooltip.toggleLoop = Bật/Tắt lặp lại
 controls.timeline.label.time = Thời gian: {time}s
 controls.timeline.label.frame = Khung hình: {frame}
 controls.timeline.label.duration = Thời lượng: {duration}
-controls.timeline.label.fps = FPS: {fps}
+controls.timeline.label.fps = Tốc độ Phát lại:
 controls.timeline.tooltip.keyframe = Khung hình: {time}
 # === devTools ===
 devTools.tabs.Console = Console
@@ -1080,7 +1080,7 @@ gameLoadingView.status.connecting = Đang kết nối...
 gameLoadingView.status.connectingP2P = Đang kết nối tới '{name}' của {host}... ({current}/{total})
 gameLoadingView.status.bootingServer = Đang khởi động máy chủ...
 gameLoadingView.status.enterPassword = Nhập mật khẩu máy chủ
-gameLoadingView.status.wrongPassword = Sai mật khẩu. Còn lại {attempts, plural, one {# lần thử} other {# lần thử}}.
+gameLoadingView.status.wrongPassword = Sai mật khẩu. Còn lại {attempts, plural, one {{attempts} lần thử} other {{attempts} lần thử}}.
 gameLoadingView.status.waitingForChunks = [TMP]Đang đợi các khối cấu trúc...
 gameLoadingView.status.bootingServerWithMessage = [TMP]Đang khởi động máy chủ... ({message})
 
@@ -1208,11 +1208,11 @@ hud.chat.openLinkModal.confirm = Mở trang web
 # === inventory ===
 inventory.chest.title = Rương
 inventory.chest.tooltip.takeAll = Lấy Tất Cả - Di chuyển tất cả vật phẩm từ vật chứa vào túi đồ. ({keybind})
-inventory.chest.tooltip.takeAllUnassigned = [TMP] Lấy Tất Cả - Di chuyển tất cả vật phẩm từ vật chứa vào túi đồ. (chưa gán phím)
+inventory.chest.tooltip.takeAllUnassigned = Lấy Tất Cả - Di chuyển tất cả vật phẩm từ vật chứa vào túi đồ. (chưa gán phím)
 inventory.chest.tooltip.putAll = Cất Tất Cả - Di chuyển tất cả vật phẩm từ túi đồ vào vật chứa. ({keybind})
-inventory.chest.tooltip.putAllUnassigned = [TMP] Cất Tất Cả - Di chuyển tất cả vật phẩm từ túi đồ vào vật chứa. (chưa gán phím)
+inventory.chest.tooltip.putAllUnassigned = Cất Tất Cả - Di chuyển tất cả vật phẩm từ túi đồ vào vật chứa. (chưa gán phím)
 inventory.chest.tooltip.quickStack = Sắp Xếp Nhanh - Di chuyển vật phẩm từ túi đồ vào vật chứa đối với các loại vật phẩm đã có sẵn. ({keybind})
-inventory.chest.tooltip.quickStackUnassigned = [TMP] Sắp Xếp Nhanh - Di chuyển vật phẩm từ túi đồ vào vật chứa đối với các loại vật phẩm đã có sẵn. (chưa gán phím)
+inventory.chest.tooltip.quickStackUnassigned = Sắp Xếp Nhanh - Di chuyển vật phẩm từ túi đồ vào vật chứa đối với các loại vật phẩm đã có sẵn. (chưa gán phím)
 
 inventory.inventory.title = Túi đồ
 inventory.itemQuantityPopup.title = Chia chồng vật phẩm:
@@ -1291,7 +1291,7 @@ inventory.storage.filterTooltips.armor = Chỉ hiện giáp
 inventory.storage.filterTooltips.blocks = Chỉ hiện vật liệu xây dựng
 
 inventory.button.autoSort.tooltip = Sắp xếp vật phẩm theo loại ({keybind})
-inventory.button.autoSort.unassignedTooltip = [TMP] Sắp Xếp Vật Phẩm Theo Loại (chưa gán phím)
+inventory.button.autoSort.unassignedTooltip = Sắp Xếp Vật Phẩm Theo Loại (chưa gán phím)
 inventory.dropdown.autoSortBy = Tự động sắp xếp theo:
 inventory.dropdown.autoSort.types.Type = Loại
 
@@ -1326,19 +1326,34 @@ itemTooltip.stats.SignatureEnergy = Năng lượng đặc trưng
 itemTooltip.stats.Ammo = Đạn
 itemTooltip.stats.SignatureCharges = Tích tụ đặc trưng
 
-itemTooltip.damageClass.unknown = Không rõ
-itemTooltip.damageClass.light = Đánh nhẹ
-itemTooltip.damageClass.charged = Đánh gồng
-itemTooltip.damageClass.signature = Đòn đánh đặc trưng
-
-itemTooltip.increases = Tăng
-itemTooltip.decreases = Giảm
-itemTooltip.modifies = Điều chỉnh
-itemTooltip.damageBy = sát thương thêm:
-itemTooltip.resistance = Kháng:
-
 itemTooltip.oneHanded = Một tay
 itemTooltip.twoHanded = Hai tay
+
+itemTooltip.damageCauseResistance.projectile = Kháng Vật thể bay: {value}
+itemTooltip.damageCauseResistance.physical = Kháng Vật lý: {value}
+itemTooltip.damageCauseResistance.fire = Kháng Hỏa: {value}
+itemTooltip.damageCauseResistance.poison = Kháng Độc: {value}
+itemTooltip.damageCauseResistance.fall = Kháng Rơi: {value}
+
+itemTooltip.damageEnhancementCause.increase.projectile = Tăng sát thương Vật thể bay thêm: {value}
+itemTooltip.damageEnhancementCause.decrease.projectile = Giảm sát thương Vật thể bay thêm: {value}
+itemTooltip.damageEnhancementCause.modify.projectile = Thay đổi sát thương Vật thể bay thêm: {value}
+
+itemTooltip.damageEnhancementCause.increase.physical = Tăng sát thương Vật lý thêm: {value}
+itemTooltip.damageEnhancementCause.decrease.physical = Giảm sát thương Vật lý thêm: {value}
+itemTooltip.damageEnhancementCause.modify.physical = Thay đổi sát thương Vật lý thêm: {value}
+
+itemTooltip.damageClassEnhancement.increase.light = Tăng sát thương Tấn công Nhẹ thêm: {value}
+itemTooltip.damageClassEnhancement.decrease.light = Giảm sát thương Tấn công Nhẹ thêm: {value}
+itemTooltip.damageClassEnhancement.modify.light = Thay đổi sát thương Tấn công Nhẹ thêm: {value}
+
+itemTooltip.damageClassEnhancement.increase.charged = Tăng sát thương Tấn công Gồng thêm: {value}
+itemTooltip.damageClassEnhancement.decrease.charged = Giảm sát thương Tấn công Gồng thêm: {value}
+itemTooltip.damageClassEnhancement.modify.charged = Thay đổi sát thương Tấn công Gồng thêm: {value}
+
+itemTooltip.damageClassEnhancement.increase.signature = Tăng sát thương Tấn công Đặc trưng thêm: {value}
+itemTooltip.damageClassEnhancement.decrease.signature = Giảm sát thương Tấn công Đặc trưng thêm: {value}
+itemTooltip.damageClassEnhancement.modify.signature = Thay đổi sát thương Tấn công Đặc trưng thêm: {value}
 
 # Header
 machinima.header.placeholder.selectScene = Chọn một Cảnh
@@ -1397,6 +1412,16 @@ machinima.modal.placeholder.actorName = Tên diễn viên
 machinima.modal.placeholder.selectActorType = Chọn loại diễn viên
 machinima.modal.placeholder.selectEvent = Chọn một sự kiện
 machinima.modal.placeholder.selectItem = Chọn một vật phẩm
+
+# Default names
+machinima.modal.default.sceneName = Cảnh mới
+
+# Errors
+machinima.modal.new.scene.empty = Tên cảnh không được để trống
+machinima.modal.new.scene.invalid = Cảnh chứa các ký tự không hợp lệ
+machinima.modal.new.scene.alreadyExisting = Tên cảnh này đã tồn tại
+machinima.playbackSpeed.invalidNumber = Tốc độ phát lại phải là một con số hợp lệ
+machinima.playbackSpeed.outOfRange = Tốc độ phát lại phải nằm trong khoảng từ {min} đến {max}
 
 # Keyframe Editor
 machinima.keyframe.tab.settings = Cài đặt
@@ -1548,7 +1573,7 @@ mainMenu.worlds.flatWorld = Thế giới phẳng
 mainMenu.worlds.randomWorld = Thế giới ngẫu nhiên
 mainMenu.worlds.creativeMode = Chế độ sáng tạo
 mainMenu.worlds.creativeModeStandard = Tiêu chuẩn
-mainMenu.worlds.creativeModeHub = Trung tâm sáng tạo
+mainMenu.worlds.creativeModeHub = Ngã rẽ
 mainMenu.worlds.creativeModeGenerated = Thế giới được tạo ngẫu nhiên
 mainMenu.worlds.npcSpawning = NPC
 mainMenu.worlds.noNpcSpawning = Không có NPC
@@ -1571,6 +1596,12 @@ mainMenu.worlds.settings.dayNightCycle = Chu kỳ Ngày / Đêm
 mainMenu.worlds.settings.dayDuration = Thời lượng ban ngày (giây)
 mainMenu.worlds.settings.nightDuration = Thời lượng ban đêm (giây)
 mainMenu.worlds.settings.customTime = Thời gian tùy chỉnh
+mainMenu.worlds.settings.storageType = [TMP] Loại Lưu trữ
+mainMenu.worlds.settings.storageType.tooltip = [TMP] Chọn backend lưu trữ cho thế giới này. Thay đổi điều này sẽ di chuyển các thế giới hiện có sang định dạng được chọn.\n\
+<b><color is="#f1ba50">Mặc định</color></b>: Sử dụng cài đặt mặc định như đã được chọn bởi máy chủ.\n\
+<b><color is="#f1ba50">RocksDB</color></b> <color is="#b32626">(Thử nghiệm)</color>: Sử dụng RocksDB làm backend lưu trữ, điều này có thể cung cấp độ tin cậy được cải thiện.
+mainMenu.worlds.settings.storageType.default = [TMP] Mặc định
+mainMenu.worlds.settings.storageType.rocksdb = [TMP] RocksDB
 mainMenu.worlds.settings.applyWorldSettings = Áp dụng cài đặt
 mainMenu.worlds.settings.restoreSettings = Khôi phục mặc định
 mainMenu.worlds.settings.deathPenalty = Hình phạt túi đồ khi chết
@@ -1583,17 +1614,27 @@ mainMenu.worlds.settings.durabilityLoss = % Độ Bền Mất Đi Khi Hy Sinh
 mainMenu.worlds.settings.deathPenaltyNone = Không Có
 mainMenu.worlds.settings.deathPenaltyDropAll = Rơi Tất Cả
 mainMenu.worlds.settings.deathPenaltyPartial = Rơi Một Phần
-mainMenu.worlds.advancedSettings = [TMP] Cài Đặt Nâng Cao
-mainMenu.worlds.settings.skipModValidation = [TMP] Bỏ Qua Xác Minh Mod
-mainMenu.worlds.settings.skipModValidation.tooltip = [TMP] Nếu được bật, trò chơi sẽ cố gắng khởi động thế giới ngay cả khi một số bản mod bị lỗi hoặc không tương thích. Điều này có thể dẫn đến hành vi không mong đợi.\nSẽ đặt lại khi trò chơi được cập nhật.
+mainMenu.worlds.advancedSettings = Cài đặt Nâng cao
+mainMenu.worlds.settings.skipModValidation = Bỏ qua Xác thực Mod
+mainMenu.worlds.settings.skipModValidation.tooltip = Nếu được bật, trò chơi sẽ cố gắng khởi động thế giới ngay cả khi một số mod bị hỏng hoặc không tương thích. Điều này có thể dẫn đến hành vi không mong muốn.\nĐặt lại khi trò chơi được cập nhật.
 
-mainMenu.worlds.corrupted = [TMP] Bị Hỏng
-mainMenu.worlds.corruptedTooltip = [TMP] Không thể tải cấu hình của thế giới này
-mainMenu.worlds.corruptedWarning.title = [TMP] Cấu Hình Thế Giới Bị Hỏng
-mainMenu.worlds.corruptedWarning.text = [TMP] Không thể tải cấu hình của thế giới này
-mainMenu.worlds.corruptedWarning.openAnyway = [TMP] Vẫn Mở
-mainMenu.worlds.corruptedWarning.viewBackups = [TMP] Xem Bản Sao Lưu
-mainMenu.worlds.corruptedWarning.fixManually = [TMP] Sửa Thủ Công
+mainMenu.worlds.settings.backups = [TMP] Sao lưu
+mainMenu.worlds.settings.backups.enabled = [TMP] Bật Sao lưu Tự động
+mainMenu.worlds.settings.backups.enabled.tooltip = [TMP] Khi được bật, thế giới của bạn sẽ được tự động sao lưu theo khoảng thời gian đã chỉ định. Các bản sao lưu có thể được sử dụng để khôi phục thế giới của bạn trong trường hợp dữ liệu bị hỏng hoặc thay đổi ngoài ý muốn.
+mainMenu.worlds.settings.backups.frequency = [TMP] Tần suất Sao lưu
+mainMenu.worlds.settings.backups.minutes = [TMP] phút
+mainMenu.worlds.settings.backups.maxCount = [TMP] Số bản Sao lưu Gần đây cần Giữ
+mainMenu.worlds.settings.backups.maxCount.tooltip = [TMP] Số lượng tối đa các bản sao lưu gần đây cần giữ lại. Khi vượt quá giới hạn này, các bản sao lưu cũ hơn sẽ được chuyển vào kho lưu trữ hoặc bị xóa.
+mainMenu.worlds.settings.backups.archiveMaxCount = [TMP] Số bản Sao lưu Lưu trữ cần Giữ
+mainMenu.worlds.settings.backups.archiveMaxCount.tooltip = [TMP] Số lượng tối đa các bản sao lưu đã lưu trữ cần giữ lại. Các bản sao lưu lưu trữ là các bản sao lưu cũ hơn được giữ để phục hồi lâu dài. Khi vượt quá giới hạn này, các bản lưu trữ cũ nhất sẽ bị xóa.
+
+mainMenu.worlds.corrupted = Bị hỏng
+mainMenu.worlds.corruptedTooltip = Cấu hình của thế giới này không thể tải được.
+mainMenu.worlds.corruptedWarning.title = Cấu hình Thế giới Bị hỏng
+mainMenu.worlds.corruptedWarning.text = Cấu hình của thế giới này không thể tải được.
+mainMenu.worlds.corruptedWarning.openAnyway = Vẫn mở
+mainMenu.worlds.corruptedWarning.viewBackups = Xem bản Sao lưu
+mainMenu.worlds.corruptedWarning.fixManually = Sửa Thủ công
 
 mainMenu.worlds.adventureMode.wip.text = [Không khả dụng trong giai đoạn Truy cập sớm]
 mainMenu.worlds.exploartionMode.wip.text = [Bản xem trước phát triển Truy cập sớm]
@@ -1615,6 +1656,17 @@ mainMenu.assetEditor.errorModal.openSettingsButton = Mở Cài đặt
 # Early Access Panel
 mainMenu.earlyAccessPanel.title = Truy cập sớm\nMiễn trừ trách nhiệm
 mainMenu.earlyAccessPanel.text = Đây là phiên bản truy cập sớm của Hytale; trò chơi vẫn đang trong quá trình phát triển tích cực. Hãy chuẩn bị tâm lý cho các lỗi và thay đổi khi chúng tôi nỗ lực hướng tới bản phát hành chính thức.\n\nCảm ơn bạn đã hỗ trợ!
+
+mainMenu.outdatedModWarning.title = Phát hiện {count, plural, one {Mod} other {Mods}} Lỗi thời
+mainMenu.outdatedModWarning.text = Các {count, plural, one {mod} other {mods}} sau đây chưa được cập nhật cho phiên bản hiện tại và có thể không hoạt động chính xác:\n\n{modList}\n\
+    Vui lòng cập nhật hoặc tắt {count, plural, one {mod này} other {các mod này}}.
+mainMenu.outdatedModWarning.continue = Vẫn Tiếp tục
+
+mainMenu.missingModWarning.title = Phát hiện Thiếu {count, plural, one {Mod} other {Mods}}
+mainMenu.missingModWarning.text = Các {count, plural, one {mod} other {mods}} sau đây đã được sử dụng trước đó trên thế giới này và hiện tại {count, plural, one {đang} other {đang}} bị thiếu:\n\n{modList}\n\
+    Vui lòng cài đặt lại hoặc tắt {count, plural, one {mod này} other {các mod này}}.
+mainMenu.missingModWarning.continue = Tắt và Vẫn Tiếp tục
+
 # === map ===
 map.title = Bản đồ thế giới
 
@@ -1622,15 +1674,15 @@ map.contextMenu.teleport = Dịch chuyển
 map.contextMenu.selectLocation = Chọn vị trí
 map.contextMenu.deselectLocation = Bỏ chọn vị trí
 map.contextMenu.removeMarker = Xóa đánh dấu
-map.contextMenu.createMapMarker = [TMP] Tạo Đánh Dấu Bản Đồ
-map.contextMenu.coordsTitle = [TMP] X: {x}, Z: {z}
-map.contextMenu.markerTitle = [TMP] X: {x}, Z: {z}
+map.contextMenu.createMapMarker = Tạo Đánh Dấu Bản Đồ
+map.contextMenu.coordsTitle = X: {x}, Z: {z}
+map.contextMenu.markerTitle = X: {x}, Z: {z}
 
-map.createMapMarker.title = [TMP] Tạo Một Đánh Dấu Bản Đồ
-map.createMapMarker.nameLabel = [TMP] Tên
-map.createMapMarker.nameOptional = [TMP] Không Bắt Buộc
-map.createMapMarker.sharedLabel = [TMP] Chia Sẻ Với Người Chơi Khác
-map.createMapMarker.submit = [TMP] Tạo Đánh Dấu
+map.createMapMarker.title = Tạo Một Đánh Dấu Bản Đồ
+map.createMapMarker.nameLabel = Tên
+map.createMapMarker.nameOptional = Không Bắt Buộc
+map.createMapMarker.sharedLabel = Chia Sẻ Với Người Chơi Khác
+map.createMapMarker.submit = Tạo Đánh Dấu
 
 map.disabled = Vị trí không xác định
 
@@ -1650,6 +1702,7 @@ map.playerListEntry.tooltip.map = Hiển thị trên Bản Đồ
 
 map.marker.localPlayer = Bạn
 map.marker.targetLocation = Vị trí mục tiêu
+map.returnToCrossroads = Quay lại Ngã rẽ
 
 # === menuOverlay ===
 menuOverlay.buttons.returnToGame = Quay lại trò chơi
@@ -1692,7 +1745,7 @@ myAvatar.tabs.Mouth = Miệng
 myAvatar.tabs.Eyes = Mắt
 myAvatar.tabs.Haircut = Kiểu tóc
 myAvatar.tabs.Pants = Quần
-myAvatar.tabs.Overpants = Quần ngoài
+myAvatar.tabs.Overpants = Trang phục chân
 myAvatar.tabs.Undertop = Áo trong
 myAvatar.tabs.Overtop = Áo ngoài
 myAvatar.tabs.Shoes = Giày
@@ -1717,12 +1770,13 @@ myAvatar.variant = Tùy chọn
 
 myAvatar.dropdown.filterBy = Lọc theo:
 
-myAvatar.lockedCosmetics = Vật phẩm trang trí bị khóa
+myAvatar.lockedCosmetics = Vật phẩm Trang trí Bị khóa
+myAvatar.lockedCosmetic = Vật phẩm Trang trí Bị khóa
 
 myAvatar.unsavedChangesDialog.title = Thay đổi chưa lưu
 myAvatar.unsavedChangesDialog.text = Bạn đã thực hiện các thay đổi đối với Ảnh đại diện nhưng chưa được lưu.
 
-myAvatar.lockedCosmeticDialog.title = Đã chọn vật phẩm trang trí bị khóa
+myAvatar.lockedCosmeticDialog.title = Đã chọn Vật phẩm Trang trí Bị khóa
 myAvatar.lockedCosmeticDialog.text = Bạn đã chọn một vật phẩm trang trí yêu cầu một phiên bản đặc biệt.\n\nBạn có thể hoàn tác lựa chọn đó về lựa chọn hợp lệ cuối cùng hoặc chỉnh sửa lựa chọn của mình để chọn một vật phẩm trang trí khác.
 myAvatar.lockedCosmeticDialog.undoButton = Hoàn tác lựa chọn
 myAvatar.lockedCosmeticDialog.editButton = Sửa lựa chọn
@@ -1732,13 +1786,12 @@ myAvatar.failedToSaveDialog.text = Chúng tôi hiện đang gặp một số s�
 myAvatar.failedToSaveDialog.button.tryAgain = Thử lại ngay
 myAvatar.failedToSaveDialog.button.ok = Đồng ý
 
-myAvatar.failedToAddSkinDialog.title = [TMP] Không thể thêm trang phục!
-myAvatar.failedToAddSkinDialog.text = [TMP] Chúng tôi không thể thêm trang phục của bạn vào lúc này. Vui lòng thử lại sau. Nếu vấn đề vẫn tiếp diễn, hãy liên hệ hỗ trợ.
+myAvatar.failedToAddSkinDialog.title = Không thể thêm trang phục ảnh đại diện!
+myAvatar.failedToAddSkinDialog.text = Chúng tôi không thể thêm trang phục ảnh đại diện của bạn ngay lúc này; vui lòng thử lại sau. Nếu vấn đề vẫn tiếp diễn, hãy liên hệ hỗ trợ.
 
-myAvatar.playerSkinsOperationFailedDialog.select.title = [TMP] Thao tác chọn trang phục ảnh đại diện thất bại!
-myAvatar.playerSkinsOperationFailedDialog.delete.title = [TMP] Thao tác xóa trang phục ảnh đại diện thất bại!
-myAvatar.playerSkinsOperationFailedDialog.update.title = [TMP] Thao tác cập nhật trang phục ảnh đại diện thất bại!
-myAvatar.playerSkinsOperationFailedDialog.text = [TMP] Vui lòng thử lại. Nếu vấn đề vẫn tiếp diễn, hãy liên hệ hỗ trợ.
+myAvatar.playerSkinsOperationFailedDialog.select.title = Thao tác chọn trang phục ảnh đại diện thất bại!
+myAvatar.playerSkinsOperationFailedDialog.delete.title = Thao tác xóa trang phục ảnh đại diện thất bại!
+myAvatar.playerSkinsOperationFailedDialog.text = Vui lòng thử lại. Nếu vấn đề vẫn tiếp diễn, hãy liên hệ hỗ trợ.
 
 myAvatar.entitlement.gameFounder.titleSuffix = Độc quyền phiên bản Cursebreaker
 myAvatar.entitlement.gameFounder.lockedMessage = Để sử dụng vật phẩm trang trí này, bạn cần có phiên bản Cursebreaker.
@@ -1759,14 +1812,14 @@ myAvatar.offline.description.offline = Bạn đang ở chế độ ngoại tuy�
 myAvatar.offline.description.connecting = Đang kết nối tới máy chủ của Hytale, hãy thử lại sau giây lát...
 myAvatar.offline.description.unavailable = Trình tạo ảnh đại diện hiện không khả dụng vì chúng tôi đang gặp sự cố khi kết nối tới máy chủ của Hytale. Hãy thử lại sau hoặc khởi động lại trò chơi.
 
-myAvatar.presets.defaultName = [TMP] Ảnh Đại Diện Mặc Định
-myAvatar.presets.deleteModal.title = [TMP] Xóa mẫu ảnh đại diện
-myAvatar.presets.deleteModal.text = [TMP] Bạn có chắc chắn muốn xóa "{presetName}" không?
-myAvatar.presets.panel.addPresetButton = [TMP] Thêm Mẫu
-myAvatar.presets.addModal.title = [TMP] Thêm Mẫu
-myAvatar.presets.editModal.title = [TMP] Chỉnh Sửa Mẫu
-myAvatar.presets.nameInput.label = [TMP] Tên Mẫu
-myAvatar.presets.nameInput.placeholder = [TMP] Mẫu ảnh đại diện của tôi
+myAvatar.presets.defaultName = Ảnh Đại Diện Mặc Định
+myAvatar.presets.deleteModal.title = Xóa mẫu ảnh đại diện
+myAvatar.presets.deleteModal.text = Bạn có chắc chắn muốn xóa "{presetName}" không?
+myAvatar.presets.panel.addPresetButton = Thêm Bản thiết lập ({currentPresetCount, number, integer}/{maxPresets, number, integer})
+myAvatar.presets.addModal.title = Thêm Mẫu
+myAvatar.presets.editModal.title = Chỉnh Sửa Mẫu
+myAvatar.presets.nameInput.label = Tên Mẫu
+myAvatar.presets.nameInput.placeholder = Mẫu ảnh đại diện của tôi
 
 # === settings ===
 settings.title = Cài đặt
@@ -1863,7 +1916,7 @@ settings.resetToDefaults.tooltip = Đặt lại tất cả cài đặt nhanh v�
 settings.resetOptions = Đặt lại tùy chọn
 settings.useSystemLanguage = Sử dụng ngôn ngữ hệ thống
 settings.language = Ngôn ngữ
-settings.language.description = Thiết lập ngôn ngữ hiển thị trong trò chơi.
+settings.language.description = Cài đặt ngôn ngữ được hiển thị bởi trò chơi.\n\n<b><color is="#b32626">Cài đặt này yêu cầu bạn phải quay lại thực đơn chính để có hiệu lực!</color></b>
 settings.fullscreen = Toàn màn hình
 settings.noAuthName = Tên chưa xác thực
 settings.windowSize = Kích thước cửa sổ
@@ -2014,6 +2067,12 @@ settings.joinCameraPref.lastUsed = Nhớ lần sử dụng cuối
 settings.diagnosticMode = Chế độ chẩn đoán
 settings.diagnosticMode.description = Khuyến nghị bật chế độ chẩn đoán nếu bạn có kế hoạch tạo nội dung. Chế độ chẩn đoán sẽ in ra nhiều thông báo lỗi hơn về các nội dung bị cấu hình sai.
 
+settings.quiche = [TMP] Sử dụng Ngăn xếp Mạng Thay thế
+settings.quiche.description = [TMP] Bật một ngăn xếp mạng thay thế cái mà có thể cải thiện khả năng kết nối trong một số tình huống. Phải được bật tắt trước khi tham gia một thế giới nhiều người chơi.
+
+settings.quiche.log = [TMP] Bật Ghi nhật ký Mạng
+settings.quiche.log.description = [TMP] Bật ghi nhật ký chi tiết cho ngăn xếp mạng thay thế. Có ích cho việc gỡ lỗi các vấn đề kết nối.
+
 settings.useBlockyModelShaderWorkaround = Giải pháp cho mô hình dạng khối
 settings.useBlockyModelShaderWorkaround.description = Trên một số máy Mac có phần cứng NVIDIA, việc kết xuất mô hình diễn ra rất chậm nếu không có giải pháp này. Cần khởi động lại trò chơi để thay đổi có hiệu lực.
 
@@ -2031,11 +2090,16 @@ settings.ambientVolume = Âm lượng môi trường
 settings.uiVolume = Âm lượng giao diện
 settings.outputMode = Chế độ đầu ra
 settings.outputMode.description = Kiểm soát cấu hình kênh đầu ra âm thanh.\n\
-<b><color is="#f1ba50">Mặc định</color></b>: Tự động chọn tùy chọn tốt nhất cho thiết bị đầu ra bạn đã chọn.
+<b><color is="#f1ba50">Mặc định</color></b>: Cố gắng tự động chọn tùy chọn tốt nhất cho thiết bị đầu ra của bạn.\n\
+<b><color is="#f1ba50">Loa (Stereo)</color></b>: Đầu ra stereo tiêu chuẩn cho các thiết lập loa.\n\
+<b><color is="#f1ba50">Tai nghe (Stereo)</color></b>: Đầu ra stereo tiêu chuẩn cho tai nghe.\n\
+<b><color is="#f1ba50">Tai nghe (Âm thanh 3D)</color></b>: Âm thanh không gian 3D cho tai nghe sử dụng HRTF (thử nghiệm).\n\
+<b><color is="#f1ba50">Đơn âm</color></b>: Đầu ra đơn kênh.
 settings.outputMode.default = Mặc định
-settings.outputMode.stereo = Stereo (Loa)
-settings.outputMode.stereoHrtf = Stereo (Tai nghe)
-settings.outputMode.mono = Mono (Đơn âm)
+settings.outputMode.speakersStereo = Loa (Stereo)
+settings.outputMode.headphonesStereo = Tai nghe (Stereo)
+settings.outputMode.headphones3DAudio = Tai nghe (Âm thanh 3D)
+settings.outputMode.mono = Mono
 settings.dynamicUiScaling = Tỷ lệ giao diện động
 settings.uiScale = Tỷ lệ giao diện
 
@@ -2105,7 +2169,7 @@ settings.bindings.Ability3ItemAction = Sử dụng Kỹ năng 3
 settings.bindings.UndoItemAction = Hoàn tác
 settings.bindings.RedoItemAction = Làm lại
 settings.bindings.AddRemoveFavoriteMaterialItemAction = Thêm/Xóa vật liệu yêu thích
-settings.bindings.DismountAction = Cưỡi/Xuống thú cưỡi
+settings.bindings.DismountAction = Xuống thú cưỡi
 settings.bindings.AlternatePlaySculptBrushModeModifier = Thay đổi phím bổ trợ Cọ điêu khắc
 settings.bindings.UsePaintModeForBrush = Sử dụng chế độ Vẽ cho Cọ
 settings.bindings.SelectBlockFromSet = Chọn Khối từ bộ
@@ -2115,80 +2179,82 @@ settings.bindings.ToggleFlyCameraControlTarget.description = Chuyển đổi m�
 settings.bindings.PreviousBuilderToolsLegendPage = Chú giải - Trang trước
 settings.bindings.NextBuilderToolsLegendPage = Chú giải - Trang sau
 
-settings.bindings.ContainerTakeAll = [TMP] Thùng Chứa: Lấy Tất Cả
-settings.bindings.ContainerPutAll = [TMP] Thùng Chứa: Cất Tất Cả
-settings.bindings.ContainerQuickStack = [TMP] Thùng Chứa: Xếp Nhanh
-settings.bindings.ContainerSort = [TMP] Thùng Chứa: Sắp Xếp Vật Phẩm
-settings.bindings.SelectionShiftUp = [TMP] Vùng Chọn - Dịch Lên
-settings.bindings.SelectionShiftDown = [TMP] Vùng Chọn - Dịch Xuống
-settings.bindings.SelectionCopy = [TMP] Vùng Chọn - Sao Chép
-settings.bindings.SelectionClear = [TMP] Vùng Chọn - Xóa
-settings.bindings.SelectionTranslateMode = [TMP] Vùng Chọn - Chế Độ Tịnh Tiến
-settings.bindings.SelectionGizmoMode = [TMP] Vùng Chọn - Chế Độ Gizmo
-settings.bindings.SelectionRotateMode = [TMP] Vùng Chọn - Chế Độ Xoay
-settings.bindings.SelectionCancelTransform = [TMP] Vùng Chọn - Hủy Biến Đổi
-settings.bindings.SelectionNextSet = [TMP] Vùng Chọn - Tập Hợp Kế Tiếp
-settings.bindings.SelectionPreviousSet = [TMP] Vùng Chọn - Tập Hợp Trước Đó
+settings.bindings.ContainerTakeAll = Thùng chứa - Lấy tất cả
+settings.bindings.ContainerPutAll = Thùng chứa - Đặt tất cả
+settings.bindings.ContainerQuickStack = Thùng chứa - Xếp nhanh
+settings.bindings.ContainerSort = Thùng chứa - Sắp xếp Vật phẩm
+settings.bindings.SelectionShiftUp = Vùng chọn - Dịch lên
+settings.bindings.SelectionShiftDown = Vùng chọn - Dịch xuống
+settings.bindings.SelectionCopy = Vùng chọn - Sao chép
+settings.bindings.SelectionClear = Vùng chọn - Xóa
+settings.bindings.SelectionTranslateMode = Vùng chọn - Chế độ Tịnh tiến
+settings.bindings.SelectionGizmoMode = Vùng chọn - Chế độ Gizmo
+settings.bindings.SelectionRotateMode = Vùng chọn - Chế độ Xoay
+settings.bindings.SelectionCancelTransform = Vùng chọn - Hủy Biến đổi
+settings.bindings.SelectionNextSet = Vùng chọn - Bộ kế tiếp
+settings.bindings.SelectionPreviousSet = Vùng chọn - Bộ trước đó
+settings.bindings.SelectionClipboard = [TMP] Vùng chọn - Khay nhớ tạm
 
-settings.bindings.PasteShiftLeft = [TMP] Dán - Dịch Sang Trái
-settings.bindings.PasteShiftRight = [TMP] Dán - Dịch Sang Phải
-settings.bindings.PasteShiftForward = [TMP] Dán - Dịch Về Phía Trước
-settings.bindings.PasteShiftBackward = [TMP] Dán - Dịch Về Phía Sau
-settings.bindings.PasteShiftUp = [TMP] Dán - Dịch Lên
-settings.bindings.PasteShiftDown = [TMP] Dán - Dịch Xuống
-settings.bindings.PasteShiftReset = [TMP] Dán - Đặt Lại Dịch Chuyển
-settings.bindings.PasteRotate = [TMP] Dán - Xoay
-settings.bindings.PasteOpenPrefabList = [TMP] Dán - Mở Danh Sách Prefab
-settings.bindings.PasteCycleOrigin = [TMP] Dán - Chuyển Đổi Gốc Tọa Độ
+settings.bindings.PasteShiftLeft = Dán - Dịch Sang Trái
+settings.bindings.PasteShiftRight = Dán - Dịch Sang Phải
+settings.bindings.PasteShiftForward = Dán - Dịch Về Phía Trước
+settings.bindings.PasteShiftBackward = Dán - Dịch Về Phía Sau
+settings.bindings.PasteShiftUp = Dán - Dịch Lên
+settings.bindings.PasteShiftDown = Dán - Dịch Xuống
+settings.bindings.PasteShiftReset = Dán - Đặt Lại Dịch Chuyển
+settings.bindings.PasteRotate = Dán - Xoay
+settings.bindings.PasteOpenPrefabList = Dán - Mở Danh Sách Prefab
+settings.bindings.PasteCycleOrigin = Dán - Chuyển Đổi Gốc Tọa Độ
 
-settings.bindings.BrushToggleInvert = [TMP] Cọ - Chuyển Đổi Đảo Ngược
-settings.bindings.BrushIncreaseWidth = [TMP] Cọ - Tăng Chiều Rộng
-settings.bindings.BrushDecreaseWidth = [TMP] Cọ - Giảm Chiều Rộng
-settings.bindings.BrushIncreaseHeight = [TMP] Cọ - Tăng Chiều Cao
-settings.bindings.BrushDecreaseHeight = [TMP] Cọ - Giảm Chiều Cao
-settings.bindings.BrushNextShapeOrigin = [TMP] Cọ - Gốc Hình Dạng Kế Tiếp
-settings.bindings.BrushPreviousShapeOrigin = [TMP] Cọ - Gốc Hình Dạng Trước Đó
-settings.bindings.BrushAxisLockTranslate = [TMP] Cọ - Khóa Trục Tịnh Tiến
-settings.bindings.BrushAxisLockRotate = [TMP] Cọ - Khóa Trục Xoay
-settings.bindings.BrushAxisLockExit = [TMP] Cọ - Thoát Khóa Trục
+settings.bindings.BrushToggleInvert = Cọ - Bật tắt Đảo ngược
+settings.bindings.BrushIncreaseWidth = Cọ - Tăng Chiều rộng
+settings.bindings.BrushDecreaseWidth = Cọ - Giảm Chiều rộng
+settings.bindings.BrushIncreaseHeight = Cọ - Tăng Chiều cao
+settings.bindings.BrushDecreaseHeight = Cọ - Giảm Chiều cao
+settings.bindings.BrushNextShapeOrigin = Cọ - Gốc Hình dạng Kế tiếp
+settings.bindings.BrushPreviousShapeOrigin = Cọ - Gốc Hình dạng Trước đó
+settings.bindings.BrushAxisLockTranslate = Cọ - Khóa Trục Tịnh tiến
+settings.bindings.BrushAxisLockRotate = Cọ - Khóa Trục Xoay
+settings.bindings.BrushAxisLockExit = Cọ - Thoát Khóa Trục
+settings.bindings.BrushPaste = [TMP] Cọ - Dán
 
-settings.bindings.EntityClone = [TMP] Thực Thể - Nhân Bản
-settings.bindings.EntityRemove = [TMP] Thực Thể - Loại Bỏ
-settings.bindings.EntityToggleFreeze = [TMP] Thực Thể - Chuyển Đổi Đóng Băng
-settings.bindings.EntityToggleSurface = [TMP] Thực Thể - Chuyển Đổi Khóa Bề Mặt
-settings.bindings.EntityOpenSpawnUI = [TMP] Thực Thể - Mở Giao Diện Triệu Hồi
-settings.bindings.EntityTranslateMode = [TMP] Thực Thể - Chế Độ Tịnh Tiến
-settings.bindings.EntityRotateMode = [TMP] Thực Thể - Chế Độ Xoay
-settings.bindings.EntityFreeMoveMode = [TMP] Thực Thể - Chế Độ Di Chuyển Tự Do
+settings.bindings.EntityClone = Thực Thể - Nhân Bản
+settings.bindings.EntityRemove = Thực Thể - Loại Bỏ
+settings.bindings.EntityToggleFreeze = Thực Thể - Chuyển Đổi Đóng Băng
+settings.bindings.EntityToggleSurface = Thực Thể - Chuyển Đổi Khóa Bề Mặt
+settings.bindings.EntityOpenSpawnUI = Thực Thể - Mở Giao Diện Triệu Hồi
+settings.bindings.EntityTranslateMode = Thực Thể - Chế Độ Tịnh Tiến
+settings.bindings.EntityRotateMode = Thực Thể - Chế Độ Xoay
+settings.bindings.EntityFreeMoveMode = Thực Thể - Chế Độ Di Chuyển Tự Do
 
-settings.bindings.MachinimaTogglePause = [TMP] Machinima - Chuyển Đổi Tạm Dừng
-settings.bindings.MachinimaToggleDisplay = [TMP] Machinima - Chuyển Đổi Hiển Thị
-settings.bindings.MachinimaToggleCamera = [TMP] Machinima - Chuyển Đổi Camera
-settings.bindings.MachinimaRestartScene = [TMP] Machinima - Khởi Động Lại Cảnh
-settings.bindings.MachinimaFrameDecrement = [TMP] Machinima - Lùi Khung Hình
-settings.bindings.MachinimaFrameIncrement = [TMP] Machinima - Tiến Khung Hình
-settings.bindings.MachinimaKeyframeDecrement = [TMP] Machinima - Lùi Khung Hình Khóa
-settings.bindings.MachinimaKeyframeIncrement = [TMP] Machinima - Tiến Khung Hình Khóa
-settings.bindings.MachinimaFrameTimeDecrease = [TMP] Machinima - Giảm Thời Gian Khung Hình
-settings.bindings.MachinimaFrameTimeIncrease = [TMP] Machinima - Tăng Thời Gian Khung Hình
-settings.bindings.MachinimaAddKeyframe = [TMP] Machinima - Thêm Khung Hình Khóa
-settings.bindings.MachinimaRemoveKeyframe = [TMP] Machinima - Xóa Khung Hình Khóa
-settings.bindings.MachinimaOriginAction = [TMP] Machinima - Hành Động Gốc
-settings.bindings.MachinimaEditKeyframe = [TMP] Machinima - Chỉnh Sửa Khung Hình Khóa
-settings.bindings.MachinimaCycleSelectionMode = [TMP] Machinima - Chuyển Đổi Chế Độ Chọn
+settings.bindings.MachinimaTogglePause = Machinima - Chuyển Đổi Tạm Dừng
+settings.bindings.MachinimaToggleDisplay = Machinima - Chuyển Đổi Hiển Thị
+settings.bindings.MachinimaToggleCamera = Machinima - Chuyển Đổi Camera
+settings.bindings.MachinimaRestartScene = Machinima - Khởi Động Lại Cảnh
+settings.bindings.MachinimaFrameDecrement = Machinima - Lùi Khung Hình
+settings.bindings.MachinimaFrameIncrement = Machinima - Tiến Khung Hình
+settings.bindings.MachinimaKeyframeDecrement = Machinima - Lùi Khung Hình Khóa
+settings.bindings.MachinimaKeyframeIncrement = Machinima - Tiến Khung Hình Khóa
+settings.bindings.MachinimaFrameTimeDecrease = Machinima - Giảm Thời Gian Khung Hình
+settings.bindings.MachinimaFrameTimeIncrease = Machinima - Tăng Thời Gian Khung Hình
+settings.bindings.MachinimaAddKeyframe = Machinima - Thêm Khung Hình Khóa
+settings.bindings.MachinimaRemoveKeyframe = Machinima - Xóa Khung Hình Khóa
+settings.bindings.MachinimaOriginAction = Machinima - Hành Động Gốc
+settings.bindings.MachinimaEditKeyframe = Machinima - Chỉnh Sửa Khung Hình Khóa
+settings.bindings.MachinimaCycleSelectionMode = Machinima - Chuyển Đổi Chế Độ Chọn
 
-settings.bindings.RulerDeletePoint = [TMP] Thước Kẻ - Xóa Điểm
-settings.bindings.RulerClearLine = [TMP] Thước Kẻ - Xóa Đường Kẻ
-settings.bindings.RulerNextLine = [TMP] Thước Kẻ - Đường Kẻ Kế Tiếp
-settings.bindings.RulerPreviousLine = [TMP] Thước Kẻ - Đường Kẻ Trước Đó
+settings.bindings.RulerDeletePoint = Thước Kẻ - Xóa Điểm
+settings.bindings.RulerClearLine = Thước Kẻ - Xóa Đường Kẻ
+settings.bindings.RulerNextLine = Thước Kẻ - Đường Kẻ Kế Tiếp
+settings.bindings.RulerPreviousLine = Thước Kẻ - Đường Kẻ Trước Đó
 
-settings.bindings.SelectPrefabRemove = [TMP] Chọn Prefab - Loại Bỏ
-settings.bindings.SelectPrefabOpenSaveUI = [TMP] Chọn Prefab - Mở Giao Diện Lưu
-settings.bindings.SelectPrefabUpdateBounds = [TMP] Chọn Prefab - Cập Nhật Phạm Vi
-settings.bindings.SelectPrefabTeleport = [TMP] Chọn Prefab - Dịch Chuyển
+settings.bindings.SelectPrefabRemove = Chọn Prefab - Loại Bỏ
+settings.bindings.SelectPrefabOpenSaveUI = Chọn Prefab - Mở Giao Diện Lưu
+settings.bindings.SelectPrefabUpdateBounds = Chọn Prefab - Cập Nhật Phạm Vi
+settings.bindings.SelectPrefabTeleport = Chọn Prefab - Dịch Chuyển
 
-settings.bindings.HitboxInsert = [TMP] Hộp Va Chạm - Thêm
-settings.bindings.HitboxDelete = [TMP] Hộp Va Chạm - Xóa
+settings.bindings.HitboxInsert = Hộp Va Chạm - Thêm
+settings.bindings.HitboxDelete = Hộp Va Chạm - Xóa
 settings.bindings.ContainerTakeAll = Vật chứa: Lấy tất cả
 settings.bindings.ContainerPutAll = Vật chứa: Đặt tất cả
 settings.bindings.ContainerQuickStack = Vật chứa: Xếp chồng nhanh
@@ -2370,12 +2436,10 @@ feedback.success.bugreport = Báo cáo lỗi của bạn đã được gửi th�
 feedback.success.reportId = ID Báo cáo: {id}
 feedback.success.submitMore = Gửi thêm
 
-feedback.redirect.title = Truy cập Hỗ trợ,
 feedback.redirect.support = Đối với các vấn đề về tài khoản hoặc thanh toán, vui lòng truy cập support.hytale.com.,
 feedback.redirect.button = Mở Hỗ trợ
+feedback.bugReportButton.tooltip = Báo cáo một Lỗi hoặc Phản hồi
 
-
-bugReportButton.tooltip = Báo cáo lỗi hoặc Phản hồi
 # === patchline ===
 # Patchline cho phép phát hành nội dung sớm để giúp người chơi thử nghiệm các tính năng mới
 
@@ -2391,14 +2455,7 @@ patchline.worldWarning.text = Bạn đang chuẩn bị mở một thế giới b
 patchline.worldWarning.openAnyway = Vẫn mở
 patchline.worldWarning.duplicateWorld = Sao chép thế giới
 
-outdatedModWarning.title = [TMP] Phát Hiện {count, plural, one {Mod} other {Mod}} Cũ
-outdatedModWarning.text = [TMP] {count, plural, one {Mod} other {Các mod}} sau đây chưa được cập nhật cho phiên bản hiện tại và có thể không hoạt động chính xác:\n\n{modList}\n\
-    Vui lòng cập nhật hoặc vô hiệu hóa {count, plural, one {mod này} other {các mod này}}.
-outdatedModWarning.continue = [TMP] Vẫn Tiếp Tục
-outdatedModWarning.cancel = [TMP] Hủy
-
 # === cosmetics ===
-cosmetics.color.skinTone = Tông màu
 
 # Hair Gradients
 cosmetics.color.PitchBlack = Đen Tuyền
