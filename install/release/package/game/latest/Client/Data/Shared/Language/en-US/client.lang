@@ -10,6 +10,7 @@ assetEditor.mainMenu.disconnectionContainer.reconnect = Reconnect
 assetEditor.mainMenu.connection.error.failedAuthentication = Failed to authenticate with server
 assetEditor.mainMenu.connection.error.failedToEstablishConnection = Failed to establish connection to server
 assetEditor.mainMenu.settingsButton = Settings
+nodeEditor.launching = Starting Node Editor
 
 assetEditor.settings.title = Settings
 
@@ -188,8 +189,7 @@ assetEditor.createAssetModal.assetPack = Asset Pack
 assetEditor.createAssetModal.assetType = Asset Type
 assetEditor.createAssetModal.folder = Folder
 assetEditor.createAssetModal.assetId = Unique Asset ID
-assetEditor.createAssetModal.assetIdHelp = Allowed characters: A-Z 0-9 _\\
-Examples: Wood_Ash_Roots, Zone3_Cloudy_Medium, Battleaxe_Swing_Left
+assetEditor.createAssetModal.assetIdHelp = Allowed characters: A-Z 0-9 _\nExamples: Wood_Ash_Roots, Zone3_Cloudy_Medium, Battleaxe_Swing_Left
 assetEditor.createAssetModal.copyAsset = Copy Asset
 assetEditor.createAssetModal.tab.properties = Properties
 assetEditor.createAssetModal.tab.source = Source
@@ -341,6 +341,9 @@ assetEditor.packModal.errors.groupRequired = Pack group is required
 assetEditor.packModal.errors.versionRequired = Version is required
 assetEditor.packModal.errors.versionInvalid = Invalid version format. Use semantic versioning (e.g., 1.0.0, 2.1.3-beta, 1.0.0+build123)
 assetEditor.packModal.errors.serverVersionRequired = Server version is required
+assetEditor.packModal.field.targetDirectory = Target Directory
+assetEditor.packModal.targetDirectory.worldMods = World Mods Folder ({path})
+assetEditor.packModal.targetDirectory.globalMods = Global Mods Folder ({path})
 
 assetEditor.readOnlyAssetBar.message = This asset is read-only and cannot be edited, since the asset pack is read-only.
 assetEditor.readOnlyAssetBar.overrideButton = Override Asset
@@ -477,6 +480,8 @@ builderTools.settings.ToolReachDistance.name = Tool Reach Distance
 builderTools.settings.ToolReachDistance.description = Specifies the max (or locked) reach distance to use for tools
 builderTools.settings.ToolDelayMin.name = Tool Delay Min
 builderTools.settings.ToolDelayMin.description = Specifies the min delay (in ms) allowed between each tool use
+builderTools.settings.UndoGroupSize.description = Number of brush executions grouped into a single undo entry. Lower values give finer undo control, higher values reduce undo steps for long strokes.
+builderTools.settings.GizmoScale.description = Controls the on-screen size of rotation and translation gizmos
 builderTools.settings.EnableBrushShapeRendering.name = Brush Shape Rendering
 builderTools.settings.EnableBrushShapeRendering.description = Toggles the brush rendering between block shape and standard wireframe
 builderTools.settings.BrushOpacity.name = Brush Opacity
@@ -534,6 +539,7 @@ builderTools.legend.setMask = Set as mask
 builderTools.legend.addMask = Add to mask
 builderTools.legend.changeHeight = Change height of shape
 builderTools.legend.changeWidth = Change width of shape
+builderTools.legend.changeRotation = Change rotation direction
 builderTools.legend.favoriteMaterials = Favorite materials
 builderTools.legend.selectedMaterial = Selected material
 builderTools.legend.shiftFasterChange = Hold Shift for faster changes
@@ -714,6 +720,7 @@ builderTools.legend.PasteTool.Page2.RotatePrefabLeftRight = Rotate prefab left o
 builderTools.legend.PasteTool.Page2.RollPrefabLeftRight = Roll prefab left or right
 builderTools.legend.PasteTool.Page2.RollPrefabForwardBackward = Roll prefab forward or backward
 builderTools.legend.PasteTool.Page2.ResetShifting = Reset shifting
+builderTools.legend.PasteTool.Page2.ResetRotation = [TMP] Reset rotation
 
 builderTools.legend.SculptBrush.Page1.Title = Sculpt Brush
 builderTools.legend.SculptBrush.Page1.Description = Allows you to raise and lower the terrain to more accurately sculpt and blend shapes. Supports most features of the Paintbrush.
@@ -806,8 +813,9 @@ builderTools.legend.SelectPrefabTool.Page1.EditingPrefabs = Editing Prefabs:
 builderTools.legend.SelectPrefabTool.Page1.OpenSaveUI = Open the save/settings UI
 builderTools.legend.SelectPrefabTool.Page1.UpdateBoundingBox = Update the selected prefab's bounding box to your current selection
 builderTools.legend.SelectPrefabTool.Page1.TeleportToPrefab = Open teleport to prefab UI
-builderTools.legend.SelectPrefabTool.Page1.SetAnchorTitle = Set Anchor Tool:
-builderTools.legend.SelectPrefabTool.Page1.SetAnchorDescription = Use the Set Anchor tool from your inventory to change where the prefab's anchor point is located. The anchor determines where the prefab is placed when spawned.
+builderTools.legend.SelectPrefabTool.Page1.QuickAccess = [TMP] Quick Access:
+builderTools.legend.SelectPrefabTool.Page1.SwitchWorlds = [TMP] Go back to last world
+builderTools.legend.SelectPrefabTool.Page1.SetAnchor = [TMP] Set the anchor point at the position you are looking at
 builderTools.legend.SelectPrefabTool.Page1.UsefulCommands = Useful Commands:
 builderTools.legend.SelectPrefabTool.Page1.KillCommand = /pedit kill - Removes all entities from the selected prefab\n\
 /pedit exit - Exits the prefab editor without saving changes
@@ -866,7 +874,39 @@ builderTools.panel.surfaceLock = Lock to Surface
 builderTools.panel.gridSnap = Grid Snap
 builderTools.panel.gridSize = Grid Size
 
+builderTools.commands.mode = Mode
+builderTools.commands.keepEmptyBlocks = Keep 'Editor Empty' Blocks
+builderTools.commands.executeCommand = Execute Command
+builderTools.commands.material = Material
+builderTools.commands.weight = Weight
+builderTools.commands.removeMaterial = Remove Material
+builderTools.commands.pitch = Pitch
+builderTools.commands.addMaterial = Add Material
+builderTools.commands.direction = Direction
+builderTools.commands.includeEmpty = Include Empty
+builderTools.commands.includeEntities = Include Entities
+builderTools.commands.wall.thickness = Thickness
+builderTools.commands.wall.roof = Roof
+builderTools.commands.wall.floor = Floor
+builderTools.commands.stack.count = Count
+builderTools.commands.stack.spacing = Spacing
+builderTools.commands.move.distance = Distance
+builderTools.commands.clear.description = Clears all blocks in the current selection.
 builderTools.commands.clearEntities.description = Removes all entities in the current selection.
+builderTools.commands.selection.set = SET
+builderTools.commands.selection.wall = WALL
+builderTools.commands.selection.fill = FILL
+builderTools.commands.selection.replace = REPLACE
+builderTools.commands.selection.clear = CLEAR
+builderTools.commands.selection.clear_entities = CLEAR ENTITIES
+builderTools.commands.selection.stack = STACK
+builderTools.commands.selection.move = MOVE
+builderTools.commands.direction.forward = Forward
+builderTools.commands.direction.backward = Backward
+builderTools.commands.direction.left = Left
+builderTools.commands.direction.right = Right
+builderTools.commands.direction.up = Up
+builderTools.commands.direction.down = Down
 
 builderTools.entityType.npc = NPC
 builderTools.entityType.item = Item
@@ -889,6 +929,18 @@ builderTools.panel.npcStamina = Stamina
 builderTools.panel.npcSpeed = Speed
 builderTools.panel.npcTarget = Target
 builderTools.panel.npcTarget.none = None
+
+# Builder Tools Chat Log
+builderTools.brush.log.setPaintMode = Set paint mode for Paint Brush to: {value}
+builderTools.brush.log.setBrushOrigin = Set brush origin to: {origin}
+builderTools.brush.log.setBrushShape = Set brush shape to: {shape}
+builderTools.brush.log.removedFavoriteMaterial = Removed from favorite materials: {block}
+builderTools.brush.log.addedFavoriteMaterial = Added to favorite materials: {block}
+builderTools.log.brushMaterialChanged = Brush Material changed to: {value}
+builderTools.log.brushKeyChanged = Brush Key changed to: {value}
+builderTools.log.argChanged = {key} changed to: {value}
+builderTools.log.invalidBlockType = '{block}' is not a valid block type
+
 # === confirmQuitOverlay ===
 confirmQuitOverlay.title = Quit Game
 confirmQuitOverlay.text = Are you sure you want to quit?
@@ -918,7 +970,7 @@ contentCreation.navigation.assets = Assets
 
 contentCreation.navigation.assetEditor = Asset Editor
 contentCreation.navigation.assetEditor.tooltipTitle = Launch Asset Editor App
-contentCreation.navigation.assetEditor.tooltipDesc = This launches an external program that allows you to live-edit game config assets.
+contentCreation.navigation.assetEditor.tooltipDesc = This launches an external program that allows you to live-edit game config assets. You can launch this quickly with the hotkey ALT+B or open it to a specific hovered item/block with SHIFT+H.
 contentCreation.navigation.blockbench = Model Editor
 contentCreation.navigation.blockbench.tooltipTitle = Launch Blockbench App (Model Editor)
 contentCreation.navigation.blockbench.tooltipDesc = Create your own models and animations for Hytale.
@@ -1049,6 +1101,9 @@ devTools.gameInfo.keys.ParticleErosion = Erosion
 
 devTools.gameInfo.keys.NetworkSent = Sent
 devTools.gameInfo.keys.NetworkReceived = Received
+devTools.gameInfo.keys.QuicStreams = QUIC Streams
+devTools.gameInfo.keys.QuicGameStream = Game Stream
+devTools.gameInfo.keys.QuicVoiceStream = Voice Stream
 # === disconnection ===
 disconnection.title.disconnected = Disconnected from server
 disconnection.title.failedToConnect = Failed to connect to server
@@ -1059,6 +1114,7 @@ disconnection.button.reconnect.inProgress = Reconnecting...
 
 disconnection.button.tryAgain = Try Again
 disconnection.button.tryAgain.inProgress = Connecting...
+disconnection.button.manageMods = Manage Mods
 
 disconnection.autoConnectingIn = Connecting in {seconds}
 
@@ -1071,6 +1127,20 @@ disconnection.error.timeout = Connection timed out. Please check your internet c
 disconnection.error.versionMismatch = Unable to connect due to a version mismatch between the client and server.
 disconnection.error.clientOutdated = Your game client is out of date. Please update to connect to this server.
 disconnection.error.serverOutdated = The server is running an older version and cannot accept your connection.
+disconnection.error.serverFailedToBoot = Server failed to boot.
+disconnection.shutdownReason.validateError.launcherAssets = Not generating schema due to launcher assets.
+disconnection.shutdownReason.validateError.detail = Asset validation failed:\n{detail}
+disconnection.shutdownReason.crash.schemaGenerationFailed = Schema generation failed.
+disconnection.shutdownReason.crash.startFailed = Failed to start server! {detail}
+disconnection.shutdownReason.shutdown.schemaGenerated = Schema generated.
+disconnection.shutdownReason.shutdown.devToolsRequest = DevTools shutdown request.
+disconnection.shutdownReason.shutdown.stressTestFinished = Stress test finished!
+disconnection.shutdownReason.missingAssets.failedToLoad = Failed to load any asset packs.
+disconnection.shutdownReason.pluginError.detail = The following {count, plural, one {plugin} other {plugins}} failed to load:\n{detail}
+disconnection.shutdownReason.pluginDuplicate = Tried to load duplicate plugin: {plugin}
+disconnection.shutdownReason.missingRequiredPlugin.detail = Failed to start server! Missing Mods:\n{detail}
+disconnection.shutdownReason.authFailed.detail = Authentication failed:\n{detail}
+disconnection.shutdownReason.worldGen.detail = World generation failed:\n{detail}
 # === gameLoadingView ===
 gameLoadingView.hints.constructionThanks = Thanks for playing while we are under construction!
 gameLoadingView.hints.futureTipsAndTricks = This screen is going to show you tips and tricks to help you with your adventure.
@@ -1081,8 +1151,14 @@ gameLoadingView.status.connectingP2P = Connecting to {host}'s '{name}'... ({curr
 gameLoadingView.status.bootingServer = Booting server...
 gameLoadingView.status.enterPassword = Enter server password
 gameLoadingView.status.wrongPassword = Incorrect password. {attempts, plural, one {{attempts} attempt} other {{attempts} attempts}} remaining.
-gameLoadingView.status.waitingForChunks = [TMP]Waiting for chunks...
-gameLoadingView.status.bootingServerWithMessage = [TMP]Booting server... ({message})
+gameLoadingView.status.waitingForChunks = Waiting for chunks...
+gameLoadingView.status.bootingServerWithMessage = Booting server... ({message})
+gameLoadingView.status.savingWorld = [TMP] Saving world "{name}"
+gameLoadingView.status.closingWorld = [TMP] Closing world "{name}"
+gameLoadingView.status.migratingChunks = [TMP] Migrating chunks for "{name}"
+gameLoadingView.status.verifiedChunks = [TMP] Verified {done}/{total} chunks for world "{name}"
+gameLoadingView.status.recoveringChunks = [TMP] Recovering {done}/{total} chunks for world "{name}"
+gameLoadingView.status.serverFrozenDumping = [TMP] Server seems frozen. Dumping logs...
 
 gameLoadingView.password.title = Server Password
 gameLoadingView.password.submit = Login
@@ -1105,6 +1181,8 @@ general.button.discardChanges = Discard Changes
 general.button.resetDefaults = Reset to Defaults
 general.button.close = Close
 general.button.back = Back
+general.button.previous = Previous
+general.button.next = Next
 general.button.add = Add
 general.button.delete = Delete
 general.button.remove = Remove
@@ -1143,6 +1221,53 @@ general.chatMessage.requestCancelled = The request was cancelled
 
 general.worldLoad.loadingWorld = Loading world...
 general.worldLoad.loadingAsset = Loading asset {assetName}
+
+general.disconnect.accountAlreadyConnecting = [TMP] A connection with this account is already in progress
+general.disconnect.alreadyLoggedIn = [TMP] You are already logged in on that account!
+general.disconnect.authError = [TMP] Authentication error
+general.disconnect.authGrantFailed = [TMP] Failed to obtain authorization grant from session service
+general.disconnect.banned.permanent = [TMP] You are permanently banned!
+general.disconnect.banned.permanent.withReason = [TMP] You are permanently banned! Reason: {reason}
+general.disconnect.banned.timed = [TMP] You are temporarily banned for {days}d {hours}h {mins}m!
+general.disconnect.banned.timed.withReason = [TMP] You are temporarily banned for {days}d {hours}h {mins}m! Reason: {reason}
+general.disconnect.editorNotSupported = [TMP] Editor isn't supported on this server!
+general.disconnect.identityTokenMissingScope = [TMP] Invalid identity token: missing {scope} scope
+general.disconnect.identityTokenUuidMismatch = [TMP] Invalid identity token: UUID mismatch
+general.disconnect.invalidAccessToken = [TMP] Invalid access token
+general.disconnect.invalidIdentityToken = [TMP] Invalid or expired identity token
+general.disconnect.invalidPasswordResponse = [TMP] Invalid password response
+general.disconnect.invalidSkin = [TMP] Your skin contains parts that aren't available on this server.\nThis usually happens when assets are out of sync.\n\n{details}
+general.disconnect.loginException = [TMP] An exception occurred while trying to login!
+general.disconnect.missingUsername = [TMP] Missing username
+general.disconnect.missingUuid = [TMP] Missing UUID
+general.disconnect.mutualAuthRequired = [TMP] Mutual authentication required - please update your client
+general.disconnect.notWhitelisted = [TMP] You are not whitelisted!
+general.disconnect.noWorldAvailable = [TMP] No world available to join
+general.disconnect.offlineModeOwnerOnly = [TMP] This world is in offline mode and only the owner can connect.
+general.disconnect.offlineModeSingleplayerOnly = [TMP] Offline mode is only available in singleplayer.
+general.disconnect.protocol.duplicateAuthToken = [TMP] Protocol error: duplicate AuthToken packet
+general.disconnect.protocol.unexpectedAuthToken = [TMP] Protocol error: unexpected AuthToken packet
+general.disconnect.protocol.unexpectedPacket = [TMP] Protocol error: unexpected packet {packetId}
+general.disconnect.protocol.unexpectedPasswordResponse = [TMP] Protocol error: unexpected PasswordResponse
+general.disconnect.referralDataTooLarge = [TMP] Referral data exceeds maximum size of {maxSize} bytes
+general.disconnect.referralInvalidSource = [TMP] Referral source address is invalid
+general.disconnect.referralMissingSource = [TMP] Referral connections must include source server address
+general.disconnect.serverAuthFailed = [TMP] Server authentication failed - please try again later
+general.disconnect.setupCancelled = [TMP] You have been disconnected from the server!
+general.disconnect.serverAuthUnavailable = [TMP] Server authentication unavailable - please try again later
+general.disconnect.serverBooting = [TMP] Server is booting up! Please try again in a moment.
+general.disconnect.serverConfigError = [TMP] Server configuration error
+general.disconnect.serverError = [TMP] Server error
+general.disconnect.serverFull = [TMP] Too many players!
+general.disconnect.serverRequiresAuthentication = [TMP] This server requires authentication!
+general.disconnect.serverShuttingDown = [TMP] Server is shutting down!
+general.disconnect.stageTimeout = [TMP] Either you took too long to login or we took too long to process your request! Retry again in a moment.
+general.disconnect.tcpAuthenticationNotSupported = [TMP] TCP connections only support insecure authentication. Use QUIC for authenticated connections.
+general.disconnect.tokenMissingUsername = [TMP] Invalid token claims: missing username
+general.disconnect.tokenUsernameMismatch = [TMP] Invalid token claims: username mismatch
+general.disconnect.tokenUuidMismatch = [TMP] Invalid token claims: UUID mismatch
+general.disconnect.tooManyPasswordAttempts = [TMP] Too many failed password attempts
+general.disconnect.universeException = [TMP] An exception occurred when adding to the universe!
 
 # === hud ===
 hud.playerList.onlinePlayers = Online Players
@@ -1198,13 +1323,13 @@ hud.debug.mapTransparency = Debug Map Transparency: {current} / {max}
 hud.debug.textureArrayLayer = Debug Texture Array Layer: {current} / {max}
 hud.debug.drawMapLevel = Draw Map Level: {current} / {max}
 
-hud.chat.openLinkModal.title = Open External Website?
-hud.chat.openLinkModal.text = You are about to open the website "{url}" in a web browser. \n\
+openLinkModal.title = Open External Website?
+openLinkModal.text = You are about to open the website "{url}" in a web browser. \n\
 \n\
 Be cautious when visiting links from other players, especially if they ask for personal information.\n\
 \n\
 Are you sure you want to proceed?
-hud.chat.openLinkModal.confirm = Open Website
+openLinkModal.confirm = Open Website
 # === inventory ===
 inventory.chest.title = Chest
 inventory.chest.tooltip.takeAll = Take All - Move all items from the container to the inventory. ({keybind})
@@ -1418,7 +1543,7 @@ machinima.modal.default.sceneName = New scene
 
 # Errors
 machinima.modal.new.scene.empty = Scene name can't be empty
-machinima.modal.new.scene.invalid = Scene contains invalid characters
+machinima.modal.new.scene.invalid = Scene name contains invalid characters
 machinima.modal.new.scene.alreadyExisting = This scene name already exists
 machinima.playbackSpeed.invalidNumber = Playback speed must be a valid number
 machinima.playbackSpeed.outOfRange = Playback speed must be between {min} and {max}
@@ -1431,6 +1556,100 @@ machinima.keyframe.button.addEvent = Add Event
 machinima.keyframe.button.edit = Edit
 machinima.keyframe.button.delete = Delete
 machinima.keyframe.tooltip.deleteEvent = Delete Event
+
+# Machinima Chat Log
+machinima.log.subCommandList = Mach Sub Commands:
+machinima.log.enterSubCommand = Please enter a mach sub command.
+machinima.log.unknownSubCommand = Unknown mach sub command! '{command}'
+machinima.log.noActiveSceneFound = No active scene found.
+machinima.log.noActiveSceneSpecify = No active scene found, please specify a scene name, or set one to active.
+machinima.log.unableToFindScene = Unable to find scene '{name}'.
+machinima.log.sceneSavedToClipboard = '{name}' scene successfully saved to the clipboard!
+machinima.log.loadedScene = Loaded scene '{name}'.
+machinima.log.sceneModelsUpdated = Scene models updated.
+machinima.log.activeSceneSetTo = Active scene set to '{name}'.
+machinima.log.selectEntityToCopy = Please select an entity to copy the model from.
+machinima.log.unableToFindEntity = Unable to find an entity in this location, aborting...
+machinima.log.entitySelected = Entity selected!
+machinima.log.selectEntityActorToApply = Now please select the EntityActor to apply the model to.
+machinima.log.unableToFindEntityInLocation = Unable to find an Entity in that location, aborting...
+machinima.log.unableToFindActorForEntity = Unable to find an Actor for that Entity, aborting...
+machinima.log.modelAppliedToActor = Model successfully applied to EntityActor '{name}'.
+machinima.log.invalidActorTypeFound = Invalid actor type found, aborting...
+machinima.log.selectKeyframeToMove = Please select an actor keyframe to move.
+machinima.log.selectKeyframeToCopy = Please select an actor keyframe to copy from.
+machinima.log.unableToFindKeyframe = Unable to find a keyframe in this location, aborting...
+machinima.log.selectPositionToMove = Now select an offset position to move to.
+machinima.log.selectPositionToAdd = Now select an offset position to add.
+machinima.log.moveCancelled = Move cancelled.
+machinima.log.cloneStopped = Clone stopped.
+machinima.log.invalidPosition = Invalid position, aborting...
+machinima.log.actorOffsetComplete = Actor offset complete.
+machinima.log.cloneFinished = Clone Finished!
+machinima.log.continueCloning = Continue Cloning with left click, or right to finish.
+machinima.log.selectKeyframeToRotate = Please left click an actor keyframe to rotate around, or right click to cancel.
+machinima.log.rotateStopped = Rotate stopped.
+machinima.log.noActiveActorSelectOne = No active actor found, select one and try again.
+machinima.log.noActiveActorFound = No active actor found!
+machinima.log.entityModelUpdated = Entity model updated.
+machinima.log.unableToUpdateModelNotEntity = Unable to update model, actor is not an Entity.
+machinima.log.actorAlreadyExists = An actor already exists with the name '{actor}' in scene '{scene}'.
+machinima.log.invalidActorType = Invalid actor type '{type}', acceptable types are player, entity, and camera.
+machinima.log.errorAddingActor = Error adding '{actor}' to scene '{scene}'.
+machinima.log.actorAdded = New actor '{actor}' added to scene '{scene}'.
+machinima.log.unableToFindActor = Unable to find actor: {name}.
+machinima.log.removedActor = Removed actor: {name}.
+machinima.log.actorScaleSet = Actor scale set to {scale}.
+machinima.log.unableToParseFloat = Unable to parse float value from: `{value}`.
+machinima.log.actorMustBeEntity = Active actor must be an entity type to use this.
+machinima.log.noActiveActorInScene = No active actor found in the scene.
+machinima.log.invalidEventType = Invalid event type '{type}'.
+machinima.log.eventAddedToKeyframe = New event added to keyframe at frame {frame}.
+machinima.log.duplicateKeyframeEvent = Only one instance of that event may be added to a keyframe, aborting...
+machinima.log.selectKeyframeForEvent = Please select the keyframe the event should be added to.
+machinima.log.selectKeyframeOfTarget = Please select the keyframe of the actor to target.
+machinima.log.enterEventIdToRemove = Please enter the keyframe event id # to remove.
+machinima.log.unableToParseKeyframeId = Unable to parse a keyframe id from '{value}'.
+machinima.log.unableToFindEvent = Unable to find event with id '{id}'.
+machinima.log.eventRemovedFromKeyframe = Event successfully removed from keyframe.
+machinima.log.pathDisplayEnabled = Path display enabled.
+machinima.log.pathDisplayDisabled = Path display disabled.
+machinima.log.playbackRestarted = Playback restarted.
+machinima.log.autoRestartEnabled = Auto restart enabled.
+machinima.log.autoRestartDisabled = Auto restart disabled.
+machinima.log.playbackStarted = Playback started at frame {frame}.
+machinima.log.playbackPaused = Paused at frame {frame}.
+machinima.log.noActiveActorSelectKeyframe = No active actor found, please select a keyframe to set.
+machinima.log.unableToParseNumberDefault = Unable to parse number from {input}, using default value {default}.
+machinima.log.addedKeyAtFrame = Added key at frame {frame}.
+machinima.log.scenesSaved = {count} scenes saved to file.
+machinima.log.scenesLoaded = {count} scenes loaded from file.
+machinima.log.selectKeyframeToChangeFrame = Please select the keyframe to change the frame of.
+machinima.log.selectKeyframeToEdit = Please select the keyframe to edit.
+machinima.log.keyframeUpdated = Keyframe updated.
+machinima.log.keyframeAlreadyAtFrame = Unable to change keyframe, one is already set at frame #{frame}.
+machinima.log.adjustPositionAndRotation = Adjust your position and rotation then left click to set, or right click to cancel.
+machinima.log.keyframeEditCancelled = Keyframe edit cancelled.
+machinima.log.unableToParseNumber = Unable to parse number from {input}.
+machinima.log.speedStats = Speed Avg: {avg}, Min: {min}, Max: {max}
+machinima.log.bezierPathUpdated = Bezier path updated.
+machinima.log.actorsWithMissingModels = {count} actors found with missing models.
+machinima.log.invalidDemoSceneNumber = Invalid demo scene int number: {value}.
+machinima.log.unableToFindDemoScene = Unable to find demo scene #{number}.
+machinima.log.demoSceneLoaded = Demo scene #{number} loaded.
+machinima.log.invalidOffsetAmount = Invalid value found for offset amount {value}!
+machinima.log.invalidInsertFrame = Invalid value found for insert frame {value}!
+machinima.log.offsetKeyframes = Offset actor keyframes!
+machinima.log.keyframeLookFixed = Keyframe look settings fixed!
+machinima.log.noCamerasInScene = Unable to find any cameras in the current scene.
+machinima.log.unableToParseBool = Unable to parse bool value: '{value}'
+machinima.log.sceneCompressionEnabled = Scene file compression enabled.
+machinima.log.sceneCompressionDisabled = Scene file compression disabled.
+machinima.log.autosaveDelay = Autosave Delay: {delay} secs
+machinima.log.unableToParseInt = Unable to parse int value: '{value}'
+machinima.log.delayRange = Delay must be between {min} and {max}.
+machinima.log.autosaveDelaySet = Autosave delay set to: {delay} secs.
+
 # === mainMenu ===
 # Navigation
 
@@ -1596,12 +1815,12 @@ mainMenu.worlds.settings.dayNightCycle = Day / Night Cycle
 mainMenu.worlds.settings.dayDuration = Day Duration (seconds)
 mainMenu.worlds.settings.nightDuration = Night Duration (seconds)
 mainMenu.worlds.settings.customTime = Custom Time
-mainMenu.worlds.settings.storageType = [TMP] Storage Type
-mainMenu.worlds.settings.storageType.tooltip = [TMP] Choose the storage backend for this world. Changing this will migrate existing worlds to the selected format.\n\
+mainMenu.worlds.settings.storageType = Storage Type
+mainMenu.worlds.settings.storageType.tooltip = Choose the storage backend for this world. Changing this will migrate existing worlds to the selected format.\n\
 <b><color is="#f1ba50">Default</color></b>: Uses the default setting as selected by the server.\n\
 <b><color is="#f1ba50">RocksDB</color></b> <color is="#b32626">(Experimental)</color>: Uses RocksDB as the storage backend, which may offer improved reliability.
-mainMenu.worlds.settings.storageType.default = [TMP] Default
-mainMenu.worlds.settings.storageType.rocksdb = [TMP] RocksDB
+mainMenu.worlds.settings.storageType.default = Default
+mainMenu.worlds.settings.storageType.rocksdb = RocksDB
 mainMenu.worlds.settings.applyWorldSettings = Apply Settings
 mainMenu.worlds.settings.restoreSettings = Restore Default
 mainMenu.worlds.settings.deathPenalty = Inventory Penalty On Death
@@ -1615,18 +1834,51 @@ mainMenu.worlds.settings.deathPenaltyNone = None
 mainMenu.worlds.settings.deathPenaltyDropAll = Drop All
 mainMenu.worlds.settings.deathPenaltyPartial = Partial Drop
 mainMenu.worlds.advancedSettings = Advanced Settings
-mainMenu.worlds.settings.skipModValidation = Skip Mod Validation
-mainMenu.worlds.settings.skipModValidation.tooltip = If enabled, the game will attempt to boot the world even if some mods are broken or incompatible. This may lead to unexpected behavior.\nResets when the game is updated.
 
-mainMenu.worlds.settings.backups = [TMP] Backups
-mainMenu.worlds.settings.backups.enabled = [TMP] Enable Automatic Backups
-mainMenu.worlds.settings.backups.enabled.tooltip = [TMP] When enabled, your world will be automatically backed up at the specified interval. Backups can be used to restore your world in case of data corruption or accidental changes.
-mainMenu.worlds.settings.backups.frequency = [TMP] Backup Frequency
-mainMenu.worlds.settings.backups.minutes = [TMP] minutes
-mainMenu.worlds.settings.backups.maxCount = [TMP] Recent Backups to Keep
-mainMenu.worlds.settings.backups.maxCount.tooltip = [TMP] The maximum number of recent backups to retain. When this limit is exceeded, older backups will be moved to the archive or deleted.
-mainMenu.worlds.settings.backups.archiveMaxCount = [TMP] Archived Backups to Keep
-mainMenu.worlds.settings.backups.archiveMaxCount.tooltip = [TMP] The maximum number of archived backups to retain. Archived backups are older backups kept for long-term recovery. When this limit is exceeded, the oldest archives will be deleted.
+mainMenu.worlds.settings.backups = Backups
+mainMenu.worlds.settings.backups.enabled = Enable Automatic Backups
+mainMenu.worlds.settings.backups.enabled.tooltip = When enabled, your world will be automatically backed up at the specified interval. Backups can be used to restore your world in case of data corruption or accidental changes.
+mainMenu.worlds.settings.backups.frequency = Backup Frequency (in minutes)
+mainMenu.worlds.settings.backups.maxCount = Recent Backups to Keep
+mainMenu.worlds.settings.backups.maxCount.tooltip = The maximum number of recent backups to retain. When this limit is exceeded, older backups will be moved to the archive or deleted.
+mainMenu.worlds.settings.backups.archiveMaxCount = Archived Backups to Keep
+mainMenu.worlds.settings.backups.archiveMaxCount.tooltip = The maximum number of archived backups to retain. Archived backups are older backups kept for long-term recovery. When this limit is exceeded, the oldest archives will be deleted.
+
+mainMenu.worlds.settings.tab.settings = Settings
+mainMenu.worlds.settings.tab.backupManagement = Backups
+
+mainMenu.worlds.backupManagement.title = Backup Management
+mainMenu.worlds.backupManagement.validate = Validate World
+mainMenu.worlds.backupManagement.recover = Recover World
+mainMenu.worlds.backupManagement.backupList = World Backups
+mainMenu.worlds.backupManagement.noBackups = No backups found
+mainMenu.worlds.backupManagement.archived = Archived
+mainMenu.worlds.backupManagement.restore = Restore
+mainMenu.worlds.backupManagement.backupDate = {backupDate, date} {backupTime, time}
+mainMenu.worlds.backupManagement.restoreConfirm.title = Restore Backup
+mainMenu.worlds.backupManagement.restoreConfirm.text = Are you sure you want to restore this backup? The current world data will be replaced.
+mainMenu.worlds.backupManagement.verifyConfirm.title = Verify World
+mainMenu.worlds.backupManagement.verifyProgress.title = Verifying World
+mainMenu.worlds.backupManagement.verifyConfirm.text = This will check all saved chunks in this world for corruption.\n\
+    This currently only checks for chunks that fail to load, not misplaced chunks.\n\
+    This may take a while for large worlds.
+mainMenu.worlds.backupManagement.verifySuccess = All chunks verified successfully. No corruption detected.
+mainMenu.worlds.backupManagement.verifyCorrupted.title = World Corrupted
+mainMenu.worlds.backupManagement.verifyCorrupted = It is recommended to recover the world or restore from a backup.
+mainMenu.worlds.backupManagement.recoverConfirm.title = Recover World
+mainMenu.worlds.backupManagement.recoverConfirm.text = Choose how to recover broken chunks in this world.\n\
+    The server will be started briefly to scan and repair the world data.
+mainMenu.worlds.backupManagement.recoverConfirm.backupsThenRegenerate = From Backups
+mainMenu.worlds.backupManagement.recoverConfirm.regenerate = Regenerate
+mainMenu.worlds.backupManagement.recoverProgress.title = Recovering World
+mainMenu.worlds.backupManagement.recoverSuccess = World recovery completed successfully.
+mainMenu.worlds.backupManagement.recoverFailed.title = Recovery Incomplete
+mainMenu.worlds.backupManagement.restoreSuccess = Backup restored successfully.
+mainMenu.worlds.backupManagement.deleteConfirm.title = Delete Backup
+mainMenu.worlds.backupManagement.deleteConfirm.text = Are you sure you want to permanently delete this backup? This cannot be undone.
+mainMenu.worlds.backupManagement.validate.description = Checks all saved chunks for data corruption.
+mainMenu.worlds.backupManagement.recover.description = Fixes corrupted chunks from backups or by regenerating them.
+mainMenu.worlds.backupManagement.backupCount = {count} {count, plural, one {backup} other {backups}}
 
 mainMenu.worlds.corrupted = Corrupted
 mainMenu.worlds.corruptedTooltip = This world's configuration could not be loaded.
@@ -1635,6 +1887,12 @@ mainMenu.worlds.corruptedWarning.text = This world's configuration could not be 
 mainMenu.worlds.corruptedWarning.openAnyway = Open Anyway
 mainMenu.worlds.corruptedWarning.viewBackups = View Backups
 mainMenu.worlds.corruptedWarning.fixManually = Fix Manually
+
+mainMenu.worlds.lockedTooltip = This world is open in another instance.
+mainMenu.worlds.moddedTooltip = This world is modded.
+mainMenu.worlds.lockWarning.title = World Already Open
+mainMenu.worlds.lockWarning.text = This world appears to be open in another instance.\n\nOpening the same save in multiple instances may corrupt your save data.
+mainMenu.worlds.lockWarning.openAnyway = Open Anyway
 
 mainMenu.worlds.adventureMode.wip.text = [Unavailable during Early Access]
 mainMenu.worlds.exploartionMode.wip.text = [Early Access development preview]
@@ -1645,7 +1903,19 @@ mainMenu.worlds.noModsFound = No mods available
 mainMenu.worlds.mods = Mods
 mainMenu.worlds.modType.pack = Pack
 mainMenu.worlds.modType.plugin = Plugin
-mainMenu.worlds.modSource.save = Save
+mainMenu.worlds.settings.tab.modManagement = Mods
+mainMenu.worlds.modVersionMismatch = This mod targets {modVersion} but the current game version is {currentVersion}. It may not work correctly.
+mainMenu.worlds.modVersionMissing = This mod does not specify a target version. It may not be compatible.
+mainMenu.worlds.modVersionWarning = Some mods may not be compatible with this current game version
+mainMenu.worlds.modColumn.name = Name
+mainMenu.worlds.modColumn.description = Description
+mainMenu.worlds.modColumn.targetVersion = Target Version
+mainMenu.worlds.modColumn.enabled = Enabled
+mainMenu.worlds.modAuthors = by {authors}
+mainMenu.worlds.modGroup.world = World Mods
+mainMenu.worlds.modGroup.world.tooltip = Mods installed in this world's save folder. They only apply to this world.
+mainMenu.worlds.modGroup.global = Global Mods
+mainMenu.worlds.modGroup.global.tooltip = Mods installed in your global Mods folder. They are available to all worlds.
 
 mainMenu.assetEditor.errorModal.missingDirectory.title = Select a Directory
 mainMenu.assetEditor.errorModal.missingDirectory.text = You need to set an assets path before using the asset editor
@@ -1848,6 +2118,7 @@ settings.groups.controls.creative = Creative
 settings.groups.controls.menus = Menus
 settings.groups.controls.blockPlacement = Block Placement
 settings.groups.controls.builderTools = Builder Tools
+settings.groups.controls.voice = [TMP] Voice
 settings.groups.controls.misc = Misc
 settings.groups.controls.debug = Debug
 settings.groups.controls.inventory = Inventory
@@ -1868,6 +2139,20 @@ settings.groups.creativeMode = Creative Mode
 settings.groups.pickupLocations = Preferred Pickup Locations
 settings.groups.accessibility = Accessibility
 
+settings.groups.voiceChat = [TMP] Voice
+settings.voiceUnavailable = [TMP] Voice chat unavailable on this server. To enable it, type "/voice enabled true" in chat.
+settings.voiceChatEnabled = [TMP] Voice Chat
+settings.voiceChatVolume = [TMP] Volume
+settings.voiceInputEnabled = [TMP] Voice Input
+settings.voiceInputDevice = [TMP] Input Device
+settings.voiceInputLevel = [TMP] Input Level
+settings.voiceInputMode = [TMP] Input Mode
+settings.voiceInputMode.voiceActivity = [TMP] Voice Activity
+settings.voiceInputMode.pushToTalk = [TMP] Push to Talk
+settings.noiseSuppression = [TMP] Noise Suppression
+settings.voiceSensitivity = [TMP] Mic Sensitivity
+settings.voiceChat.silenced = [TMP] Muted (Dead)
+
 settings.prototype.percentagePlayGizmoLength = Percentage Width for Gizmo Rendering
 settings.prototype.minPlaySelectGizmoSize = Minimum Gizmo Size
 settings.prototype.maxPlaySelectGizmoSize = Maximum Gizmo Size
@@ -1883,6 +2168,7 @@ settings.category.soundSettings = Audio Settings
 settings.category.selectionSettings = Selection Settings
 settings.category.uiVisibility = UI Visibility
 settings.category.displayNotifications = Display & Notifications
+settings.category.environment = Environment
 
 # Quick Settings Labels
 settings.noClip = No Clip
@@ -1896,6 +2182,7 @@ settings.allowNPCDetection = Allow NPC Detection
 settings.respondToHit = Respond To Hit
 settings.toolReachDistance = Tool Reach Distance
 settings.toolDelayMin = Tool Delay Minimum
+settings.undoGroupSize = Undo Group Size
 settings.brushOpacity = Brush Opacity
 settings.enableBrushShapeRendering = Enable Brush Shape Rendering
 settings.brushSoundsEnabled = Brush Sounds
@@ -1907,6 +2194,12 @@ settings.showToolNotifications = Show Tool Notifications
 settings.laserPointerColor = Laser Pointer Color
 settings.laserPointerColor.description = The default hex color for the laser pointer tool
 settings.fullbright = Fullbright
+settings.timeOfDay = Time of Day
+settings.weather = Weather
+settings.weather.serverDefault = Server Default
+settings.pauseTime = Pause Time
+settings.environment.reset = Reset Environment
+settings.environment.reset.tooltip = Reset time and weather to server values
 
 # Quick Settings UI
 settings.dragToReorder = Drag to reorder
@@ -1916,7 +2209,7 @@ settings.resetToDefaults.tooltip = Reset all quick settings to their default val
 settings.resetOptions = Reset Options
 settings.useSystemLanguage = Use System Language
 settings.language = Language
-settings.language.description = Sets the language displayed by the game.\n\n<b><color is="#b32626">This setting requires you to go back to the main menu to take effect!</color></b>
+settings.language.description = Sets the language displayed by the game.\n\n<b><color is="#b32626">This setting requires a client restart!</color></b>
 settings.fullscreen = Fullscreen
 settings.noAuthName = No Auth Name
 settings.windowSize = Window Size
@@ -2067,11 +2360,11 @@ settings.joinCameraPref.lastUsed = Remember Last Used
 settings.diagnosticMode = Diagnostic Mode
 settings.diagnosticMode.description = Enabling diagnostic mode is recommended if you plan to create content. Diagnostic mode will print out more error messages about misconfigured content.
 
-settings.quiche = [TMP] Use Alternative Network Stack
-settings.quiche.description = [TMP] Enables an alternative network stack which may improve connectivity in some situations. Must be toggled before joining a multiplayer world.
+settings.quiche = Use Alternative Network Stack
+settings.quiche.description = Enables an alternative network stack which may improve connectivity in some situations. Must be toggled before joining a multiplayer world.
 
-settings.quiche.log = [TMP] Enable Networking Logging
-settings.quiche.log.description = [TMP] Enables detailed logging for the alternative network stack. Useful for debugging connection issues.
+settings.quiche.log = Enable Networking Logging
+settings.quiche.log.description = Enables detailed logging for the alternative network stack. Useful for debugging connection issues.
 
 settings.useBlockyModelShaderWorkaround = Blocky Model Workaround
 settings.useBlockyModelShaderWorkaround.description = On some Macs with NVIDIA hardware, model rendering is very slow without this workaround. Restarting the game is required for the change to take effect.
@@ -2109,6 +2402,15 @@ settings.bindingPopup.bind = Bind "{binding}"
 settings.bindingPopup.pressKey = Press any key or esc to cancel
 settings.bindings.clear = Remove the current keybind.
 
+settings.bindings.input.unbound = [TMP] Unbound
+settings.bindings.input.ctrl = [TMP] Ctrl
+settings.bindings.input.shift = [TMP] Shift
+settings.bindings.input.alt = [TMP] Alt
+settings.bindings.input.leftMouse = [TMP] Left Mouse
+settings.bindings.input.rightMouse = [TMP] Right Mouse
+settings.bindings.input.middleMouse = [TMP] Middle Mouse
+settings.bindings.input.mouseButton = [TMP] Mouse {button}
+
 settings.bindings.MoveForwards = Move Forwards
 settings.bindings.MoveBackwards = Move Backwards
 settings.bindings.StrafeLeft = Move Left
@@ -2127,11 +2429,14 @@ settings.bindings.OpenMap = Open Map
 settings.bindings.OpenDevTools = Open Dev Tools
 settings.bindings.DropItem = Drop Item
 settings.bindings.ShowUtilitySlotSelector = Show Utility Slot Selector
+settings.bindings.ShowEmoteSelector = Show Emote Selector
 settings.bindings.ToggleBuilderToolsLegend = Toggle Builder Tools Legend
 settings.bindings.OpenToolsSettings = Open Creative Tools
 
+settings.bindings.PushToTalk = [TMP] Push to Talk
+
 settings.bindings.SwitchCameraMode = Switch Camera Mode
-settings.bindings.ActivateCameraRotation = Activate Camera Rotation
+settings.bindings.ActivateCameraRotation = Activate Inverted Camera
 settings.bindings.ToggleProfiling = Toggle Profiling
 settings.bindings.SwitchHudVisibility = Switch HUD Visibility
 settings.bindings.ToggleFullscreen = Toggle Fullscreen
@@ -2193,7 +2498,7 @@ settings.bindings.SelectionRotateMode = Selection - Rotate Mode
 settings.bindings.SelectionCancelTransform = Selection - Cancel Transform
 settings.bindings.SelectionNextSet = Selection - Next Set
 settings.bindings.SelectionPreviousSet = Selection - Previous Set
-settings.bindings.SelectionClipboard = [TMP] Selection - Clipboard
+settings.bindings.SelectionClipboard = Selection - Clipboard
 
 settings.bindings.PasteShiftLeft = Paste - Shift Left
 settings.bindings.PasteShiftRight = Paste - Shift Right
@@ -2205,8 +2510,8 @@ settings.bindings.PasteShiftReset = Paste - Reset Shift
 settings.bindings.PasteRotate = Paste - Rotate
 settings.bindings.PasteOpenPrefabList = Paste - Open Prefab List
 settings.bindings.PasteCycleOrigin = Paste - Cycle Origin
+settings.bindings.PasteRotationReset = [TMP] Paste - Reset Rotation
 
-settings.bindings.BrushToggleInvert = Brush - Toggle Invert
 settings.bindings.BrushIncreaseWidth = Brush - Increase Width
 settings.bindings.BrushDecreaseWidth = Brush - Decrease Width
 settings.bindings.BrushIncreaseHeight = Brush - Increase Height
@@ -2216,7 +2521,9 @@ settings.bindings.BrushPreviousShapeOrigin = Brush - Previous Shape Origin
 settings.bindings.BrushAxisLockTranslate = Brush - Axis Lock Translate
 settings.bindings.BrushAxisLockRotate = Brush - Axis Lock Rotate
 settings.bindings.BrushAxisLockExit = Brush - Exit Axis Lock
-settings.bindings.BrushPaste = [TMP] Brush - Paste
+settings.bindings.BrushPaste = Brush - Paste
+settings.bindings.BrushNextRotationFace = Brush - Next Rotation Face
+settings.bindings.BrushNextRotationFace.logOutput = Set brush rotation to: {rotationFace}
 
 settings.bindings.EntityClone = Entity - Clone
 settings.bindings.EntityRemove = Entity - Remove
@@ -2252,6 +2559,8 @@ settings.bindings.SelectPrefabRemove = Select Prefab - Remove
 settings.bindings.SelectPrefabOpenSaveUI = Select Prefab - Open Save UI
 settings.bindings.SelectPrefabUpdateBounds = Select Prefab - Update Bounds
 settings.bindings.SelectPrefabTeleport = Select Prefab - Teleport
+settings.bindings.SelectPrefabBack = [TMP] Select Prefab - Back
+settings.bindings.SetPrefabAnchor = [TMP] Select Prefab - Set Anchor
 
 settings.bindings.HitboxInsert = Hitbox - Insert
 settings.bindings.HitboxDelete = Hitbox - Delete
@@ -2392,6 +2701,8 @@ feedback.bugreport.button.label = Report Bug
 feedback.bugreport.button.tooltip = Report a bug
 feedback.bugreport.includeLogFile = Include current log file
 
+feedback.contactPermission = Give permission for us to contact you about this report
+
 feedback.type.feedback = Feedback
 feedback.type.bugreport = Bug Report
 
@@ -2409,6 +2720,7 @@ feedback.category.placeholder = Select a category
 feedback.category.website = Website
 feedback.category.game = Game
 feedback.category.launcher = Launcher
+feedback.category.tools = Tools
 feedback.category.accounts = Accounts
 feedback.category.billing = Billing
 

@@ -1,43 +1,50 @@
-earSide = Bên tai
+earSide = Bên Tai
 earSide.left = Trái
 earSide.right = Phải
-earSide.both = Cả hai
+earSide.both = Cả Hai
 
-pattern.skull = Họa tiết đầu lâu
-pattern.star = Họa tiết ngôi sao
-pattern.gaia = Họa tiết cây lăng kính
-pattern.cat = Họa tiết mèo
-pattern.bunny = Họa tiết thỏ
-pattern.unicorn = Họa tiết kỳ lân
-pattern.cat = Họa tiết mèo
-pattern.play = Họa tiết nút Phát
-pattern.play_inverted = Họa tiết nút Phát đảo ngược
+pattern.skull = Họa Tiết Đầu Lâu
+pattern.star = Họa Tiết Ngôi Sao
+pattern.gaia = Họa Tiết Cây Lăng Kính
+pattern.cat = Họa Tiết Mèo
+pattern.bunny = Họa Tiết Thỏ
+pattern.unicorn = Họa Tiết Kỳ Lân
+pattern.cat = Họa Tiết Mèo
+pattern.play = Họa Tiết Nút Phát
+pattern.play_inverted = Họa Tiết Nút Phát Đảo Ngược
 
-pants.dungareesshorts = Quần yếm đùi
-pants.bracedshorts = Quần đùi có dây đeo
-pants.dungarees = Quần yếm
-pants.bracedpants = Quần dài có dây đeo
+pants.dungareesshorts = Quần Yếm Đùi
+pants.bracedshorts = Quần Đùi Có Dây Đeo
+pants.dungarees = Quần Yếm
+pants.bracedpants = Quần Dài Có Dây Đeo
 pants.hiddenbelt = Thắt Lưng Ẩn
 
 option.a = Tùy Chọn A
 option.b = Tùy Chọn B
 option.c = Tùy Chọn C
 
-default = Mặc định
+default = Mặc Định
 
-overtops.Scavenger_Poncho = Không có đầu lâu
+overtops.Scavenger_Poncho = Không Có Đầu Lâu
 
-capes.no_neck = Không có cổ
+capes.no_neck = Không Có Cổ
 
-haircuts.Dreadlocks01.name = Tóc bím 1
-haircuts.Dreadlocks02.name = Tóc bím 2
-haircuts.Dreadlocks03.name = Tóc bím 3
-haircuts.SlickbackCowlick.name = Tóc vuốt ngược có xoáy
+haircuts.Dreadlocks01.name = Tóc Bím 1
+haircuts.Dreadlocks02.name = Tóc Bím 2
+haircuts.Dreadlocks03.name = Tóc Bím 3
+haircuts.FrizzyBun01.name = [TMP] Búi Tóc Xù 1
+haircuts.FrizzyBun02.name = [TMP] Búi Tóc Xù 2
+haircuts.SlickbackCowlick.name = Tóc Vuốt Ngược Có Xoáy
 haircuts.Hairstrand.name = Lọn Tóc
 haircuts.GoldenBangles.name = Vòng Tay Vàng
 
+haircuts.Messy.name = [TMP] Tóc Rối
+haircuts.Braids.name = [TMP] Tóc Tết
+haircuts.Locks.name = [TMP] Tóc Bện Thừng
+haircuts.Wild.name = [TMP] Tóc Hoang Dã
+
 headaccessory.Logo_Cap_Movie.name = Logo Phim
-headaccessory.Logo_Cap_Heart.name = Logo Trái tim
+headaccessory.Logo_Cap_Heart.name = Logo Trái Tim
 headaccessory.Logo_Cap_Hypixel.name = Logo Hypixel
 
 left_arm.name = Cánh Tay Trái
