@@ -347,6 +347,7 @@ assetEditor.packModal.errors.serverVersionRequired = Server version is required
 assetEditor.packModal.field.targetDirectory = Target Directory
 assetEditor.packModal.targetDirectory.worldMods = World Mods Folder ({path})
 assetEditor.packModal.targetDirectory.globalMods = Global Mods Folder ({path})
+assetEditor.packModal.success.created = Asset pack created successfully
 
 assetEditor.readOnlyAssetBar.message = This asset is read-only and cannot be edited, since the asset pack is read-only.
 assetEditor.readOnlyAssetBar.overrideButton = Override Asset
@@ -554,22 +555,21 @@ builderTools.legend.shift = Shift +
 
 builderTools.legend.ScriptedBrushPage.Title = [TMP] Scriptable Brushes
 builderTools.legend.ScriptedBrushPage.Description = [TMP] This is a brush made in the Node Editor without any coding. If you want to make your own brush like this one, you can:
-builderTools.legend.ScriptedBrushPage.ToolSettings = [TMP] Open the tool settings.
+builderTools.legend.ScriptedBrushPage.ToolSettings = [TMP] Open the creative tool settings.
 builderTools.legend.ScriptedBrushPage.ExampleScriptedBrush.Title = [TMP] Opening the Node Editor for Scripted Brushes:
 builderTools.legend.ScriptedBrushPage.ExampleScriptedBrush.Description = [TMP] 1. Go to Assets > Asset Node Editor.\n\
 2. The Node Editor tool will pop up.\n\
 3. In the Node Editor, click on Root Node: Demo Workspace and select Scriptable Brush. If asked if you want to continue, say OK.\n\
 4. You are now in the Scriptable Brush workspace and can make a brush!
 builderTools.legend.ScriptedBrushPage.NodeEditorBasics.Title = [TMP] Scriptable Brush Node Editor Basics:
-builderTools.legend.ScriptedBrushPage.NodeEditorBasics.Description = [TMP] Now that you in the workspace, you can make your brush by:\n\
-- Use Right-Click to create a Node\n\
-- Use Left-Click on the bubble on the created Node and drag it to the bubble on the Root Node to connect it.
-4. You are now in the Scriptable Brush workspace to start making a scripted brush!
+builderTools.legend.ScriptedBrushPage.NodeEditorBasics.Description = [TMP] Now that you are in the workspace, you can make your brush by:\n\
+- Using right-click to create a Node\n\
+- Using left-click on the bubble on the created Node and drag it to the bubble on the Root Node to connect it.
 builderTools.legend.ScriptedBrushPage.NodeEditorSavingAndTesting.Title = [TMP] Saving and Testing:
 builderTools.legend.ScriptedBrushPage.NodeEditorSavingAndTesting.Description = [TMP] 1. Go to File > Save or Save As, and save it to an Asset Pack.\n\
 2. Go back to your game, and equip a Paint Brush Tool in your hand.\n\
-4. Type in chat /sb load, and go to the brush you made.\n\
-5. You can now start using your brush!
+3. Type in chat /sb load, and go to the brush you made.\n\
+4. You can now start using your brush!
 
 builderTools.legend.SelectTargetMaterial = [TMP] Select targeted material
 builderTools.legend.AddTargetMaterial = [TMP] Add targeted material as multi-material
@@ -745,7 +745,7 @@ builderTools.legend.ForestBrush.Page2.Example1.Description = [TMP] 1. Look at th
 4. Hold down the decorate key, usually Left-Click, to place the foliage decorations.\n\
 5. Add trees by changing the type to Trees.\n\
 6. Hold down the decorate key, usually Left-Click, to place the trees.\n\
-5. You now have a forest!
+7. You now have a forest!
 builderTools.legend.ForestBrush.Page3.Title = [TMP] Settings
 builderTools.legend.ForestBrush.Page3.NumDecorations.Title = [TMP] # of Decorations:
 builderTools.legend.ForestBrush.Page3.NumDecorations.Description = [TMP] - The number of decorations to place. Only applies when the Decoration Types is set to Trees or Boulders.
@@ -801,7 +801,7 @@ builderTools.legend.PathBrush.Page2.Example1.Description = [TMP] 1. Look at the 
 2. Customize the blocks to use for the path by placing blocks in the settings.\n\
 3. Hold down the draw key, usually Right-Click, to start drawing the path.\n\
 4. Hold down the half-block key, usually Left-Click, to place down half-blocks near un-level area to make them smoother.\n\
-6. You now have a path with decorations!
+5. You now have a path with decorations!
 builderTools.legend.PathBrush.Page3.Title = [TMP] Settings
 builderTools.legend.PathBrush.Page3.PathBlocks.Title = [TMP] Path Blocks:
 builderTools.legend.PathBrush.Page3.PathBlocks.Description = [TMP] - The main blocks the path will be made out of. Comes with a Density slider to control how many to place.
@@ -811,6 +811,8 @@ builderTools.legend.PathBrush.Page3.DecorationBlocks.Title = [TMP] Decoration Bl
 builderTools.legend.PathBrush.Page3.DecorationBlocks.Description = [TMP] - The blocks to add as decorations along the path. Comes with a Density slider to control how many to place. Comes with a Width slider to control how wide it will be.
 builderTools.legend.PathBrush.Page3.HalfBlocks.Title = [TMP] Half-Blocks on Path:
 builderTools.legend.PathBrush.Page3.HalfBlocks.Description = [TMP] - The half-blocks to be placed near un-level areas to make them smoother.
+builderTools.legend.PathBrush.Page3.ClearObstacles.Title = [TMP] Clear Obstacles:
+builderTools.legend.PathBrush.Page3.ClearObstacles.Description = [TMP] - If enabled, removes obstacles in the way of the path.
 
 builderTools.legend.RiverBrush.Page1.Title = [TMP] River Brush
 builderTools.legend.RiverBrush.Page1.Description = [TMP] The River Brush Tool allows you to make rivers and oceans.
@@ -832,7 +834,7 @@ builderTools.legend.RiverBrush.Page3.SurfaceBlocks.Description = [TMP] - The blo
 builderTools.legend.RiverBrush.Page3.SubsurfaceBlocks.Title = [TMP] Blocks under Fluid:
 builderTools.legend.RiverBrush.Page3.SubsurfaceBlocks.Description = [TMP] - The blocks to place under the fluid of the river. Comes with a Density slider to control how many to place.
 builderTools.legend.RiverBrush.Page3.UnderDecorations.Title = [TMP] Decorations under Fluid:
-builderTools.legend.RiverBrush.Page3.UnderDecorations.Description = [TMP] - The decorations to under the fluid. Comes with a Density slider to control how many to place.
+builderTools.legend.RiverBrush.Page3.UnderDecorations.Description = [TMP] - The decorations to add under the fluid. Comes with a Density slider to control how many to place.
 builderTools.legend.RiverBrush.Page3.SideDecorations.Title = [TMP] Decorations on side of Fluid:
 builderTools.legend.RiverBrush.Page3.SideDecorations.Description = [TMP] - The decorations to add on the side of the river. Comes with a Density slider to control how many to place.
 builderTools.legend.RiverBrush.Page3.TopDecorations.Title = [TMP] Decorations on top of the Fluid:
@@ -869,10 +871,10 @@ builderTools.legend.SpiralBrush.Page3.InvertDirection.Description = [TMP] - Inve
 builderTools.legend.SpiralBrush.Page3.Smoothness.Title = [TMP] Smoothness
 builderTools.legend.SpiralBrush.Page3.Smoothness.Description = [TMP] - Controls how smooth the spiral will be. Higher = more smooth, Lower = less smooth.
 builderTools.legend.SpiralBrush.Page3.HollowCenter.Title = [TMP] Hollow Center
-builderTools.legend.SpiralBrush.Page3.HollowCenter.Description = [TMP] - If enabled replaces the center of the spiral with air from where you clicked.
+builderTools.legend.SpiralBrush.Page3.HollowCenter.Description = [TMP] - If enabled, replaces the center of the spiral with air from where you clicked.
 
 builderTools.legend.RevolveTool.Page1.Title = [TMP] Revolve Tool
-builderTools.legend.RevolveTool.Page1.Description = [TMP] The Revolve Tool allows you to rotate and paste, a selection. This tool will only work if a selection has been made.
+builderTools.legend.RevolveTool.Page1.Description = [TMP] The Revolve Tool allows you to rotate and paste a selection. This tool will only work if a selection has been made.
 builderTools.legend.RevolveTool.Page1.ShapeArea = [TMP] Does the revolve. Depending on what settings you are using, it will do the revolve around where you are aiming, or yourself.
 builderTools.legend.RevolveTool.Page2.Example1.Title = [TMP] Revolving with the Brush:
 builderTools.legend.RevolveTool.Page2.Example1.Description = [TMP] 1. Make a selection that you want to have revolved.\n\
@@ -1303,7 +1305,7 @@ contentCreation.navigation.assets = Assets
 
 contentCreation.navigation.assetEditor = Asset Editor
 contentCreation.navigation.assetEditor.tooltipTitle = Launch Asset Editor App
-contentCreation.navigation.assetEditor.tooltipDesc = This launches an external program that allows you to live-edit game config assets. You can launch this quickly with the hotkey ALT+B or open it to a specific hovered item/block with SHIFT+H.
+contentCreation.navigation.assetEditor.tooltipDesc = [TMP] This launches an external program that allows you to live-edit game config assets.
 contentCreation.navigation.blockbench = Model Editor
 contentCreation.navigation.blockbench.tooltipTitle = Launch Blockbench App (Model Editor)
 contentCreation.navigation.blockbench.tooltipDesc = Create your own models and animations for Hytale.
@@ -1474,8 +1476,14 @@ disconnection.shutdownReason.missingAssets.failedToLoad = Failed to load any ass
 disconnection.shutdownReason.pluginError.detail = The following {count, plural, one {plugin} other {plugins}} failed to load:\n{detail}
 disconnection.shutdownReason.pluginDuplicate = Tried to load duplicate plugin: {plugin}
 disconnection.shutdownReason.missingRequiredPlugin.detail = Failed to start server! Missing Mods:\n{detail}
-disconnection.shutdownReason.authFailed.detail = Authentication failed:\n{detail}
+disconnection.shutdownReason.authFailed.needOfficialLauncher = [TMP] Authentication failed:\nOffline singleplayer mode requires the game must be launched through the official launcher.
+disconnection.shutdownReason.authFailed.offlineTokenValidationFailed = [TMP] Authentication failed:\nOffline token validation failed. The token may be expired, tampered, or malformed.
+disconnection.shutdownReason.authFailed.tokenValidationFailed = [TMP] Authentication failed:\nToken validation failed. Provided tokens may be expired, tampered, or malformed. Remove invalid tokens or provide valid ones.
 disconnection.shutdownReason.worldGen.detail = World generation failed:\n{detail}
+disconnection.shutdownReason.verifyError.chunksCorrupted = Failed to verify world "{world}", {corrupted}/{total} chunks corrupted
+disconnection.shutdownReason.verifyError.detail = Failed to {action} world "{world}"\n{detail}
+disconnection.shutdownReason.recoverError = Failed to recover world "{world}"\n{detail}
+disconnection.shutdownReason.verifyError = Failed to verify world "{world}"\n{detail}
 # === gameLoadingView ===
 gameLoadingView.hints.constructionThanks = Thanks for playing while we are under construction!
 gameLoadingView.hints.futureTipsAndTricks = This screen is going to show you tips and tricks to help you with your adventure.
@@ -1494,8 +1502,14 @@ gameLoadingView.status.migratingChunks = Migrating chunks for "{name}"
 gameLoadingView.status.verifiedChunks = Verified {done}/{total} chunks for world "{name}"
 gameLoadingView.status.recoveringChunks = Recovering {done}/{total} chunks for world "{name}"
 gameLoadingView.status.serverFrozenDumping = Server seems frozen. Dumping logs...
+gameLoadingView.status.enabled = Enabled
+gameLoadingView.status.shuttingDownModules = Shutting down modules
+gameLoadingView.status.settingUp = Setting up
+gameLoadingView.status.starting = Starting
+gameLoadingView.status.savingChunks = Saving world "{name}" chunks
 
 gameLoadingView.password.title = Server Password
+gameLoadingView.password.text = The server is password protected. Please enter the password to continue.
 gameLoadingView.password.submit = Login
 # === gamePageNavigation ===
 gamePageNavigation.buttons.Inventory = Inventory
@@ -1609,6 +1623,14 @@ general.disconnect.tokenUsernameMismatch = Invalid token claims: username mismat
 general.disconnect.tokenUuidMismatch = Invalid token claims: UUID mismatch
 general.disconnect.tooManyPasswordAttempts = Too many failed password attempts
 general.disconnect.universeException = An exception occurred when adding to the universe!
+general.p2p.worldNowPrivate = World is now private.
+general.p2p.openingWorldToConnections = Opening world to connections...
+general.p2p.worldOpenedUPnP = World opened using automatic port forwarding (UPnP).
+general.p2p.worldOpenedSTUN = World opened using direct connection discovery (STUN).
+general.p2p.worldOpenedLocal = World opened to local network.
+general.p2p.failedToOpenWorld = Failed to open world: {error}
+general.p2p.tryManualPortForwarding = Try manual port forwarding or use a VPN like Tailscale.
+general.p2p.failedToOpenWorldTimeout = Failed to open world: connection setup timed out.
 
 # === hud ===
 hud.playerList.onlinePlayers = Online Players
@@ -1664,6 +1686,15 @@ hud.debug.mapTransparency = Debug Map Transparency: {current} / {max}
 hud.debug.textureArrayLayer = Debug Texture Array Layer: {current} / {max}
 hud.debug.drawMapLevel = Draw Map Level: {current} / {max}
 
+hud.chat.suggestions.empty = [TMP] No suggestions
+hud.chat.suggestions.hint = [TMP] Press Tab to autocomplete
+hud.chat.suggestions.section.variants = [TMP] Variants
+hud.chat.suggestions.section.subcommands = [TMP] Subcommands
+hud.chat.suggestions.section.suggestions = [TMP] Suggestions
+hud.chat.suggestions.section.optional = [TMP] Optional
+
+hud.voip.overflow = [TMP] +{overflow} {overflow, plural, one {other} other {others}} speaking
+
 openLinkModal.title = Open External Website?
 openLinkModal.text = You are about to open the website "{url}" in a web browser. \n\
 \n\
@@ -1671,7 +1702,19 @@ Be cautious when visiting links from other players, especially if they ask for p
 \n\
 Are you sure you want to proceed?
 openLinkModal.confirm = Open Website
+
+# === autocomplete ===
+
+hud.chat.suggestions.empty = [TMP] No suggestions
+hud.chat.suggestions.hint = [TMP] Press Tab to autocomplete
+hud.chat.suggestions.section.variants = [TMP] Variants
+hud.chat.suggestions.section.subcommands = [TMP] Subcommands
+hud.chat.suggestions.section.suggestions = [TMP] Suggestions
+hud.chat.suggestions.section.optional = [TMP] Optional
+hud.chat.suggestions.variant.noargs = [TMP] <no args>
+
 # === inventory ===
+
 inventory.chest.title = Chest
 inventory.chest.tooltip.takeAll = Take All - Move all items from the container to the inventory. ({keybind})
 inventory.chest.tooltip.takeAllUnassigned = Take All - Move all items from the container to the inventory. (unassigned)
@@ -1757,6 +1800,8 @@ inventory.storage.filterTooltips.weapons = Show Weapons Only
 inventory.storage.filterTooltips.armor = Show Armor Only
 inventory.storage.filterTooltips.blocks = Show Building Materials Only
 
+inventory.button.clearInventory.tooltip = [TMP] Clear Inventory
+inventory.button.clearInventory.confirm = [TMP] Clear Inventory?
 inventory.button.autoSort.tooltip = Sort Items by Type ({keybind})
 inventory.button.autoSort.unassignedTooltip = Sort Items by Type (unassigned)
 inventory.dropdown.autoSortBy = Autosort by:
@@ -1771,6 +1816,9 @@ inventory.action.smartMove = Transfer
 inventory.action.resize = Resize
 inventory.action.placeOne = Place One
 inventory.action.resizeMod = Resize x5
+inventory.action.resizeUp = [TMP] Resize +
+inventory.action.resizeDown = [TMP] Resize -
+inventory.hint.switchPanel = [TMP] Switch Panel
 # === itemTooltip ===
 itemTooltip.resourceType.name = Resource: {name}
 itemTooltip.id = ID:
@@ -1870,6 +1918,14 @@ machinima.modal.label.model = Model
 machinima.modal.label.fieldOfView = Field of View
 machinima.modal.label.lighting = Emitting light
 machinima.modal.label.light = Light color
+
+# Actions
+machinima.track.action.mute = [TMP] Mute
+machinima.track.action.edit = [TMP] Edit Settings
+machinima.track.action.duplicate = [TMP] Duplicate Track
+machinima.track.action.delete = [TMP] Delete Track
+machinima.track.camera.active = [TMP] Is Active Camera
+machinima.track.entity.useCurrentModel = [TMP] Use current player model
 
 # Modal Checkboxes
 machinima.modal.checkbox.activateCamera = Activate Camera
@@ -1991,6 +2047,24 @@ machinima.log.autosaveDelay = Autosave Delay: {delay} secs
 machinima.log.unableToParseInt = Unable to parse int value: '{value}'
 machinima.log.delayRange = Delay must be between {min} and {max}.
 machinima.log.autosaveDelaySet = Autosave delay set to: {delay} secs.
+machinima.log.sceneAutosaved = Scene "{name}" autosaved to file.
+machinima.log.invalidSceneFilename = Invalid scene filename
+machinima.log.invalidScenePath = Invalid scene path
+machinima.log.errorSavingToFile = Error saving data to file {filePath}! - {error}
+machinima.log.sceneMustBeWithinDirectory = Scene file must be within the scenes directory
+machinima.log.unableToFindFile = Unable to find file "{filename}"
+machinima.log.errorReadingFromFile = Error reading data from file {filename}! - {error}
+machinima.log.failedToDeserializeScene = Failed to deserialize scene from {player}
+machinima.log.receivedSceneUpdate = Received "{name}" scene update from {player}
+machinima.log.selectionModeSetTo = SelectionMode mode set to {mode}
+machinima.log.continuousPlaybackEnabled = Continous playback enabled
+machinima.log.continuousPlaybackDisabled = Continous playback disabled
+machinima.log.autoSceneRestartEnabled = Auto scene restart enabled
+machinima.log.autoSceneRestartDisabled = Auto scene restart disabled
+machinima.log.sceneOriginSet = Scene origin set.
+machinima.log.sceneOffsetToOrigin = Scene offset to origin.
+machinima.log.removedKeyframe = Removed keyframe for frame {frame}
+machinima.log.hotbarFull = Hotbar is full. Clear a slot to receive the Machinima tool.
 
 # === mainMenu ===
 # Navigation
@@ -2162,6 +2236,7 @@ mainMenu.worlds.settings.storageType = Storage Type
 mainMenu.worlds.settings.storageType.tooltip = Choose the storage backend for this world. Changing this will migrate existing worlds to the selected format.\n\
 <b><color is="#f1ba50">Default</color></b>: Uses the default setting as selected by the server.\n\
 <b><color is="#f1ba50">RocksDB</color></b> <color is="#b32626">(Experimental)</color>: Uses RocksDB as the storage backend, which may offer improved reliability.
+mainMenu.worlds.settings.storageType.tooltipDisabled = [TMP] This setting is currently disabled. Play on this world once to enable it.
 mainMenu.worlds.settings.storageType.default = Default
 mainMenu.worlds.settings.storageType.rocksdb = RocksDB
 mainMenu.worlds.settings.applyWorldSettings = Apply Settings
@@ -2259,6 +2334,15 @@ mainMenu.worlds.modGroup.world = World Mods
 mainMenu.worlds.modGroup.world.tooltip = Mods installed in this world's save folder. They only apply to this world.
 mainMenu.worlds.modGroup.global = Global Mods
 mainMenu.worlds.modGroup.global.tooltip = Mods installed in your global Mods folder. They are available to all worlds.
+
+mainMenu.worlds.modSource.world = World
+mainMenu.worlds.modSource.global = Global
+
+mainMenu.worlds.modMissing.title = Missing required mods
+mainMenu.worlds.modMissing.message = The following required mods are missing:\n{mods}
+
+mainMenu.worlds.modRequiredBy.title = Mod required by other mods
+mainMenu.worlds.modRequiredBy.message = The following mods depend on {mod} and will be disabled with it:\n{mods}
 
 mainMenu.assetEditor.errorModal.missingDirectory.title = Select a Directory
 mainMenu.assetEditor.errorModal.missingDirectory.text = You need to set an assets path before using the asset editor
@@ -2479,6 +2563,7 @@ settings.prototype.groups.playselect = Play Selection Tool
 settings.prototype.groups.paint = Paint
 settings.prototype.groups.debug = Debug
 settings.prototype.groups.mounts = Mounts
+settings.prototype.enableController = [TMP] Enable Controller Support
 settings.groups.creativeMode = Creative Mode
 settings.groups.pickupLocations = Preferred Pickup Locations
 settings.groups.accessibility = Accessibility
@@ -2710,11 +2795,11 @@ settings.joinCameraPref.lastUsed = Remember Last Used
 settings.diagnosticMode = Diagnostic Mode
 settings.diagnosticMode.description = Enabling diagnostic mode is recommended if you plan to create content. Diagnostic mode will print out more error messages about misconfigured content.
 
-settings.quiche = Use Alternative Network Stack
-settings.quiche.description = Enables an alternative network stack which may improve connectivity in some situations. Must be toggled before joining a multiplayer world.
+settings.legacy_networking = Use Legacy Network Stack
+settings.legacy_networking.description = Uses the legacy MSQuic network stack instead of the default Quiche stack. Must be toggled before joining a multiplayer world.
 
 settings.quiche.log = Enable Networking Logging
-settings.quiche.log.description = Enables detailed logging for the alternative network stack. Useful for debugging connection issues.
+settings.quiche.log.description = Enables detailed logging for the network stack. Useful for debugging connection issues.
 
 settings.useBlockyModelShaderWorkaround = Blocky Model Workaround
 settings.useBlockyModelShaderWorkaround.description = On some Macs with NVIDIA hardware, model rendering is very slow without this workaround. Restarting the game is required for the change to take effect.
@@ -2802,6 +2887,7 @@ settings.bindings.ShowPlayerList = Show Player List
 settings.bindings.OpenInventory = Open Inventory
 settings.bindings.OpenMap = Open Map
 settings.bindings.OpenDevTools = Open Dev Tools
+settings.bindings.OpenAssetEditor = [TMP] Open Asset Editor
 settings.bindings.DropItem = Drop Item
 settings.bindings.ShowUtilitySlotSelector = Show Utility Slot Selector
 settings.bindings.ShowEmoteSelector = Show Emote Selector
@@ -2864,6 +2950,27 @@ settings.bindings.ContainerTakeAll = Container - Take All
 settings.bindings.ContainerPutAll = Container - Put All
 settings.bindings.ContainerQuickStack = Container - Quick Stack
 settings.bindings.ContainerSort = Container - Sort Items
+settings.bindings.UiPickItem = [TMP] Pick Item
+settings.bindings.UiPickHalf = [TMP] Pick Half
+settings.bindings.UiPickOne = [TMP] Pick One
+settings.bindings.UiSmartMove = [TMP] Smart Move
+settings.bindings.UiPlaceOne = [TMP] Place One
+settings.bindings.UiResizeStack = [TMP] Resize Stack
+settings.bindings.UiResizeStackMod = [TMP] Resize Stack (x5)
+settings.bindings.UiResizeStackUp = [TMP] Resize Stack +
+settings.bindings.UiResizeStackDown = [TMP] Resize Stack -
+settings.bindings.UiValidate = [TMP] Validate
+settings.bindings.UiCancel = [TMP] Cancel
+settings.bindings.UiNavigateUp = [TMP] Navigate Up
+settings.bindings.UiNavigateDown = [TMP] Navigate Down
+settings.bindings.UiNavigateLeft = [TMP] Navigate Left
+settings.bindings.UiNavigateRight = [TMP] Navigate Right
+settings.bindings.UiTabLeft = [TMP] Tab Left
+settings.bindings.UiTabRight = [TMP] Tab Right
+settings.bindings.UiPanelLeft = [TMP] Panel Left
+settings.bindings.UiPanelRight = [TMP] Panel Right
+settings.bindings.HotbarScrollNext = [TMP] Hotbar Next
+settings.bindings.HotbarScrollPrevious = [TMP] Hotbar Previous
 settings.bindings.SelectionShiftUp = Selection - Shift Up
 settings.bindings.SelectionShiftDown = Selection - Shift Down
 settings.bindings.SelectionCopy = Selection - Copy
@@ -2948,6 +3055,27 @@ settings.bindings.ContainerTakeAll = Container - Take All
 settings.bindings.ContainerPutAll = Container - Put All
 settings.bindings.ContainerQuickStack = Container - Quick Stack
 settings.bindings.ContainerSort = Container - Sort Items
+settings.bindings.UiPickItem = [TMP] Pick Item
+settings.bindings.UiPickHalf = [TMP] Pick Half
+settings.bindings.UiPickOne = [TMP] Pick One
+settings.bindings.UiSmartMove = [TMP] Smart Move
+settings.bindings.UiPlaceOne = [TMP] Place One
+settings.bindings.UiResizeStack = [TMP] Resize Stack
+settings.bindings.UiResizeStackMod = [TMP] Resize Stack (x5)
+settings.bindings.UiResizeStackUp = [TMP] Resize Stack +
+settings.bindings.UiResizeStackDown = [TMP] Resize Stack -
+settings.bindings.UiValidate = [TMP] Validate
+settings.bindings.UiCancel = [TMP] Cancel
+settings.bindings.UiNavigateUp = [TMP] Navigate Up
+settings.bindings.UiNavigateDown = [TMP] Navigate Down
+settings.bindings.UiNavigateLeft = [TMP] Navigate Left
+settings.bindings.UiNavigateRight = [TMP] Navigate Right
+settings.bindings.UiTabLeft = [TMP] Tab Left
+settings.bindings.UiTabRight = [TMP] Tab Right
+settings.bindings.UiPanelLeft = [TMP] Panel Left
+settings.bindings.UiPanelRight = [TMP] Panel Right
+settings.bindings.HotbarScrollNext = [TMP] Hotbar Next
+settings.bindings.HotbarScrollPrevious = [TMP] Hotbar Previous
 
 settings.autoJumpObstacle = Auto Step-Up
 settings.autoJumpObstacle.description = With this setting enabled, you will automatically walk up blocks with a max height of 1 unit.
@@ -3072,7 +3200,7 @@ feedback.title = Submit Bug or Feedback
 feedback.selectType = What would you like to submit?
 
 feedback.feedback.title = Submit Feedback
-feedback.feedback.description = Help us improve Hytale by sharing your thoughts and suggestions.
+feedback.feedback.description.link = Share your thoughts and suggestions to help us improve Hytale. Opens in your browser.
 feedback.feedback.button.label = Feedback
 feedback.feedback.button.tooltip = Submit feedback
 
@@ -3177,9 +3305,9 @@ cosmetics.color.BlueLight = Light Blue
 cosmetics.color.Turquoise = Turquoise
 cosmetics.color.Green = Green
 cosmetics.color.White = White
-cosmetics.color.GreyAsh = Ash Grey
-cosmetics.color.Grey = Grey
-cosmetics.color.GreyPurple = Purple Grey
+cosmetics.color.GreyAsh = Ash Gray
+cosmetics.color.Grey = Gray
+cosmetics.color.GreyPurple = Purple Gray
 cosmetics.color.Blue_Anthracite = Anthracite Blue
 
 # Shiny_Fabric Gradients
@@ -3190,9 +3318,9 @@ cosmetics.color.Violet = Violet
 
 # Jean_Generic Gradients
 cosmetics.color.BluePastel = Pastel Blue
-cosmetics.color.GreyDark = Dark Grey
-cosmetics.color.GreyLight = Light Grey
-cosmetics.color.GreyBlue = Blue Grey
+cosmetics.color.GreyDark = Dark Gray
+cosmetics.color.GreyLight = Light Gray
+cosmetics.color.GreyBlue = Blue Gray
 cosmetics.color.Marine_Blue = Marine Blue
 cosmetics.color.Maroon = Maroon
 cosmetics.color.Blue_Night = Night Blue
