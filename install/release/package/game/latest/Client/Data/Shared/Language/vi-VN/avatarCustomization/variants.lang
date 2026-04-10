@@ -32,16 +32,16 @@ capes.no_neck = Không Có Cổ
 haircuts.Dreadlocks01.name = Tóc Bím 1
 haircuts.Dreadlocks02.name = Tóc Bím 2
 haircuts.Dreadlocks03.name = Tóc Bím 3
-haircuts.FrizzyBun01.name = [TMP] Búi Tóc Xù 1
-haircuts.FrizzyBun02.name = [TMP] Búi Tóc Xù 2
+haircuts.FrizzyBun01.name = Búi Tóc Xù 1
+haircuts.FrizzyBun02.name = Búi Tóc Xù 2
 haircuts.SlickbackCowlick.name = Tóc Vuốt Ngược Có Xoáy
 haircuts.Hairstrand.name = Lọn Tóc
 haircuts.GoldenBangles.name = Vòng Tay Vàng
 
-haircuts.Messy.name = [TMP] Tóc Rối
-haircuts.Braids.name = [TMP] Tóc Tết
-haircuts.Locks.name = [TMP] Tóc Bện Thừng
-haircuts.Wild.name = [TMP] Tóc Hoang Dã
+haircuts.Messy.name = Tóc Rối
+haircuts.Braids.name = Tóc Tết
+haircuts.Locks.name = Tóc Bện Thừng
+haircuts.Wild.name = Tóc Hoang Dã
 
 headaccessory.Logo_Cap_Movie.name = Logo Phim
 headaccessory.Logo_Cap_Heart.name = Logo Trái Tim

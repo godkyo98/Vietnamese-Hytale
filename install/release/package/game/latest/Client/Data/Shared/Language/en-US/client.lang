@@ -26,9 +26,12 @@ assetEditor.mainMenu.errors.failedToSaveServerList = Failed to save server list
 
 assetEditor.mainMenu.serverModal.titleAdd = Add Server
 assetEditor.mainMenu.serverModal.titleEdit = Edit Server
+assetEditor.mainMenu.serverModal.titleRemove = Remove Server
 assetEditor.mainMenu.serverModal.errors.enterName = Please enter a name
 assetEditor.mainMenu.serverModal.errors.enterHostname = Please enter a hostname
 assetEditor.mainMenu.serverModal.errors.nameAlreadyInUse = This name is already in use.
+assetEditor.mainMenu.serverModal.errors.enterPort = Please enter a port
+assetEditor.mainMenu.serverModal.errors.invalidPort = Port is invalid
 
 assetEditor.mainMenu.removeServerModal.title = Remove server "{serverName}" from list?
 
@@ -476,38 +479,37 @@ builderTools.noToolSettings = This tool doesn't require configuration.
 builderTools.favorites.nameTitle = Tool Favorite Name
 builderTools.favorites.nameDescription = Please enter a name for this favorite tool
 
-builderTools.settings.ToolReachDistance.name = Tool Reach Distance
+builderTools.settings.ToolReachDistance.name = Reach Distance
 builderTools.settings.ToolReachDistance.description = Specifies the max (or locked) reach distance to use for tools
 builderTools.settings.ToolDelayMin.name = Tool Delay Min
 builderTools.settings.ToolDelayMin.description = Specifies the min delay (in ms) allowed between each tool use
 builderTools.settings.UndoGroupSize.description = Number of brush executions grouped into a single undo entry. Lower values give finer undo control, higher values reduce undo steps for long strokes.
 builderTools.settings.GizmoScale.description = Controls the on-screen size of rotation and translation gizmos
-builderTools.settings.EnableBrushShapeRendering.name = Brush Shape Rendering
-builderTools.settings.EnableBrushShapeRendering.description = Toggles the brush rendering between block shape and standard wireframe
 builderTools.settings.BrushOpacity.name = Brush Opacity
 builderTools.settings.BrushOpacity.description = Controls the opacity of the rendered brush tools
-builderTools.settings.SelectionOpacity.name = Selection Opacity
-builderTools.settings.SelectionOpacity.description = Controls the opacity of the rendered selection tool
+builderTools.settings.SelectionOpacity.name = Selection Box Opacity
+builderTools.settings.SelectionOpacity.description = Controls the opacity of the selection box.
 builderTools.settings.SelectionPanelOpacity.name = Selection Panel Opacity
-builderTools.settings.SelectionPanelOpacity.description = Controls the opacity of the draggable selection tool panels
-builderTools.settings.FlightInertia.name = Flight Inertia
+builderTools.settings.SelectionPanelOpacity.description = Controls the opacity of the draggable panels on the selection box.
+builderTools.settings.FlightInertia.name = Flight Drift
 builderTools.settings.FlightInertia.description = Adds momentum and gradual deceleration to creative flight (0 = instant stop, 100 = maximum drift)
 builderTools.settings.FlightMode.name = Flight Mode
 builderTools.settings.FlightMode.description = Choose between hovering in place or flying toward camera direction
 builderTools.settings.DisplayLegend.name = Display Legend
 builderTools.settings.DisplayLegend.description = Shows or hides the builder tools legend panel with control hints
-builderTools.settings.NoClip.name = No Clip
+builderTools.settings.NoClip.name = No Collision
 builderTools.settings.NoClip.description = Disables collision detection when flying, allowing you to pass through blocks
 builderTools.settings.AirPlacement.name = Air Placement
 builderTools.settings.AirPlacement.description = Allows placing blocks in air at range without requiring support. Use mouse wheel to adjust placement distance
-builderTools.settings.AllowNPCDetection.name = Allow NPC Detection
+builderTools.settings.QuickReplace.name = Quick Replace
+builderTools.settings.QuickReplace.description = Allows right clicking blocks to replace them with the block currently being held.
+builderTools.settings.AllowNPCDetection.name = Visible to NPCs
 builderTools.settings.AllowNPCDetection.description = When enabled, NPCs can detect and react to you while in Creative mode
 builderTools.settings.RespondToHit.name = Respond To Hit
 builderTools.settings.RespondToHit.description = When enabled, you can receive knockback and other hit effects while invincible in Creative mode
 builderTools.settings.BrushShapeRendering.name = Brush Block Rendering
 builderTools.settings.BrushShapeRendering.description = Toggles the brush preview render between wireframe and block style
 builderTools.settings.FlightSpeedMultiplier.description = Adjust flight and movement speed
-builderTools.settings.BrushSoundsEnabled.description = Enable or disable sound effects when using brush tools
 builderTools.settings.BrushSoundVolume.description = Adjust the volume of brush tool sound effects
 builderTools.settings.HideHud.description = Hide all HUD elements
 builderTools.settings.HideHotbar.description = Hide the hotbar while in Creative mode
@@ -526,7 +528,7 @@ builderTools.panel.maskSettings = Mask Settings
 builderTools.panel.quickSettings = Settings
 builderTools.quickSettings.title = Creative Mode Quick Settings
 builderTools.panel.clearSelection = Clear selection
-builderTools.panel.enableEmptyFilter = Enable 'Empty' filter
+builderTools.panel.enableEmptyFilter = Enable "Empty" filter
 builderTools.panel.invertEntireMask = Invert entire mask
 builderTools.panel.useCustomMaskCommandEntry = Use custom mask command entry
 
@@ -550,8 +552,53 @@ builderTools.legend.alt = Alt +
 builderTools.legend.shiftalt = Shift + Alt +
 builderTools.legend.shift = Shift +
 
-builderTools.legend.PaintBrush.Page1.Title = Basic Brushes
-builderTools.legend.PaintBrush.Page1.Description = The Paintbrush Tool allows you to place and remove blocks in different shapes, sizes, and materials
+builderTools.legend.ScriptedBrushPage.Title = [TMP] Scriptable Brushes
+builderTools.legend.ScriptedBrushPage.Description = [TMP] This is a brush made in the Node Editor without any coding. If you want to make your own brush like this one, you can:
+builderTools.legend.ScriptedBrushPage.ToolSettings = [TMP] Open the tool settings.
+builderTools.legend.ScriptedBrushPage.ExampleScriptedBrush.Title = [TMP] Opening the Node Editor for Scripted Brushes:
+builderTools.legend.ScriptedBrushPage.ExampleScriptedBrush.Description = [TMP] 1. Go to Assets > Asset Node Editor.\n\
+2. The Node Editor tool will pop up.\n\
+3. In the Node Editor, click on Root Node: Demo Workspace and select Scriptable Brush. If asked if you want to continue, say OK.\n\
+4. You are now in the Scriptable Brush workspace and can make a brush!
+builderTools.legend.ScriptedBrushPage.NodeEditorBasics.Title = [TMP] Scriptable Brush Node Editor Basics:
+builderTools.legend.ScriptedBrushPage.NodeEditorBasics.Description = [TMP] Now that you in the workspace, you can make your brush by:\n\
+- Use Right-Click to create a Node\n\
+- Use Left-Click on the bubble on the created Node and drag it to the bubble on the Root Node to connect it.
+4. You are now in the Scriptable Brush workspace to start making a scripted brush!
+builderTools.legend.ScriptedBrushPage.NodeEditorSavingAndTesting.Title = [TMP] Saving and Testing:
+builderTools.legend.ScriptedBrushPage.NodeEditorSavingAndTesting.Description = [TMP] 1. Go to File > Save or Save As, and save it to an Asset Pack.\n\
+2. Go back to your game, and equip a Paint Brush Tool in your hand.\n\
+4. Type in chat /sb load, and go to the brush you made.\n\
+5. You can now start using your brush!
+
+builderTools.legend.SelectTargetMaterial = [TMP] Select targeted material
+builderTools.legend.AddTargetMaterial = [TMP] Add targeted material as multi-material
+builderTools.legend.UndoLastBrush = [TMP] Undo last brush action
+builderTools.legend.RedoLastUndo = [TMP] Redo last undone action
+builderTools.legend.TipsAndTricks.Title = [TMP] Tips and Tricks
+builderTools.legend.TipsAndTricks.Description = [TMP] Here are some tips and tricks for how to use this brush:
+builderTools.legend.EditInventoryProperties = [TMP] Edit the brush's settings from the inventory
+builderTools.legend.SettingDescription = [TMP] Below are descriptions of what each setting does for this brush:
+builderTools.legend.BlockMasking = [TMP] Block Masking
+builderTools.legend.BlockMaskingDescription = [TMP] Allows you to set materials to the brush that limit changes to blocks that match those materials
+builderTools.legend.BlockMaskingMenuDescription = [TMP] To see all the masking options and what they do, you can:
+builderTools.legend.BrushMenuMaskingTab = [TMP] Open the Brush Settings
+builderTools.legend.BlockMaskingMenuTabDescription = [TMP] Open the Brush Masking Tab (near top right)
+builderTools.legend.BlockMaskTarget.Title = [TMP] Mask:
+builderTools.legend.BlockMaskTarget.Description = [TMP] Replace only blocks in this list
+builderTools.legend.BlockMaskAbove.Title = [TMP] > Above:
+builderTools.legend.BlockMaskAbove.Description = [TMP] Replace only blocks above the ones in this list
+builderTools.legend.BlockMaskNot.Title = [TMP] ! Not:
+builderTools.legend.BlockMaskNot.Description = [TMP] Don't replace blocks in this list
+builderTools.legend.BlockMaskBelow.Title = [TMP] < Below:
+builderTools.legend.BlockMaskBelow.Description = [TMP] Replace only blocks below the ones in this list
+builderTools.legend.BlockMaskAdjacent.Title = [TMP] ~ Adjacent:
+builderTools.legend.BlockMaskAdjacent.Description = [TMP] Replace only blocks next to the ones in this list
+builderTools.legend.BlockMaskNeighbor.Title = [TMP] ^ Neighbor:
+builderTools.legend.BlockMaskNeighbor.Description = [TMP] Replace only blocks touching the ones in this list
+
+builderTools.legend.PaintBrush.Page1.Title = [TMP] Paint Brush
+builderTools.legend.PaintBrush.Page1.Description = [TMP] The Paint Brush Tool allows you to place and remove blocks in different shapes, sizes, and materials
 builderTools.legend.PaintBrush.Page1.DestroyBlocks = Destroy blocks where you're aiming
 builderTools.legend.PaintBrush.Page1.PlaceBlocks = Place blocks where you're aiming, according to the material you've set
 builderTools.legend.PaintBrush.Page1.SelectTargetMaterial = Select targeted material
@@ -562,23 +609,299 @@ builderTools.legend.PaintBrush.Page1.EditInventoryProperties = Edit materials, s
 builderTools.legend.PaintBrush.Page1.AirPlacementTitle = Air Placement
 builderTools.legend.PaintBrush.Page1.AirPlacementHotkey = Toggle Air Placement targeting mode
 builderTools.legend.PaintBrush.Page1.AirPlacementDistanceChange = Change distance of air placement
-builderTools.legend.PaintBrush.Page2.Title = Axis Lock & Masking
 builderTools.legend.PaintBrush.Page2.AxisLock = Axis Lock
 builderTools.legend.PaintBrush.Page2.AxisLockDescription = Allows you to stick the brush to a flat, moveable, rotateable surface. The following hotkeys allow you to show, edit, and exit the surface mode.
 builderTools.legend.PaintBrush.Page2.ShowSurfaceMoveTool = Show Surface Move Tool
 builderTools.legend.PaintBrush.Page2.ShowSurfaceRotationTool = Show Surface Rotation Tool
 builderTools.legend.PaintBrush.Page2.UseBrush = Use Brush
 builderTools.legend.PaintBrush.Page2.ExitAxisLockMode = Exit Axis Lock mode
-builderTools.legend.PaintBrush.Page2.BlockMasking = Block Masking
-builderTools.legend.PaintBrush.Page2.BlockMaskingDescription = Allows you to set materials to the brush that limit changes to blocks that match those materials
-builderTools.legend.PaintBrush.Page2.BrushMenuMaskingTab = Brush Menu Masking Tab
-builderTools.legend.PaintBrush.Page2.MaskConfigDescription = Click the pencil icon in the top right to swap to the 'Mask Config' panel. There you can create more complex masks using items from the inventory. Hover over terms in the UI panel for more information.
-builderTools.legend.PaintBrush.Page3.Title = Scriptable Brushes / Air Placement
-builderTools.legend.PaintBrush.Page3.Description = Scriptable Brushes\n\
-You can create custom block placement logic using commands and assets like "River Brush", "Mountain Brush", and any other brush you can imagine!
-builderTools.legend.PaintBrush.Page3.CreateBrushesDescription = To create your own brushes, take a look at the samples provided in the Assets/MacroCommands/Brushes/ directory in the assets. You can use the in-game /help command to learn more about every available brush config operation. You'll also need to create a Paint Brush item; look in the Assets/Server/Item/Items/EditorTool/ScriptedBrushes/ directory for examples of these items.
-builderTools.legend.PaintBrush.Page3.TestingBrushesTitle = Testing Development Brushes
-builderTools.legend.PaintBrush.Page3.TestingBrushesDescription = Use '/sb load' to open a UI and browse all available scripted brushes, or '/sb load <name>' to load a specific brush directly. This lets you test brushes without needing to create an item first. Use '/sb clear' to disable when done.
+
+builderTools.legend.CaveBrush.Page1.Title = [TMP] Cave Brush
+builderTools.legend.CaveBrush.Page1.Description = [TMP] The Cave Brush Tool allows you to make caves and ravines.
+builderTools.legend.CaveBrush.Page1.DecorateArea = [TMP] Add cave decorations where you're aiming
+builderTools.legend.CaveBrush.Page1.ShapeArea = [TMP] Sculpt the cave area where you're aiming
+builderTools.legend.CaveBrush.Page2.BlockTip.Title = [TMP] Customizing a Cave:
+builderTools.legend.CaveBrush.Page2.BlockTip.Description = [TMP] You can customize what blocks the cave is made out of by dragging and dropping blocks from the inventory into the settings.\n\nYou can also remove blocks by double-clicking on blocks in the setting.
+builderTools.legend.CaveBrush.Page2.Example1.Title = [TMP] Making and Decorating a Cave:
+builderTools.legend.CaveBrush.Page2.Example1.Description = [TMP] 1. Look at the ground, the side of a mountain, or a solid chunk of land.\n\
+2. Hold down the sculpt key, usually Right-Click, to start sculpting the shape of the cave.\n\
+3. In the sculpted cave, look at the floor and hold down the decorate key, usually Left-Click, to add decorations.\n\
+4. In the sculpted cave, look at the ceiling and hold down the decorate key, usually Left-Click, to add decorations.\n\
+5. You now have a cave with decorations!
+builderTools.legend.CaveBrush.Page3.Title = [TMP] Settings (1/2)
+builderTools.legend.CaveBrush.Page3.CaveBlocks.Title = [TMP] Cave Blocks:
+builderTools.legend.CaveBrush.Page3.CaveBlocks.Description = [TMP] - The blocks to make the cave out of.
+builderTools.legend.CaveBrush.Page3.CaveBlockDecorations.Title = [TMP] Cave Block Decorations:
+builderTools.legend.CaveBrush.Page3.CaveBlockDecorations.Description = [TMP] - The blocks to decorate the cave floor with on the sides of the Floor Blocks. Comes with a Density slider to control how many to place.
+builderTools.legend.CaveBrush.Page3.TopDecorations.Title = [TMP] Top Decorations:
+builderTools.legend.CaveBrush.Page3.TopDecorations.Description = [TMP] - The blocks to decorate the cave ceiling with. Comes with a Density slider to control how many to place.
+builderTools.legend.CaveBrush.Page3.FloorBlocks.Title = [TMP] Floor Blocks:
+builderTools.legend.CaveBrush.Page3.FloorBlocks.Description = [TMP] - The blocks to decorate the cave floor with. Comes with a Density slider to control how many to place.
+builderTools.legend.CaveBrush.Page3.FloorDecorations.Title = [TMP] Floor Decorations:
+builderTools.legend.CaveBrush.Page3.FloorDecorations.Description = [TMP] - The blocks to place as decoration on top of the Floor Blocks. Comes with a Density slider to control how many to place.
+builderTools.legend.CaveBrush.Page3.OreBlocks.Title = [TMP] Ore Blocks:
+builderTools.legend.CaveBrush.Page3.OreBlocks.Description = [TMP] - The ore blocks to place around the cave. Comes with a Density slider to control how many to place.
+builderTools.legend.CaveBrush.Page4.Title = [TMP] Settings (2/2)
+builderTools.legend.CaveBrush.Page4.Randomize.Title = [TMP] Randomize:
+builderTools.legend.CaveBrush.Page4.Randomize.Description = [TMP] - When checked, makes the shape smaller or larger at random when shaping the cave.
+builderTools.legend.CaveBrush.Page4.MeltStrength.Title = [TMP] Melt Strength:
+builderTools.legend.CaveBrush.Page4.MeltStrength.Description = [TMP] - Controls the carving strength of the brush. Higher = removes more blocks, Lower = removes less blocks.
+builderTools.legend.CaveBrush.Page4.SmoothStrength.Title = [TMP] Smooth Strength:
+builderTools.legend.CaveBrush.Page4.SmoothStrength.Description = [TMP] - Controls the smoothing strength of the brush. Higher = more smooth, Lower = less smooth.
+
+builderTools.legend.BoulderBrush.Page1.Title = [TMP] Boulder Brush
+builderTools.legend.BoulderBrush.Page1.Description = [TMP] The Boulder Brush Tool allows you to make boulders and rock formations.
+builderTools.legend.BoulderBrush.Page1.DecorateArea = [TMP] Decorate the boulder where you're aiming
+builderTools.legend.BoulderBrush.Page1.ShapeArea = [TMP] Place a boulder where you're aiming
+builderTools.legend.BoulderBrush.Page2.BlockTip.Title = [TMP] Customizing a Boulder:
+builderTools.legend.BoulderBrush.Page2.BlockTip.Description = [TMP] You can customize what blocks the boulder is made out of by dragging and dropping blocks from the inventory into the settings.\n\nYou can also remove blocks by double-clicking on blocks in the setting.
+builderTools.legend.BoulderBrush.Page2.Example1.Title = [TMP] Making and Decorating a Boulder:
+builderTools.legend.BoulderBrush.Page2.Example1.Description = [TMP] 1. Look at the ground.\n\
+2. Press the place key, usually Right-Click, to place a boulder\n\
+3. Change the Origin to Center.\n\
+4. Look at the boulder and press the decorate key, usually Left-Click, to add decorations.\n\
+5. You now have a boulder with decorations!
+builderTools.legend.BoulderBrush.Page3.Title = [TMP] Settings (1/2)
+builderTools.legend.BoulderBrush.Page3.RockBlocks.Title = [TMP] Rock Blocks:
+builderTools.legend.BoulderBrush.Page3.RockBlocks.Description = [TMP] - The blocks to make the boulder out of.
+builderTools.legend.BoulderBrush.Page3.TopBlocks.Title = [TMP] Top Blocks:
+builderTools.legend.BoulderBrush.Page3.TopBlocks.Description = [TMP] - The blocks to decorate the top of the boulder. Comes with a Density slider to control how many to place.
+builderTools.legend.BoulderBrush.Page3.TopDecor.Title = [TMP] Top Decor:
+builderTools.legend.BoulderBrush.Page3.TopDecor.Description = [TMP] - The blocks to place on top of the Top Blocks. Comes with a Density slider to control how many to place.
+builderTools.legend.BoulderBrush.Page3.RockDecor.Title = [TMP] Rock Decor:
+builderTools.legend.BoulderBrush.Page3.RockDecor.Description = [TMP] - The blocks to place on top of the Rock Blocks. Comes with a Density slider to control how many to place.
+builderTools.legend.BoulderBrush.Page3.BoulderPoints.Title = [TMP] Boulder Points:
+builderTools.legend.BoulderBrush.Page3.BoulderPoints.Description = [TMP] - The number of sub-boulders to use to make the boulder. The sub-boulders can be spaced with Boulder Radius to make one boulder, or a group of boulders.
+builderTools.legend.BoulderBrush.Page3.BoulderRadius.Title = [TMP] Boulder Radius:
+builderTools.legend.BoulderBrush.Page3.BoulderRadius.Description = [TMP] - Controls the spacing between the Boulder Points. This can be used to make the boulder wider, or create a group of boulders.
+builderTools.legend.BoulderBrush.Page4.Title = [TMP] Settings (2/2)
+builderTools.legend.BoulderBrush.Page4.Randomization.Title = [TMP] Randomization:
+builderTools.legend.BoulderBrush.Page4.Randomization.Description = [TMP] - Controls how random the boulder looks. Higher = more random, Lower = less random.
+builderTools.legend.BoulderBrush.Page4.Smoothness.Title = [TMP] Smoothness:
+builderTools.legend.BoulderBrush.Page4.Smoothness.Description = [TMP] - Controls how smooth the boulder is. Higher = more smooth, Lower = less smooth.
+builderTools.legend.BoulderBrush.Page4.StackSize.Title = [TMP] Stack Size (Advanced):
+builderTools.legend.BoulderBrush.Page4.StackSize.Description = [TMP] - Controls how many times to stack the boulder using it's Width. This is a different way to shape boulders. The boulder will place the current shape down, move it up by the Height, decrease the Width, and place again and keep doing this.
+builderTools.legend.BoulderBrush.Page4.StackRandomization.Title = [TMP] Stack Randomization (Advanced):
+builderTools.legend.BoulderBrush.Page4.StackRandomization.Description = [TMP] - The randomization between the height layers of the boulder. Higher = more random, Lower = less random.
+builderTools.legend.BoulderBrush.Page4.StackTip.Title = [TMP] Advanced Settings Tip:
+builderTools.legend.BoulderBrush.Page4.StackTip.Description = [TMP] - To see how the Stack Size and Stack Randomization work, turn Smoothness to 0, Shape to Cube, Stack Size to above 0, and try out different Width and Heights.
+
+builderTools.legend.BuildingBrush.Page1.Title = [TMP] Building Brush
+builderTools.legend.BuildingBrush.Page1.Description = [TMP] The Building Brush Tool allows you to make buildings and form structures.
+builderTools.legend.BuildingBrush.Page1.ShapeArea = [TMP] Place a building where you're aiming
+builderTools.legend.BuildingBrush.Page2.BlockTip.Title = [TMP] Customizing a Building:
+builderTools.legend.BuildingBrush.Page2.BlockTip.Description = [TMP] You can customize what blocks the building is made out of by dragging and dropping blocks from the inventory into the settings.\n\nYou can also remove blocks by double-clicking on blocks in the setting.
+builderTools.legend.BuildingBrush.Page2.Example1.Title = [TMP] Making a Tower with Windows:
+builderTools.legend.BuildingBrush.Page2.Example1.Description = [TMP] 1. Use the settings to make Width and Height to what you want.\n\
+2. Change the Number of Floors to how many floors you want the tower to have.\n\
+3. Change the Number of Windows to how many windows you want, and change the Window Radius so that the windows are placed properly in the wall. Windows take trial and error currently to get them placed properly in the wall.\n\
+4. Change the Roof settings to be what you want.\n\
+5. Press the place key, usually Right-Click, to place the building.\n\
+6. You now have a tower!
+builderTools.legend.BuildingBrush.Page3.Title = [TMP] Settings
+builderTools.legend.BuildingBrush.Page3.MainBlock.Title = [TMP] Main Block:
+builderTools.legend.BuildingBrush.Page3.MainBlock.Description = [TMP] - The main blocks to make the building out of.
+builderTools.legend.BuildingBrush.Page3.SecondaryBlock.Title = [TMP] Secondary Block:
+builderTools.legend.BuildingBrush.Page3.SecondaryBlock.Description = [TMP] - The blocks used as decoration across the center of the walls of the building.
+builderTools.legend.BuildingBrush.Page3.FloorBlock.Title = [TMP] Floor Block:
+builderTools.legend.BuildingBrush.Page3.FloorBlock.Description = [TMP] - The blocks used for the floors in the building.
+builderTools.legend.BuildingBrush.Page3.EnableWindows.Title = [TMP] Enable Windows:
+builderTools.legend.BuildingBrush.Page3.EnableWindows.Description = [TMP] - Enables windows to be placed on the building.
+builderTools.legend.BuildingBrush.Page3.WindowRadius.Title = [TMP] Window Radius:
+builderTools.legend.BuildingBrush.Page3.WindowRadius.Description = [TMP] - The radius of where the windows should be placed. This setting may take playing around with to get it right.
+builderTools.legend.BuildingBrush.Page3.EnableRoof.Title = [TMP] Enable Roof:
+builderTools.legend.BuildingBrush.Page3.EnableRoof.Description = [TMP] - Enables the roof to be placed on the building. Turning off the roof is good for making walls.
+
+builderTools.legend.DecorationBrush.Page1.Title = [TMP] Decoration Brush
+builderTools.legend.DecorationBrush.Page1.Description = [TMP] The Decoration Brush Tool allows you to paint decoration.
+builderTools.legend.DecorationBrush.Page1.DecorateArea = [TMP] Clear blocks that match the blocks in Blocks to Clear.
+builderTools.legend.DecorationBrush.Page1.ShapeArea = [TMP] Paint the decorations where you're aiming
+builderTools.legend.DecorationBrush.Page2.BlockTip.Title = [TMP] Customizing the Decorations:
+builderTools.legend.DecorationBrush.Page2.BlockTip.Description = [TMP] You can customize what blocks are used for the decorations by dragging and dropping blocks from the inventory into the settings.\n\nYou can also remove blocks by double-clicking on blocks in the setting.
+builderTools.legend.DecorationBrush.Page2.Example1.Title = [TMP] Clearing an area and adding ground decorations:
+builderTools.legend.DecorationBrush.Page2.Example1.Description = [TMP] 1. Find an area you want to add decorations.\n\
+2. Hold down the clearing key, usually Left-Click, to remove blocks from the area.\n\
+3. Open the settings and add any decorations you want into the settings.\n\
+4. Hold down the painting key, usually Right-Click, to paint the decorations on the area.\n\
+5. You have now decorated the area!
+builderTools.legend.DecorationBrush.Page3.Title = [TMP] Settings
+builderTools.legend.DecorationBrush.Page3.BlocksToClear.Title = [TMP] Blocks to Clear:
+builderTools.legend.DecorationBrush.Page3.BlocksToClear.Description = [TMP] - The blocks to clear when using the clear blocks key, usually Left-Click.
+builderTools.legend.DecorationBrush.Page3.FloorBlocks.Title = [TMP] Floor Blocks:
+builderTools.legend.DecorationBrush.Page3.FloorBlocks.Description = [TMP] - The blocks to decorate with. Comes with a Density slider to control how many to place.
+builderTools.legend.DecorationBrush.Page3.DecorationBlocks.Title = [TMP] Decoration Blocks:
+builderTools.legend.DecorationBrush.Page3.DecorationBlocks.Description = [TMP] - The blocks to place on top of Floor Blocks. Comes with a Density slider to control how many to place.
+
+builderTools.legend.ForestBrush.Page1.Title = [TMP] Forest Brush
+builderTools.legend.ForestBrush.Page1.Description = [TMP] The Forest Brush Tool allows you to make forests and leafy brush.
+builderTools.legend.ForestBrush.Page1.DecorateArea = [TMP] Add the selected decorations type where you're aiming
+builderTools.legend.ForestBrush.Page1.ShapeArea = [TMP] Paints the ground where you're aiming
+builderTools.legend.ForestBrush.Page2.BlockTip.Title = [TMP] Customizing a Forest:
+builderTools.legend.ForestBrush.Page2.BlockTip.Description = [TMP] You can customize what blocks the forest is made out of by dragging and dropping blocks from the inventory into the settings.\n\nYou can also remove blocks by double-clicking on blocks in the setting.
+builderTools.legend.ForestBrush.Page2.Example1.Title = [TMP] Making and Decorating a Forest:
+builderTools.legend.ForestBrush.Page2.Example1.Description = [TMP] 1. Look at the area where you want to make the forest.\n\
+2. Hold down the paint ground key, usually Right-Click, to start painting the forest floor.\n\
+3. Add ground decorations by changing the type to Foliage, and adding the blocks you want to use for plants in the Foliage Blocks.\n\
+4. Hold down the decorate key, usually Left-Click, to place the foliage decorations.\n\
+5. Add trees by changing the type to Trees.\n\
+6. Hold down the decorate key, usually Left-Click, to place the trees.\n\
+5. You now have a forest!
+builderTools.legend.ForestBrush.Page3.Title = [TMP] Settings
+builderTools.legend.ForestBrush.Page3.NumDecorations.Title = [TMP] # of Decorations:
+builderTools.legend.ForestBrush.Page3.NumDecorations.Description = [TMP] - The number of decorations to place. Only applies when the Decoration Types is set to Trees or Boulders.
+builderTools.legend.ForestBrush.Page3.DecorationSpacing.Title = [TMP] Decoration Spacing:
+builderTools.legend.ForestBrush.Page3.DecorationSpacing.Description = [TMP] - The spacing between decorations to be placed. Only applies when the Decoration Types is set to Trees or Boulders.
+builderTools.legend.ForestBrush.Page3.FloorBlocks.Title = [TMP] Floor Blocks:
+builderTools.legend.ForestBrush.Page3.FloorBlocks.Description = [TMP] - The blocks to decorate the forest floor with. Comes with a Density slider to control how many to place.
+builderTools.legend.ForestBrush.Page3.FloorOutlineBlocks.Title = [TMP] Floor Outline Blocks:
+builderTools.legend.ForestBrush.Page3.FloorOutlineBlocks.Description = [TMP] - The blocks to decorate the outline of the forest floor with. Comes with a Density slider to control how many to place.
+builderTools.legend.ForestBrush.Page3.FloorPatchBlocks.Title = [TMP] Floor Patch Blocks:
+builderTools.legend.ForestBrush.Page3.FloorPatchBlocks.Description = [TMP] - The blocks to place randomly throughout the forest floor for decoration. Comes with a Density slider to control how many to place.
+builderTools.legend.ForestBrush.Page3.FoliageBlocks.Title = [TMP] Foliage Blocks:
+builderTools.legend.ForestBrush.Page3.FoliageBlocks.Description = [TMP] - The blocks to use for foliage on the forest floor. Comes with a Density slider to control how many to place. Only applies when the Decoration Types is set to Foliage.
+
+builderTools.legend.MountainBrush.Page1.Title = [TMP] Mountain Brush
+builderTools.legend.MountainBrush.Page1.Description = [TMP] The Mountain Brush Tool allows you to sculpt mountains and terrain.
+builderTools.legend.MountainBrush.Page1.ShapeArea = [TMP] Sculpt a mountain where you're aiming
+builderTools.legend.MountainBrush.Page2.BlockTip.Title = [TMP] Customizing a Mountain:
+builderTools.legend.MountainBrush.Page2.BlockTip.Description = [TMP] You can customize what blocks the mountain is made out of by dragging and dropping blocks from the inventory into the settings.\n\nYou can also remove blocks by double-clicking on blocks in the setting.
+builderTools.legend.MountainBrush.Page2.Example1.Title = [TMP] Making a Mountain:
+builderTools.legend.MountainBrush.Page2.Example1.Description = [TMP] 1. Look at the ground.\n\
+2. Customize the blocks to use for the mountain by placing blocks in the Layer settings.\n\
+3. Hold down the sculpt key, usually Right-Click, to start sculpting the shape of the mountain.\n\
+4. You now can sculpt mountains!
+builderTools.legend.MountainBrush.Page2.Example2.Title = [TMP] Making a Valley:
+builderTools.legend.MountainBrush.Page2.Example2.Description = [TMP] 1. Look at the ground.\n\
+2. Change the Number of Points to 1, and Point Spacing to above 40.\n\
+3. Hold down the sculpt key, usually Right-Click, to start sculpting. Notice that you now have 2 places where the terrain is being formed.\n\
+4. Sculpt in a straight line moving up and down to build up a cliff on both sides.\n\
+5. You now can sculpt a valley! This ability can also be used to make multiple mountains or details in the mountains at the same time.
+builderTools.legend.MountainBrush.Page3.Title = [TMP] Settings
+builderTools.legend.MountainBrush.Page3.TopLayer.Title = [TMP] Top Layer:
+builderTools.legend.MountainBrush.Page3.TopLayer.Description = [TMP] - The blocks that will be on the top of the terrain.
+builderTools.legend.MountainBrush.Page3.MiddleLayer.Title = [TMP] Middle Layer:
+builderTools.legend.MountainBrush.Page3.MiddleLayer.Description = [TMP] - The blocks that will be in the middle of the terrain.
+builderTools.legend.MountainBrush.Page3.BottomLayer.Title = [TMP] Bottom Layer:
+builderTools.legend.MountainBrush.Page3.BottomLayer.Description = [TMP] - The blocks that will be on the bottom of the terrain.
+builderTools.legend.MountainBrush.Page3.NumberOfPoints.Title = [TMP] Number of Points:
+builderTools.legend.MountainBrush.Page3.NumberOfPoints.Description = [TMP] - The number of points to use to sculpt the mountains.
+builderTools.legend.MountainBrush.Page3.PointSpacing.Title = [TMP] Point Spacing:
+builderTools.legend.MountainBrush.Page3.PointSpacing.Description = [TMP] - The spacing between the Number of Points used to sculpt the mountain.
+builderTools.legend.MountainBrush.Page3.Smoothness.Title = [TMP] Smoothness:
+builderTools.legend.MountainBrush.Page3.Smoothness.Description = [TMP] - Controls how smooth the sculpted terrain will be. Higher = more smooth, lower = less smooth
+
+builderTools.legend.PathBrush.Page1.Title = [TMP] Path Brush
+builderTools.legend.PathBrush.Page1.Description = [TMP] The Path Brush Tool allows you to make paths.
+builderTools.legend.PathBrush.Page1.DecorateArea = [TMP] Adds half-blocks near level changes to make the path smoother
+builderTools.legend.PathBrush.Page1.ShapeArea = [TMP] Draw a path where you're aiming
+builderTools.legend.PathBrush.Page2.BlockTip.Title = [TMP] Customizing a Path:
+builderTools.legend.PathBrush.Page2.BlockTip.Description = [TMP] You can customize what blocks the path is made out of by dragging and dropping blocks from the inventory into the settings.\n\nYou can also remove blocks by double-clicking on blocks in the setting.
+builderTools.legend.PathBrush.Page2.Example1.Title = [TMP] Making a Path:
+builderTools.legend.PathBrush.Page2.Example1.Description = [TMP] 1. Look at the ground.\n\
+2. Customize the blocks to use for the path by placing blocks in the settings.\n\
+3. Hold down the draw key, usually Right-Click, to start drawing the path.\n\
+4. Hold down the half-block key, usually Left-Click, to place down half-blocks near un-level area to make them smoother.\n\
+6. You now have a path with decorations!
+builderTools.legend.PathBrush.Page3.Title = [TMP] Settings
+builderTools.legend.PathBrush.Page3.PathBlocks.Title = [TMP] Path Blocks:
+builderTools.legend.PathBrush.Page3.PathBlocks.Description = [TMP] - The main blocks the path will be made out of. Comes with a Density slider to control how many to place.
+builderTools.legend.PathBrush.Page3.OutlineBlocks.Title = [TMP] Outline Blocks:
+builderTools.legend.PathBrush.Page3.OutlineBlocks.Description = [TMP] - The blocks to place on the outline of the path. Comes with a Density slider to control how many to place. Comes with a Width slider to control how wide it will be.
+builderTools.legend.PathBrush.Page3.DecorationBlocks.Title = [TMP] Decoration Blocks:
+builderTools.legend.PathBrush.Page3.DecorationBlocks.Description = [TMP] - The blocks to add as decorations along the path. Comes with a Density slider to control how many to place. Comes with a Width slider to control how wide it will be.
+builderTools.legend.PathBrush.Page3.HalfBlocks.Title = [TMP] Half-Blocks on Path:
+builderTools.legend.PathBrush.Page3.HalfBlocks.Description = [TMP] - The half-blocks to be placed near un-level areas to make them smoother.
+
+builderTools.legend.RiverBrush.Page1.Title = [TMP] River Brush
+builderTools.legend.RiverBrush.Page1.Description = [TMP] The River Brush Tool allows you to make rivers and oceans.
+builderTools.legend.RiverBrush.Page1.DecorateArea = [TMP] Adds decorations where you're aiming
+builderTools.legend.RiverBrush.Page1.ShapeArea = [TMP] Draw a river where you're aiming
+builderTools.legend.RiverBrush.Page2.BlockTip.Title = [TMP] Customizing a River:
+builderTools.legend.RiverBrush.Page2.BlockTip.Description = [TMP] You can customize what blocks the river is made out of by dragging and dropping blocks from the inventory into the settings.\n\nYou can also remove blocks by double-clicking on blocks in the setting.
+builderTools.legend.RiverBrush.Page2.Example1.Title = [TMP] Making a River/Waterfall:
+builderTools.legend.RiverBrush.Page2.Example1.Description = [TMP] 1. Look at a surface.\n\
+2. Customize the blocks to use for the river by placing blocks in the settings.\n\
+3. Hold down the draw key, usually Right-Click, to start drawing the river.\n\
+4. Hold down the decoration key, usually Left-Click, to place down decorations on the side of the river, under the water, and on top of the water.\n\
+5. You now have a river, and or waterfall!
+builderTools.legend.RiverBrush.Page3.Title = [TMP] Settings
+builderTools.legend.RiverBrush.Page3.FluidMaterial.Title = [TMP] Fluid Material:
+builderTools.legend.RiverBrush.Page3.FluidMaterial.Description = [TMP] - The fluid material the river will be made out of.
+builderTools.legend.RiverBrush.Page3.SurfaceBlocks.Title = [TMP] Blocks above Fluid:
+builderTools.legend.RiverBrush.Page3.SurfaceBlocks.Description = [TMP] - The blocks to place on the side and under the fluid of the river. Comes with a Density slider to control how many to place. Comes with a Width slider to control how wide it will be.
+builderTools.legend.RiverBrush.Page3.SubsurfaceBlocks.Title = [TMP] Blocks under Fluid:
+builderTools.legend.RiverBrush.Page3.SubsurfaceBlocks.Description = [TMP] - The blocks to place under the fluid of the river. Comes with a Density slider to control how many to place.
+builderTools.legend.RiverBrush.Page3.UnderDecorations.Title = [TMP] Decorations under Fluid:
+builderTools.legend.RiverBrush.Page3.UnderDecorations.Description = [TMP] - The decorations to under the fluid. Comes with a Density slider to control how many to place.
+builderTools.legend.RiverBrush.Page3.SideDecorations.Title = [TMP] Decorations on side of Fluid:
+builderTools.legend.RiverBrush.Page3.SideDecorations.Description = [TMP] - The decorations to add on the side of the river. Comes with a Density slider to control how many to place.
+builderTools.legend.RiverBrush.Page3.TopDecorations.Title = [TMP] Decorations on top of the Fluid:
+builderTools.legend.RiverBrush.Page3.TopDecorations.Description = [TMP] - The decorations to add on the top of the river. Comes with a Density slider to control how many to place.
+
+builderTools.legend.SpiralBrush.Page1.Title = [TMP] Spiral Brush
+builderTools.legend.SpiralBrush.Page1.Description = [TMP] The Spiral Brush Tool allows you to make spirals and circular patterns.
+builderTools.legend.SpiralBrush.Page1.ShapeArea = [TMP] Place a spiral where you're aiming
+builderTools.legend.SpiralBrush.Page2.BlockTip.Title = [TMP] Customizing a Spiral:
+builderTools.legend.SpiralBrush.Page2.BlockTip.Description = [TMP] You can customize what blocks the spiral is made out of by dragging and dropping blocks from the inventory into the settings.\n\nYou can also remove blocks by double-clicking on blocks in the setting.
+builderTools.legend.SpiralBrush.Page2.Example1.Title = [TMP] Making a Custom Spiral:
+builderTools.legend.SpiralBrush.Page2.Example1.Description = [TMP] 1. Look at a surface.\n\
+2. Customize the blocks to use for the spiral by placing blocks in the settings.\n\
+3. Change the Number of Points to be what you need. Higher = more points in the spiral, Lower = less points in the spiral.\n\
+4. Change the Radius to be 15. This will make it wide enough to see what the tool does.\n\
+5. If you want a spiral going upward, change the Vertical Spacing to be higher than 0.\n\
+6. Change which way the spiral is drawn by checking the Flip, Rotate Direction, or Invert Direction boxes.\n\
+7. You can also add smoothing to the spiral by changing the Smoothness to be higher than 0.\n\
+8. You can also choose to Hollow Center to make the center of the spiral made of air.\n\
+9. You now have a spiral!
+builderTools.legend.SpiralBrush.Page3.Title = [TMP] Settings
+builderTools.legend.SpiralBrush.Page3.NumberPoints.Title = [TMP] Number of Points:
+builderTools.legend.SpiralBrush.Page3.NumberPoints.Description = [TMP] - The number of points on the spiral.
+builderTools.legend.SpiralBrush.Page3.Radius.Title = [TMP] Radius:
+builderTools.legend.SpiralBrush.Page3.Radius.Description = [TMP] - The radius of the spiral, which is how wide it will be.
+builderTools.legend.SpiralBrush.Page3.VerticalSpacing.Title = [TMP] Vertical Spacing:
+builderTools.legend.SpiralBrush.Page3.VerticalSpacing.Description = [TMP] - How far apart each point in the spiral is from each other, which is how tall it will be.
+builderTools.legend.SpiralBrush.Page3.Flip.Title = [TMP] Flip
+builderTools.legend.SpiralBrush.Page3.Flip.Description = [TMP] - Flips the order the spiral is drawn.
+builderTools.legend.SpiralBrush.Page3.RotateDirection.Title = [TMP] Rotate Direction
+builderTools.legend.SpiralBrush.Page3.RotateDirection.Description = [TMP] - Rotates the spiral 180 degrees.
+builderTools.legend.SpiralBrush.Page3.InvertDirection.Title = [TMP] Invert Direction
+builderTools.legend.SpiralBrush.Page3.InvertDirection.Description = [TMP] - Inverts the direction the spiral is drawn.
+builderTools.legend.SpiralBrush.Page3.Smoothness.Title = [TMP] Smoothness
+builderTools.legend.SpiralBrush.Page3.Smoothness.Description = [TMP] - Controls how smooth the spiral will be. Higher = more smooth, Lower = less smooth.
+builderTools.legend.SpiralBrush.Page3.HollowCenter.Title = [TMP] Hollow Center
+builderTools.legend.SpiralBrush.Page3.HollowCenter.Description = [TMP] - If enabled replaces the center of the spiral with air from where you clicked.
+
+builderTools.legend.RevolveTool.Page1.Title = [TMP] Revolve Tool
+builderTools.legend.RevolveTool.Page1.Description = [TMP] The Revolve Tool allows you to rotate and paste, a selection. This tool will only work if a selection has been made.
+builderTools.legend.RevolveTool.Page1.ShapeArea = [TMP] Does the revolve. Depending on what settings you are using, it will do the revolve around where you are aiming, or yourself.
+builderTools.legend.RevolveTool.Page2.Example1.Title = [TMP] Revolving with the Brush:
+builderTools.legend.RevolveTool.Page2.Example1.Description = [TMP] 1. Make a selection that you want to have revolved.\n\
+2. Equip the Revolve Tool.\n\
+3. Set settings to what you want.\n\
+4. Aim the brush to where you want the selection to be revolved around.\n\
+5. Press the revolve key, usually Right-Click.\n\
+6. You now have revolved your selection!
+builderTools.legend.RevolveTool.Page2.Example2.Title = [TMP] Making a Full Circle around Yourself:
+builderTools.legend.RevolveTool.Page2.Example2.Description = [TMP] 1. Make a selection that you want to have revolved.\n\
+2. Equip the Revolve Tool.\n\
+3. Set the Fully Revolve setting to checked, and change the Target to Player (Self).\n\
+4. Move yourself so you are some blocks away from your selection.\n\
+5. Press the revolve key, usually Right-Click.\n\
+6. You now fully revolved the selection around yourself!
+builderTools.legend.RevolveTool.Page3.Title = [TMP] Settings
+builderTools.legend.RevolveTool.Page3.Sampling.Title = [TMP] Fill Strategy:
+builderTools.legend.RevolveTool.Page3.Sampling.Description = [TMP] - The strategy to fill holes in the revolve. Revolving can sometimes leave holes, this will attempt to fill those holes.
+builderTools.legend.RevolveTool.Page3.FullyRevolve.Title = [TMP] Fully Revolve:
+builderTools.legend.RevolveTool.Page3.FullyRevolve.Description = [TMP] - Will revolve the selection entirely in a circle. This will ignore the Place Count and entirely revolve the selection.
+builderTools.legend.RevolveTool.Page3.PlaceCount.Title = [TMP] Paste Count:
+builderTools.legend.RevolveTool.Page3.PlaceCount.Description = [TMP] - Controls how many times to paste the selection in the revolve. For example, if this set to 5 then the selection will paste 5 times.
+builderTools.legend.RevolveTool.Page3.CenterAround.Title = [TMP] Center Around:
+builderTools.legend.RevolveTool.Page3.CenterAround.Description = [TMP] - Controls the target to revolve around. Brush Target = revolve around where the brush is aimed, Player (Self) = revolves around where you are.
+builderTools.legend.RevolveTool.Page3.UseCustomDistance.Title = [TMP] Use Custom Radius:
+builderTools.legend.RevolveTool.Page3.UseCustomDistance.Description = [TMP] - Pastes and revolves the selection where aimed, and uses Custom Radius to control the spacing from the center.
+builderTools.legend.RevolveTool.Page3.PlaceDistance.Title = [TMP] Custom Radius:
+builderTools.legend.RevolveTool.Page3.PlaceDistance.Description = [TMP] - The radius to control the spacing between the center and the revolve points. Higher = more wide, Lower = less wide.
+builderTools.legend.RevolveTool.Page4.Title = [TMP] Settings (2/2)
 
 builderTools.legend.LineBrush.Page1.Title = Line Brush
 builderTools.legend.LineBrush.Page1.Description = Allows you to build straight lines of blocks
@@ -720,7 +1043,16 @@ builderTools.legend.PasteTool.Page2.RotatePrefabLeftRight = Rotate prefab left o
 builderTools.legend.PasteTool.Page2.RollPrefabLeftRight = Roll prefab left or right
 builderTools.legend.PasteTool.Page2.RollPrefabForwardBackward = Roll prefab forward or backward
 builderTools.legend.PasteTool.Page2.ResetShifting = Reset shifting
-builderTools.legend.PasteTool.Page2.ResetRotation = [TMP] Reset rotation
+builderTools.legend.PasteTool.Page2.ResetRotation = Reset rotation
+
+builderTools.legend.TintBrush.Page1.Title = Tint Brush
+builderTools.legend.TintBrush.Page1.Description = Allows you to paint or blend tints on blocks.
+builderTools.legend.TintBrush.Page1.BlendTints = Blend the tints where you're aiming
+builderTools.legend.TintBrush.Page1.PaintTints = Paint your color where you're aiming
+builderTools.legend.TintBrush.Page1.PickColor = Copy tint from target
+builderTools.legend.TintBrush.Page1.UndoLastBrush = Undo last brush action
+builderTools.legend.TintBrush.Page1.RedoLastUndo = Redo last undone action
+builderTools.legend.TintBrush.Page1.EditInventoryProperties = Edit color, opacity, size, shape from the inventory
 
 builderTools.legend.SculptBrush.Page1.Title = Sculpt Brush
 builderTools.legend.SculptBrush.Page1.Description = Allows you to raise and lower the terrain to more accurately sculpt and blend shapes. Supports most features of the Paintbrush.
@@ -813,9 +1145,9 @@ builderTools.legend.SelectPrefabTool.Page1.EditingPrefabs = Editing Prefabs:
 builderTools.legend.SelectPrefabTool.Page1.OpenSaveUI = Open the save/settings UI
 builderTools.legend.SelectPrefabTool.Page1.UpdateBoundingBox = Update the selected prefab's bounding box to your current selection
 builderTools.legend.SelectPrefabTool.Page1.TeleportToPrefab = Open teleport to prefab UI
-builderTools.legend.SelectPrefabTool.Page1.QuickAccess = [TMP] Quick Access:
-builderTools.legend.SelectPrefabTool.Page1.SwitchWorlds = [TMP] Go back to last world
-builderTools.legend.SelectPrefabTool.Page1.SetAnchor = [TMP] Set the anchor point at the position you are looking at
+builderTools.legend.SelectPrefabTool.Page1.QuickAccess = Quick Access:
+builderTools.legend.SelectPrefabTool.Page1.SwitchWorlds = Go back to last world
+builderTools.legend.SelectPrefabTool.Page1.SetAnchor = Set the anchor point at the position you are looking at
 builderTools.legend.SelectPrefabTool.Page1.UsefulCommands = Useful Commands:
 builderTools.legend.SelectPrefabTool.Page1.KillCommand = /pedit kill - Removes all entities from the selected prefab\n\
 /pedit exit - Exits the prefab editor without saving changes
@@ -836,7 +1168,7 @@ builderTools.legend.EntityTool.Page1.AdjustDistance = Adjust entity distance
 
 builderTools.legend.EntityTool.Page2.Title = Transform Modes
 builderTools.legend.EntityTool.Page2.TransformModes = Transform Modes:
-builderTools.legend.EntityTool.Page2.TranslateMode = Enter translation mode
+builderTools.legend.EntityTool.Page2.TranslateMode = Enter movement mode
 builderTools.legend.EntityTool.Page2.RotateMode = Enter rotation mode
 builderTools.legend.EntityTool.Page2.RotateHeadMode = Enter head rotation mode
 builderTools.legend.EntityTool.Page2.FreeMoveMode = Attach to cursor
@@ -874,6 +1206,7 @@ builderTools.panel.surfaceLock = Lock to Surface
 builderTools.panel.gridSnap = Grid Snap
 builderTools.panel.gridSize = Grid Size
 
+builderTools.commands.log.argValueChanged = {argKey} changed to {argValue}
 builderTools.commands.mode = Mode
 builderTools.commands.keepEmptyBlocks = Keep 'Editor Empty' Blocks
 builderTools.commands.executeCommand = Execute Command
@@ -1007,6 +1340,8 @@ contentCreation.navigation.worldtools.importImage = Import Image
 
 contentCreation.navigation.help = Help
 contentCreation.navigation.help.commands = Commands
+contentCreation.navigation.help.clientLogs = Client Logs
+contentCreation.navigation.help.serverLogs = Server Logs
 # === controls ===
 # Timeline Control
 controls.timeline.tooltip.muteTrack = Mute Track
@@ -1153,12 +1488,12 @@ gameLoadingView.status.enterPassword = Enter server password
 gameLoadingView.status.wrongPassword = Incorrect password. {attempts, plural, one {{attempts} attempt} other {{attempts} attempts}} remaining.
 gameLoadingView.status.waitingForChunks = Waiting for chunks...
 gameLoadingView.status.bootingServerWithMessage = Booting server... ({message})
-gameLoadingView.status.savingWorld = [TMP] Saving world "{name}"
-gameLoadingView.status.closingWorld = [TMP] Closing world "{name}"
-gameLoadingView.status.migratingChunks = [TMP] Migrating chunks for "{name}"
-gameLoadingView.status.verifiedChunks = [TMP] Verified {done}/{total} chunks for world "{name}"
-gameLoadingView.status.recoveringChunks = [TMP] Recovering {done}/{total} chunks for world "{name}"
-gameLoadingView.status.serverFrozenDumping = [TMP] Server seems frozen. Dumping logs...
+gameLoadingView.status.savingWorld = Saving world "{name}"
+gameLoadingView.status.closingWorld = Closing world "{name}"
+gameLoadingView.status.migratingChunks = Migrating chunks for "{name}"
+gameLoadingView.status.verifiedChunks = Verified {done}/{total} chunks for world "{name}"
+gameLoadingView.status.recoveringChunks = Recovering {done}/{total} chunks for world "{name}"
+gameLoadingView.status.serverFrozenDumping = Server seems frozen. Dumping logs...
 
 gameLoadingView.password.title = Server Password
 gameLoadingView.password.submit = Login
@@ -1218,56 +1553,62 @@ general.relativeTime.years = {years} years ago
 
 general.chatMessage.failedToSaveScreenshot = Failed to save screenshot!
 general.chatMessage.requestCancelled = The request was cancelled
+general.chatMessage.voiceChatEnabled = Voice chat enabled.
+general.chatMessage.voiceChatDisabled = Voice chat disabled.
+general.chatMessage.voiceChatMuted = Voice chat muted.
+general.chatMessage.voiceChatUnmuted = Voice chat unmuted.
+general.chatMessage.voiceChatMutedByServerOperator = Voice chat muted by a server operator.
+general.chatMessage.voiceChatUnmutedByServerOperator = Voice chat unmuted by a server operator.
 
 general.worldLoad.loadingWorld = Loading world...
 general.worldLoad.loadingAsset = Loading asset {assetName}
 
-general.disconnect.accountAlreadyConnecting = [TMP] A connection with this account is already in progress
-general.disconnect.alreadyLoggedIn = [TMP] You are already logged in on that account!
-general.disconnect.authError = [TMP] Authentication error
-general.disconnect.authGrantFailed = [TMP] Failed to obtain authorization grant from session service
-general.disconnect.banned.permanent = [TMP] You are permanently banned!
-general.disconnect.banned.permanent.withReason = [TMP] You are permanently banned! Reason: {reason}
-general.disconnect.banned.timed = [TMP] You are temporarily banned for {days}d {hours}h {mins}m!
-general.disconnect.banned.timed.withReason = [TMP] You are temporarily banned for {days}d {hours}h {mins}m! Reason: {reason}
-general.disconnect.editorNotSupported = [TMP] Editor isn't supported on this server!
-general.disconnect.identityTokenMissingScope = [TMP] Invalid identity token: missing {scope} scope
-general.disconnect.identityTokenUuidMismatch = [TMP] Invalid identity token: UUID mismatch
-general.disconnect.invalidAccessToken = [TMP] Invalid access token
-general.disconnect.invalidIdentityToken = [TMP] Invalid or expired identity token
-general.disconnect.invalidPasswordResponse = [TMP] Invalid password response
-general.disconnect.invalidSkin = [TMP] Your skin contains parts that aren't available on this server.\nThis usually happens when assets are out of sync.\n\n{details}
-general.disconnect.loginException = [TMP] An exception occurred while trying to login!
-general.disconnect.missingUsername = [TMP] Missing username
-general.disconnect.missingUuid = [TMP] Missing UUID
-general.disconnect.mutualAuthRequired = [TMP] Mutual authentication required - please update your client
-general.disconnect.notWhitelisted = [TMP] You are not whitelisted!
-general.disconnect.noWorldAvailable = [TMP] No world available to join
-general.disconnect.offlineModeOwnerOnly = [TMP] This world is in offline mode and only the owner can connect.
-general.disconnect.offlineModeSingleplayerOnly = [TMP] Offline mode is only available in singleplayer.
-general.disconnect.protocol.duplicateAuthToken = [TMP] Protocol error: duplicate AuthToken packet
-general.disconnect.protocol.unexpectedAuthToken = [TMP] Protocol error: unexpected AuthToken packet
-general.disconnect.protocol.unexpectedPacket = [TMP] Protocol error: unexpected packet {packetId}
-general.disconnect.protocol.unexpectedPasswordResponse = [TMP] Protocol error: unexpected PasswordResponse
-general.disconnect.referralDataTooLarge = [TMP] Referral data exceeds maximum size of {maxSize} bytes
-general.disconnect.referralInvalidSource = [TMP] Referral source address is invalid
-general.disconnect.referralMissingSource = [TMP] Referral connections must include source server address
-general.disconnect.serverAuthFailed = [TMP] Server authentication failed - please try again later
-general.disconnect.setupCancelled = [TMP] You have been disconnected from the server!
-general.disconnect.serverAuthUnavailable = [TMP] Server authentication unavailable - please try again later
-general.disconnect.serverBooting = [TMP] Server is booting up! Please try again in a moment.
-general.disconnect.serverConfigError = [TMP] Server configuration error
-general.disconnect.serverError = [TMP] Server error
-general.disconnect.serverFull = [TMP] Too many players!
-general.disconnect.serverRequiresAuthentication = [TMP] This server requires authentication!
-general.disconnect.serverShuttingDown = [TMP] Server is shutting down!
-general.disconnect.stageTimeout = [TMP] Either you took too long to login or we took too long to process your request! Retry again in a moment.
-general.disconnect.tcpAuthenticationNotSupported = [TMP] TCP connections only support insecure authentication. Use QUIC for authenticated connections.
-general.disconnect.tokenMissingUsername = [TMP] Invalid token claims: missing username
-general.disconnect.tokenUsernameMismatch = [TMP] Invalid token claims: username mismatch
-general.disconnect.tokenUuidMismatch = [TMP] Invalid token claims: UUID mismatch
-general.disconnect.tooManyPasswordAttempts = [TMP] Too many failed password attempts
-general.disconnect.universeException = [TMP] An exception occurred when adding to the universe!
+general.disconnect.accountAlreadyConnecting = A connection with this account is already in progress
+general.disconnect.alreadyLoggedIn = You are already logged in on that account!
+general.disconnect.authError = Authentication error
+general.disconnect.authGrantFailed = Failed to obtain authorization grant from session service
+general.disconnect.banned.permanent = You are permanently banned!
+general.disconnect.banned.permanent.withReason = You are permanently banned! Reason: {reason}
+general.disconnect.banned.timed = You are temporarily banned for {days}d {hours}h {mins}m!
+general.disconnect.banned.timed.withReason = You are temporarily banned for {days}d {hours}h {mins}m! Reason: {reason}
+general.disconnect.editorNotSupported = Editor isn't supported on this server!
+general.disconnect.identityTokenMissingScope = Invalid identity token: missing {scope} scope
+general.disconnect.identityTokenUuidMismatch = Invalid identity token: UUID mismatch
+general.disconnect.invalidAccessToken = Invalid access token
+general.disconnect.invalidIdentityToken = Invalid or expired identity token
+general.disconnect.invalidPasswordResponse = Invalid password response
+general.disconnect.invalidSkin = Your skin contains parts that aren't available on this server.\nThis usually happens when assets are out of sync.\n\n{details}
+general.disconnect.loginException = An exception occurred while trying to login!
+general.disconnect.missingUsername = Missing username
+general.disconnect.missingUuid = Missing UUID
+general.disconnect.mutualAuthRequired = Mutual authentication required - please update your client
+general.disconnect.notWhitelisted = You are not whitelisted!
+general.disconnect.noWorldAvailable = No world available to join
+general.disconnect.offlineModeOwnerOnly = This world is in offline mode and only the owner can connect.
+general.disconnect.offlineModeSingleplayerOnly = Offline mode is only available in singleplayer.
+general.disconnect.protocol.duplicateAuthToken = Protocol error: duplicate AuthToken packet
+general.disconnect.protocol.unexpectedAuthToken = Protocol error: unexpected AuthToken packet
+general.disconnect.protocol.unexpectedPacket = Protocol error: unexpected packet {packetId}
+general.disconnect.protocol.unexpectedPasswordResponse = Protocol error: unexpected PasswordResponse
+general.disconnect.referralDataTooLarge = Referral data exceeds maximum size of {maxSize} bytes
+general.disconnect.referralInvalidSource = Referral source address is invalid
+general.disconnect.referralMissingSource = Referral connections must include source server address
+general.disconnect.serverAuthFailed = Server authentication failed - please try again later
+general.disconnect.setupCancelled = You have been disconnected from the server!
+general.disconnect.serverAuthUnavailable = Server authentication unavailable - please try again later
+general.disconnect.serverBooting = Server is booting up! Please try again in a moment.
+general.disconnect.serverConfigError = Server configuration error
+general.disconnect.serverError = Server error
+general.disconnect.serverFull = Too many players!
+general.disconnect.serverRequiresAuthentication = This server requires authentication!
+general.disconnect.serverShuttingDown = Server is shutting down!
+general.disconnect.stageTimeout = Either you took too long to login or we took too long to process your request! Retry again in a moment.
+general.disconnect.tcpAuthenticationNotSupported = TCP connections only support insecure authentication. Use QUIC for authenticated connections.
+general.disconnect.tokenMissingUsername = Invalid token claims: missing username
+general.disconnect.tokenUsernameMismatch = Invalid token claims: username mismatch
+general.disconnect.tokenUuidMismatch = Invalid token claims: UUID mismatch
+general.disconnect.tooManyPasswordAttempts = Too many failed password attempts
+general.disconnect.universeException = An exception occurred when adding to the universe!
 
 # === hud ===
 hud.playerList.onlinePlayers = Online Players
@@ -1398,6 +1739,7 @@ inventory.processing.button.turnOn = Turn On
 inventory.processing.button.turnOff = Turn Off
 inventory.processing.panel.fuel.title = Fuel
 inventory.processing.panel.output.title = Output
+inventory.processing.tooltip.timeStopped = Processing is paused because time has stopped in this area.
 
 inventory.panel.input.title = Input
 
@@ -1571,10 +1913,10 @@ machinima.log.activeSceneSetTo = Active scene set to '{name}'.
 machinima.log.selectEntityToCopy = Please select an entity to copy the model from.
 machinima.log.unableToFindEntity = Unable to find an entity in this location, aborting...
 machinima.log.entitySelected = Entity selected!
-machinima.log.selectEntityActorToApply = Now please select the EntityActor to apply the model to.
+machinima.log.selectEntityActorToApply = Now please select the Actor to apply the model to.
 machinima.log.unableToFindEntityInLocation = Unable to find an Entity in that location, aborting...
 machinima.log.unableToFindActorForEntity = Unable to find an Actor for that Entity, aborting...
-machinima.log.modelAppliedToActor = Model successfully applied to EntityActor '{name}'.
+machinima.log.modelAppliedToActor = Model successfully applied to Actor '{name}'.
 machinima.log.invalidActorTypeFound = Invalid actor type found, aborting...
 machinima.log.selectKeyframeToMove = Please select an actor keyframe to move.
 machinima.log.selectKeyframeToCopy = Please select an actor keyframe to copy from.
@@ -1748,6 +2090,7 @@ mainMenu.servers.editPopup.editServer = Edit Server
 mainMenu.servers.editPopup.name = Name
 mainMenu.servers.editPopup.error.invalidAddress = Please enter a valid address for the server
 mainMenu.servers.editPopup.error.invalidName = Please enter a valid name for the server
+mainMenu.servers.editPopup.addServer.name.placeholder = Server name
 
 mainMenu.servers.name = Name
 mainMenu.servers.description = Description
@@ -1969,6 +2312,7 @@ map.playerList.inWorld = This player is in your world
 
 map.playerListEntry.tooltip.compass = Track on Compass
 map.playerListEntry.tooltip.map = Show on Map
+map.playerListEntry.tooltip.mute = Mute Player
 
 map.marker.localPlayer = You
 map.marker.targetLocation = Target Location
@@ -2118,7 +2462,7 @@ settings.groups.controls.creative = Creative
 settings.groups.controls.menus = Menus
 settings.groups.controls.blockPlacement = Block Placement
 settings.groups.controls.builderTools = Builder Tools
-settings.groups.controls.voice = [TMP] Voice
+settings.groups.controls.voice = Voice
 settings.groups.controls.misc = Misc
 settings.groups.controls.debug = Debug
 settings.groups.controls.inventory = Inventory
@@ -2139,19 +2483,30 @@ settings.groups.creativeMode = Creative Mode
 settings.groups.pickupLocations = Preferred Pickup Locations
 settings.groups.accessibility = Accessibility
 
-settings.groups.voiceChat = [TMP] Voice
-settings.voiceUnavailable = [TMP] Voice chat unavailable on this server. To enable it, type "/voice enabled true" in chat.
-settings.voiceChatEnabled = [TMP] Voice Chat
-settings.voiceChatVolume = [TMP] Volume
-settings.voiceInputEnabled = [TMP] Voice Input
-settings.voiceInputDevice = [TMP] Input Device
-settings.voiceInputLevel = [TMP] Input Level
-settings.voiceInputMode = [TMP] Input Mode
-settings.voiceInputMode.voiceActivity = [TMP] Voice Activity
-settings.voiceInputMode.pushToTalk = [TMP] Push to Talk
-settings.noiseSuppression = [TMP] Noise Suppression
-settings.voiceSensitivity = [TMP] Mic Sensitivity
-settings.voiceChat.silenced = [TMP] Muted (Dead)
+settings.groups.voiceChat = Voice
+settings.voiceUnavailable = Voice chat unavailable on this server. To enable it, type "/voice enabled true" in chat.
+settings.voiceUnavailableManaged = Voice chat is currently unavailable for child accounts. A parent or guardian will be able to enable this feature through parental controls in the future.
+settings.voiceUnavailableSingleplayer = Voice chat is disabled in singleplayer. It will be enabled automatically if other players join.
+settings.voiceChatEnabled = Voice Chat
+settings.voiceChatVolume = Volume
+settings.voiceInputEnabled = Voice Input
+settings.voiceInputDevice = Input Device
+settings.voiceInputLevel = Input Level
+settings.voiceInputMode = Input Mode
+settings.voiceInputMode.voiceActivity = Voice Activity
+settings.voiceInputMode.pushToTalk = Push to Talk
+settings.voiceInputMode.pushToTalkToggle = Push to Talk (Toggle)
+settings.noiseSuppression = Noise Suppression
+settings.voiceSensitivity = Mic Sensitivity
+settings.voiceChat.silenced = Muted (Dead)
+
+settings.tabs.social = Social
+settings.groups.discord = Discord
+settings.discordEnabled = Discord Integration
+settings.discordEnabled.description = Enable Discord status sharing and social features.
+settings.discord.connectedAs = Connected as {username}
+settings.discord.disableConfirm.title = Disable Discord Integration
+settings.discord.disableConfirm.text = This will disconnect Discord from Hytale social features. Logging in with Discord is not affected.
 
 settings.prototype.percentagePlayGizmoLength = Percentage Width for Gizmo Rendering
 settings.prototype.minPlaySelectGizmoSize = Minimum Gizmo Size
@@ -2171,28 +2526,25 @@ settings.category.displayNotifications = Display & Notifications
 settings.category.environment = Environment
 
 # Quick Settings Labels
-settings.noClip = No Clip
+settings.noClip = No Collision
 settings.flightMode = Flight Mode
 settings.flightMode.hover = Hover
 settings.flightMode.directional = Directional
-settings.flightInertia = Flight Inertia
+settings.flightInertia = Flight Drift
 settings.flightSpeedMultiplier = Move Speed
 settings.airPlacement = Air Placement
-settings.allowNPCDetection = Allow NPC Detection
+settings.quickReplace = Quick Replace
+settings.allowNPCDetection = Visible to NPCs
 settings.respondToHit = Respond To Hit
-settings.toolReachDistance = Tool Reach Distance
-settings.toolDelayMin = Tool Delay Minimum
-settings.undoGroupSize = Undo Group Size
+settings.toolReachDistance = Reach Distance
+settings.toolDelayMin = Delay
+settings.undoGroupSize = Undo/Redo Amount
 settings.brushOpacity = Brush Opacity
-settings.enableBrushShapeRendering = Enable Brush Shape Rendering
-settings.brushSoundsEnabled = Brush Sounds
 settings.brushSoundVolume = Brush Sound Volume
-settings.selectionOpacity = Selection Opacity
+settings.selectionOpacity = Selection Box Opacity
 settings.selectionPanelOpacity = Selection Panel Opacity
 settings.displayLegend = Display Legend
 settings.showToolNotifications = Show Tool Notifications
-settings.laserPointerColor = Laser Pointer Color
-settings.laserPointerColor.description = The default hex color for the laser pointer tool
 settings.fullbright = Fullbright
 settings.timeOfDay = Time of Day
 settings.weather = Weather
@@ -2209,7 +2561,7 @@ settings.resetToDefaults.tooltip = Reset all quick settings to their default val
 settings.resetOptions = Reset Options
 settings.useSystemLanguage = Use System Language
 settings.language = Language
-settings.language.description = Sets the language displayed by the game.\n\n<b><color is="#b32626">This setting requires a client restart!</color></b>
+settings.language.description = Sets the language displayed by the game.\n\n<b><color is="#b32626">This setting requires you to go back to the main menu to fully take effect!</color></b>
 settings.fullscreen = Fullscreen
 settings.noAuthName = No Auth Name
 settings.windowSize = Window Size
@@ -2243,9 +2595,7 @@ settings.firstPersonCameraShakeIntensity = First Person Camera Shake Intensity
 settings.thirdPersonCameraShakeIntensity = Third Person Camera Shake Intensity
 settings.creativeInteractionDistance = Creative Interaction Distance
 settings.prototype.adventureInteractionDistance = General Interaction Distance
-settings.gizmoScaleMultiplier = Rotation / Translation Gizmo UI Scale
-settings.laserPointerColor = Default Laser Pointer Color
-settings.laserPointerColor.description = The default hex color for the laser pointer tool (e.g. #3CFAE6)
+settings.gizmoScaleMultiplier = Gizmo Size
 settings.prototype.useBlockSubfaces = Use Block Subfaces
 settings.prototype.displayBlockSubfaces = Display Block Subfaces
 settings.prototype.displayBlockBoundaries = Display Block Boundaries
@@ -2402,14 +2752,39 @@ settings.bindingPopup.bind = Bind "{binding}"
 settings.bindingPopup.pressKey = Press any key or esc to cancel
 settings.bindings.clear = Remove the current keybind.
 
-settings.bindings.input.unbound = [TMP] Unbound
-settings.bindings.input.ctrl = [TMP] Ctrl
-settings.bindings.input.shift = [TMP] Shift
-settings.bindings.input.alt = [TMP] Alt
-settings.bindings.input.leftMouse = [TMP] Left Mouse
-settings.bindings.input.rightMouse = [TMP] Right Mouse
-settings.bindings.input.middleMouse = [TMP] Middle Mouse
-settings.bindings.input.mouseButton = [TMP] Mouse {button}
+settings.bindings.input.unbound = Unbound
+settings.bindings.input.ctrl = Ctrl
+settings.bindings.input.shift = Shift
+settings.bindings.input.alt = Alt
+settings.bindings.input.leftMouse = Left Mouse
+settings.bindings.input.rightMouse = Right Mouse
+settings.bindings.input.middleMouse = Middle Mouse
+settings.bindings.input.mouseButton = Mouse {button}
+settings.bindings.input.return = Enter
+settings.bindings.input.escape = Escape
+settings.bindings.input.backspace = Backspace
+settings.bindings.input.tab = Tab
+settings.bindings.input.space = Space
+settings.bindings.input.printscreen = Print Screen
+settings.bindings.input.scrolllock = Scroll Lock
+settings.bindings.input.pause = Pause
+settings.bindings.input.insert = Insert
+settings.bindings.input.home = Home
+settings.bindings.input.pageup = Page Up
+settings.bindings.input.end = End
+settings.bindings.input.pagedown = Page Down
+settings.bindings.input.right = Right Arrow
+settings.bindings.input.left = Left Arrow
+settings.bindings.input.down = Down Arrow
+settings.bindings.input.up = Up Arrow
+settings.bindings.input.delete = Delete
+settings.bindings.input.capslock = Caps Lock
+settings.bindings.input.lctrl = Left Ctrl
+settings.bindings.input.lshift = Left Shift
+settings.bindings.input.lalt = Left Alt
+settings.bindings.input.rctrl = Right Ctrl
+settings.bindings.input.rshift = Right Shift
+settings.bindings.input.ralt = Right Alt
 
 settings.bindings.MoveForwards = Move Forwards
 settings.bindings.MoveBackwards = Move Backwards
@@ -2433,10 +2808,11 @@ settings.bindings.ShowEmoteSelector = Show Emote Selector
 settings.bindings.ToggleBuilderToolsLegend = Toggle Builder Tools Legend
 settings.bindings.OpenToolsSettings = Open Creative Tools
 
-settings.bindings.PushToTalk = [TMP] Push to Talk
+settings.bindings.PushToTalk = Push to Talk
+settings.bindings.ToggleVoiceChat = Toggle Voice Chat
 
 settings.bindings.SwitchCameraMode = Switch Camera Mode
-settings.bindings.ActivateCameraRotation = Activate Inverted Camera
+settings.bindings.ActivateCameraRotation = Activate Camera Rotation
 settings.bindings.ToggleProfiling = Toggle Profiling
 settings.bindings.SwitchHudVisibility = Switch HUD Visibility
 settings.bindings.ToggleFullscreen = Toggle Fullscreen
@@ -2507,10 +2883,12 @@ settings.bindings.PasteShiftBackward = Paste - Shift Backward
 settings.bindings.PasteShiftUp = Paste - Shift Up
 settings.bindings.PasteShiftDown = Paste - Shift Down
 settings.bindings.PasteShiftReset = Paste - Reset Shift
-settings.bindings.PasteRotate = Paste - Rotate
+settings.bindings.PasteRotateY = [TMP] Paste - Rotate Y
+settings.bindings.PasteRotateX = [TMP] Paste - Rotate X
+settings.bindings.PasteRotateZ = [TMP] Paste - Rotate Z
 settings.bindings.PasteOpenPrefabList = Paste - Open Prefab List
 settings.bindings.PasteCycleOrigin = Paste - Cycle Origin
-settings.bindings.PasteRotationReset = [TMP] Paste - Reset Rotation
+settings.bindings.PasteRotationReset = Paste - Reset Rotation
 
 settings.bindings.BrushIncreaseWidth = Brush - Increase Width
 settings.bindings.BrushDecreaseWidth = Brush - Decrease Width
@@ -2532,6 +2910,7 @@ settings.bindings.EntityToggleSurface = Entity - Toggle Surface Lock
 settings.bindings.EntityOpenSpawnUI = Entity - Open Spawn UI
 settings.bindings.EntityTranslateMode = Entity - Translate Mode
 settings.bindings.EntityRotateMode = Entity - Rotate Mode
+settings.bindings.EntityRotateModeHead = [TMP] Entity - Rotate Head Mode
 settings.bindings.EntityFreeMoveMode = Entity - Free Move Mode
 
 settings.bindings.MachinimaTogglePause = Machinima - Toggle Pause
@@ -2552,6 +2931,7 @@ settings.bindings.MachinimaCycleSelectionMode = Machinima - Cycle Selection Mode
 
 settings.bindings.RulerDeletePoint = Ruler - Delete Point
 settings.bindings.RulerClearLine = Ruler - Clear Line
+settings.bindings.RulerReset = Ruler - Reset Tool
 settings.bindings.RulerNextLine = Ruler - Next Line
 settings.bindings.RulerPreviousLine = Ruler - Previous Line
 
@@ -2559,8 +2939,8 @@ settings.bindings.SelectPrefabRemove = Select Prefab - Remove
 settings.bindings.SelectPrefabOpenSaveUI = Select Prefab - Open Save UI
 settings.bindings.SelectPrefabUpdateBounds = Select Prefab - Update Bounds
 settings.bindings.SelectPrefabTeleport = Select Prefab - Teleport
-settings.bindings.SelectPrefabBack = [TMP] Select Prefab - Back
-settings.bindings.SetPrefabAnchor = [TMP] Select Prefab - Set Anchor
+settings.bindings.SelectPrefabBack = Select Prefab - Back
+settings.bindings.SetPrefabAnchor = Select Prefab - Set Anchor
 
 settings.bindings.HitboxInsert = Hitbox - Insert
 settings.bindings.HitboxDelete = Hitbox - Delete
@@ -2646,6 +3026,7 @@ settings.prototype.mountForcedDecelerationMultiplierSetting.tooltip = The multip
 settings.prototype.mountRequireNewInput = Require New Input After Forced Deceleration
 settings.prototype.mountRequireNewInput.tooltip = Whether you have to release and press movement input in order to move again after a forced deceleration
 settings.prototype.displayTempPrefix = Show [TMP] Tags on Text
+settings.prototype.forceManagedSession = Force Managed Session
 
 settings.armorItemsPickupLocation = Armor Items
 settings.weaponAndToolItemsPickupLocation = Weapon And Tool Items
@@ -2846,3 +3227,16 @@ cosmetics.color.Copper_Green = Copper
 cosmetics.color.Brass_Purple = Brass
 cosmetics.color.Iron_Black = Steel
 cosmetics.color.Black_Red = Iron
+
+# === social ===
+# Social sidebar context menu
+ui.social.menu.viewProfile = View Profile
+ui.social.menu.inviteToParty = Invite to Party
+ui.social.menu.removeFriend = Remove Friend
+ui.social.menu.block = Block
+# Social sidebar section headers
+ui.social.header.inYourWorld = IN YOUR WORLD - {count}
+ui.social.header.friendRequests = FRIEND REQUESTS - {count}
+ui.social.header.friends = FRIENDS - {count}
+ui.social.header.group = GROUP - {count}
+ui.social.header.partyInvites = PARTY INVITES - {count}

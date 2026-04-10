@@ -32,16 +32,16 @@ capes.no_neck = No Neck
 haircuts.Dreadlocks01.name = Dreadlocks 1
 haircuts.Dreadlocks02.name = Dreadlocks 2
 haircuts.Dreadlocks03.name = Dreadlocks 3
-haircuts.FrizzyBun01.name = [TMP] Frizzy Buns 1
-haircuts.FrizzyBun02.name = [TMP] Frizzy Buns 2
+haircuts.FrizzyBun01.name = Frizzy Buns 1
+haircuts.FrizzyBun02.name = Frizzy Buns 2
 haircuts.SlickbackCowlick.name = Cowlicked Slickback
 haircuts.Hairstrand.name = Hairstrand
 haircuts.GoldenBangles.name = Golden Bangles
 
-haircuts.Messy.name = [TMP] Messy
-haircuts.Braids.name = [TMP] Braids
-haircuts.Locks.name = [TMP] Locks
-haircuts.Wild.name = [TMP] Wild
+haircuts.Messy.name = Messy
+haircuts.Braids.name = Braids
+haircuts.Locks.name = Locks
+haircuts.Wild.name = Wild
 
 headaccessory.Logo_Cap_Movie.name = Movie Logo
 headaccessory.Logo_Cap_Heart.name = Heart Logo
